@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Service Areas | THT Windows — Houston, TX</title>
+<meta name="description" content="THT Windows provides professional window replacement across the greater Houston metro — Tomball, The Woodlands, Spring, Conroe, Cypress, Katy, and surrounding communities."/>
+<link rel="canonical" href="https://thtwindows.com/service-areas.html"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
+
+/* NAV */
+nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:100}
+.nav-logo{width:220px;flex-shrink:0}
+.nav-brand-name{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:#1F2937;letter-spacing:0.5px;text-transform:uppercase}
+.nav-brand-sub{font-size:9px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:400}
+.nav-links{display:flex;gap:36px;flex:1;justify-content:center}
+.nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap}
+.nav-links a:hover{color:#0F4C81}
+.nav-links a.active{color:#0F4C81;font-weight:700}
+.nav-right{width:220px;display:flex;justify-content:flex-end;flex-shrink:0}
+.nav-btn{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 24px;border-radius:6px;border:none;cursor:pointer;min-width:160px;white-space:nowrap;font-family:'Inter',sans-serif}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+
+/* MOBILE DRAWER */
+.mobile-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(4,14,26,0.55)}
+.mobile-drawer.open{display:block}
+.mobile-panel{position:absolute;top:0;right:0;bottom:0;width:280px;background:#fff;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem}
+.mobile-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:22px;color:#1F2937;margin-bottom:0.25rem}
+.mobile-panel a{font-size:15px;color:#374151;text-decoration:none;font-weight:500;padding:0.5rem 0;border-bottom:1px solid #f3f4f6}
+.mobile-panel a:hover,.mobile-panel a.active{color:#0F4C81}
+.mobile-panel .nav-btn{margin-top:0.5rem;width:100%;text-align:center}
+
+@media(max-width:960px){
+  .nav-links{display:none}
+  .nav-right .nav-btn{display:none}
+  .nav-hamburger{display:flex;flex-direction:column;gap:5px}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
+  nav{justify-content:space-between}
+  .nav-right{width:auto}
+}
+
+/* HERO */
+.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#040e1a 0%,#0a2540 40%,#0F4C81 100%);opacity:0.95}
+.hero-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px),repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px)}
+.hero-content{position:relative;z-index:2;padding:4rem 2.5rem 3.5rem;max-width:680px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.88);font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
+.hero h1{font-family:'Inter',sans-serif;font-size:46px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:1.25rem}
+.hero h1 em{font-style:normal;color:#5BA4D4}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.75;max-width:520px;margin-bottom:2.25rem}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-solid{background:#0F4C81;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-solid:hover{background:#0d4070}
+.btn-outline{background:transparent;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:2px solid rgba(255,255,255,0.42);cursor:pointer;font-family:'Inter',sans-serif}
+.btn-outline:hover{background:rgba(255,255,255,0.08)}
+
+/* STRIP */
+.strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
+.strip-item{padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.1rem}
+.strip-item+.strip-item{border-left:1px solid #e5e7eb}
+.strip-icon{width:44px;height:44px;background:#EBF2FA;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.strip-item h3{font-size:14.5px;font-weight:700;color:#1F2937;margin-bottom:4px}
+.strip-item p{font-size:12.5px;color:#6b7280;line-height:1.6}
+
+/* SECTIONS */
+.sec{padding:4.5rem 2.5rem}
+.sec-gray{background:#F8FAFC}
+.sec-white{background:#fff}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:0.875rem}
+.eyebrow-light{color:rgba(255,255,255,0.55)}
+.rule{width:42px;height:2px;background:#0F4C81;border-radius:2px;margin:0 0 1.5rem}
+.rule-center{margin:0 auto 1.5rem}
+.rule-light{background:rgba(255,255,255,0.35)}
+.sec-h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1F2937;line-height:1.15;letter-spacing:-0.3px;margin-bottom:0.75rem}
+.sec-p{font-size:14px;color:#6b7280;line-height:1.7;max-width:500px}
+.center{text-align:center}
+.center .sec-p{margin:0 auto}
+.center .rule{margin:0 auto 1.5rem}
+
+/* AREAS GRID */
+.areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.75rem}
+.area-card{background:#fff;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.5rem 1.25rem;text-align:center;transition:border-color 0.15s,box-shadow 0.15s}
+.area-card:hover{border-color:#0F4C81;box-shadow:0 4px 16px rgba(15,76,129,0.08)}
+.area-card-icon{width:44px;height:44px;background:#EBF2FA;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.875rem}
+.area-card h4{font-size:14.5px;font-weight:700;color:#1F2937;margin-bottom:4px}
+.area-card p{font-size:11.5px;color:#6b7280;line-height:1.5}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.two-col-text .sec-p{max-width:none}
+.check-list{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem}
+.check-list li{display:flex;align-items:flex-start;gap:0.75rem;font-size:13.5px;color:#374151;line-height:1.6}
+.check-list li::before{content:"✓";color:#0F4C81;font-weight:700;font-size:14px;flex-shrink:0;margin-top:1px}
+
+/* FINAL CTA */
+.final-cta{background:#040e1a;padding:5rem 2.5rem;text-align:center}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-0.3px}
+.final-cta p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:500px;margin:0 auto 2.25rem}
+.final-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-phone{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,0.6);font-weight:500;margin-top:1.25rem}
+.cta-phone a{color:#5BA4D4;text-decoration:none;font-weight:700}
+.cta-phone a:hover{color:#fff}
+
+/* FOOTER */
+footer{background:#111827;padding:3rem 2.5rem 1.75rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:2px}
+.footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
+.footer-contact-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.footer-contact-item span{font-size:12px;color:#9ca3af}
+.footer-social{display:flex;gap:9px;margin-top:1rem}
+.fsoc{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);font-size:14px;text-decoration:none;font-weight:700}
+.footer-col h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:0.875rem;letter-spacing:0.3px}
+.footer-col a{display:block;font-size:12px;color:#9ca3af;text-decoration:none;margin-bottom:5px}
+.footer-col a:hover{color:#fff}
+.footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
+.footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.25}
+.footer-htr-line{width:36px;height:2px;background:#0F4C81;margin:8px auto 0;border-radius:1px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11.5px;color:#4b5563}
+
+@media(max-width:768px){
+  .hero h1{font-size:30px}
+  .sec{padding:3rem 1.25rem}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr;gap:2rem}
+  .strip{grid-template-columns:1fr}
+  .strip-item+.strip-item{border-left:none;border-top:1px solid #e5e7eb}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+  .sec-h2{font-size:26px}
+  .final-cta h2{font-size:28px}
+}
+@media(max-width:1100px){.areas-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){nav{padding:0 20px}.footer-grid{grid-template-columns:1fr}.areas-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-brand-name">THT Windows</div>
+    <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="replacement-window-options.html">Window Styles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="financing.html">Financing</a>
+    <a href="service-areas.html" class="active">Service Areas</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-panel">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="replacement-window-options.html">Window Styles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="financing.html">Financing</a>
+    <a href="service-areas.html" class="active">Service Areas</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" aria-label="Service Areas Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Greater Houston Metro</div>
+    <h1>Serving Houston &amp;<br><em>Surrounding Communities</em></h1>
+    <p class="hero-sub">THT Windows provides professional replacement window installation across the greater Houston area — from Tomball to Galveston, The Woodlands to Katy.</p>
+    <div class="hero-btns">
+      <button class="btn-solid" onclick="location.href='contact.html'">Check Your Area</button>
+      <button class="btn-outline" onclick="location.href='contact.html'">Get Free Estimate</button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <div class="strip-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="9" r="5" stroke="#0F4C81" stroke-width="1.5"/><path d="M11 14c-5 0-9 2-9 4h18c0-2-4-4-9-4z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <h3>Houston-Based Local Team</h3>
+      <p>Our crew lives and works in the communities we serve — familiar with local home styles, codes, and climate demands.</p>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#0F4C81" stroke-width="1.5"/><path d="M11 7v4l3 2" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div>
+      <h3>Same-Week Estimates</h3>
+      <p>Free in-home consultations available across the Houston metro — typically scheduled within the same week you call.</p>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 12l2-2 4 4L18 7" stroke="#0F4C81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div>
+      <h3>Free In-Home Estimates</h3>
+      <p>No obligation visits anywhere in our service territory. We come to you, measure every opening, and provide clear recommendations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- AREAS GRID -->
+<section class="sec sec-white">
+  <div class="center">
+    <div class="eyebrow">Where We Work</div>
+    <div class="rule rule-center"></div>
+    <h2 class="sec-h2">Communities We Serve</h2>
+    <p class="sec-p">We serve homeowners throughout the greater Houston metro. Don't see your city? Call us — our service area is always expanding.</p>
+  </div>
+  <div class="areas-grid">
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Tomball</h4>
+      <p>Northwest Houston suburb — full service area</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>The Woodlands</h4>
+      <p>North Houston master-planned community</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Spring</h4>
+      <p>North Houston — Harris &amp; Montgomery counties</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Conroe</h4>
+      <p>Montgomery County seat, Lake Conroe area</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Cypress</h4>
+      <p>Northwest Harris County, Cy-Fair area</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Katy</h4>
+      <p>West Houston — Harris, Fort Bend &amp; Waller</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Magnolia</h4>
+      <p>Montgomery County, northwest corridor</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Richmond</h4>
+      <p>Fort Bend County, southwest Houston</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Pearland</h4>
+      <p>South Houston suburb, Brazoria County</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Sugar Land</h4>
+      <p>Fort Bend County, southwest Houston</p>
+    </div>
+
+    <div class="area-card">
+      <div class="area-card-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 7v12h6v-6h4v6h6V7L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Galveston</h4>
+      <p>Galveston Island, coastal Houston area</p>
+    </div>
+
+    <div class="area-card" style="border-style:dashed;background:#F8FAFC">
+      <div class="area-card-icon" style="background:#f3f4f6">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 5v6M11 11l4 4M11 11l-4 4" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/><circle cx="11" cy="11" r="8" stroke="#9ca3af" stroke-width="1.5"/></svg>
+      </div>
+      <h4 style="color:#9ca3af">Your Area?</h4>
+      <p>Not listed? Call us — we may serve your zip code.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY LOCAL -->
+<section class="sec sec-gray">
+  <div class="two-col">
+    <div class="two-col-text">
+      <div class="eyebrow">Why Local Matters</div>
+      <div class="rule"></div>
+      <h2 class="sec-h2">A Houston Team for Houston Homes</h2>
+      <p class="sec-p">Houston's climate is unique — extreme heat, high humidity, and the occasional severe storm demand windows built and installed specifically for these conditions. Our local team knows what works.</p>
+      <ul class="check-list">
+        <li>Familiar with Houston-area building codes and permit requirements</li>
+        <li>Windows selected for South-Central Energy Star climate zone performance</li>
+        <li>Installation techniques designed for hot, humid conditions</li>
+        <li>Quick follow-up service — we're never more than a short drive away</li>
+        <li>A division of Home Team Roofing, a trusted Houston-area contractor</li>
+      </ul>
+    </div>
+    <div>
+      <div style="background:#EBF2FA;border-radius:16px;padding:2.5rem;text-align:center">
+        <div style="font-size:48px;font-weight:800;color:#0F4C81;font-family:'Playfair Display',serif;margin-bottom:0.5rem">Houston</div>
+        <div style="font-size:13px;color:#6b7280;margin-bottom:2rem">Our home. Our community.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;text-align:center">
+          <div style="background:#fff;border-radius:10px;padding:1.25rem">
+            <div style="font-size:24px;font-weight:800;color:#0F4C81">500+</div>
+            <div style="font-size:11px;color:#6b7280;margin-top:4px">Projects Completed</div>
+          </div>
+          <div style="background:#fff;border-radius:10px;padding:1.25rem">
+            <div style="font-size:24px;font-weight:800;color:#0F4C81">5.0</div>
+            <div style="font-size:11px;color:#6b7280;margin-top:4px">Star Rating</div>
+          </div>
+          <div style="background:#fff;border-radius:10px;padding:1.25rem">
+            <div style="font-size:24px;font-weight:800;color:#0F4C81">50+</div>
+            <div style="font-size:11px;color:#6b7280;margin-top:4px">Zip Codes Served</div>
+          </div>
+          <div style="background:#fff;border-radius:10px;padding:1.25rem">
+            <div style="font-size:24px;font-weight:800;color:#0F4C81">1-Day</div>
+            <div style="font-size:11px;color:#6b7280;margin-top:4px">Most Installs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="eyebrow eyebrow-light">Serving Your Neighborhood</div>
+  <div class="rule rule-center rule-light"></div>
+  <h2>Ready to Get Started?</h2>
+  <p>Call or schedule online to confirm we serve your area and book your free in-home estimate. Most appointments are available within the same week.</p>
+  <div class="final-cta-btns">
+    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="btn-outline" style="font-size:14px;padding:14px 32px" onclick="location.href='replacement-window-options.html'">Browse Window Styles</button>
+  </div>
+  <div class="cta-phone">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2A1.5 1.5 0 014 .5h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.64 5.9a8.085 8.085 0 004.06 4.06l1.462-1.464a.5.5 0 01.506-.133l3.07.878A.5.5 0 0114 9.62V10.5a1.5 1.5 0 01-1.5 1.5C6.201 12 .5 6.299.5.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
+    Or call us directly: <a href="tel:+18324223039">(832) 422-3039</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>THT WINDOWS</h3>
+      <div class="footer-brand-sub">A Division of Home Team Roofing</div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5A1.5 1.5 0 013.5 1h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.04 6.4a9.085 9.085 0 004.56 4.56l.962-1.564a.5.5 0 01.506-.133l3.07.878A.5.5 0 0113 10.62V11.5a1.5 1.5 0 01-1.5 1.5C5.701 13 1 8.299 1 2.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>(832) 422-3039</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>thehometeamroofing@gmail.com</span>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="fsoc" aria-label="Facebook">f</a>
+        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
+        <a href="#" class="fsoc" aria-label="Google">G</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Window Styles</h4>
+      <a href="replacement-window-options.html">Double Hung</a>
+      <a href="replacement-window-options.html">Casement</a>
+      <a href="replacement-window-options.html">Picture</a>
+      <a href="replacement-window-options.html">Sliding</a>
+      <a href="replacement-window-options.html">Bay Windows</a>
+      <a href="replacement-window-options.html">Patio Doors</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service Areas</h4>
+      <a href="service-areas.html">Tomball</a>
+      <a href="service-areas.html">The Woodlands</a>
+      <a href="service-areas.html">Spring</a>
+      <a href="service-areas.html">Conroe</a>
+      <a href="service-areas.html">Cypress</a>
+      <a href="service-areas.html">Katy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:flex-end">
+      <div class="footer-htr">
+        <div class="footer-htr-div">A Division of</div>
+        <div class="footer-htr-name">HOME TEAM<br>ROOFING</div>
+        <div class="footer-htr-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 THT Windows. All Rights Reserved.</p>
+    <p>Houston, TX &nbsp;&middot;&nbsp; thtwindows.com</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hamburger=document.getElementById('hamburger');
+  var drawer=document.getElementById('mobileDrawer');
+  var closeBtn=document.getElementById('mobileClose');
+  if(hamburger&&drawer&&closeBtn){
+    hamburger.addEventListener('click',function(){drawer.classList.add('open');});
+    closeBtn.addEventListener('click',function(){drawer.classList.remove('open');});
+    drawer.addEventListener('click',function(e){if(e.target===drawer){drawer.classList.remove('open');}});
+  }
+})();
+</script>
+</body>
+</html>
