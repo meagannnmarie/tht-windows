@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Window Project Builder | THT Windows — Houston, TX</title>
+<meta name="description" content="Design your home's window replacement project with THT Windows. Build your project, upload photos, and receive a personalized estimate within 24 hours."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ─── RESET ────────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937;overflow-x:hidden}
+
+/* ─── NAV ──────────────────────────────────────────── */
+nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:200}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:18px}
+.nav-logo img{height:74px;width:auto;display:block;flex-shrink:0}
+.nav-red-divider{width:2px;height:58px;background:#b91c1c;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:5px}
+.nav-brand-name{font-family:'Inter',sans-serif;font-size:19px;font-weight:800;color:#1a1f2e;letter-spacing:3px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;white-space:nowrap;line-height:1}
+.nav-links{display:flex;gap:36px;flex:1;justify-content:center}
+.nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap;transition:color .15s}
+.nav-links a:hover,.nav-links a.active{color:#0F4C81}
+.nav-links a.active{font-weight:700}
+.nav-right{width:220px;display:flex;justify-content:flex-end;flex-shrink:0}
+.nav-btn{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 24px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+@media(max-width:960px){
+  .nav-links,.nav-right .nav-btn{display:none}
+  .nav-hamburger{display:flex;flex-direction:column;gap:5px}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
+  nav{justify-content:space-between;padding:0 20px}
+  .nav-right{width:auto}
+  .nav-logo{gap:12px}
+  .nav-logo img{height:50px}
+  .nav-red-divider{height:40px}
+  .nav-brand-name{font-size:14px;letter-spacing:2px}
+  .nav-brand-sub{font-size:6.5px;letter-spacing:1.4px}
+}
+.mobile-drawer{display:none;position:fixed;inset:0;z-index:400;background:rgba(4,14,26,.55)}
+.mobile-drawer.open{display:block}
+.mobile-panel{position:absolute;top:0;right:0;bottom:0;width:280px;background:#fff;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem}
+.mobile-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:22px;color:#1F2937;margin-bottom:.25rem}
+.mobile-panel a{font-size:15px;color:#374151;text-decoration:none;font-weight:500;padding:.5rem 0;border-bottom:1px solid #f3f4f6}
+.mobile-panel a:hover{color:#0F4C81}
+.mobile-panel .nav-btn{margin-top:.5rem;width:100%;text-align:center}
+
+/* ─── PROGRESS ─────────────────────────────────────── */
+.prog-wrap{background:#fff;border-bottom:1px solid #e5e7eb;height:58px;display:flex;align-items:center;padding:0 48px;position:sticky;top:96px;z-index:150}
+.prog-inner{display:flex;align-items:center;width:100%;max-width:860px}
+.prog-step{display:flex;align-items:center;gap:9px}
+.prog-dot{width:26px;height:26px;border-radius:50%;border:2px solid #e5e7eb;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#d1d5db;flex-shrink:0;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.prog-step.done .prog-dot{border-color:#16a34a;background:#f0fdf4;color:#16a34a}
+.prog-step.active .prog-dot{border-color:#0F4C81;background:#0F4C81;color:#fff;box-shadow:0 0 0 4px rgba(15,76,129,.12)}
+.prog-label{font-size:11px;font-weight:600;color:#d1d5db;white-space:nowrap;transition:color .35s}
+.prog-step.done .prog-label{color:#16a34a}
+.prog-step.active .prog-label{color:#0F4C81}
+.prog-connector{flex:1;height:1px;background:#e5e7eb;margin:0 10px;min-width:16px;transition:background .5s}
+.prog-connector.done{background:#16a34a}
+@keyframes dotCelebrate{0%{transform:scale(1)}40%{transform:scale(1.4)}70%{transform:scale(.9)}100%{transform:scale(1)}}
+.prog-dot.celebrate{animation:dotCelebrate .5s cubic-bezier(.16,1,.3,1) both}
+@media(max-width:768px){
+  .prog-wrap{padding:0 16px;top:60px}
+  .prog-label{display:none}
+  .prog-dot{width:22px;height:22px;font-size:9px}
+  .prog-connector{margin:0 5px;min-width:6px}
+}
+@media(max-width:960px){.prog-wrap{top:60px}}
+
+/* ─── PROJECT SUMMARY PANEL ────────────────────────── */
+.summary-panel{position:fixed;right:28px;top:178px;width:256px;background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(15,76,129,.09);z-index:100;display:none;opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
+.summary-panel.visible{display:block}
+.summary-panel.shown{opacity:1;transform:translateY(0)}
+.sp-head{background:#040e1a;padding:1.125rem 1.375rem;display:flex;align-items:center;gap:10px}
+.sp-head-icon{width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sp-head-text{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase}
+.sp-head-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.2;margin-top:1px}
+.sp-body{padding:1.25rem 1.375rem}
+.sp-entry{padding:10px 0;border-bottom:1px solid #f3f4f6}
+.sp-entry:last-of-type{border-bottom:none}
+.sp-entry-main{font-size:14px;font-weight:700;color:#1F2937;margin-bottom:1px;transition:color .3s}
+.sp-entry-main.highlight{color:#0F4C81}
+.sp-entry-sub{font-size:11.5px;color:#9ca3af;font-weight:400}
+.sp-progress{margin-top:1rem;padding-top:1rem;border-top:1px solid #f3f4f6}
+.sp-prog-labels{display:flex;justify-content:space-between;margin-bottom:6px}
+.sp-prog-label{font-size:10.5px;font-weight:600;color:#9ca3af}
+.sp-prog-pct{font-size:10.5px;font-weight:700;color:#0F4C81}
+.sp-bar{height:3px;background:#f3f4f6;border-radius:2px;overflow:hidden}
+.sp-bar-fill{height:100%;background:linear-gradient(to right,#0F4C81,#5BA4D4);border-radius:2px;width:0;transition:width .7s cubic-bezier(.4,0,.2,1)}
+.sp-status-badge{margin:1rem 1.375rem 0;padding:8px 12px;background:#EBF2FA;border-radius:7px;font-size:11.5px;font-weight:700;color:#0F4C81;text-align:center;letter-spacing:.3px}
+.sp-foot{padding:.875rem 1.375rem 1.125rem;border-top:1px solid #f3f4f6;margin-top:0}
+.sp-foot-label{font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px}
+.sp-foot-phone{font-size:13px;font-weight:700;color:#0F4C81}
+@media(max-width:1200px){.summary-panel{display:none!important}}
+
+/* Layout padding when panel is visible */
+@media(min-width:1201px){.has-panel{padding-right:308px}}
+
+/* ─── SHARED TOKENS ────────────────────────────────── */
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:.75rem}
+.rule{width:42px;height:2px;background:#0F4C81;border-radius:2px;margin:0 0 1.5rem}
+.rule-center{margin:0 auto 1.75rem}
+.btn-primary{background:#0F4C81;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s,transform .12s,box-shadow .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:#0d4070;transform:translateY(-1px);box-shadow:0 6px 20px rgba(15,76,129,.22)}
+.btn-primary:active{transform:none}
+.btn-secondary{background:transparent;color:#0F4C81;font-size:13px;font-weight:600;padding:12px 20px;border-radius:6px;border:1.5px solid #0F4C81;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s}
+.btn-secondary:hover{background:#EBF2FA}
+.btn-ghost{background:transparent;color:#6b7280;font-size:13px;font-weight:500;padding:11px 18px;border-radius:6px;border:1px solid #e5e7eb;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.btn-ghost:hover{border-color:#9ca3af;color:#374151}
+
+/* Form fields */
+.field-group{margin-bottom:1.5rem}
+.field-label{display:block;font-size:11px;font-weight:700;color:#374151;margin-bottom:5px;letter-spacing:1.5px;text-transform:uppercase}
+.field-group input,.field-group select,.field-group textarea{width:100%;padding:13px 15px;border:1.5px solid #e5e7eb;border-radius:9px;font-size:14px;font-family:'Inter',sans-serif;color:#1F2937;outline:none;background:#fff;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none}
+.field-group input:focus,.field-group select:focus,.field-group textarea:focus{border-color:#0F4C81;box-shadow:0 0 0 3px rgba(15,76,129,.08)}
+.field-group textarea{min-height:96px;resize:vertical;line-height:1.65}
+.field-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='6'%3E%3Cpath d='M1 1l4.5 4 4.5-4' stroke='%236b7280' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.field-hint{font-size:11.5px;color:#9ca3af;margin-top:5px;line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.25rem}
+@media(max-width:580px){.g2,.g3{grid-template-columns:1fr}}
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb}
+
+/* ─── STEP SYSTEM ──────────────────────────────────── */
+.steps-wrap{min-height:calc(100vh - 154px)}
+.step{display:none}
+.step.active{display:block;animation:stepReveal .5s cubic-bezier(.16,1,.3,1) both}
+@keyframes stepReveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Step content containers */
+.step-shell{max-width:800px;margin:0 auto;padding:4.5rem 2.5rem}
+.step-shell-wide{max-width:1040px;margin:0 auto;padding:4.5rem 2.5rem}
+.step-intro{margin-bottom:3rem}
+.step-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:.5rem}
+.step-rule{width:40px;height:2px;background:#0F4C81;border-radius:2px;margin:.75rem 0 1.5rem}
+.step-headline{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1F2937;line-height:1.12;letter-spacing:-.3px;margin-bottom:.875rem}
+.step-sub{font-size:14.5px;color:#6b7280;line-height:1.8;max-width:520px}
+
+/* ─── STEP 1: HERO ─────────────────────────────────── */
+.hero-stage{position:relative;height:640px;overflow:hidden;background:#040e1a;background-image:url("images/windowestimatephoto.png");background-size:cover;background-position:center center;display:flex;align-items:center}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,.94) 0%,rgba(4,14,26,.88) 28%,rgba(4,14,26,.48) 58%,rgba(4,14,26,0) 78%)}
+.hero-body{position:relative;z-index:2;padding:0 5rem 0 72px;max-width:660px}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.85);font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:2rem}
+.hero-kicker-dot{width:5px;height:5px;background:#f59e0b;border-radius:50%;flex-shrink:0}
+.hero-h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:#fff;line-height:1.06;letter-spacing:-.5px;margin-bottom:1.25rem}
+.hero-h1 em{font-style:italic;color:rgba(255,255,255,.85)}
+.hero-p{font-size:16px;color:rgba(255,255,255,.68);line-height:1.8;margin-bottom:2.25rem;max-width:460px}
+.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-hero-cta{background:#fff;color:#0F4C81;font-size:14.5px;font-weight:700;padding:15px 32px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .18s;display:inline-flex;align-items:center;gap:9px}
+.btn-hero-cta:hover{background:#f0f7ff;transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,255,255,.15)}
+.btn-hero-text{background:transparent;color:rgba(255,255,255,.75);font-size:13px;font-weight:500;padding:0;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:underline;text-underline-offset:3px;transition:color .15s}
+.btn-hero-text:hover{color:#fff}
+.hero-trust{display:flex;align-items:center;gap:9px;margin-top:1.75rem}
+.hero-stars{color:#f59e0b;font-size:14px;letter-spacing:1.5px}
+.hero-trust-text{font-size:12.5px;color:rgba(255,255,255,.55)}
+.hero-trust-text strong{color:rgba(255,255,255,.85);font-weight:600}
+.hero-floats{position:absolute;right:64px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:2}
+.hero-float{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:1.125rem 1.5rem;text-align:center;min-width:132px}
+.hero-float-num{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.5px;line-height:1}
+.hero-float-label{font-size:10px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px}
+@media(max-width:960px){
+  .hero-stage{height:auto;min-height:540px}
+  .hero-body{padding:4rem 1.5rem}
+  .hero-h1{font-size:36px}
+  .hero-floats{display:none}
+}
+
+/* ─── INTRO STRIP ──────────────────────────────────── */
+.how-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e5e7eb}
+.how-item{padding:1.75rem 1.875rem;display:flex;gap:.875rem;align-items:flex-start;border-right:1px solid #e5e7eb}
+.how-item:last-child{border-right:none}
+.how-num{width:30px;height:30px;background:#EBF2FA;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#0F4C81;flex-shrink:0;margin-top:1px}
+.how-item h3{font-size:13px;font-weight:700;color:#1F2937;margin-bottom:3px}
+.how-item p{font-size:12px;color:#6b7280;line-height:1.6}
+@media(max-width:768px){
+  .how-strip{grid-template-columns:1fr 1fr}
+  .how-item:nth-child(2){border-right:none}
+  .how-item:nth-child(3){border-top:1px solid #e5e7eb}
+  .how-item:nth-child(4){border-top:1px solid #e5e7eb;border-right:none}
+}
+@media(max-width:480px){
+  .how-strip{grid-template-columns:1fr}
+  .how-item{border-right:none!important;border-top:1px solid #e5e7eb}
+  .how-item:first-child{border-top:none}
+}
+
+/* ─── STEP 3: WINDOW BUILDER ───────────────────────── */
+
+/* Invitation card (empty state) */
+.add-invite{border:2px dashed #d1dce9;border-radius:18px;padding:4.5rem 2.5rem;text-align:center;cursor:pointer;transition:all .28s ease;background:#fff;user-select:none}
+.add-invite:hover{border-color:#0F4C81;border-style:solid;background:#f8fbff;transform:translateY(-3px);box-shadow:0 12px 36px rgba(15,76,129,.1)}
+.add-invite-ring{width:72px;height:72px;border-radius:50%;background:#EBF2FA;border:2px dashed #c7d8ed;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;transition:all .28s}
+.add-invite:hover .add-invite-ring{background:#0F4C81;border-color:#0F4C81}
+.add-invite:hover .add-invite-ring .plus-stroke{stroke:#fff}
+.add-invite-h{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1F2937;margin-bottom:.625rem}
+.add-invite-p{font-size:13.5px;color:#9ca3af;line-height:1.7;max-width:340px;margin:0 auto 1.875rem}
+
+/* Window card portfolio grid */
+.win-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:1.375rem}
+@media(max-width:680px){.win-grid{grid-template-columns:1fr}}
+
+@keyframes cardReveal{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Premium portfolio card */
+.win-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;transition:box-shadow .25s,transform .25s,border-color .25s;animation:cardReveal .42s cubic-bezier(.16,1,.3,1) both;cursor:default}
+.win-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(15,76,129,.11);border-color:#d1dce9}
+.wc-photo{height:172px;overflow:hidden;background:#F8FAFC;position:relative}
+.wc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease}
+.win-card:hover .wc-photo img{transform:scale(1.06)}
+.wc-photo-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#EBF2FA,#F8FAFC)}
+.wc-status-chip{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:20px;font-size:9.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.chip-planned{background:rgba(255,255,255,.85);color:#9ca3af;border:1px solid rgba(209,213,219,.6)}
+.chip-measured{background:rgba(235,242,250,.9);color:#0F4C81;border:1px solid rgba(15,76,129,.18)}
+.chip-complete{background:rgba(240,253,244,.9);color:#16a34a;border:1px solid rgba(22,163,74,.2)}
+.wc-body{padding:1.125rem 1.25rem}
+.wc-room-row{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem;margin-bottom:.5rem}
+.wc-room-label{font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#0F4C81}
+.wc-actions{display:flex;gap:5px;flex-shrink:0}
+.wc-btn{width:26px;height:26px;border-radius:6px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;color:#9ca3af;flex-shrink:0}
+.wc-btn:hover{border-color:#0F4C81;color:#0F4C81;background:#EBF2FA}
+.wc-btn.del:hover{border-color:#ef4444;color:#ef4444;background:#fef2f2}
+.wc-type{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#1F2937;margin-bottom:.25rem;line-height:1.2}
+.wc-dim{font-size:12px;color:#9ca3af;font-weight:500;margin-bottom:.125rem}
+.wc-notes-text{font-size:11.5px;color:#9ca3af;font-style:italic;margin-top:3px}
+.wc-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.875rem;padding-top:.875rem;border-top:1px solid #f3f4f6}
+.wc-photos-label{display:flex;align-items:center;gap:5px;font-size:11.5px;color:#9ca3af;font-weight:500}
+.wc-photos-label.has-photos{color:#0F4C81}
+.wc-floor-badge{font-size:10.5px;color:#9ca3af;background:#f9fafb;border:1px solid #f3f4f6;border-radius:4px;padding:2px 8px;font-weight:500}
+
+/* "Add another" trigger */
+.add-another-btn{display:flex;align-items:center;gap:10px;width:100%;padding:1rem 1.375rem;border:1.5px dashed #d1dce9;border-radius:10px;cursor:pointer;background:#fff;transition:all .22s;color:#9ca3af;font-size:13px;font-weight:600;font-family:'Inter',sans-serif}
+.add-another-btn:hover{border-color:#0F4C81;color:#0F4C81;background:#f8fbff}
+.add-another-circle{width:28px;height:28px;border-radius:50%;background:#EBF2FA;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+.add-another-btn:hover .add-another-circle{background:#0F4C81}
+.add-another-btn:hover .add-another-circle .plus-stroke{stroke:#fff}
+
+/* Collection mood line */
+.collection-mood{text-align:center;padding:.875rem 1rem;font-size:13px;color:#9ca3af;font-style:italic;font-family:'Playfair Display',serif}
+
+/* ─── ADD WINDOW MODAL ─────────────────────────────── */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(4,14,26,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex;animation:modalFadeIn .25s ease}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:#fff;border-radius:18px;width:100%;max-width:660px;max-height:92vh;overflow-y:auto;animation:modalRise .35s cubic-bezier(.16,1,.3,1) both;position:relative}
+@keyframes modalRise{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.modal-head{padding:1.875rem 2rem 1.375rem;border-bottom:1px solid #f3f4f6;display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:#fff;z-index:10;border-radius:18px 18px 0 0}
+.modal-head h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1F2937}
+.modal-head p{font-size:13px;color:#9ca3af;margin-top:3px}
+.modal-x{width:32px;height:32px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#6b7280;transition:all .15s;flex-shrink:0}
+.modal-x:hover{border-color:#374151;color:#1F2937}
+.modal-body{padding:1.875rem 2rem}
+.modal-section{margin-bottom:2rem}
+.modal-section-label{font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#374151;margin-bottom:.875rem}
+
+/* Room pills */
+.room-pills{display:flex;flex-wrap:wrap;gap:7px}
+.r-pill{padding:7px 15px;border-radius:20px;border:1.5px solid #e5e7eb;background:#fff;font-size:12.5px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .15s;user-select:none}
+.r-pill:hover{border-color:#0F4C81;color:#0F4C81}
+.r-pill.on{border-color:#0F4C81;background:#EBF2FA;color:#0F4C81}
+
+/* Type picker */
+.type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+@media(max-width:520px){.type-grid{grid-template-columns:repeat(3,1fr)}}
+.t-card{border:2px solid #e5e7eb;border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;background:#fff;position:relative}
+.t-card:hover{border-color:#0F4C81;transform:translateY(-2px);box-shadow:0 5px 16px rgba(15,76,129,.1)}
+.t-card.on{border-color:#0F4C81;box-shadow:0 0 0 3px rgba(15,76,129,.1)}
+.t-card-img{height:72px;overflow:hidden;background:#F8FAFC}
+.t-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.t-card-img-empty{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#EBF2FA}
+.t-card-name{padding:6px 7px;font-size:10.5px;font-weight:700;color:#374151;text-align:center;line-height:1.3}
+.t-check{position:absolute;top:4px;right:4px;width:17px;height:17px;background:#0F4C81;border-radius:50%;display:none;align-items:center;justify-content:center}
+.t-card.on .t-check{display:flex}
+
+/* Floor pills */
+.floor-pills{display:flex;gap:8px}
+.f-pill{padding:8px 18px;border-radius:6px;border:1.5px solid #e5e7eb;background:#fff;font-size:13px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .15s;user-select:none}
+.f-pill:hover{border-color:#0F4C81;color:#0F4C81}
+.f-pill.on{border-color:#0F4C81;background:#EBF2FA;color:#0F4C81}
+
+/* Dimension inputs */
+.dim-row{display:flex;align-items:center;gap:10px}
+.dim-row input{flex:1;padding:12px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;color:#1F2937}
+.dim-row input:focus{border-color:#0F4C81;box-shadow:0 0 0 3px rgba(15,76,129,.08)}
+.dim-x{font-size:20px;font-weight:300;color:#9ca3af;flex-shrink:0}
+.modal-note-input{width:100%;padding:12px 14px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s;color:#1F2937}
+.modal-note-input:focus{border-color:#0F4C81;box-shadow:0 0 0 3px rgba(15,76,129,.08)}
+
+.modal-foot{padding:1.375rem 2rem 1.875rem;border-top:1px solid #f3f4f6;display:flex;justify-content:space-between;align-items:center;position:sticky;bottom:0;background:#fff;border-radius:0 0 18px 18px}
+
+/* ─── STEP 4: PHOTOS ───────────────────────────────── */
+.ctx-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2rem}
+.ctx-pill{padding:7px 16px;border-radius:20px;border:1.5px solid #e5e7eb;background:#fff;font-size:12.5px;font-weight:600;color:#6b7280;cursor:pointer;transition:all .2s;white-space:nowrap}
+.ctx-pill:hover{border-color:#0F4C81;color:#0F4C81}
+.ctx-pill.on{border-color:#0F4C81;background:#EBF2FA;color:#0F4C81}
+
+.drop-zone{border:2px dashed #d1dce9;border-radius:18px;padding:4rem 2rem;text-align:center;cursor:pointer;transition:all .25s;background:#F8FAFC;position:relative;overflow:hidden}
+.drop-zone:hover,.drop-zone.over{border-color:#0F4C81;background:#f0f6ff;border-style:solid}
+.drop-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.dz-icon{width:64px;height:64px;background:#EBF2FA;border-radius:16px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center}
+.dz-h{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#1F2937;margin-bottom:.5rem}
+.dz-p{font-size:13.5px;color:#9ca3af;line-height:1.7;margin-bottom:1.375rem}
+.dz-fmts{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:.875rem}
+.dz-fmt{font-size:10.5px;color:#9ca3af;background:#f3f4f6;border-radius:4px;padding:2px 8px}
+
+.up-prog{margin-top:.875rem;display:none}
+.up-prog-bar{height:3px;background:#e5e7eb;border-radius:2px;overflow:hidden}
+.up-prog-fill{height:100%;background:linear-gradient(to right,#0F4C81,#5BA4D4);border-radius:2px;width:0;transition:width .35s ease}
+.up-prog-label{font-size:11px;color:#9ca3af;margin-top:5px;text-align:right}
+
+.photo-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:1rem;margin-top:2rem}
+@keyframes thumbReveal{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+.photo-cell{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#f3f4f6;border:1px solid #e5e7eb;animation:thumbReveal .3s cubic-bezier(.16,1,.3,1) both;cursor:pointer}
+.photo-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .32s}
+.photo-cell:hover img{transform:scale(1.06)}
+.photo-cell-mask{position:absolute;inset:0;background:rgba(4,14,26,0);display:flex;align-items:center;justify-content:center;gap:7px;transition:background .22s}
+.photo-cell:hover .photo-cell-mask{background:rgba(4,14,26,.38)}
+.pc-btn{opacity:0;background:#fff;border:none;border-radius:7px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .2s;color:#1F2937}
+.photo-cell:hover .pc-btn{opacity:1}
+.photo-cell-name{position:absolute;bottom:0;left:0;right:0;padding:5px 9px;background:linear-gradient(to top,rgba(4,14,26,.62),transparent);font-size:10px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ─── LIGHTBOX ─────────────────────────────────────── */
+.lightbox{display:none;position:fixed;inset:0;z-index:600;background:rgba(4,14,26,.95);align-items:center;justify-content:center}
+.lightbox.open{display:flex;animation:lbFade .2s ease}
+@keyframes lbFade{from{opacity:0}to{opacity:1}}
+.lb-img{max-width:90vw;max-height:86vh;object-fit:contain;border-radius:8px}
+.lb-close{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .15s}
+.lb-close:hover{background:rgba(255,255,255,.18)}
+
+/* ─── STEP 5: CONTACT ──────────────────────────────── */
+.contact-layout{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start}
+.contact-sidebar{background:#040e1a;border-radius:14px;padding:2rem;position:sticky;top:180px}
+.cs-head{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:1.25rem;line-height:1.25}
+.cs-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:1.125rem}
+.cs-dot{width:28px;height:28px;background:rgba(255,255,255,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cs-item h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:2px}
+.cs-item p{font-size:11.5px;color:rgba(255,255,255,.48);line-height:1.6}
+.cs-rule{height:1px;background:rgba(255,255,255,.08);margin:1.375rem 0}
+.cs-stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:6px}
+.cs-quote{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,.55);line-height:1.7}
+.cs-attr{font-size:10.5px;color:rgba(255,255,255,.3);margin-top:6px;font-weight:600;letter-spacing:.3px}
+@media(max-width:880px){.contact-layout{grid-template-columns:1fr}.contact-sidebar{position:static}}
+
+/* ─── STEP 6: PROJECT RECEIVED ─────────────────────── */
+@keyframes checkBounce{0%{opacity:0;transform:scale(.3) rotate(-10deg)}60%{transform:scale(1.15) rotate(2deg)}80%{transform:scale(.95)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes checkFade{0%,55%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.8)}}
+@keyframes logoReveal{from{opacity:0;transform:scale(.65)}to{opacity:1;transform:scale(1)}}
+@keyframes ringRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes ringPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.14;transform:scale(1.1)}}
+@keyframes heroReveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Hero */
+.cs-hero{position:relative;min-height:640px;background:#040e1a;background-image:url("images/windowestimatephoto.png");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cs-hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,14,26,.86) 0%,rgba(4,14,26,.72) 50%,rgba(4,14,26,.92) 100%)}
+.cs-hero-body{position:relative;z-index:2;text-align:center;padding:5rem 2rem;max-width:700px;animation:heroReveal .75s cubic-bezier(.16,1,.3,1) both}
+
+/* Animated badge */
+.cs-badge-wrap{position:relative;width:140px;height:140px;margin:0 auto 2.25rem}
+.cs-badge-inner{position:relative;width:140px;height:140px;border-radius:50%;background:transparent;display:flex;align-items:center;justify-content:center;animation:checkBounce .8s cubic-bezier(.16,1,.3,1) .25s both}
+.cs-badge-stack{display:grid;place-items:center;width:140px;height:140px}
+.cs-check-icon{grid-area:1/1;display:flex;align-items:center;justify-content:center;animation:checkFade .4s ease 1.2s forwards}
+.cs-logo-icon{grid-area:1/1;width:140px;height:140px;object-fit:cover;border-radius:50%;opacity:0;animation:logoReveal .5s cubic-bezier(.16,1,.3,1) 1.5s forwards}
+
+/* Ref chip */
+.cs-ref-chip{display:inline-block;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.5);font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 18px;border-radius:4px;margin-bottom:1.875rem}
+
+/* Hero type */
+.cs-h2{font-family:'Playfair Display',serif;font-size:50px;font-weight:700;color:#fff;line-height:1.08;letter-spacing:-.5px;margin-bottom:1.125rem}
+.cs-sub{font-size:15px;color:rgba(255,255,255,.62);line-height:1.82;max-width:520px;margin:0 auto 2.25rem}
+
+/* CTAs */
+.cs-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:2.625rem}
+.cs-btn-primary{background:#fff;color:#0F4C81;font-size:14px;font-weight:700;padding:14px 30px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:9px;transition:all .18s}
+.cs-btn-primary:hover{background:#f0f7ff;transform:translateY(-1px);box-shadow:0 8px 26px rgba(255,255,255,.15)}
+.cs-btn-ghost{background:transparent;color:rgba(255,255,255,.65);font-size:13px;font-weight:500;padding:13px 22px;border-radius:6px;border:1px solid rgba(255,255,255,.2);cursor:pointer;font-family:'Inter',sans-serif;transition:all .18s}
+.cs-btn-ghost:hover{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.38)}
+
+/* Trust strip */
+.cs-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}
+.cs-trust-badge{display:flex;align-items:center;gap:7px;padding:0 22px;font-size:12px;font-weight:600;color:rgba(255,255,255,.68)}
+.cs-trust-stars{color:#f59e0b;letter-spacing:2px;font-size:11px}
+.cs-trust-div{width:1px;height:18px;background:rgba(255,255,255,.18);flex-shrink:0}
+
+/* What Happens Next */
+.cs-steps-section{background:#F8FAFC;padding:5.5rem 2rem;border-bottom:1px solid #e5e7eb}
+.cs-steps-inner{max-width:900px;margin:0 auto;text-align:center}
+.cs-steps-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:.5rem}
+.cs-steps-rule{width:40px;height:2px;background:#0F4C81;border-radius:2px;margin:.75rem auto 1.875rem}
+.cs-steps-h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#1F2937;margin-bottom:3rem;line-height:1.2}
+.cs-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+.cs-step{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:2.5rem 1.875rem 2rem;text-align:center;position:relative;animation:cardReveal .45s cubic-bezier(.16,1,.3,1) both;transition:box-shadow .25s,border-color .25s}
+.cs-step:hover{box-shadow:0 14px 40px rgba(15,76,129,.09);border-color:#d1dce9}
+.cs-step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;background:#0F4C81;border-radius:50%;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2.5px solid #F8FAFC;box-shadow:0 2px 8px rgba(15,76,129,.25)}
+.cs-step-icon{width:52px;height:52px;background:#EBF2FA;border-radius:13px;margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(15,76,129,.1)}
+.cs-step h4{font-size:14px;font-weight:700;color:#1F2937;margin-bottom:.5rem}
+.cs-step p{font-size:12.5px;color:#6b7280;line-height:1.72}
+
+/* Project Summary */
+.cs-summary-section{background:#fff;padding:4.5rem 2rem 5.5rem}
+.cs-summary-inner{max-width:660px;margin:0 auto}
+.cs-summary-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:.5rem}
+.cs-summary-rule{width:40px;height:2px;background:#0F4C81;border-radius:2px;margin:.75rem 0 2rem}
+.cs-summary-h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#1F2937;margin-bottom:.375rem}
+.cs-summary-sub{font-size:13px;color:#9ca3af;margin-bottom:2.25rem}
+
+/* Summary cards — keep intact */
+.cc{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;margin-bottom:1.125rem;animation:cardReveal .4s ease both}
+.cc-head{background:#F8FAFC;border-bottom:1px solid #e5e7eb;padding:.75rem 1.25rem}
+.cc-head h4{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#0F4C81}
+.cc-body{padding:1.125rem 1.25rem}
+.cc-row{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;padding:5px 0;border-bottom:1px solid #f9fafb}
+.cc-row:last-child{border-bottom:none}
+.cc-label{color:#9ca3af;font-weight:400}
+.cc-val{color:#1F2937;font-weight:600;text-align:right;max-width:62%}
+.cc-win{padding:10px 0;border-bottom:1px solid #f3f4f6}
+.cc-win:last-child{border-bottom:none;padding-bottom:0}
+.cc-win-room{font-size:10px;font-weight:700;color:#0F4C81;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px}
+.cc-win-meta{font-size:13px;color:#374151;line-height:1.65}
+.cc-win-meta em{color:#9ca3af;font-style:italic;font-size:12px}
+.cc-body-wins{padding-top:.875rem;padding-bottom:.875rem}
+.cc-notes{font-size:13.5px;color:#374151;line-height:1.8;font-style:italic;margin:0}
+
+@media(max-width:680px){.cs-steps{grid-template-columns:1fr}.cs-steps-section{padding:3.5rem 1.25rem}}
+@media(max-width:560px){
+  .cs-h2{font-size:36px}
+  .cs-trust-div{display:none}
+  .cs-trust-badge{padding:6px 10px;font-size:11.5px}
+  .cs-summary-section{padding:3rem 1.25rem 4rem}
+}
+
+/* ─── FOOTER ───────────────────────────────────────── */
+footer{background:#111827;padding:3rem 2.5rem 1.75rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:2px}
+.footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
+.footer-contact-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px}
+.footer-contact-item span{font-size:12px;color:#9ca3af;line-height:1.5}
+.footer-social{display:flex;gap:9px;margin-top:1rem}
+.fsoc{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:14px;text-decoration:none;font-weight:700}
+.footer-col h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:.875rem;letter-spacing:.3px}
+.footer-col a{display:block;font-size:12px;color:#9ca3af;text-decoration:none;margin-bottom:5px}
+.footer-col a:hover{color:#fff}
+.footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
+.footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.25}
+.footer-htr-line{width:36px;height:2px;background:#0F4C81;margin:8px auto 0;border-radius:1px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11.5px;color:#4b5563}
+@media(max-width:768px){footer{padding:2.5rem 1.25rem 1.5rem}.footer-grid{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="images/windowlogo.PNG" alt="Home Team Windows" />
+    <div class="nav-red-divider"></div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">THT Windows</div>
+      <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="replacement-window-options.html">Window Styles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+    <a href="service-areas.html">Service Areas</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="nav-btn" onclick="location.href='contact.html'">Call Us Now</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-panel">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="index.html">Home</a>
+    <a href="replacement-window-options.html">Window Styles</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+    <a href="service-areas.html">Service Areas</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <button class="nav-btn" onclick="location.href='contact.html'">Call Us Now</button>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="prog-wrap" id="progWrap">
+  <div class="prog-inner">
+    <div class="prog-step active" id="ps1"><div class="prog-dot" id="pd1">1</div><span class="prog-label">Overview</span></div>
+    <div class="prog-connector" id="pc1"></div>
+    <div class="prog-step" id="ps2"><div class="prog-dot" id="pd2">2</div><span class="prog-label">Your Home</span></div>
+    <div class="prog-connector" id="pc2"></div>
+    <div class="prog-step" id="ps3"><div class="prog-dot" id="pd3">3</div><span class="prog-label">Windows</span></div>
+    <div class="prog-connector" id="pc3"></div>
+    <div class="prog-step" id="ps4"><div class="prog-dot" id="pd4">4</div><span class="prog-label">Photos</span></div>
+    <div class="prog-connector" id="pc4"></div>
+    <div class="prog-step" id="ps5"><div class="prog-dot" id="pd5">5</div><span class="prog-label">Contact</span></div>
+    <div class="prog-connector" id="pc5"></div>
+    <div class="prog-step" id="ps6"><div class="prog-dot" id="pd6">6</div><span class="prog-label">Complete</span></div>
+  </div>
+</div>
+
+<!-- PROJECT SUMMARY PANEL -->
+<aside class="summary-panel" id="summaryPanel">
+  <div class="sp-head">
+    <div class="sp-head-icon">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="rgba(255,255,255,.6)" stroke-width="1.3"/><path d="M4 7h6M4 4.5h6M4 9.5h4" stroke="rgba(255,255,255,.6)" stroke-width="1.3" stroke-linecap="round"/></svg>
+    </div>
+    <div>
+      <div class="sp-head-text">Your Project</div>
+      <div class="sp-head-name" id="spName">THT Windows Estimate</div>
+    </div>
+  </div>
+  <div class="sp-body">
+    <div class="sp-entry">
+      <div class="sp-entry-main" id="spWinsLine">0 Windows Planned</div>
+      <div class="sp-entry-sub" id="spRoomsLine">No rooms added yet</div>
+    </div>
+    <div class="sp-entry">
+      <div class="sp-entry-main" id="spPhotosLine">No Reference Photos Yet</div>
+      <div class="sp-entry-sub">Uploaded to your project</div>
+    </div>
+    <div class="sp-entry" style="border-bottom:none">
+      <div class="sp-entry-main" id="spConsultLine">Consultation Time: —</div>
+      <div class="sp-entry-sub">Estimated based on your project</div>
+    </div>
+    <div class="sp-progress">
+      <div class="sp-prog-labels"><span class="sp-prog-label">Project Progress</span><span class="sp-prog-pct" id="spPct">0%</span></div>
+      <div class="sp-bar"><div class="sp-bar-fill" id="spFill"></div></div>
+    </div>
+  </div>
+  <div class="sp-status-badge" id="spBadge">Ready to Begin</div>
+  <div class="sp-foot">
+    <div class="sp-foot-label">Questions? Call us</div>
+    <div class="sp-foot-phone">(832) 422-3039</div>
+  </div>
+</aside>
+
+<!-- ══ STEPS ══════════════════════════════════════════ -->
+<div class="steps-wrap">
+
+<!-- ─ STEP 1 ─────────────────────────────────────────── -->
+<div class="step active" id="step-1">
+  <div class="hero-stage">
+    <div class="hero-scrim"></div>
+    <div class="hero-body">
+      <div class="hero-kicker"><div class="hero-kicker-dot"></div>Free · No Obligation · 5 Minutes</div>
+      <h1 class="hero-h1">Design the Home<br>You've Always<br><em>Imagined</em></h1>
+      <p class="hero-p">Beautiful windows change how your home feels — and how you feel inside it. Build your renovation here and we'll bring your vision to life.</p>
+      <div class="hero-actions">
+        <button class="btn-hero-cta" onclick="goTo(2)">
+          Begin Your Project
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#0F4C81" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn-hero-text" onclick="location.href='contact.html'">Prefer to talk? Call us instead</button>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-stars">★★★★★</span>
+        <span class="hero-trust-text">Trusted by <strong>hundreds of Houston homeowners</strong></span>
+      </div>
+    </div>
+    <div class="hero-floats">
+      <div class="hero-float"><div class="hero-float-num">24h</div><div class="hero-float-label">Response Time</div></div>
+      <div class="hero-float"><div class="hero-float-num">Free</div><div class="hero-float-label">No Obligation</div></div>
+      <div class="hero-float"><div class="hero-float-num">5★</div><div class="hero-float-label">Google Rated</div></div>
+    </div>
+  </div>
+
+  <div class="how-strip">
+    <div class="how-item"><div class="how-num">1</div><div><h3>Tell Us About Your Home</h3><p>Address, project type, and timeline so we can prepare the right team.</p></div></div>
+    <div class="how-item"><div class="how-num">2</div><div><h3>Build Your Window Collection</h3><p>Room by room, style by style — add each window and watch your project grow.</p></div></div>
+    <div class="how-item"><div class="how-num">3</div><div><h3>Share a Few Photos</h3><p>Photos of your existing windows give us the detail we need for an accurate estimate.</p></div></div>
+    <div class="how-item"><div class="how-num">4</div><div><h3>We Reach Out in 24 Hours</h3><p>A dedicated specialist reviews your project and contacts you with your estimate.</p></div></div>
+  </div>
+
+  <div style="background:#F8FAFC;padding:5rem 2rem;text-align:center;border-top:1px solid #e5e7eb">
+    <p style="font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:.625rem">Your renovation starts here</p>
+    <div style="width:40px;height:2px;background:#0F4C81;border-radius:2px;margin:0 auto 1.5rem"></div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#1F2937;letter-spacing:-.3px;margin-bottom:.875rem;line-height:1.15">The entire process takes<br>about five minutes.</h2>
+    <p style="font-size:14.5px;color:#6b7280;line-height:1.8;max-width:440px;margin:0 auto 2.25rem">Your information is always private. No pressure. No commitments. Just a conversation about your home.</p>
+    <button class="btn-primary" style="font-size:14.5px;padding:15px 38px;margin:0 auto" onclick="goTo(2)">Begin My Project →</button>
+  </div>
+</div>
+
+<!-- ─ STEP 2 ─────────────────────────────────────────── -->
+<div class="step" id="step-2">
+  <div class="has-panel">
+    <div class="step-shell">
+      <div class="step-intro">
+        <div class="step-eyebrow">Step 1 of 5</div>
+        <div class="step-rule"></div>
+        <h2 class="step-headline">Let's Start with Your Home</h2>
+        <p class="step-sub">Tell us about your property and what you're hoping to achieve. The more you share, the better we can serve you.</p>
+      </div>
+
+      <div class="g2">
+        <div class="field-group"><label class="field-label">First Name</label><input id="fFirst" placeholder="Jane" autocomplete="given-name"/></div>
+        <div class="field-group"><label class="field-label">Last Name</label><input id="fLast" placeholder="Smith" autocomplete="family-name"/></div>
+      </div>
+      <div class="field-group"><label class="field-label">Property Address</label><input id="fAddr" placeholder="123 Oak Lane" autocomplete="street-address"/><div class="field-hint">We'll check for available energy rebates in your neighborhood.</div></div>
+      <div class="g2">
+        <div class="field-group"><label class="field-label">City</label><input id="fCity" placeholder="Tomball" autocomplete="address-level2"/></div>
+        <div class="field-group"><label class="field-label">ZIP Code</label><input id="fZip" placeholder="77375" maxlength="5" autocomplete="postal-code"/></div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Project Type</label>
+        <select id="fType">
+          <option value="">What best describes your project?</option>
+          <option>Full Home Window Replacement</option>
+          <option>Partial Replacement — Select Windows</option>
+          <option>New Construction</option>
+          <option>Room Addition</option>
+          <option>Insurance / Storm Damage</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="g2">
+        <div class="field-group">
+          <label class="field-label">Approximate Window Count</label>
+          <select id="fCount">
+            <option value="">How many windows?</option>
+            <option>1–3 windows</option>
+            <option>4–7 windows</option>
+            <option>8–12 windows</option>
+            <option>13–20 windows</option>
+            <option>20+ windows</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Ideal Timeline</label>
+          <select id="fTimeline">
+            <option value="">When are you hoping to start?</option>
+            <option>As soon as possible</option>
+            <option>Within 30 days</option>
+            <option>Within 60 days</option>
+            <option>Within 90 days</option>
+            <option>Just exploring options</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Anything else we should know? <span style="color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">(optional)</span></label>
+        <textarea id="fNotes" placeholder="HOA restrictions, special window shapes, existing damage, budget range, or any other details that might help us prepare…"></textarea>
+      </div>
+
+      <div class="step-nav">
+        <button class="btn-ghost" onclick="goTo(1)">← Back</button>
+        <button class="btn-primary" onclick="goTo(3)">Continue — Add Your Windows →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─ STEP 3 ─────────────────────────────────────────── -->
+<div class="step" id="step-3">
+  <div class="has-panel">
+    <div class="step-shell">
+      <div class="step-intro">
+        <div class="step-eyebrow">Step 2 of 5</div>
+        <div class="step-rule"></div>
+        <h2 class="step-headline">Build Your Window Collection</h2>
+        <p class="step-sub">Add each window in your home — room by room, style by style. Every window you add becomes a detailed item in your project portfolio.</p>
+      </div>
+
+      <div id="projectStage"></div>
+
+      <div class="step-nav" style="margin-top:2.25rem">
+        <button class="btn-ghost" onclick="goTo(2)">← Back</button>
+        <button class="btn-primary" onclick="goTo(4)">Continue — Add Photos →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─ STEP 4 ─────────────────────────────────────────── -->
+<div class="step" id="step-4">
+  <div class="has-panel">
+    <div class="step-shell">
+      <div class="step-intro">
+        <div class="step-eyebrow">Step 3 of 5</div>
+        <div class="step-rule"></div>
+        <h2 class="step-headline">Show Us What We're Working With</h2>
+        <p class="step-sub">Photos of your existing windows — interior and exterior — give us the detail we need to prepare an accurate, personalized estimate. Don't worry about quality.</p>
+      </div>
+
+      <div class="ctx-pills" id="ctxPills">
+        <div class="ctx-pill on" data-ctx="overall" onclick="setCtx(this,'overall')">Overall Project</div>
+      </div>
+
+      <div class="drop-zone" id="dropZone">
+        <input type="file" id="photoInput" multiple accept="image/*"/>
+        <div class="dz-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 17V9M13 9l-4 4M13 9l4 4" stroke="#0F4C81" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 20v1A2.5 2.5 0 005.5 23.5h15A2.5 2.5 0 0023 21v-1" stroke="#0F4C81" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="dz-h">Drop your photos here</h3>
+        <p class="dz-p">Or tap to browse — your camera roll works too on mobile.<br>Interior, exterior, close-up: every angle helps.</p>
+        <button class="btn-secondary" style="pointer-events:none" type="button">Choose Photos</button>
+        <div class="dz-fmts">
+          <span class="dz-fmt">JPG</span><span class="dz-fmt">PNG</span><span class="dz-fmt">HEIC</span><span class="dz-fmt">WEBP</span><span class="dz-fmt">Up to 20MB each</span>
+        </div>
+      </div>
+
+      <div class="up-prog" id="upProg">
+        <div class="up-prog-bar"><div class="up-prog-fill" id="upFill"></div></div>
+        <div class="up-prog-label" id="upLabel"></div>
+      </div>
+
+      <div class="photo-gallery" id="photoGallery"></div>
+
+      <div class="step-nav">
+        <button class="btn-ghost" onclick="goTo(3)">← Back</button>
+        <button class="btn-primary" onclick="goTo(5)">Continue — Almost There →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─ STEP 5 ─────────────────────────────────────────── -->
+<div class="step" id="step-5">
+  <div class="has-panel">
+    <div class="step-shell" style="max-width:980px">
+      <div class="step-intro">
+        <div class="step-eyebrow">Step 4 of 5</div>
+        <div class="step-rule"></div>
+        <h2 class="step-headline">Almost There</h2>
+        <p class="step-sub">Tell us the best way to reach you. A THT Windows specialist will review your entire project and contact you within 24 business hours.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div>
+          <div class="g2">
+            <div class="field-group"><label class="field-label">Phone</label><input id="cPhone" type="tel" placeholder="(832) 555-0000" autocomplete="tel"/></div>
+            <div class="field-group"><label class="field-label">Email</label><input id="cEmail" type="email" placeholder="you@example.com" autocomplete="email"/></div>
+          </div>
+          <div class="g2">
+            <div class="field-group">
+              <label class="field-label">Best Way to Reach You</label>
+              <select id="cMethod"><option value="">Select a preference…</option><option>Phone call</option><option>Text message</option><option>Email</option><option>Any — whatever's fastest</option></select>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Best Time to Call</label>
+              <select id="cTime"><option value="">Select a time…</option><option>Morning (8am–12pm)</option><option>Afternoon (12pm–5pm)</option><option>Evening (5pm–7pm)</option><option>Anytime</option></select>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">How Did You Find Us? <span style="color:#9ca3af;font-weight:400;text-transform:none;letter-spacing:0;font-size:11px">(optional)</span></label>
+            <select id="cSource"><option value="">Select…</option><option>Google Search</option><option>Friend or Neighbor</option><option>Nextdoor</option><option>Facebook</option><option>Yard Sign</option><option>Previous Customer</option><option>Other</option></select>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:1rem">
+            <input type="checkbox" id="cFin" style="width:16px;height:16px;margin-top:3px;accent-color:#0F4C81;flex-shrink:0"/>
+            <label for="cFin" style="font-size:13px;color:#374151;cursor:pointer;line-height:1.6">I'm interested in financing options — I'd love to hear more</label>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:2rem">
+            <input type="checkbox" id="cConsent" checked style="width:16px;height:16px;margin-top:3px;accent-color:#0F4C81;flex-shrink:0"/>
+            <label for="cConsent" style="font-size:12px;color:#9ca3af;cursor:pointer;line-height:1.6">I agree to be contacted by THT Windows about my project estimate. I can opt out at any time.</label>
+          </div>
+          <input type="text" id="hpField" name="_hp" style="display:none" tabindex="-1" autocomplete="off"/>
+          <div id="submitError" style="display:none;margin-bottom:1rem;padding:12px 16px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;font-size:13.5px;color:#dc2626;font-weight:500"></div>
+          <div class="step-nav" style="margin-top:0;padding-top:1.5rem">
+            <button class="btn-ghost" onclick="goTo(4)">← Back</button>
+            <button id="submitBtn" class="btn-primary" style="font-size:14.5px;padding:15px 34px" onclick="submitProject()">Submit My Project →</button>
+          </div>
+        </div>
+        <div class="contact-sidebar">
+          <p class="cs-head">Why THT Windows?</p>
+          <div class="cs-item"><div class="cs-dot"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5l3.5 3.5 5.5-6.5" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h4>Free, No-Pressure Estimate</h4><p>Honest pricing from a local team. No hard sells, no gimmicks.</p></div></div>
+          <div class="cs-item"><div class="cs-dot"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="#fff" stroke-width="1.4"/><path d="M6.5 4v2.8l1.8 1.7" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><h4>24-Hour Response</h4><p>Every project reviewed same day, response within one business day.</p></div></div>
+          <div class="cs-item"><div class="cs-dot"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1l1.7 3.6L12 5.2l-2.75 2.7.65 3.8L6.5 9.9 3.1 11.7l.65-3.8L1 5.2l3.8-.6z" stroke="#fff" stroke-width="1.2" fill="none"/></svg></div><div><h4>5-Star Rated in Houston</h4><p>Trusted by hundreds of families across the Houston metro area.</p></div></div>
+          <div class="cs-item"><div class="cs-dot"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1" y="4" width="11" height="8.5" rx="1.5" stroke="#fff" stroke-width="1.4"/><path d="M4 4V3A2.5 2.5 0 019 3v1" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><h4>Licensed &amp; Insured</h4><p>Fully licensed Texas contractor, bonded for your peace of mind.</p></div></div>
+          <div class="cs-rule"></div>
+          <div class="cs-stars">★★★★★</div>
+          <p class="cs-quote">"The team was professional, on time, and the windows look absolutely stunning. Best decision we ever made for our home."</p>
+          <p class="cs-attr">— Michelle R., The Woodlands TX</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─ STEP 6 ─────────────────────────────────────────── -->
+<div class="step" id="step-6">
+
+  <!-- ── Project Received Hero ───────────────────────── -->
+  <div class="cs-hero" id="csHero">
+    <div class="cs-hero-scrim"></div>
+    <div class="cs-hero-body">
+
+      <div class="cs-badge-wrap">
+        <div class="cs-badge-inner">
+          <div class="cs-badge-stack">
+            <span class="cs-check-icon">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M10 20l8 8 13-14" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <img class="cs-logo-icon" src="images/projectlogo.png" alt="Home Team Windows">
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-ref-chip">Project Ref: <span id="confirmRef">—</span></div>
+
+      <h2 class="cs-h2">Your project has<br>been received.</h2>
+      <p class="cs-sub">A Home Team Windows specialist will personally review every detail of your project — your windows, photos, and notes — and reach out within 24 business hours with your personalized estimate.</p>
+
+      <div class="cs-actions">
+        <a href="tel:8324223039">
+          <button class="cs-btn-primary">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 2.5A1.5 1.5 0 014 1h.88a.5.5 0 01.48.36l.88 3.07a.5.5 0 01-.13.51L4.64 6.4a9.1 9.1 0 004.96 4.96l1.46-1.46a.5.5 0 01.51-.13l3.07.88a.5.5 0 01.36.48V12a1.5 1.5 0 01-1.5 1.5C7.2 13.5 1.5 7.8 1.5 1.5z" stroke="#0F4C81" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+            Call Now With Questions
+          </button>
+        </a>
+        <a href="index.html">
+          <button class="cs-btn-ghost">Return to Home</button>
+        </a>
+      </div>
+
+      <div class="cs-trust">
+        <div class="cs-trust-badge">
+          <span class="cs-trust-stars">★★★★★</span>
+          <span>5-Star Rated</span>
+        </div>
+        <div class="cs-trust-div"></div>
+        <div class="cs-trust-badge">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5l3 3 6-6" stroke="rgba(255,255,255,.7)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Premium Installation</span>
+        </div>
+        <div class="cs-trust-div"></div>
+        <div class="cs-trust-badge">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1C4 1 2 3 2 5.5c0 3.5 4.5 6.5 4.5 6.5S11 9 11 5.5C11 3 9 1 6.5 1z" stroke="rgba(255,255,255,.7)" stroke-width="1.3"/><circle cx="6.5" cy="5.5" r="1.5" stroke="rgba(255,255,255,.7)" stroke-width="1.2"/></svg>
+          <span>Local Houston Team</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── What Happens Next ────────────────────────────── -->
+  <div class="cs-steps-section">
+    <div class="cs-steps-inner">
+      <div class="cs-steps-eyebrow">What Happens Next</div>
+      <div class="cs-steps-rule"></div>
+      <h3 class="cs-steps-h2">Your renovation is in good hands.</h3>
+      <div class="cs-steps">
+
+        <div class="cs-step" style="animation-delay:.05s">
+          <div class="cs-step-num">1</div>
+          <div class="cs-step-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="3" width="18" height="16" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><path d="M2 8h18M7 1v4M15 1v4" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/><path d="M6 12h4M6 15h6" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h4>We Review Your Project</h4>
+          <p>Our specialists carefully go through every window, photo, and note you've submitted to build a detailed, personalized estimate for your home.</p>
+        </div>
+
+        <div class="cs-step" style="animation-delay:.12s">
+          <div class="cs-step-num">2</div>
+          <div class="cs-step-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 3.5A1.5 1.5 0 014.5 2h.88a.5.5 0 01.48.36l.88 3.07a.5.5 0 01-.13.51L4.96 7.4a9.1 9.1 0 005.64 5.64l1.46-1.46a.5.5 0 01.51-.13l3.07.88a.5.5 0 01.36.48V13.5A1.5 1.5 0 0114.5 15C8.7 15 4 10.3 4 4.5" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/><path d="M15 2c2.76 0 5 2.24 5 5M15 5.5c1.1 0 2 .9 2 2" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h4>A Specialist Contacts You</h4>
+          <p>A dedicated Home Team Windows specialist reaches out at your preferred time to walk you through your estimate and answer every question.</p>
+        </div>
+
+        <div class="cs-step" style="animation-delay:.2s">
+          <div class="cs-step-num">3</div>
+          <div class="cs-step-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 5.5V11c0 4.5 3.3 8.7 8 10 4.7-1.3 8-5.5 8-10V5.5L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.5 11l2.5 2.5 4.5-5" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>Your Consultation Is Prepared</h4>
+          <p>We prepare your personalized in-home consultation — measurements, window options, and pricing — tailored to your home, timeline, and vision.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Project Summary ──────────────────────────────── -->
+  <div class="cs-summary-section">
+    <div class="cs-summary-inner">
+      <div class="cs-summary-eyebrow">Project Summary</div>
+      <div class="cs-summary-rule"></div>
+      <h3 class="cs-summary-h2">Everything we received from you.</h3>
+      <p class="cs-summary-sub">Keep this for your records. A copy will be reviewed with your estimate.</p>
+      <div id="confirmBody"></div>
+    </div>
+  </div>
+
+</div>
+
+</div><!-- /steps-wrap -->
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div><h2 id="mTitle">Add a Window</h2><p id="mSub">Tell us about this window and we'll add it to your project.</p></div>
+      <button class="modal-x" onclick="closeModal()">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1 1l11 11M12 1L1 12" stroke="#6b7280" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <div class="modal-section-label">Which room?</div>
+        <div class="room-pills">
+          <div class="r-pill" onclick="pickRoom(this)">Living Room</div>
+          <div class="r-pill" onclick="pickRoom(this)">Master Bedroom</div>
+          <div class="r-pill" onclick="pickRoom(this)">Bedroom 2</div>
+          <div class="r-pill" onclick="pickRoom(this)">Bedroom 3</div>
+          <div class="r-pill" onclick="pickRoom(this)">Kitchen</div>
+          <div class="r-pill" onclick="pickRoom(this)">Dining Room</div>
+          <div class="r-pill" onclick="pickRoom(this)">Bathroom</div>
+          <div class="r-pill" onclick="pickRoom(this)">Office / Study</div>
+          <div class="r-pill" onclick="pickRoom(this)">Garage</div>
+          <div class="r-pill" onclick="pickRoom(this)">Other</div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Window style</div>
+        <div class="type-grid">
+          <div class="t-card" data-type="Double Hung" data-img="images/doublehung.png" onclick="pickType(this)">
+            <div class="t-card-img"><img src="images/doublehung.png" alt="Double Hung" loading="lazy"/></div>
+            <div class="t-card-name">Double Hung</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="t-card" data-type="Casement" data-img="images/casement.png" onclick="pickType(this)">
+            <div class="t-card-img"><img src="images/casement.png" alt="Casement" loading="lazy"/></div>
+            <div class="t-card-name">Casement</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="t-card" data-type="Sliding" data-img="images/slidingwindows.jpeg" onclick="pickType(this)">
+            <div class="t-card-img"><img src="images/slidingwindows.jpeg" alt="Sliding" loading="lazy"/></div>
+            <div class="t-card-name">Sliding</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="t-card" data-type="Bay / Bow" data-img="images/bay.jpeg" onclick="pickType(this)">
+            <div class="t-card-img"><img src="images/bay.jpeg" alt="Bay / Bow" loading="lazy"/></div>
+            <div class="t-card-name">Bay / Bow</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="t-card" data-type="Awning" data-img="images/awning.png" onclick="pickType(this)">
+            <div class="t-card-img"><img src="images/awning.png" alt="Awning" loading="lazy"/></div>
+            <div class="t-card-name">Awning</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="t-card" data-type="Garden" data-img="images/gardenwindow.jpeg" onclick="pickType(this)">
+            <div class="t-card-img"><img src="images/gardenwindow.jpeg" alt="Garden" loading="lazy"/></div>
+            <div class="t-card-name">Garden</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="t-card" data-type="Picture" data-img="" onclick="pickType(this)">
+            <div class="t-card-img"><div class="t-card-img-empty"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="3" y="3" width="22" height="22" rx="2" stroke="#0F4C81" stroke-width="1.4"/><rect x="7" y="7" width="14" height="14" rx="1" stroke="#0F4C81" stroke-width="1"/></svg></div></div>
+            <div class="t-card-name">Picture</div>
+            <div class="t-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Dimensions <span style="color:#9ca3af;font-size:10px;font-weight:500;text-transform:none;letter-spacing:0">(estimates are fine)</span></div>
+        <div class="dim-row">
+          <input id="mW" type="number" placeholder="Width (in)" min="12" max="144"/>
+          <span class="dim-x">×</span>
+          <input id="mH" type="number" placeholder="Height (in)" min="12" max="144"/>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">Floor</div>
+        <div class="floor-pills">
+          <div class="f-pill on" data-floor="Ground Floor" onclick="pickFloor(this)">Ground Floor</div>
+          <div class="f-pill" data-floor="2nd Floor" onclick="pickFloor(this)">2nd Floor</div>
+          <div class="f-pill" data-floor="3rd Floor +" onclick="pickFloor(this)">3rd Floor +</div>
+        </div>
+      </div>
+      <div class="modal-section" style="margin-bottom:0">
+        <div class="modal-section-label">Notes <span style="color:#9ca3af;font-size:10px;font-weight:500;text-transform:none;letter-spacing:0">(optional)</span></div>
+        <input class="modal-note-input" id="mNotes" placeholder="Arched top, broken frame, unusual shape, etc."/>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn-primary" onclick="saveWindow()">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5l3.5 3.5 5.5-6.5" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Save This Window
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img class="lb-img" id="lbImg" src="" alt=""/>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>THT WINDOWS</h3>
+      <div class="footer-brand-sub">A Division of Home Team Roofing</div>
+      <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg><span>11709 Boudreaux Rd, Suite 1150<br>Tomball, Texas 77375</span></div>
+      <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5A1.5 1.5 0 013.5 1h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.04 6.4a9.085 9.085 0 004.56 4.56l.962-1.564a.5.5 0 01.506-.133l3.07.878A.5.5 0 0113 10.62V11.5a1.5 1.5 0 01-1.5 1.5C5.701 13 1 8.299 1 2.5z" stroke="#6b7280" stroke-width="1.2"/></svg><span>(832) 422-3039</span></div>
+      <div class="footer-contact-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg><span>thehometeamroofing@gmail.com</span></div>
+      <div class="footer-social"><a href="#" class="fsoc">f</a><a href="#" class="fsoc">ig</a><a href="#" class="fsoc">G</a></div>
+    </div>
+    <div class="footer-col"><h4>Window Styles</h4><a href="replacement-window-options.html">Double Hung</a><a href="replacement-window-options.html">Casement</a><a href="replacement-window-options.html">Picture</a><a href="replacement-window-options.html">Sliding</a><a href="replacement-window-options.html">Bay Windows</a></div>
+    <div class="footer-col"><h4>Service Areas</h4><a href="service-areas.html">Tomball</a><a href="service-areas.html">The Woodlands</a><a href="service-areas.html">Spring</a><a href="service-areas.html">Conroe</a><a href="service-areas.html">Cypress</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="gallery.html">Gallery</a><a href="reviews.html">Reviews</a><a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a><a href="contact.html">Contact</a></div>
+    <div style="display:flex;align-items:flex-start;justify-content:flex-end"><div class="footer-htr"><div class="footer-htr-div">A Division of</div><div class="footer-htr-name">HOME TEAM<br>ROOFING</div><div class="footer-htr-line"></div></div></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 THT Windows. All Rights Reserved.</p><p>Houston, TX · thtwindows.com</p></div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+/* ── STATE ──────────────────────────────────────────── */
+var cur = 1;
+var wins = [];          // array of window objects
+var editIdx = null;
+var photos = {};        // { contextKey: [{url,name}] }
+var photoCtx = 'overall';
+var mRoom = '', mType = '', mTypeImg = '', mFloor = 'Ground Floor';
+var _projectRef = null; // set by submitProject, read by buildConfirm
+
+/* ── NAVIGATION ─────────────────────────────────────── */
+window.goTo = function(n){
+  if(n > cur) celebrateStep(cur);
+  var from = document.getElementById('step-'+cur);
+  from.classList.remove('active');
+  from.style.display = 'none';
+  cur = n;
+  var to = document.getElementById('step-'+n);
+  to.style.display = 'block';
+  to.classList.add('active');
+  syncProg();
+  syncPanel();
+  if(n===3) renderStage();
+  if(n===4) buildCtxPills();
+  if(n===6) buildConfirm();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+/* ── STEP CELEBRATION ───────────────────────────────── */
+function celebrateStep(n){
+  var dot = document.getElementById('pd'+n);
+  if(!dot) return;
+  dot.classList.add('celebrate');
+  setTimeout(function(){dot.classList.remove('celebrate');},600);
+}
+
+/* ── PROGRESS ───────────────────────────────────────── */
+function syncProg(){
+  for(var i=1;i<=6;i++){
+    var ps = document.getElementById('ps'+i);
+    ps.className = 'prog-step'+(i<cur?' done':i===cur?' active':'');
+    if(i<6){
+      var pc = document.getElementById('pc'+i);
+      pc.className = 'prog-connector'+(i<cur?' done':'');
+    }
+  }
+  var panel = document.getElementById('summaryPanel');
+  if(cur>=2 && cur<=5){
+    panel.classList.add('visible');
+    setTimeout(function(){panel.classList.add('shown');},30);
+  } else {
+    panel.classList.remove('shown');
+    setTimeout(function(){panel.classList.remove('visible');},350);
+  }
+}
+
+/* ── SUMMARY PANEL ──────────────────────────────────── */
+function syncPanel(){
+  var name = (gv('fFirst')+' '+gv('fLast')).trim();
+  document.getElementById('spName').textContent = name || 'Your Project';
+
+  var rooms = unique(wins.map(function(w){return w.room;}));
+  var totalPhotos = Object.values(photos).reduce(function(a,b){return a+b.length;},0);
+  var mins = 30 + wins.length * 5;
+
+  /* Prose format */
+  document.getElementById('spWinsLine').textContent =
+    wins.length === 0 ? 'No Windows Added Yet' :
+    wins.length + ' Window'+(wins.length>1?'s':'')+' Planned';
+
+  document.getElementById('spRoomsLine').textContent =
+    rooms.length === 0 ? 'No rooms added yet' :
+    'Across '+rooms.length+' Room'+(rooms.length>1?'s':'') +
+    (rooms.length<=3 ? (' — '+rooms.join(', ')) : '');
+
+  document.getElementById('spPhotosLine').textContent =
+    totalPhotos === 0 ? 'No Reference Photos Yet' :
+    totalPhotos+' Reference Photo'+(totalPhotos>1?'s':'')+' Uploaded';
+
+  document.getElementById('spConsultLine').textContent =
+    wins.length === 0 ? 'Consultation Time: —' :
+    'Estimated Consultation: '+mins+' Minutes';
+
+  var pct = Math.round(((cur-1)/5)*100);
+  document.getElementById('spPct').textContent = pct+'%';
+  document.getElementById('spFill').style.width = pct+'%';
+
+  var badge = document.getElementById('spBadge');
+  if(cur<=1) badge.textContent = 'Ready to Begin';
+  else if(cur<=3 && wins.length===0) badge.textContent = 'In Progress — Add Windows';
+  else if(cur<=4) badge.textContent = wins.length+' Window'+(wins.length>1?'s':'')+' — Looking Great';
+  else badge.textContent = 'Ready for Review';
+}
+
+function unique(arr){
+  return arr.filter(function(v,i,a){return a.indexOf(v)===i;});
+}
+
+/* ── WINDOW STAGE RENDER ────────────────────────────── */
+function renderStage(){
+  var stage = document.getElementById('projectStage');
+  if(wins.length===0){
+    stage.innerHTML =
+      '<div class="add-invite" onclick="openModal(null)">'+
+        '<div class="add-invite-ring">'+
+          '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path class="plus-stroke" d="M14 5v18M5 14h18" stroke="#0F4C81" stroke-width="2" stroke-linecap="round"/></svg>'+
+        '</div>'+
+        '<h3 class="add-invite-h">Add Your First Window</h3>'+
+        '<p class="add-invite-p">Your collection starts here. Each window you add brings your home one step closer to what you\'ve always imagined.</p>'+
+        '<span class="btn-primary" style="pointer-events:none;margin:0 auto">Begin Building →</span>'+
+      '</div>';
+    return;
+  }
+
+  var moodLines = [
+    'Your project is taking shape.',
+    'Your collection is growing beautifully.',
+    'What a thoughtful renovation.',
+    'This is going to be a stunning transformation.',
+    'Your home is going to look extraordinary.'
+  ];
+  var mood = moodLines[Math.min(wins.length-1, moodLines.length-1)];
+
+  var cards = '<div class="win-grid">';
+  wins.forEach(function(w,i){
+    var wPhotos = photos['win-'+w.id]||[];
+    var hasDims = w.w && w.h;
+    var isComplete = hasDims && wPhotos.length>0;
+    var isMeasured = hasDims && !isComplete;
+
+    var chipClass = isComplete ? 'chip-complete' : isMeasured ? 'chip-measured' : 'chip-planned';
+    var chipText  = isComplete ? '✓ Complete' : isMeasured ? '◈ Measured' : '◌ Planned';
+
+    var photoImg = w.typeImg
+      ? '<img src="'+w.typeImg+'" alt="'+w.type+'" loading="lazy"/>'
+      : '<div class="wc-photo-fallback"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="4" width="28" height="28" rx="3" stroke="#d1dce9" stroke-width="1.5"/><rect x="9" y="9" width="18" height="18" rx="2" stroke="#d1dce9" stroke-width="1"/></svg></div>';
+
+    var dimText = hasDims ? w.w+'" × '+w.h+'"' : 'Measurements Needed';
+
+    var photoLabel = wPhotos.length
+      ? wPhotos.length+' Reference Photo'+(wPhotos.length>1?'s':'')
+      : 'No photos yet';
+    var photoClass = wPhotos.length ? 'wc-photos-label has-photos' : 'wc-photos-label';
+
+    var photoIcon = wPhotos.length
+      ? '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x=".5" y="2" width="11" height="9.5" rx="1.5" stroke="#0F4C81" stroke-width="1.1"/><circle cx="6" cy="6.5" r="1.8" stroke="#0F4C81" stroke-width="1.1"/><path d="M3.5 2L4.2 1h3.6L8.5 2" stroke="#0F4C81" stroke-width="1.1"/></svg>'
+      : '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x=".5" y="2" width="11" height="9.5" rx="1.5" stroke="#d1d5db" stroke-width="1.1"/><circle cx="6" cy="6.5" r="1.8" stroke="#d1d5db" stroke-width="1.1"/><path d="M3.5 2L4.2 1h3.6L8.5 2" stroke="#d1d5db" stroke-width="1.1"/></svg>';
+
+    cards +=
+      '<div class="win-card" style="animation-delay:'+(i*0.08)+'s">'+
+        '<div class="wc-photo">'+
+          photoImg+
+          '<div class="wc-status-chip '+chipClass+'">'+chipText+'</div>'+
+        '</div>'+
+        '<div class="wc-body">'+
+          '<div class="wc-room-row">'+
+            '<div class="wc-room-label">'+w.room+'</div>'+
+            '<div class="wc-actions">'+
+              '<button class="wc-btn" title="Edit" onclick="openModal('+i+')">'+
+                '<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M7 1.5l2.5 2.5-6.5 6.5H.5V8L7 1.5z" stroke="#9ca3af" stroke-width="1.1" fill="none"/></svg>'+
+              '</button>'+
+              '<button class="wc-btn del" title="Remove" onclick="removeWin('+i+')">'+
+                '<svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#9ca3af" stroke-width="1.3" stroke-linecap="round"/></svg>'+
+              '</button>'+
+            '</div>'+
+          '</div>'+
+          '<div class="wc-type">'+w.type+'</div>'+
+          '<div class="wc-dim">'+dimText+'</div>'+
+          '<div class="wc-dim">'+w.floor+'</div>'+
+          (w.notes?'<div class="wc-notes-text">'+w.notes+'</div>':'')+
+          '<div class="wc-footer">'+
+            '<div class="'+photoClass+'">'+photoIcon+' '+photoLabel+'</div>'+
+            '<span class="wc-floor-badge" style="display:none">'+w.floor+'</span>'+
+          '</div>'+
+        '</div>'+
+      '</div>';
+  });
+  cards += '</div>';
+
+  var addMore =
+    '<button class="add-another-btn" onclick="openModal(null)">'+
+      '<div class="add-another-circle">'+
+        '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path class="plus-stroke" d="M6 1v10M1 6h10" stroke="#0F4C81" stroke-width="1.6" stroke-linecap="round"/></svg>'+
+      '</div>'+
+      'Add Another Window'+
+    '</button>';
+
+  stage.innerHTML = cards + addMore + '<div class="collection-mood">"'+mood+'"</div>';
+}
+
+/* ── MODAL ──────────────────────────────────────────── */
+window.openModal = function(idx){
+  editIdx = (idx!=null) ? idx : null;
+  var w = (editIdx!=null) ? wins[editIdx] : null;
+  document.getElementById('mTitle').textContent = w ? 'Edit Window' : 'Add a Window';
+  document.getElementById('mSub').textContent = w ? 'Update the details for this window.' : 'Tell us about this window and we\'ll add it to your project.';
+  mRoom  = w ? w.room : '';
+  mType  = w ? w.type : '';
+  mTypeImg = w ? w.typeImg : '';
+  mFloor = w ? w.floor : 'Ground Floor';
+  document.getElementById('mW').value = w&&w.w ? w.w : '';
+  document.getElementById('mH').value = w&&w.h ? w.h : '';
+  document.getElementById('mNotes').value = w ? w.notes : '';
+  document.querySelectorAll('.r-pill').forEach(function(p){p.classList.toggle('on', p.textContent===mRoom);});
+  document.querySelectorAll('.t-card').forEach(function(c){c.classList.toggle('on', c.dataset.type===mType);});
+  document.querySelectorAll('.f-pill').forEach(function(p){p.classList.toggle('on', p.dataset.floor===mFloor);});
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+};
+window.closeModal = function(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+};
+window.pickRoom = function(el){
+  document.querySelectorAll('.r-pill').forEach(function(p){p.classList.remove('on');});
+  el.classList.add('on'); mRoom = el.textContent;
+};
+window.pickType = function(el){
+  document.querySelectorAll('.t-card').forEach(function(c){c.classList.remove('on');});
+  el.classList.add('on'); mType = el.dataset.type; mTypeImg = el.dataset.img;
+};
+window.pickFloor = function(el){
+  document.querySelectorAll('.f-pill').forEach(function(p){p.classList.remove('on');});
+  el.classList.add('on'); mFloor = el.dataset.floor;
+};
+window.saveWindow = function(){
+  if(!mRoom){alert('Please select a room.');return;}
+  if(!mType){alert('Please select a window style.');return;}
+  var w = {
+    id: (editIdx!=null&&wins[editIdx]) ? wins[editIdx].id : Date.now(),
+    room:mRoom, type:mType, typeImg:mTypeImg,
+    w:document.getElementById('mW').value,
+    h:document.getElementById('mH').value,
+    floor:mFloor,
+    notes:document.getElementById('mNotes').value.trim()
+  };
+  if(editIdx!=null) wins[editIdx]=w; else wins.push(w);
+  closeModal();
+  renderStage();
+  syncPanel();
+};
+window.removeWin = function(i){wins.splice(i,1);renderStage();syncPanel();};
+
+/* ── PHOTO CONTEXT ──────────────────────────────────── */
+function buildCtxPills(){
+  var bar = document.getElementById('ctxPills');
+  bar.innerHTML = '<div class="ctx-pill on" data-ctx="overall" onclick="setCtx(this,\'overall\')">Overall Project</div>';
+  wins.forEach(function(w){
+    var key='win-'+w.id;
+    var p=document.createElement('div');
+    p.className='ctx-pill';
+    p.dataset.ctx=key;
+    p.textContent=w.room+' — '+w.type;
+    p.setAttribute('onclick','setCtx(this,\''+key+'\')');
+    bar.appendChild(p);
+  });
+  setCtx(bar.firstChild,'overall');
+}
+window.setCtx = function(el,key){
+  document.querySelectorAll('.ctx-pill').forEach(function(p){p.classList.remove('on');});
+  el.classList.add('on');
+  photoCtx=key;
+  renderGallery();
+};
+
+/* ── PHOTO UPLOAD ───────────────────────────────────── */
+var dz = document.getElementById('dropZone');
+var pi = document.getElementById('photoInput');
+dz.addEventListener('dragover',function(e){e.preventDefault();dz.classList.add('over');});
+dz.addEventListener('dragleave',function(){dz.classList.remove('over');});
+dz.addEventListener('drop',function(e){
+  e.preventDefault();dz.classList.remove('over');
+  handleFiles(Array.from(e.dataTransfer.files).filter(function(f){return f.type.startsWith('image/');}));
+});
+pi.addEventListener('change',function(){handleFiles(Array.from(pi.files));pi.value='';});
+
+function handleFiles(files){
+  if(!files.length) return;
+  if(!photos[photoCtx]) photos[photoCtx]=[];
+  var prog=document.getElementById('upProg'), fill=document.getElementById('upFill'), lbl=document.getElementById('upLabel');
+  prog.style.display='block'; fill.style.width='0%';
+  var done=0;
+  files.forEach(function(f){
+    var r=new FileReader();
+    r.onload=function(e){
+      photos[photoCtx].push({url:e.target.result,name:f.name});
+      done++;
+      fill.style.width=Math.round((done/files.length)*100)+'%';
+      lbl.textContent=done+' of '+files.length+' photo'+(files.length>1?'s':'')+' added';
+      if(done===files.length){
+        setTimeout(function(){prog.style.display='none';},900);
+        renderGallery();
+        syncPanel();
+        if(cur===3) renderStage();
+      }
+    };
+    r.readAsDataURL(f);
+  });
+}
+function renderGallery(){
+  var grid=document.getElementById('photoGallery');
+  var list=photos[photoCtx]||[];
+  grid.innerHTML='';
+  list.forEach(function(p,i){
+    var cell=document.createElement('div');
+    cell.className='photo-cell';
+    cell.style.animationDelay=(i*0.05)+'s';
+    cell.innerHTML=
+      '<img src="'+p.url+'" alt="'+p.name+'"/>'+
+      '<div class="photo-cell-mask">'+
+        '<button class="pc-btn" onclick="openLb(\''+p.url+'\')">'+
+          '<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="#1F2937" stroke-width="1.3"/><path d="M9 9l3 3" stroke="#1F2937" stroke-width="1.3" stroke-linecap="round"/></svg>'+
+        '</button>'+
+        '<button class="pc-btn" onclick="removePhoto(\''+photoCtx+'\','+i+')">'+
+          '<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2l9 9M11 2L2 11" stroke="#1F2937" stroke-width="1.3" stroke-linecap="round"/></svg>'+
+        '</button>'+
+      '</div>'+
+      '<div class="photo-cell-name">'+p.name.replace(/\.[^.]+$/,'').slice(0,22)+'</div>';
+    grid.appendChild(cell);
+  });
+}
+window.removePhoto=function(key,i){if(photos[key])photos[key].splice(i,1);renderGallery();syncPanel();};
+
+/* ── LIGHTBOX ───────────────────────────────────────── */
+window.openLb=function(src){document.getElementById('lbImg').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';};
+window.closeLb=function(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLb();closeModal();}});
+document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+/* ── CONFIRM SUMMARY ────────────────────────────────── */
+function buildConfirm(){
+
+  // ── Collect photo counts by context ─────────────────
+  var totalP = 0;
+  var photoBreakdown = [];
+  Object.keys(photos).forEach(function(key){
+    var count = photos[key].length;
+    if(!count) return;
+    totalP += count;
+    var label = key === 'overall' ? 'Overall Project' : (function(){
+      var winId = parseInt(key.replace('win-',''), 10);
+      var w = wins.filter(function(x){ return x.id === winId; })[0];
+      return w ? w.room + ' — ' + w.type : key;
+    })();
+    photoBreakdown.push({ label: label, count: count });
+  });
+
+  // ── Build structured project payload ────────────────
+  // This object is the single source of truth for all future integrations.
+  // Shape it here once; connect the destinations below via TODO blocks.
+  var ref = _projectRef || ('THT-' + Date.now().toString(36).toUpperCase().slice(-6));
+  var projectPayload = {
+    referenceNumber: ref,
+    submittedAt: new Date().toISOString(),
+    customer: {
+      firstName:         gv('fFirst'),
+      lastName:          gv('fLast'),
+      phone:             gv('cPhone'),
+      email:             gv('cEmail'),
+      preferredContact:  gv('cMethod'),
+      preferredTime:     gv('cTime'),
+      hearAboutUs:       gv('cSource'),
+      interestedInFinancing: !!(document.getElementById('cFin') && document.getElementById('cFin').checked)
+    },
+    property: {
+      address: gv('fAddr'),
+      city:    gv('fCity'),
+      zip:     gv('fZip')
+    },
+    project: {
+      type:        gv('fType'),
+      windowCount: gv('fCount'),
+      timeline:    gv('fTimeline'),
+      notes:       gv('fNotes')
+    },
+    windows: wins.map(function(w){
+      return {
+        room:   w.room,
+        type:   w.type,
+        width:  w.w,
+        height: w.h,
+        floor:  w.floor,
+        notes:  w.notes,
+        photos: (photos['win-'+w.id]||[]).length
+      };
+    }),
+    photos: { total: totalP, breakdown: photoBreakdown }
+  };
+
+  // ── TODO: Google Sheets integration ─────────────────
+  // When ready, POST projectPayload to your Apps Script web app.
+  //
+  //   fetch('https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify(projectPayload)
+  //   });
+  //
+  // The Apps Script doPost(e) handler receives e.postData.contents.
+  // Parse it with JSON.parse() and append a row to your target sheet.
+
+  // ── TODO: JobNimbus CRM integration ─────────────────
+  // When ready, POST to the JobNimbus Contacts API to create a lead.
+  //
+  //   fetch('https://app.jobnimbus.com/api1/contacts', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Authorization': 'Bearer YOUR_API_KEY',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({
+  //       first_name:  projectPayload.customer.firstName,
+  //       last_name:   projectPayload.customer.lastName,
+  //       email:       projectPayload.customer.email,
+  //       phone:       projectPayload.customer.phone,
+  //       address_line1: projectPayload.property.address,
+  //       city:        projectPayload.property.city,
+  //       zip:         projectPayload.property.zip,
+  //       source_name: projectPayload.customer.hearAboutUs,
+  //       note:        JSON.stringify(projectPayload.windows)
+  //     })
+  //   });
+
+  // ── TODO: Confirmation email to customer ────────────
+  // When ready, trigger via EmailJS, SendGrid, or the same Apps Script endpoint.
+  // Use: projectPayload.customer.email, projectPayload.customer.firstName,
+  //      projectPayload.referenceNumber, projectPayload.windows
+
+  // Log payload for QA — remove before go-live
+  console.log('[THT Windows] Project submitted:', projectPayload);
+
+  // ── Render reference number in hero ─────────────────
+  document.getElementById('confirmRef').textContent = ref;
+
+  // ── Build address string ─────────────────────────────
+  var addr = [gv('fAddr'), gv('fCity'), gv('fZip')]
+    .filter(function(v){ return v !== '—'; }).join(', ');
+
+  // ── Card: Customer & Contact ─────────────────────────
+  var contactCard =
+    '<div class="cc"><div class="cc-head"><h4>Customer &amp; Contact</h4></div><div class="cc-body">'+
+      '<div class="cc-row"><span class="cc-label">Name</span><span class="cc-val">'+gv('fFirst')+' '+gv('fLast')+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Phone</span><span class="cc-val">'+gv('cPhone')+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Email</span><span class="cc-val">'+gv('cEmail')+'</span></div>'+
+      (gv('cMethod')!=='—'?'<div class="cc-row"><span class="cc-label">Preferred Contact</span><span class="cc-val">'+gv('cMethod')+'</span></div>':'')+
+      (gv('cTime')!=='—'?'<div class="cc-row"><span class="cc-label">Best Time to Call</span><span class="cc-val">'+gv('cTime')+'</span></div>':'')+
+    '</div></div>';
+
+  // ── Card: Property & Project ─────────────────────────
+  var propertyCard =
+    '<div class="cc"><div class="cc-head"><h4>Property &amp; Project</h4></div><div class="cc-body">'+
+      '<div class="cc-row"><span class="cc-label">Address</span><span class="cc-val">'+addr+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Project Type</span><span class="cc-val">'+gv('fType')+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Window Count</span><span class="cc-val">'+gv('fCount')+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Timeline</span><span class="cc-val">'+gv('fTimeline')+'</span></div>'+
+    '</div></div>';
+
+  // ── Card: Windows Planned ────────────────────────────
+  var windowsCard = '';
+  if(wins.length){
+    var winRows = wins.map(function(w){
+      var sz = (w.w && w.h) ? w.w+'" × '+w.h+'"' : 'Measurements TBD';
+      var wPh = (photos['win-'+w.id]||[]).length;
+      var meta = [w.type, sz, w.floor].join(' · ');
+      var photoNote = wPh ? ' · '+wPh+' photo'+(wPh>1?'s':'') : '';
+      return '<div class="cc-win">'+
+        '<div class="cc-win-room">'+w.room+'</div>'+
+        '<div class="cc-win-meta">'+meta+photoNote+(w.notes?'<br><em>'+w.notes+'</em>':'')+'</div>'+
+      '</div>';
+    }).join('');
+    windowsCard =
+      '<div class="cc"><div class="cc-head"><h4>'+wins.length+' Window'+(wins.length>1?'s':'')+' Planned</h4></div>'+
+      '<div class="cc-body cc-body-wins">'+winRows+'</div></div>';
+  }
+
+  // ── Card: Reference Photos ───────────────────────────
+  var photosCard = '';
+  if(totalP > 0){
+    var phRows = photoBreakdown.map(function(p){
+      return '<div class="cc-row"><span class="cc-label">'+p.label+'</span>'+
+             '<span class="cc-val">'+p.count+' photo'+(p.count>1?'s':'')+'</span></div>';
+    }).join('');
+    photosCard =
+      '<div class="cc"><div class="cc-head"><h4>'+totalP+' Reference Photo'+(totalP>1?'s':'')+' Uploaded</h4></div>'+
+      '<div class="cc-body">'+phRows+'</div></div>';
+  }
+
+  // ── Card: Notes ──────────────────────────────────────
+  var notesCard = '';
+  var notes = gv('fNotes');
+  if(notes && notes !== '—'){
+    notesCard =
+      '<div class="cc"><div class="cc-head"><h4>Notes from You</h4></div>'+
+      '<div class="cc-body"><p class="cc-notes">'+notes+'</p></div></div>';
+  }
+
+  // ── Card: Submission Details ─────────────────────────
+  var now = new Date();
+  var submittedStr = now.toLocaleDateString('en-US',{
+    weekday:'long', month:'long', day:'numeric', year:'numeric'
+  })+' at '+now.toLocaleTimeString('en-US',{ hour:'numeric', minute:'2-digit' });
+  var submissionCard =
+    '<div class="cc"><div class="cc-head"><h4>Submission Details</h4></div><div class="cc-body">'+
+      '<div class="cc-row"><span class="cc-label">Reference</span><span class="cc-val">'+ref+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Submitted</span><span class="cc-val">'+submittedStr+'</span></div>'+
+      '<div class="cc-row"><span class="cc-label">Response Expected</span><span class="cc-val">Within 24 Business Hours</span></div>'+
+    '</div></div>';
+
+  document.getElementById('confirmBody').innerHTML =
+    contactCard + propertyCard + windowsCard + photosCard + notesCard + submissionCard;
+}
+
+function gv(id){return (document.getElementById(id)||{}).value||'—';}
+
+window.submitProject = function() {
+  var btn = document.getElementById('submitBtn');
+  var errEl = document.getElementById('submitError');
+
+  // Prevent duplicate submissions
+  if (btn && btn.disabled) return;
+
+  // Clear previous error
+  if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+
+  // Helper: return '' instead of '—' for empty fields
+  function pg(id) { var v = gv(id); return v === '—' ? '' : v; }
+
+  // Generate reference number for this submission
+  var ref = 'THT-' + Date.now().toString(36).toUpperCase().slice(-6);
+
+  // Build message: reference + all extra project details not covered by top-level fields
+  var msgLines = [];
+  msgLines.push('Project Ref: ' + ref);
+
+  var addr = [pg('fAddr'), pg('fCity'), pg('fZip')].filter(Boolean).join(', ');
+  if (addr) msgLines.push('Property Address: ' + addr);
+  if (pg('cMethod')) msgLines.push('Preferred Contact: ' + pg('cMethod'));
+  if (pg('cTime'))   msgLines.push('Best Time to Call: ' + pg('cTime'));
+  if (pg('cSource')) msgLines.push('How They Found Us: ' + pg('cSource'));
+
+  var cFin = document.getElementById('cFin');
+  if (cFin && cFin.checked) msgLines.push('Interested in Financing: Yes');
+
+  var notes = pg('fNotes');
+  if (notes) msgLines.push('Project Notes: ' + notes);
+
+  if (wins.length) {
+    msgLines.push('');
+    msgLines.push('Windows (' + wins.length + '):');
+    wins.forEach(function(w, i) {
+      var sz = (w.w && w.h) ? w.w + '" x ' + w.h + '"' : 'Measurements TBD';
+      var ph = (photos['win-' + w.id] || []).length;
+      var line = '  ' + (i + 1) + '. ' + w.room + ' — ' + w.type + ' (' + sz + ', ' + w.floor + ')';
+      if (ph) line += ' [' + ph + ' photo' + (ph > 1 ? 's' : '') + ']';
+      if (w.notes) line += ' | Note: ' + w.notes;
+      msgLines.push(line);
+    });
+  }
+
+  // Photo summary
+  var totalP = 0;
+  var photoLabels = [];
+  Object.keys(photos).forEach(function(key) {
+    var count = photos[key].length;
+    if (!count) return;
+    totalP += count;
+    var label = key === 'overall' ? 'Overall Project' : (function() {
+      var winId = parseInt(key.replace('win-', ''), 10);
+      var w = wins.filter(function(x) { return x.id === winId; })[0];
+      return w ? w.room + ' — ' + w.type : key;
+    })();
+    photoLabels.push(label + ': ' + count);
+  });
+  if (totalP > 0) {
+    msgLines.push('');
+    msgLines.push('Photos (' + totalP + ' total): ' + photoLabels.join(', '));
+  }
+
+  var payload = {
+    firstName:       pg('fFirst'),
+    lastName:        pg('fLast'),
+    email:           pg('cEmail'),
+    phone:           pg('cPhone'),
+    city:            pg('fCity'),
+    zipCode:         pg('fZip'),
+    serviceType:     pg('fType'),
+    numberOfWindows: pg('fCount'),
+    projectTimeline: pg('fTimeline'),
+    message:         msgLines.join('\n'),
+    pageUrl:         window.location.href,
+    _hp:             (document.getElementById('hpField') || {}).value || ''
+  };
+
+  // Disable button and show loading state
+  if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+
+  fetch('/api/submit-inquiry', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res) {
+    return res.json().then(function(data) { return { ok: res.ok, data: data }; });
+  })
+  .then(function(result) {
+    if (result.ok) {
+      _projectRef = ref;
+      goTo(6);
+    } else {
+      var msg = (result.data && result.data.error) ||
+        'Something went wrong. Please try again or call us at (832) 422-3039.';
+      if (errEl) { errEl.textContent = msg; errEl.style.display = 'block'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Submit My Project →'; }
+    }
+  })
+  .catch(function() {
+    var msg = 'Unable to submit. Please check your connection and try again, or call us at (832) 422-3039.';
+    if (errEl) { errEl.textContent = msg; errEl.style.display = 'block'; }
+    if (btn) { btn.disabled = false; btn.textContent = 'Submit My Project →'; }
+  });
+};
+
+/* ── MOBILE DRAWER ──────────────────────────────────── */
+var ham=document.getElementById('hamburger'),drw=document.getElementById('mobileDrawer'),cls=document.getElementById('mobileClose');
+if(ham){ham.addEventListener('click',function(){drw.classList.add('open');});}
+if(cls){cls.addEventListener('click',function(){drw.classList.remove('open');});}
+if(drw){drw.addEventListener('click',function(e){if(e.target===drw)drw.classList.remove('open');});}
+
+/* init */
+syncProg();
+renderStage();
+})();
+</script>
+</body>
+</html>
