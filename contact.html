@@ -13,9 +13,12 @@ body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
 
 /* NAV */
 nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:100}
-.nav-logo{width:220px;flex-shrink:0}
-.nav-brand-name{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:#1F2937;letter-spacing:0.5px;text-transform:uppercase}
-.nav-brand-sub{font-size:9px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:400}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:18px}
+.nav-logo img{height:74px;width:auto;display:block;flex-shrink:0}
+.nav-red-divider{width:2px;height:58px;background:#b91c1c;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:5px}
+.nav-brand-name{font-family:'Inter',sans-serif;font-size:19px;font-weight:800;color:#1a1f2e;letter-spacing:3px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;white-space:nowrap;line-height:1}
 .nav-links{display:flex;gap:36px;flex:1;justify-content:center}
 .nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap}
 .nav-links a:hover{color:#0F4C81}
@@ -40,13 +43,18 @@ nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;
   .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
   nav{justify-content:space-between}
   .nav-right{width:auto}
+  .nav-logo{gap:12px}
+  .nav-logo img{height:50px}
+  .nav-red-divider{height:40px}
+  .nav-brand-name{font-size:14px;letter-spacing:2px}
+  .nav-brand-sub{font-size:6.5px;letter-spacing:1.4px}
 }
 
 /* HERO */
-.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#040e1a 0%,#0a2540 40%,#0F4C81 100%);opacity:0.95}
-.hero-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px),repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px)}
-.hero-content{position:relative;z-index:2;padding:4rem 2.5rem 3.5rem;max-width:680px}
+.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;background-image:url("images/contactfinal.png");background-size:cover;background-repeat:no-repeat;background-position:center center;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
+.hero-pattern{display:none}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
 .hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.88);font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
 .hero h1{font-family:'Inter',sans-serif;font-size:46px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:1.25rem}
 .hero h1 em{font-style:normal;color:#5BA4D4}
@@ -87,7 +95,13 @@ nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;
 .form-group textarea{resize:vertical;min-height:110px;line-height:1.6}
 .form-submit{background:#0F4C81;color:#fff;font-size:14px;font-weight:700;padding:14px 28px;border-radius:8px;border:none;cursor:pointer;width:100%;font-family:'Inter',sans-serif;margin-top:0.5rem}
 .form-submit:hover{background:#0d4070}
+.form-submit:disabled{background:#6b7280;cursor:not-allowed}
 .form-note{font-size:11.5px;color:#9ca3af;text-align:center;margin-top:0.875rem;line-height:1.6}
+.inquiry-msg{display:none;border-radius:8px;padding:14px 16px;font-size:13.5px;line-height:1.6;margin-top:1rem}
+.inquiry-msg--success{display:block;background:#f0fdf4;border:1.5px solid #86efac;color:#166534}
+.inquiry-msg--error{display:block;background:#fef2f2;border:1.5px solid #fca5a5;color:#991b1b}
+/* Honeypot — hidden from real users, visible to bots */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;tab-index:-1;aria-hidden:true}
 
 /* SIDEBAR */
 .contact-sidebar{display:flex;flex-direction:column;gap:1.25rem}
@@ -171,20 +185,24 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-brand-name">THT Windows</div>
-    <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    <img src="images/windowlogo.PNG" alt="Home Team Windows" />
+    <div class="nav-red-divider"></div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">THT Windows</div>
+      <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    </div>
   </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="replacement-window-options.html">Window Styles</a>
     <a href="gallery.html">Gallery</a>
-    <a href="financing.html">Financing</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     <a href="service-areas.html">Service Areas</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html" class="active">Contact</a>
   </div>
   <div class="nav-right">
-    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
     <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
       <span></span><span></span><span></span>
     </button>
@@ -198,16 +216,16 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <a href="index.html">Home</a>
     <a href="replacement-window-options.html">Window Styles</a>
     <a href="gallery.html">Gallery</a>
-    <a href="financing.html">Financing</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     <a href="service-areas.html">Service Areas</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html" class="active">Contact</a>
-    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero" aria-label="Contact Hero">
+<section class="hero" aria-label="Luxury Houston home featuring premium black-framed replacement windows — contact Home Team Windows for your free in-home estimate.">
   <div class="hero-bg"></div>
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-content">
@@ -255,7 +273,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <div class="form-card">
       <h3>Request Your Free Estimate</h3>
       <p class="form-sub">Fill out the form and we'll reach out within one business day to schedule your in-home visit at a time that works for you.</p>
-      <form action="#" method="POST">
+      <form id="inquiry-form" action="#" method="POST" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="first-name">First Name</label>
@@ -297,7 +315,13 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
           <label for="message">Tell Us About Your Project (Optional)</label>
           <textarea id="message" name="message" placeholder="Any details about the windows you need replaced, specific areas of the home, or questions you have..."></textarea>
         </div>
-        <button type="submit" class="form-submit">Request My Free Estimate</button>
+        <!-- Honeypot — leave blank; bots fill it and get silently dropped -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="_hp">Leave this blank</label>
+          <input type="text" id="_hp" name="_hp" tabindex="-1" autocomplete="off"/>
+        </div>
+        <button type="submit" id="inquiry-submit" class="form-submit">Request My Free Estimate</button>
+        <div id="inquiry-msg" class="inquiry-msg" role="alert"></div>
         <p class="form-note">By submitting this form you agree to be contacted by THT Windows regarding your estimate request. We never share your information.</p>
       </form>
     </div>
@@ -397,7 +421,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <div class="expect-card">
       <div class="expect-num">2</div>
       <h4>Free In-Home Visit</h4>
-      <p>Our specialist visits your home, measures every window opening, and walks you through the Norandex product options that fit your home's style, needs, and goals — with no pressure to decide.</p>
+      <p>Our specialist visits your home, measures every window opening, and walks you through our full product line and the options that fit your home's style, needs, and goals — with no pressure to decide.</p>
     </div>
     <div class="expect-card">
       <div class="expect-num">3</div>
@@ -469,7 +493,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <h4>Company</h4>
       <a href="gallery.html">Gallery</a>
       <a href="reviews.html">Reviews</a>
-      <a href="financing.html">Financing</a>
+      <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
       <a href="contact.html">Contact</a>
     </div>
     <div style="display:flex;align-items:flex-start;justify-content:flex-end">
@@ -496,6 +520,97 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     closeBtn.addEventListener('click',function(){drawer.classList.remove('open');});
     drawer.addEventListener('click',function(e){if(e.target===drawer){drawer.classList.remove('open');}});
   }
+})();
+
+/* ── Project Inquiry Form → /api/submit-inquiry ───────────────────────────── */
+(function(){
+  var form   = document.getElementById('inquiry-form');
+  var btn    = document.getElementById('inquiry-submit');
+  var msgEl  = document.getElementById('inquiry-msg');
+  if (!form || !btn || !msgEl) return;
+
+  function showMsg(text, type) {
+    msgEl.textContent = text;
+    msgEl.className   = 'inquiry-msg inquiry-msg--' + type;
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (btn.disabled) return;
+
+    // ── Client-side validation ────────────────────────────────────────────────
+    var firstName = (document.getElementById('first-name').value || '').trim();
+    var lastName  = (document.getElementById('last-name').value  || '').trim();
+    var email     = (document.getElementById('email').value      || '').trim();
+    var phone     = (document.getElementById('phone').value      || '').trim();
+
+    if (!firstName && !lastName) {
+      showMsg('Please provide your name.', 'error'); return;
+    }
+    if (!email && !phone) {
+      showMsg('Please provide an email address or phone number.', 'error'); return;
+    }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showMsg('Please enter a valid email address.', 'error'); return;
+    }
+
+    // ── Loading state ─────────────────────────────────────────────────────────
+    btn.disabled    = true;
+    btn.textContent = 'Sending…';
+    msgEl.className = 'inquiry-msg';
+
+    // ── Build payload ─────────────────────────────────────────────────────────
+    var hp = document.getElementById('_hp');
+    var payload = {
+      firstName:       firstName,
+      lastName:        lastName,
+      email:           email,
+      phone:           phone,
+      city:            (document.getElementById('city').value    || '').trim(),
+      numberOfWindows: (document.getElementById('windows').value || '').trim(),
+      message:         (document.getElementById('message').value || '').trim(),
+      zipCode:         '',
+      serviceType:     '',
+      projectTimeline: '',
+      _hp:             hp ? hp.value : '',
+      pageUrl:         window.location.href,
+    };
+
+    // ── POST to server-side endpoint ──────────────────────────────────────────
+    fetch('/api/submit-inquiry', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    })
+    .then(function(res) {
+      return res.json().then(function(data) {
+        return { status: res.status, data: data };
+      });
+    })
+    .then(function(result) {
+      if (result.status === 200 && result.data.ok) {
+        // Success — hide form, show confirmation
+        form.style.display = 'none';
+        msgEl.innerHTML = '<strong>Thank you!</strong> Your request has been received. ' +
+          'A THT Windows specialist will contact you within one business day.';
+        msgEl.className = 'inquiry-msg inquiry-msg--success';
+      } else {
+        // Server-side validation or webhook error
+        btn.disabled    = false;
+        btn.textContent = 'Request My Free Estimate';
+        showMsg(
+          (result.data && result.data.error) ||
+          'Something went wrong. Please try again or call us at (832) 422-3039.',
+          'error'
+        );
+      }
+    })
+    .catch(function() {
+      btn.disabled    = false;
+      btn.textContent = 'Request My Free Estimate';
+      showMsg('Unable to submit your request. Please try again or call (832) 422-3039.', 'error');
+    });
+  });
 })();
 </script>
 </body>

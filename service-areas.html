@@ -13,9 +13,12 @@ body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
 
 /* NAV */
 nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:100}
-.nav-logo{width:220px;flex-shrink:0}
-.nav-brand-name{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:#1F2937;letter-spacing:0.5px;text-transform:uppercase}
-.nav-brand-sub{font-size:9px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:400}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:18px}
+.nav-logo img{height:74px;width:auto;display:block;flex-shrink:0}
+.nav-red-divider{width:2px;height:58px;background:#b91c1c;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:5px}
+.nav-brand-name{font-family:'Inter',sans-serif;font-size:19px;font-weight:800;color:#1a1f2e;letter-spacing:3px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;white-space:nowrap;line-height:1}
 .nav-links{display:flex;gap:36px;flex:1;justify-content:center}
 .nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap}
 .nav-links a:hover{color:#0F4C81}
@@ -40,18 +43,23 @@ nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;
   .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
   nav{justify-content:space-between}
   .nav-right{width:auto}
+  .nav-logo{gap:12px}
+  .nav-logo img{height:50px}
+  .nav-red-divider{height:40px}
+  .nav-brand-name{font-size:14px;letter-spacing:2px}
+  .nav-brand-sub{font-size:6.5px;letter-spacing:1.4px}
 }
 
 /* HERO */
-.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#040e1a 0%,#0a2540 40%,#0F4C81 100%);opacity:0.95}
-.hero-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px),repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px)}
-.hero-content{position:relative;z-index:2;padding:4rem 2.5rem 3.5rem;max-width:680px}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.88);font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
-.hero h1{font-family:'Inter',sans-serif;font-size:46px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:1.25rem}
+.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;background-image:url("images/serviceareahero.png");background-size:cover;background-repeat:no-repeat;background-position:center center;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
+.hero-pattern{display:none}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:28px;width:fit-content}
+.hero h1{font-family:'Inter',sans-serif;font-size:44px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-1.5px;margin-bottom:28px;background:none;text-shadow:none;max-width:500px}
 .hero h1 em{font-style:normal;color:#5BA4D4}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.75;max-width:520px;margin-bottom:2.25rem}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:36px;max-width:440px}
+.hero-btns{display:flex;gap:1rem;margin-bottom:32px}
 .btn-solid{background:#0F4C81;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
 .btn-solid:hover{background:#0d4070}
 .btn-outline{background:transparent;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:2px solid rgba(255,255,255,0.42);cursor:pointer;font-family:'Inter',sans-serif}
@@ -124,6 +132,9 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .footer-bottom p{font-size:11.5px;color:#4b5563}
 
 @media(max-width:768px){
+  .hero{background-position:30% center}
+  .hero-content{padding:28px 24px 32px 24px;max-width:100%}
+  .hero-bg{background:linear-gradient(to right,rgba(4,14,26,0.94) 0%,rgba(4,14,26,0.92) 50%,rgba(4,14,26,0.78) 100%)}
   .hero h1{font-size:30px}
   .sec{padding:3rem 1.25rem}
   .areas-grid{grid-template-columns:repeat(2,1fr)}
@@ -144,20 +155,24 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-brand-name">THT Windows</div>
-    <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    <img src="images/windowlogo.PNG" alt="Home Team Windows" />
+    <div class="nav-red-divider"></div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">THT Windows</div>
+      <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    </div>
   </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="replacement-window-options.html">Window Styles</a>
     <a href="gallery.html">Gallery</a>
-    <a href="financing.html">Financing</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     <a href="service-areas.html" class="active">Service Areas</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
-    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
     <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
       <span></span><span></span><span></span>
     </button>
@@ -171,16 +186,16 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <a href="index.html">Home</a>
     <a href="replacement-window-options.html">Window Styles</a>
     <a href="gallery.html">Gallery</a>
-    <a href="financing.html">Financing</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     <a href="service-areas.html" class="active">Service Areas</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html">Contact</a>
-    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero" aria-label="Service Areas Hero">
+<section class="hero" aria-label="Luxury Houston-area home with premium replacement windows overlooking the city skyline at sunset.">
   <div class="hero-bg"></div>
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-content">
@@ -189,7 +204,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <p class="hero-sub">THT Windows provides professional replacement window installation across the greater Houston area — from Tomball to Galveston, The Woodlands to Katy.</p>
     <div class="hero-btns">
       <button class="btn-solid" onclick="location.href='contact.html'">Check Your Area</button>
-      <button class="btn-outline" onclick="location.href='contact.html'">Get Free Estimate</button>
+      <button class="btn-outline" onclick="location.href='estimate.html'">Get Free Estimate</button>
     </div>
   </div>
 </section>
@@ -384,7 +399,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   <h2>Ready to Get Started?</h2>
   <p>Call or schedule online to confirm we serve your area and book your free in-home estimate. Most appointments are available within the same week.</p>
   <div class="final-cta-btns">
-    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='estimate.html'">Get Free Estimate</button>
     <button class="btn-outline" style="font-size:14px;padding:14px 32px" onclick="location.href='replacement-window-options.html'">Browse Window Styles</button>
   </div>
   <div class="cta-phone">
@@ -439,7 +454,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <h4>Company</h4>
       <a href="gallery.html">Gallery</a>
       <a href="reviews.html">Reviews</a>
-      <a href="financing.html">Financing</a>
+      <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
       <a href="contact.html">Contact</a>
     </div>
     <div style="display:flex;align-items:flex-start;justify-content:flex-end">

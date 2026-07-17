@@ -14,9 +14,12 @@ body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
 
 /* NAV */
 nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:100}
-.nav-logo{width:220px;flex-shrink:0}
-.nav-brand-name{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:#1F2937;letter-spacing:0.5px;text-transform:uppercase}
-.nav-brand-sub{font-size:9px;color:#9ca3af;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;font-weight:400}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:18px}
+.nav-logo img{height:74px;width:auto;display:block;flex-shrink:0}
+.nav-red-divider{width:2px;height:58px;background:#b91c1c;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:5px}
+.nav-brand-name{font-family:'Inter',sans-serif;font-size:19px;font-weight:800;color:#1a1f2e;letter-spacing:3px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;white-space:nowrap;line-height:1}
 .nav-links{display:flex;gap:36px;flex:1;justify-content:center}
 .nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap}
 .nav-links a:hover{color:#0F4C81}
@@ -41,12 +44,16 @@ nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;
   .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
   nav{justify-content:space-between}
   .nav-right{width:auto}
+  .nav-logo{gap:12px}
+  .nav-logo img{height:50px}
+  .nav-red-divider{height:40px}
+  .nav-brand-name{font-size:14px;letter-spacing:2px}
+  .nav-brand-sub{font-size:6.5px;letter-spacing:1.4px}
 }
 
 /* HERO */
-.hero{position:relative;min-height:580px;overflow:hidden;background:#040e1a;display:flex;align-items:center}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#040e1a 0%,#0a2540 40%,#0F4C81 100%);opacity:0.95}
-.hero-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px),repeating-linear-gradient(90deg,transparent,transparent 48px,rgba(255,255,255,1) 48px,rgba(255,255,255,1) 50px)}
+.hero{position:relative;min-height:580px;overflow:hidden;background:#040e1a;background-image:url("images/windowheaderreplacement.png");background-size:cover;background-repeat:no-repeat;background-position:center center;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
 .hero-content{position:relative;z-index:2;padding:5rem 2.5rem 4rem;max-width:680px}
 .hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.88);font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
 .hero h1{font-family:'Inter',sans-serif;font-size:48px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-1px;margin-bottom:1.25rem}
@@ -253,6 +260,69 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 @media(max-width:768px){
   .mfr-details-row{grid-template-columns:1fr}
 }
+
+/* ── COLLECTION EDITORIAL LAYOUT ─────────────────────── */
+.col-intro{padding:5.5rem 2.5rem 4rem;background:#fff;text-align:center;border-bottom:1px solid #f0f2f5}
+.col-intro-inner{max-width:660px;margin:0 auto}
+.col-eyebrow-top{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#b91c1c;margin-bottom:1rem}
+.col-intro-h{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#1a1f2e;line-height:1.15;letter-spacing:-0.5px;margin-bottom:1.25rem}
+.col-intro-p{font-size:16px;color:#6b7280;line-height:1.75;max-width:580px;margin:0 auto}
+.collections-wrap{padding:3.5rem 2.5rem 5rem;background:#F8FAFC;display:flex;flex-direction:column;gap:2.75rem}
+.coll-row{display:flex;align-items:stretch;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 2px 24px rgba(0,0,0,0.055)}
+.coll-reverse{flex-direction:row-reverse}
+.coll-img{width:52%;flex-shrink:0;overflow:hidden;min-height:460px}
+.coll-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.65s ease}
+.coll-row:hover .coll-img img{transform:scale(1.03)}
+.coll-body{flex:1;padding:3.75rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+.coll-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:0.875rem}
+.coll-rule{width:36px;height:2px;background:#b91c1c;border-radius:2px;margin-bottom:1.5rem}
+.coll-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#1a1f2e;line-height:1.2;letter-spacing:-0.3px;margin-bottom:1.1rem}
+.coll-desc{font-size:15px;color:#4b5563;line-height:1.8;margin-bottom:1.625rem}
+.coll-features{list-style:none;padding:0;margin:0 0 2.25rem;display:flex;flex-direction:column;gap:0.625rem}
+.coll-features li{font-size:13.5px;color:#374151;padding-left:1.25rem;position:relative;line-height:1.5}
+.coll-features li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:#b91c1c}
+.coll-btn{display:inline-flex;align-items:center;gap:6px;background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:12px 24px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s,transform .12s;width:fit-content;text-decoration:none}
+.coll-btn::after{content:'→';font-size:12px}
+.coll-btn:hover{background:#0d4070;transform:translateY(-1px)}
+.bottom-cta-sec{padding:6rem 2.5rem;background:#fff;text-align:center;border-top:1px solid #e5e7eb}
+.bottom-cta-inner{max-width:580px;margin:0 auto}
+.bottom-cta-h{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1a1f2e;line-height:1.2;margin-bottom:1.1rem;letter-spacing:-0.3px}
+.bottom-cta-p{font-size:15px;color:#6b7280;line-height:1.75;margin-bottom:2.5rem}
+.bottom-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;align-items:center}
+.coll-btn-outline{display:inline-flex;align-items:center;background:transparent;color:#0F4C81;font-size:13px;font-weight:600;padding:12px 24px;border-radius:6px;border:1.5px solid #0F4C81;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:background .15s}
+.coll-btn-outline:hover{background:#EBF2FA}
+@media(max-width:960px){
+  .coll-row,.coll-reverse{flex-direction:column}
+  .coll-img{width:100%;min-height:280px}
+  .coll-body{padding:2.5rem 2rem}
+  .coll-title{font-size:24px}
+  .col-intro-h{font-size:30px}
+  .bottom-cta-h{font-size:26px}
+  .collections-wrap{padding:2.5rem 1.25rem 3.5rem;gap:1.75rem}
+}
+@media(max-width:480px){
+  .col-intro{padding:3.5rem 1.25rem 2.5rem}
+  .bottom-cta-sec{padding:3.5rem 1.25rem}
+  .coll-body{padding:2rem 1.5rem}
+  .col-intro-h{font-size:26px}
+}
+
+/* WINDOW TYPES SECTION */
+.wt-section{padding:5.5rem 2.5rem;background:#fff}
+.wt-inner{max-width:1240px;margin:0 auto}
+.wt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.wt-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.wt-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(15,76,129,.1)}
+.wt-card-img{height:220px;overflow:hidden;flex-shrink:0}
+.wt-card-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.wt-card:hover .wt-card-img img{transform:scale(1.05)}
+.wt-card-body{padding:1.25rem 1.25rem 1.5rem;display:flex;flex-direction:column;flex:1}
+.wt-card-title{font-size:15px;font-weight:700;color:#1F2937;margin-bottom:.5rem;line-height:1.35}
+.wt-card-desc{font-size:13px;color:#6b7280;line-height:1.6;margin-bottom:1rem;flex:1}
+.wt-card-link{font-size:12.5px;color:#0F4C81;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:3px}
+.wt-card-link:hover{text-decoration:underline}
+@media(max-width:900px){.wt-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.wt-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -260,20 +330,24 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-brand-name">THT Windows</div>
-    <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    <img src="images/windowlogo.PNG" alt="Home Team Windows" />
+    <div class="nav-red-divider"></div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">THT Windows</div>
+      <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+    </div>
   </div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="replacement-window-options.html" class="active">Window Styles</a>
     <a href="gallery.html">Gallery</a>
-    <a href="financing.html">Financing</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     <a href="service-areas.html">Service Areas</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
-    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
     <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
       <span></span><span></span><span></span>
     </button>
@@ -287,24 +361,23 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <a href="index.html">Home</a>
     <a href="replacement-window-options.html" class="active">Window Styles</a>
     <a href="gallery.html">Gallery</a>
-    <a href="financing.html">Financing</a>
+    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     <a href="service-areas.html">Service Areas</a>
     <a href="reviews.html">Reviews</a>
     <a href="contact.html">Contact</a>
-    <button class="nav-btn" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
   </div>
 </div>
 
 <!-- HERO -->
 <section class="hero" aria-label="Hero">
   <div class="hero-bg"></div>
-  <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="hero-badge">Houston Replacement Window Specialists</div>
     <h1>Replacement Window<br>Options for <em>Texas Homes</em></h1>
     <p class="hero-sub">Built for the Texas heat. Engineered for energy savings. Professionally installed by the team trusted across the Houston metro area for quality and craftsmanship.</p>
     <div class="hero-btns">
-      <button class="btn-solid" onclick="location.href='contact.html'">Get Free Estimate</button>
+      <button class="btn-solid" onclick="location.href='estimate.html'">Get Free Estimate</button>
       <button class="btn-outline" onclick="location.href='#window-styles'">Explore Window Styles</button>
     </div>
     <div class="hero-trust">
@@ -345,468 +418,258 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   </div>
 </div>
 
-<!-- BENEFITS SECTION -->
-<section class="sec sec-gray" id="benefits">
-  <div class="center">
-    <div class="eyebrow">Why Upgrade Your Windows</div>
-    <div class="rule rule-center"></div>
-    <h2 class="sec-h2">Built for Texas. Designed to Last.</h2>
-    <p class="sec-p">Quality replacement windows deliver returns that go beyond energy savings — from quieter rooms to higher home values, the benefits compound for decades.</p>
-  </div>
-  <div class="ben-grid">
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.09 12.37A1 1 0 005 14h7v8l8.91-10.37A1 1 0 0020 10h-7V2z" stroke="#0F4C81" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Texas Heat Performance</h4>
-      <p>Our windows are specifically selected for performance in hot, humid Texas climates. Low-E glass coatings reflect solar heat to keep rooms cooler and reduce strain on your A/C — even during the harshest Houston summers.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0F4C81" stroke-width="1.6"/><path d="M12 7v5l3 2" stroke="#0F4C81" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </div>
-      <h4>Lower Energy Bills</h4>
-      <p>Double-pane windows with argon gas fill significantly outperform single-pane glass. Most homeowners see measurable reductions in heating and cooling costs within the first year after replacement.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9z" stroke="#0F4C81" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Improved Home Value</h4>
-      <p>Replacement windows consistently rank among the highest-impact home improvements. Updated windows improve curb appeal, attract buyers, and add lasting value to your home — making them one of the smartest investments a homeowner can make.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="#0F4C81" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="#0F4C81" stroke-width="1.6"/><circle cx="18" cy="16" r="3" stroke="#0F4C81" stroke-width="1.6"/></svg>
-      </div>
-      <h4>Noise Reduction</h4>
-      <p>Double-pane insulated glass dramatically reduces outside noise intrusion — road traffic, neighborhood sounds, and yard equipment. A quieter home means better sleep and more comfortable living.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0F4C81" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#0F4C81" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Low Maintenance</h4>
-      <p>Modern vinyl and composite window frames never need painting and won't rot, warp, or corrode. Tilt-in sashes make cleaning easy from inside your home — no ladders required on upper floors.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#0F4C81" stroke-width="1.6"/><path d="M3 9h18M9 3v18" stroke="#0F4C81" stroke-width="1.6"/></svg>
-      </div>
-      <h4>Better Curb Appeal</h4>
-      <p>New windows are one of the most visible exterior upgrades a homeowner can make. Fresh frames, modern grid patterns, and clean glass transform the look of a home from the street — and from every room inside.</p>
-    </div>
+<!--
+  PRESERVED TECHNICAL SPECIFICATIONS — for use on individual collection detail pages
+  ==================================================================================
+
+  BENEFITS:
+  - Texas Heat Performance: Low-E glass coatings reflect solar heat, reduce A/C strain in hot, humid Texas climates
+  - Lower Energy Bills: Double-pane argon-gas-fill windows outperform single-pane; measurable cost savings within year one
+  - Improved Home Value: Replacement windows rank among highest-impact home improvements for resale and curb appeal
+  - Noise Reduction: Double-pane insulated glass dramatically cuts road traffic, neighborhood, and yard equipment noise
+  - Low Maintenance: Vinyl frames never need painting; tilt-in sashes clean from inside (no ladder required)
+  - Better Curb Appeal: Fresh frames, modern grid patterns, and clean glass transform street-facing appearance
+
+  BRAND: Home Team Windows — Premium Vinyl Windows, Replacement & New Construction
+  CERTIFICATIONS: Energy Star® | Low Maintenance Vinyl | Custom Sizes | Grids Between Glass | Multiple Exterior Colors | Tilt-In Sash Cleaning
+
+  COLLECTION 1 — HOME TEAM PREMIUM SERIES: Signature Single Hung — Classic
+    Profile: Beveled exterior
+    Locks: Surface-mounted forced-entry-resistant
+    Lift rail: Full-length
+    Sash: Tilt-in bottom for inside cleaning
+    Glass: Dual-pane insulating
+    Interior: New Black laminate available
+    Styles: Single Hung · Slider · 3-Lite Slider · Picture · Specialty Shapes · Operable Arch
+    Colors: White · Cream · CoCoA · Forest Green · Almond · Bronze · Clay · Black
+
+  COLLECTION 2 — HOME TEAM CONTEMPORARY COLLECTION: Contemporary Single Hung — Craftsman
+    Profile: Brickmould exterior
+    Locks: Dual-opposing mortised recessed
+    Lift rail: Integral
+    Sash: Tilt-in bottom for inside cleaning
+    Balances: Inverted-coil with push-button vent stops
+    Impact: Option available
+    Styles: Single Hung · Slider · 3-Lite Slider · Picture · Specialty Shapes · Operable Arch
+    Colors: White · Black · Bronze · Almond · Clay
+
+  COLLECTION 3 — HOME TEAM SIGNATURE COLLECTION: Signature Double Hung — Premier
+    Sash: Both top and bottom tilt in
+    Locks: Dual-opposing mortised recessed
+    Screen: Full FlexScreen with Clarity Screen mesh
+    Balances: Inverted-coil with detent clip
+    Glass: Dual- or triple-pane available
+    Exclusive: Blinds Between-the-Glass
+    Styles: Double Hung · Slider · 3-Lite Slider · Picture · Specialty Shapes · Awning · Casement
+    Colors: White · Cream · CoCoA · Forest Green · Almond · Bronze · Clay · Black
+
+  GRID OPTIONS (All Series): Grids Between Glass Sculptured · Grids Between Glass Flat · Simulated Divided Lite · Simulated Meeting Rail
+  WARRANTY: Lifetime Frame Coverage · 20-Year IGU & Components · 2-Year Skilled Labor & Shipping
+
+  WINDOW STYLES (9 types):
+    Double Hung — Most Popular — Bedrooms, living rooms, kitchens — Top & bottom ventilation — Excellent efficiency
+    Casement — Best Ventilation — Living rooms, bedrooms, offices — Full opening — Excellent efficiency
+    Picture — Maximum Light — Living rooms, dining areas — Non-operable — Excellent efficiency
+    Sliding — Space Saving — Hallways, kitchens, rooms near patios — Half opening — Good efficiency
+    Bay — Curb Appeal — Living rooms, dining rooms, master bedrooms — Side panels — Good efficiency
+    Bow — Elegant Curves — Living rooms, formal dining, entryways — Side panels — Good efficiency
+    Garden — Kitchen Favorite — Kitchen, breakfast nooks — Side vents — Good efficiency
+    Awning — Rain-Ready — Bathrooms, basements, high placement — Even in rain — Excellent efficiency
+    Patio/Sliding Glass Door — Indoor-Outdoor Living — Patios, decks — Full panel — Excellent efficiency
+-->
+
+<!-- COLLECTION INTRO -->
+<section class="col-intro">
+  <div class="col-intro-inner">
+    <div class="col-eyebrow-top">Our Window Collections</div>
+    <h2 class="col-intro-h">Premium Windows, Crafted for Texas Homes</h2>
+    <p class="col-intro-p">From classic single-hung windows to our top-of-the-line double-hung premier series, every Home Team window is engineered for the Texas climate — built to cut energy costs, last for decades, and look beautiful from the street.</p>
   </div>
 </section>
 
-<!-- MANUFACTURER SECTION -->
-<section class="sec sec-white" id="manufacturer">
-  <div>
-    <div class="eyebrow">Our Window Products</div>
-    <div class="rule"></div>
-    <h2 class="sec-h2">Norandex Xact Series Vinyl Windows</h2>
-    <p style="font-size:17px;color:#1F2937;font-weight:500;line-height:1.6;max-width:620px;margin-bottom:0.75rem">Premium vinyl windows professionally installed by THT Windows in Houston, TX.</p>
-    <p class="sec-p" style="max-width:640px">Norandex manufactures premium vinyl windows engineered for energy efficiency, durability, and low maintenance — built to perform in demanding climates like Houston's.</p>
-  </div>
+<!-- COLLECTION SECTIONS -->
+<div class="collections-wrap">
 
-  <!-- Brand Block -->
-  <div class="mfr-brand-block">
-    <div class="mfr-logo-box" aria-label="Norandex logo placeholder">
-      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="6" width="44" height="44" rx="6" stroke="#0F4C81" stroke-width="2"/>
-        <path d="M6 28h44M28 6v44" stroke="#0F4C81" stroke-width="2"/>
-        <rect x="14" y="14" width="12" height="12" rx="1.5" fill="#EBF2FA" stroke="#0F4C81" stroke-width="1.5"/>
-        <rect x="30" y="14" width="12" height="12" rx="1.5" fill="#EBF2FA" stroke="#0F4C81" stroke-width="1.5"/>
-        <rect x="14" y="30" width="12" height="12" rx="1.5" fill="#EBF2FA" stroke="#0F4C81" stroke-width="1.5"/>
-        <rect x="30" y="30" width="12" height="12" rx="1.5" fill="#EBF2FA" stroke="#0F4C81" stroke-width="1.5"/>
-      </svg>
+  <!-- Collection 1: Premium Series (image left, text right) -->
+  <div class="coll-row">
+    <div class="coll-img">
+      <img src="images/new2.png" alt="Signature Single Hung Classic window installation on luxury home" loading="lazy">
     </div>
-    <div>
-      <div class="mfr-brand-name">Norandex</div>
-      <div class="mfr-brand-tagline">Xact New Construction Series</div>
-      <div class="mfr-brand-desc">Premium Vinyl Windows — Replacement &amp; New Construction</div>
-      <div class="mfr-feature-tags">
-        <span class="mfr-ftag">We Sell Energy Star®</span>
-        <span class="mfr-ftag">Low Maintenance Vinyl</span>
-        <span class="mfr-ftag">Custom Sizes</span>
-        <span class="mfr-ftag">Grids Between Glass</span>
-        <span class="mfr-ftag">Multiple Exterior Colors</span>
-        <span class="mfr-ftag">Tilt-In Sash Cleaning</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Product Family Cards -->
-  <div style="margin-bottom:1.75rem">
-    <div class="eyebrow">Xact New Construction Series</div>
-    <div class="rule"></div>
-  </div>
-  <div class="mfr-product-cards">
-
-    <div class="mfr-pcard">
-      <div class="mfr-pcard-photo">
-        <img src="https://images.unsplash.com/photo-1696986324679-dad26261d579?w=800&h=400&fit=crop&q=80" alt="Upscale living room with white vinyl windows and warm natural light" loading="lazy">
-      </div>
-      <div class="mfr-series-label">Xact New Construction</div>
-      <h4>Xact 4200 — Single Hung</h4>
-      <p>A dependable single-hung window with a clean beveled exterior profile — built for traditional Texas homes where solid performance and long-term value matter.</p>
-      <ul class="mfr-feat-list">
-        <li>Beveled exterior profile</li>
-        <li>Surface-mounted forced-entry-resistant locks</li>
-        <li>Full-length lift rail</li>
-        <li>Tilt-in bottom sash for easy inside cleaning</li>
+    <div class="coll-body">
+      <div class="coll-eyebrow">Home Team Premium Series</div>
+      <div class="coll-rule"></div>
+      <h3 class="coll-title">Signature Single Hung — Classic</h3>
+      <p class="coll-desc">A dependable single-hung window with a clean beveled exterior profile — built for traditional Texas homes where solid performance and long-term value matter most.</p>
+      <ul class="coll-features">
+        <li>Easy-clean tilt-in bottom sash</li>
         <li>Dual-pane insulating glass</li>
-        <li>New Black laminate interior available</li>
+        <li>Multiple exterior color options</li>
       </ul>
-      <div class="mfr-pcard-meta">
-        <div class="mfr-pcard-label">Available Styles</div>
-        <div class="mfr-pcard-styles">Single Hung · Slider · 3-Lite Slider · Picture · Specialty Shapes · Operable Arch</div>
-      </div>
-      <div class="mfr-pcard-meta" style="margin-top:0.625rem">
-        <div class="mfr-pcard-label">Exterior Colors</div>
-        <div class="mfr-pcard-styles">White · Cream · CoCoA · Forest Green · Almond · Bronze · Clay · Black</div>
-      </div>
-    </div>
-
-    <div class="mfr-pcard">
-      <div class="mfr-pcard-photo">
-        <img src="https://images.unsplash.com/photo-1761061079517-2ff8192b2f02?w=800&h=400&fit=crop&q=80" alt="Luxury craftsman home with covered porch, white trim, and architectural window detailing" loading="lazy">
-      </div>
-      <div class="mfr-series-label">Xact New Construction</div>
-      <h4>Xact 4400 — Single Hung</h4>
-      <p>Enhanced detailing for craftsman and transitional home styles — featuring a traditional brickmould exterior profile and elevated hardware throughout.</p>
-      <ul class="mfr-feat-list">
-        <li>Brickmould exterior profile</li>
-        <li>Dual-opposing mortised recessed locks</li>
-        <li>Integral lift rail</li>
-        <li>Tilt-in bottom sash for easy inside cleaning</li>
-        <li>Inverted-coil balances with push-button vent stops</li>
-        <li>Impact option available</li>
-      </ul>
-      <div class="mfr-pcard-meta">
-        <div class="mfr-pcard-label">Available Styles</div>
-        <div class="mfr-pcard-styles">Single Hung · Slider · 3-Lite Slider · Picture · Specialty Shapes · Operable Arch</div>
-      </div>
-      <div class="mfr-pcard-meta" style="margin-top:0.625rem">
-        <div class="mfr-pcard-label">Exterior Colors</div>
-        <div class="mfr-pcard-styles">White · Black · Bronze · Almond · Clay</div>
-      </div>
-    </div>
-
-    <div class="mfr-pcard">
-      <div class="mfr-pcard-photo">
-        <img src="https://images.unsplash.com/photo-1757359056339-22968344cce6?w=800&h=400&fit=crop&q=80" alt="Modern farmhouse with large black-framed windows and warm evening light" loading="lazy">
-      </div>
-      <div class="mfr-series-label">Xact New Construction</div>
-      <h4>Xact 4600 — Double Hung</h4>
-      <p>The top-of-the-line Xact window — both sashes tilt in for easy cleaning, with triple-pane glass available and exclusive Blinds Between-the-Glass.</p>
-      <ul class="mfr-feat-list">
-        <li>Both top and bottom sash tilt in</li>
-        <li>Dual-opposing mortised recessed locks</li>
-        <li>Full FlexScreen with Clarity Screen mesh</li>
-        <li>Inverted-coil balances with detent clip</li>
-        <li>Dual- or triple-pane glass available</li>
-        <li>Blinds Between-the-Glass — exclusive to Xact 4600</li>
-      </ul>
-      <div class="mfr-pcard-meta">
-        <div class="mfr-pcard-label">Available Styles</div>
-        <div class="mfr-pcard-styles">Double Hung · Slider · 3-Lite Slider · Picture · Specialty Shapes · Awning · Casement</div>
-      </div>
-      <div class="mfr-pcard-meta" style="margin-top:0.625rem">
-        <div class="mfr-pcard-label">Exterior Colors</div>
-        <div class="mfr-pcard-styles">White · Cream · CoCoA · Forest Green · Almond · Bronze · Clay · Black</div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Grid Options & Warranty -->
-  <div class="mfr-details-row">
-    <div class="mfr-detail-block">
-      <div class="mfr-detail-label">Grid Options — All Series</div>
-      <div class="mfr-detail-value">Grids Between Glass Sculptured · Grids Between Glass Flat · Simulated Divided Lite · Simulated Meeting Rail</div>
-    </div>
-    <div class="mfr-detail-block">
-      <div class="mfr-detail-label">Transferable Warranty</div>
-      <div class="mfr-detail-value">Lifetime Frame Coverage · 20-Year IGU &amp; Components · 2-Year Skilled Labor &amp; Shipping</div>
+      <a class="coll-btn" href="estimate.html">Explore Premium Series</a>
     </div>
   </div>
 
-  <!-- CTA -->
-  <div style="text-align:center;margin-top:2.5rem;display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap">
-    <button class="btn-solid" style="font-size:14px;padding:13px 32px" onclick="location.href='contact.html'">Get Your Free Estimate</button>
-    <a class="btn-brochure" href="https://www.norandex.com/wp-content/uploads/2025/06/Xact-New-Construction-Brochure_2.2026.pdf" target="_blank" rel="noopener noreferrer">
-      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 13h10M7.5 2v8M4.5 7l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Download Xact New Construction Brochure
-    </a>
+  <!-- Collection 2: Contemporary Collection (text left, image right) -->
+  <div class="coll-row coll-reverse">
+    <div class="coll-img">
+      <img src="images/newhouse.png" alt="Contemporary Single Hung Craftsman window on transitional farmhouse home" loading="lazy">
+    </div>
+    <div class="coll-body">
+      <div class="coll-eyebrow">Home Team Contemporary Collection</div>
+      <div class="coll-rule"></div>
+      <h3 class="coll-title">Contemporary Single Hung — Craftsman</h3>
+      <p class="coll-desc">Enhanced detailing for craftsman and transitional home styles — featuring a traditional brickmould exterior profile and elevated hardware designed to complement your home's architecture.</p>
+      <ul class="coll-features">
+        <li>Architectural brickmould profile</li>
+        <li>Recessed premium hardware</li>
+        <li>Impact-resistant option available</li>
+      </ul>
+      <a class="coll-btn" href="estimate.html">Explore Contemporary Collection</a>
+    </div>
+  </div>
+
+  <!-- Collection 3: Signature Collection (image left, text right) -->
+  <div class="coll-row">
+    <div class="coll-img">
+      <img src="images/galleryphotofinal.png" alt="Signature Double Hung Premier windows in modern home interior" loading="lazy">
+    </div>
+    <div class="coll-body">
+      <div class="coll-eyebrow">Home Team Signature Collection</div>
+      <div class="coll-rule"></div>
+      <h3 class="coll-title">Signature Double Hung — Premier</h3>
+      <p class="coll-desc">Our top-of-the-line window — both sashes tilt in for effortless cleaning, with triple-pane glass available and exclusive Blinds-Between-the-Glass for the ultimate in privacy and style.</p>
+      <ul class="coll-features">
+        <li>Both sashes tilt in for easy cleaning</li>
+        <li>Premium FlexScreen system</li>
+        <li>Blinds-Between-the-Glass option</li>
+      </ul>
+      <a class="coll-btn" href="estimate.html">Explore Signature Collection</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- WINDOW TYPES SECTION -->
+<section class="wt-section" id="window-styles">
+  <div class="wt-inner">
+    <div class="center">
+      <div class="eyebrow">Window Types &amp; Styles</div>
+      <div class="rule rule-center"></div>
+      <h2 class="sec-h2">Find the Perfect Window<br>for Every Room</h2>
+    </div>
+    <div class="wt-grid">
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/doublehung.png?v=2" alt="Double Hung Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Double Hung<br>Windows</div>
+          <div class="wt-card-desc">Classic style with modern performance.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/casement.png" alt="Casement Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Casement<br>Windows</div>
+          <div class="wt-card-desc">Maximum ventilation and unobstructed views.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/picturewindow.png" alt="Picture Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Picture<br>Windows</div>
+          <div class="wt-card-desc">Frame the view with natural light.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/slidingwindows.jpeg" alt="Sliding Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Sliding<br>Windows</div>
+          <div class="wt-card-desc">Smooth operation and easy maintenance.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/bay.jpeg" alt="Bay Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Bay<br>Windows</div>
+          <div class="wt-card-desc">Add space, light, and architectural dimension.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/newbow.png" alt="Bow Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Bow<br>Windows</div>
+          <div class="wt-card-desc">Elegant curves and sweeping panoramic views.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/gardenwindow.jpeg" alt="Garden Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Garden<br>Windows</div>
+          <div class="wt-card-desc">Bring the outdoors in with a built-in greenhouse.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/awning.png" alt="Awning Windows" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Awning<br>Windows</div>
+          <div class="wt-card-desc">Fresh air even in the rain — hinged at the top.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="wt-card">
+        <div class="wt-card-img">
+          <img src="images/sliding.jpeg" alt="Patio Doors" loading="lazy">
+        </div>
+        <div class="wt-card-body">
+          <div class="wt-card-title">Patio<br>Doors</div>
+          <div class="wt-card-desc">Seamless indoor-outdoor living and entertaining.</div>
+          <a class="wt-card-link" href="estimate.html">Learn More →</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- WINDOW STYLES SECTION -->
-<section class="sec sec-gray" id="window-styles">
-  <div class="center">
-    <div class="eyebrow">Window Types &amp; Styles</div>
-    <div class="rule rule-center"></div>
-    <h2 class="sec-h2">Find the Perfect Window for Every Room</h2>
-    <p class="sec-p">Every home is different. We offer a full range of replacement window styles to match your architecture, maximize natural light, and improve energy performance — whatever your Texas home requires.</p>
-  </div>
-
-  <div class="wgrid">
-
-    <!-- Double Hung -->
-    <div class="wcard">
-      <div class="wcard-img">
-      <img src="images/doublehung.png" alt="Double Hung Windows">      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Most Popular</div>
-        <h4>Double Hung Windows</h4>
-        <p>Both sashes slide up and down independently, making them easy to clean from inside and ideal for classic Texas home styles. Excellent ventilation control on both top and bottom.</p>
-        <div class="wcard-tags">
-          <span class="tag">Versatile</span>
-          <span class="tag">Easy Clean</span>
-          <span class="tag">Great Ventilation</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Casement -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="images/casement.png" alt="Picture Windows">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Best Ventilation</div>
-        <h4>Casement Windows</h4>
-        <p>Hinged on one side and open outward with a crank handle, casement windows provide maximum airflow and a very tight seal when closed — great for living rooms and bedrooms.</p>
-        <div class="wcard-tags">
-          <span class="tag">Max Airflow</span>
-          <span class="tag">Tight Seal</span>
-          <span class="tag">Contemporary</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Picture -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="https://images.unsplash.com/photo-1529290130-4ca3753253ae?w=800&h=440&fit=crop&q=80" alt="Luxury interior with large fixed-glass picture window framing a pool view" loading="lazy">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Maximum Light</div>
-        <h4>Picture Windows</h4>
-        <p>Fixed, non-opening windows designed to frame your view and flood rooms with natural light. Perfect for living rooms, dining areas, and any space where you want an unobstructed panorama.</p>
-        <div class="wcard-tags">
-          <span class="tag">Fixed/Non-Operable</span>
-          <span class="tag">Large Views</span>
-          <span class="tag">Energy Efficient</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sliding -->
-    <div class="wcard">
-      <div class="wcard-img">
-       <img src="images/slidingwindows.jpeg" alt="Sliding Windows">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Space Saving</div>
-        <h4>Sliding Windows</h4>
-        <p>One or both sashes glide horizontally on tracks. No swing clearance needed — ideal for rooms facing patios, walkways, or areas where an outward-opening window isn't practical.</p>
-        <div class="wcard-tags">
-          <span class="tag">No Swing Space</span>
-          <span class="tag">Smooth Operation</span>
-          <span class="tag">Wide Openings</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bay -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="images/bay.jpeg" alt="Bay Windows">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Curb Appeal</div>
-        <h4>Bay Windows</h4>
-        <p>Three angled windows that project outward from the wall, creating a dramatic architectural feature and extra interior space. A timeless choice for living rooms and dining areas.</p>
-        <div class="wcard-tags">
-          <span class="tag">Adds Space</span>
-          <span class="tag">Architectural</span>
-          <span class="tag">Natural Light</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bow -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="images/bow.jpeg" alt="Bow Windows">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Elegant Curves</div>
-        <h4>Bow Windows</h4>
-        <p>Four or more windows arranged in a gentle curve, creating a rounded exterior projection with a softer, more graceful look than a bay window. Creates a beautiful reading nook or seating area.</p>
-        <div class="wcard-tags">
-          <span class="tag">4–6 Panels</span>
-          <span class="tag">Curved Profile</span>
-          <span class="tag">Interior Nook</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Garden -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="images/gardenwindow.jpeg" alt="Garden Windows">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Kitchen Favorite</div>
-        <h4>Garden Windows</h4>
-        <p>A small greenhouse-style window that projects outward from the wall with side venting panels and a glass shelf — perfect for kitchens to grow herbs or display plants year-round.</p>
-        <div class="wcard-tags">
-          <span class="tag">Kitchen Herb Garden</span>
-          <span class="tag">Side Vents</span>
-          <span class="tag">Glass Shelf</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Awning -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="images/awning.png" alt="Awning Windows">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Rain-Ready</div>
-        <h4>Awning Windows</h4>
-        <p>Hinged at the top and open outward from the bottom, awning windows let in fresh air even during light rain — a great choice for bathrooms, basements, or placement above other windows.</p>
-        <div class="wcard-tags">
-          <span class="tag">Opens in Rain</span>
-          <span class="tag">Bottom Vent</span>
-          <span class="tag">Privacy Height</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Patio / Sliding Glass Door -->
-    <div class="wcard">
-      <div class="wcard-img">
-        <img src="https://images.unsplash.com/photo-1565261949232-3fcc78206c0c?w=800&h=440&fit=crop&q=80" alt="Modern black-framed sliding glass patio door opening to outdoor living" loading="lazy">
-      </div>
-      <div class="wcard-body">
-        <div class="wcard-badge">Indoor–Outdoor Living</div>
-        <h4>Patio / Sliding Glass Doors</h4>
-        <p>Wide sliding glass panels that seamlessly connect your indoor living space to a patio, deck, or backyard. Energy-efficient glass keeps the Texas heat out without blocking your view.</p>
-        <div class="wcard-tags">
-          <span class="tag">Full Panel Glass</span>
-          <span class="tag">Smooth Glide</span>
-          <span class="tag">Screen Option</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- COMPARISON TABLE -->
-<section class="sec sec-gray" id="comparison">
-  <div class="center">
-    <div class="eyebrow">Style Comparison</div>
-    <div class="rule rule-center"></div>
-    <h2 class="sec-h2">Which Window Style Is Right for You?</h2>
-    <p class="sec-p">Use this quick-reference guide to match window styles to your home's specific needs, rooms, and architectural style.</p>
-  </div>
-  <div class="compare-wrap">
-    <table class="compare-table" aria-label="Window style comparison">
-      <thead>
-        <tr>
-          <th>Window Style</th>
-          <th>Best Rooms</th>
-          <th>Ventilation</th>
-          <th>Best For</th>
-          <th>Energy Efficiency</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Double Hung</strong></td>
-          <td>Bedrooms, living rooms, kitchens</td>
-          <td><span class="check">&#10003;</span> Top &amp; bottom</td>
-          <td>Traditional homes, versatile use</td>
-          <td><span class="check">&#10003;</span> Excellent</td>
-        </tr>
-        <tr>
-          <td><strong>Casement</strong></td>
-          <td>Living rooms, bedrooms, offices</td>
-          <td><span class="check">&#10003;</span> Full opening</td>
-          <td>Maximum airflow, modern style</td>
-          <td><span class="check">&#10003;</span> Excellent</td>
-        </tr>
-        <tr>
-          <td><strong>Picture</strong></td>
-          <td>Living rooms, dining rooms, views</td>
-          <td>&#x2014; Non-operable</td>
-          <td>Unobstructed views, large openings</td>
-          <td><span class="check">&#10003;</span> Excellent</td>
-        </tr>
-        <tr>
-          <td><strong>Sliding</strong></td>
-          <td>Hallways, kitchens, rooms near patios</td>
-          <td><span class="partial">~</span> Half opening</td>
-          <td>Wide openings, no swing space</td>
-          <td><span class="partial">~</span> Good</td>
-        </tr>
-        <tr>
-          <td><strong>Bay</strong></td>
-          <td>Living rooms, dining rooms, master bedrooms</td>
-          <td><span class="partial">~</span> Side panels</td>
-          <td>Curb appeal, extra interior space</td>
-          <td><span class="partial">~</span> Good</td>
-        </tr>
-        <tr>
-          <td><strong>Bow</strong></td>
-          <td>Living rooms, formal dining, entryways</td>
-          <td><span class="partial">~</span> Side panels</td>
-          <td>Elegant curves, reading nooks</td>
-          <td><span class="partial">~</span> Good</td>
-        </tr>
-        <tr>
-          <td><strong>Garden</strong></td>
-          <td>Kitchen, breakfast nooks</td>
-          <td><span class="check">&#10003;</span> Side vents</td>
-          <td>Herb gardens, plants, extra light</td>
-          <td><span class="partial">~</span> Good</td>
-        </tr>
-        <tr>
-          <td><strong>Awning</strong></td>
-          <td>Bathrooms, basements, high placement</td>
-          <td><span class="check">&#10003;</span> Even in rain</td>
-          <td>Privacy, ventilation in wet weather</td>
-          <td><span class="check">&#10003;</span> Excellent</td>
-        </tr>
-        <tr>
-          <td><strong>Patio / Sliding Door</strong></td>
-          <td>Patios, decks, backyard access</td>
-          <td><span class="check">&#10003;</span> Full panel</td>
-          <td>Indoor–outdoor living, wide views</td>
-          <td><span class="check">&#10003;</span> Excellent</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- FINANCING CTA -->
-<section class="sec sec-white" id="financing">
-  <div class="fin-banner">
-    <div class="fin-text">
-      <div class="eyebrow" style="color:rgba(255,255,255,0.55);margin-bottom:0.5rem">Flexible Payment Options</div>
-      <h3>New Windows, No Financial Stress</h3>
-      <p>We believe every Texas homeowner deserves energy-efficient, beautiful windows. That's why THT Windows offers flexible financing options — with approved credit, you can upgrade your home now with solutions designed for every situation. Ask about financing during your free in-home estimate.</p>
-    </div>
-    <div class="fin-actions">
-      <button class="btn-white" onclick="location.href='contact.html'">Explore Financing Options</button>
-      <span class="fin-note">Subject to credit approval. Ask for details during your free estimate.</span>
+<!-- BOTTOM CTA -->
+<section class="bottom-cta-sec">
+  <div class="bottom-cta-inner">
+    <h2 class="bottom-cta-h">Not Sure Which Collection Is Right for Your Home?</h2>
+    <p class="bottom-cta-p">Our team will walk through every room with you, take measurements, and match the right window to each opening — no pressure, no guesswork. Free in-home estimates available across the Houston metro area.</p>
+    <div class="bottom-cta-btns">
+      <a class="coll-btn" href="estimate.html">Get Free Estimate</a>
+      <a class="coll-btn-outline" href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">View Financing Options</a>
     </div>
   </div>
 </section>
@@ -892,7 +755,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   <h2>Ready to Upgrade Your Windows?</h2>
   <p>Schedule your free, no-pressure in-home estimate. We'll measure every opening, recommend the right window styles, and give you a clear, detailed quote — on your timeline.</p>
   <div class="final-cta-btns">
-    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='contact.html'">Get Free Estimate</button>
+    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='estimate.html'">Get Free Estimate</button>
     <button class="btn-outline" style="font-size:14px;padding:14px 32px" onclick="location.href='#window-styles'">Browse Window Styles</button>
   </div>
   <div class="cta-phone">
@@ -947,7 +810,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <h4>Company</h4>
       <a href="gallery.html">Gallery</a>
       <a href="reviews.html">Reviews</a>
-      <a href="financing.html">Financing</a>
+      <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
       <a href="contact.html">Contact</a>
     </div>
     <div style="display:flex;align-items:flex-start;justify-content:flex-end">
