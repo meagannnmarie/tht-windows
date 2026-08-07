@@ -15,7 +15,7 @@
 //   via file:// will NOT work because the fetch to /api/google-reviews requires
 //   an HTTP server context. Use `vercel dev` or `npx serve .` + Vercel CLI.
 
-const PLACES_API_BASE = 'https://places.googleapis.com/v1/places';
+const PLACES_API_BASE = 'https://places.googleapis.com/v1';
 
 // Fields requested from the Places API (New).
 // Only request what is actually displayed — billing is per-field.
