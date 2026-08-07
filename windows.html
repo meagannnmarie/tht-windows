@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Windows | Home Team Home Solutions — Houston, TX</title>
+<meta name="description" content="Premium energy-efficient replacement windows professionally installed across Houston, TX. Double hung, casement, bay, picture windows and more. Get a free estimate."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
+
+/* NAV */
+:root{--red:#b91c1c;--border:#e5e3df}
+nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid var(--border);padding:0 52px;height:88px;display:flex;align-items:center;gap:0}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo-img{height:56px;width:auto;display:block;flex-shrink:0}
+.nav-brand{display:flex;flex-direction:column;gap:2px}
+.nav-brand-name{font-size:12px;font-weight:700;color:#0d0d0d;letter-spacing:2.5px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8.5px;font-weight:400;color:#999;letter-spacing:1.5px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-links{display:flex;gap:28px;flex:1;justify-content:center;align-items:center}
+.nav-links a{font-size:12.5px;color:#444;text-decoration:none;font-weight:500;letter-spacing:.3px;white-space:nowrap;transition:color .15s;position:relative}
+.nav-links a:hover{color:#0d0d0d}
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{font-size:12.5px;color:#444;font-weight:500;letter-spacing:.3px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px;padding:0;transition:color .15s}
+.nav-drop-btn:hover{color:#0d0d0d}
+.nav-drop-btn svg{transition:transform .2s}
+.nav-drop:hover .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:.5rem 0;min-width:170px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;z-index:500}
+.nav-drop:hover .nav-drop-menu,
+.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu::before{content:'';position:absolute;top:-20px;left:0;right:0;height:20px}
+.nav-drop-menu a{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;font-size:12.5px;color:#444;text-decoration:none;font-weight:500;transition:background .12s,color .12s}
+.nav-drop-menu a:hover{background:#faf9f7;color:#0d0d0d}
+.nav-drop-menu a .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.nav-drop-menu a.active-svc{background:#faf9f7;color:#0d0d0d;font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:background .15s,transform .12s}
+.nav-cta:hover{background:#991b1b;transform:translateY(-1px)}
+.nav-cta svg{flex-shrink:0}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:#0d0d0d;border-radius:1px;transition:.2s}
+@media(max-width:1140px){nav{padding:0 28px}.nav-links{gap:20px}}
+@media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
+
+/* HERO */
+.hero{position:relative;height:700px;overflow:hidden;background:#040e1a;background-image:url("images/sleekwindowsphoto.png");background-size:cover;background-repeat:no-repeat;background-position:60% center;margin:0;padding:0}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,15,25,0.78) 0%,rgba(5,15,25,0.55) 25%,rgba(5,15,25,0.18) 45%,rgba(5,15,25,0) 62%)}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:28px;width:fit-content}
+.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,44px);color:#fff;line-height:1.1;letter-spacing:-.5px;margin-bottom:28px;background:none;text-shadow:none;max-width:500px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:36px;max-width:440px}
+.hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
+.hero-trust{display:flex;align-items:center;gap:10px}
+.hero-stars{color:#f59e0b;font-size:18px;letter-spacing:2px}
+.hero-trust-text{font-size:14px;color:rgba(255,255,255,0.82);font-weight:400}
+.hero-trust-text strong{color:#fff;font-weight:700}
+.btn-solid{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 18px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
+.btn-outline{background:rgba(10,10,15,0.55);color:#fff;font-size:13px;font-weight:600;padding:11px 18px;border-radius:6px;border:1px solid #b91c1c;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s,border-color .15s}
+.btn-outline:hover{background:rgba(185,28,28,0.25);border-color:#dc2626}
+@media(max-width:640px){
+  .hero-btns{flex-direction:column;gap:0.5rem}
+  .btn-solid,.btn-outline{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+}
+
+/* FEATURE STRIP */
+.strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
+.strip-item{padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.1rem}
+.strip-item+.strip-item{border-left:1px solid #e5e7eb}
+.strip-icon{width:44px;height:44px;background:#EBF2FA;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.strip-item h3{font-family:'Playfair Display',serif;font-size:14.5px;font-weight:500;color:#1F2937;margin-bottom:4px}
+.strip-item p{font-size:12.5px;color:#6b7280;line-height:1.6}
+
+/* SECTIONS */
+.sec{padding:4.5rem 2.5rem}
+.sec-gray{background:#F8FAFC}
+.sec-white{background:#fff}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:0.875rem}
+.rule{width:42px;height:2px;background:#0F4C81;border-radius:2px;margin:0 0 1.5rem}
+.rule-center{margin:0 auto 1.5rem}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,34px);font-weight:500;color:#1F2937;line-height:1.15;letter-spacing:-0.2px;margin-bottom:0.75rem}
+.sec-p{font-size:14px;color:#6b7280;line-height:1.7;max-width:500px}
+.center{text-align:center}.center .sec-p{margin:0 auto}.center .rule{margin:0 auto 1.5rem}
+
+/* WINDOW TYPES */
+.wgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem;margin-top:2.5rem}
+.wcard{border:1px solid #e5e7eb;border-radius:11px;overflow:hidden;background:#fff;transition:transform .25s,box-shadow .25s,border-color .25s}
+.wcard:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(15,76,129,.11);border-color:#d1dce9}
+.wcard-img{height:160px;overflow:hidden;position:relative;background:#040e1a}
+.wcard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.wcard:hover .wcard-img img{transform:scale(1.06)}
+.wcard-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,14,26,.38) 0%,rgba(4,14,26,.1) 50%,transparent 80%);pointer-events:none}
+.wcard-body{padding:1rem}
+.wcard-body h4{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:#1F2937;margin-bottom:3px}
+.wcard-body p{font-size:11.5px;color:#6b7280;line-height:1.55;margin-bottom:7px}
+.wcard-link{font-size:11.5px;font-weight:600;color:#0F4C81;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.wcard-link::after{content:'→';font-size:11px}
+
+/* WHY CHOOSE */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.why-h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,36px);font-weight:500;color:#1F2937;line-height:1.15;margin-bottom:1.125rem;letter-spacing:-0.2px}
+.why-p{font-size:14px;color:#6b7280;line-height:1.8;margin-bottom:1.875rem;max-width:480px}
+.why-btn{background:#0F4C81;color:#fff;font-size:13.5px;font-weight:600;padding:13px 28px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s,transform .12s,box-shadow .15s;display:inline-flex;align-items:center;gap:9px}
+.why-btn:hover{background:#0d4070;transform:translateY(-1px);box-shadow:0 6px 20px rgba(15,76,129,.22)}
+.why-photo-stack{position:relative;height:456px}
+.why-photo-primary{position:absolute;top:0;left:0;width:83%;height:370px;border-radius:18px;overflow:hidden;box-shadow:0 24px 64px rgba(4,14,26,.18)}
+.why-photo-primary img{width:100%;height:100%;object-fit:cover;display:block}
+.why-photo-secondary{position:absolute;bottom:0;right:0;width:52%;height:204px;border-radius:14px;overflow:hidden;border:4px solid #fff;box-shadow:0 14px 40px rgba(4,14,26,.17)}
+.why-photo-secondary img{width:100%;height:100%;object-fit:cover;display:block;object-position:center top}
+.why-badge{position:absolute;background:#fff;border:1px solid #e5e7eb;border-radius:9px;padding:8px 14px;box-shadow:0 4px 18px rgba(4,14,26,.1);display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;color:#1F2937;white-space:nowrap;z-index:10}
+.why-badge-dot{width:8px;height:8px;border-radius:50%;background:#16a34a;flex-shrink:0}
+.why-badge-stars{color:#f59e0b;letter-spacing:2px;font-size:10.5px}
+@media(max-width:960px){
+  .why-grid{grid-template-columns:1fr}
+  .why-photo-stack{height:340px;margin-top:2.5rem}
+  .why-photo-primary{width:78%;height:276px}
+  .why-photo-secondary{width:50%;height:168px}
+}
+@media(max-width:560px){
+  .why-photo-stack{height:262px}
+  .why-photo-primary{width:76%;height:214px}
+  .why-photo-secondary{width:52%;height:140px}
+  .why-badge{font-size:10px;padding:6px 11px}
+}
+.feat4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem;margin-top:3rem;padding-top:2.75rem;border-top:1px solid #e5e7eb}
+.f4-item{display:flex;align-items:flex-start;gap:1rem}
+.f4-icon{width:44px;height:44px;background:#EBF2FA;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1.5px solid rgba(15,76,129,.1)}
+.f4-item h4{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:#1F2937;margin-bottom:5px}
+.f4-item p{font-size:12.5px;color:#6b7280;line-height:1.65}
+@media(max-width:680px){.feat4{grid-template-columns:1fr 1fr}}
+
+/* GALLERY */
+.gal-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.gal-cell{border-radius:14px;overflow:hidden;aspect-ratio:2/3}
+.gal-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:#0F4C81;margin-top:1.25rem;text-decoration:none}
+.gal-link::after{content:'→';font-size:12px}
+
+/* BOTTOM TWO-COL */
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.area-eyebrow{font-size:10.5px;font-weight:700;color:#0F4C81;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.75rem}
+.area-h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#1F2937;margin-bottom:0.3rem}
+.area-sub{font-size:12.5px;color:#6b7280;margin-bottom:1.1rem}
+.area-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem}
+.area-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#374151;font-weight:500}
+.area-item::before{content:'';display:block;width:6px;height:6px;background:#0F4C81;border-radius:50%;flex-shrink:0}
+
+.testi-block{margin-top:2rem}
+.testi-eyebrow{font-size:10.5px;font-weight:700;color:#0F4C81;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:0.75rem}
+.testi-h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#1F2937;margin-bottom:0.3rem}
+.testi-sub{font-size:12.5px;color:#6b7280;margin-bottom:1.1rem}
+.tcard{background:#F8FAFC;border:1px solid #e5e7eb;border-radius:10px;padding:1.25rem;margin-bottom:0.875rem}
+.tcard-stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:0.75rem}
+.tcard-q{font-size:13px;color:#374151;line-height:1.68;font-style:italic;margin-bottom:0.5rem;font-family:'Playfair Display',serif}
+.tcard-name{font-size:11.5px;color:#9ca3af;font-weight:600}
+
+/* FORM CARD */
+.form-col{background:#0F4C81;border-radius:14px;padding:2rem}
+.form-col h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:#fff;margin-bottom:1.25rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem}
+.fg{margin-bottom:0.75rem}
+.fg input,.fg select,.fg textarea{background:#fff;border:none;border-radius:6px;padding:11px 13px;font-size:13px;color:#1F2937;outline:none;font-family:'Inter',sans-serif;width:100%}
+.fg textarea{min-height:80px;resize:vertical}
+.form-submit{width:100%;background:#fff;color:#0F4C81;font-size:14px;font-weight:700;padding:13px;border-radius:7px;border:none;cursor:pointer;font-family:'Inter',sans-serif;margin-top:0.25rem}
+.form-note{font-size:10.5px;color:rgba(255,255,255,0.45);text-align:center;margin-top:0.75rem}
+
+/* FOOTER */
+footer{background:#111827;padding:3rem 2.5rem 1.75rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:#fff;margin-bottom:2px}
+.footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
+.footer-contact-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.footer-contact-item span{font-size:12px;color:#9ca3af}
+.footer-social{display:flex;gap:9px;margin-top:1rem}
+.fsoc{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);font-size:14px;text-decoration:none;font-weight:700}
+.footer-col h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:0.875rem;letter-spacing:0.3px}
+.footer-col a{display:block;font-size:12px;color:#9ca3af;text-decoration:none;margin-bottom:5px}
+.footer-col a:hover{color:#fff}
+.footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
+.footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:#fff;line-height:1.25}
+.footer-htr-line{width:36px;height:2px;background:#0F4C81;margin:8px auto 0;border-radius:1px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11.5px;color:#4b5563}
+
+/* ICON HELPERS */
+.ico-svg{display:block}
+
+/* MOBILE NAV */
+.mob-drawer{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.5)}
+.mob-drawer.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;bottom:0;width:300px;background:#fff;padding:2rem 1.875rem;display:flex;flex-direction:column;overflow-y:auto}
+.mob-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:20px;color:#0d0d0d;margin-bottom:1.5rem}
+.mob-link{font-size:15px;color:#333;text-decoration:none;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;display:block}
+.mob-link:hover{color:var(--red)}
+.mob-expand{font-size:15px;color:#333;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;width:100%}
+.mob-sub{display:none;padding-left:1rem}
+.mob-sub.open{display:block}
+.mob-sub a{font-size:13.5px;color:#888;text-decoration:none;padding:.4rem 0;display:block}
+.mob-sub a:hover{color:var(--red)}
+.mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
+
+@media(max-width:768px){
+  .hero{height:auto;min-height:520px;background-position:65% top}
+  .hero-overlay{background:linear-gradient(to bottom,rgba(5,15,25,0.84) 0%,rgba(5,15,25,0.72) 45%,rgba(5,15,25,0.40) 75%,rgba(5,15,25,0.10) 100%)}
+  .hero-content{padding:32px 24px 32px 24px;max-width:100%}
+  .hero h1{font-size:clamp(24px,6vw,32px)}
+  .wgrid{grid-template-columns:repeat(2,1fr)}
+  .gal-row{grid-template-columns:repeat(2,1fr)}
+  .bottom-grid{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr}
+  .strip-item+.strip-item{border-left:none;border-top:1px solid #e5e7eb}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+}
+@media(max-width:480px){
+  nav{padding:0 20px}
+  .footer-grid{grid-template-columns:1fr}
+  .wgrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Home Team Home Solutions">
+    <img src="images/hometeamroofinglogo.png" alt="Home Team Roofing" class="nav-logo-img" />
+    <div class="nav-brand">
+      <div class="nav-brand-name">Home Team</div>
+      <div class="nav-brand-sub">Home Solutions</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" aria-haspopup="true">
+        Home Improvements
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="#666" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-drop-menu">
+        <a href="roofing.html"><span class="dot"></span>Roofing</a>
+        <a href="windows.html" class="active-svc"><span class="dot"></span>Windows</a>
+        <a href="doors.html"><span class="dot"></span>Custom Doors</a>
+        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
+      </div>
+    </div>
+    <a href="gallery.html">Gallery</a>
+    <a href="financing.html">Financing</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="estimate.html" class="nav-cta">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <button class="mob-expand" id="mobSvcToggle">Home Improvements ›</button>
+    <div class="mob-sub" id="mobSvc">
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="siding.html">Other Home Solutions</a>
+    </div>
+    <a href="financing.html" class="mob-link">Financing</a>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="reviews.html" class="mob-link">Reviews</a>
+    <a href="contact.html" class="mob-link">About</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <a href="estimate.html" class="mob-cta">Start My Project →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Houston's Premium Window Specialists</div>
+    <h1>Beautiful Windows<br>Designed for<br>Texas Homes</h1>
+    <p class="hero-sub">Energy-efficient replacement windows professionally installed by the trusted team behind Home Team Roofing.</p>
+    <div class="hero-btns">
+      <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
+      <a class="btn-outline" href="https://payzer.com/Payment/ExternalMake/businessId/9487" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+      <a class="btn-outline" href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+    </div>
+    <div class="hero-trust">
+      <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="hero-trust-text">Rated <strong>5.0</strong> Stars by Houston Homeowners</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="strip">
+  <div class="strip-item">
+    <div class="strip-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 3L3 9v10h5v-6h6v6h5V9L11 3z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Lower Energy Bills</h3>
+      <p>Advanced efficiency helps keep your home comfortable year-round while reducing utility costs.</p>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 16l5-5 4 4 5-7" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 9h4v4" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Increase Home Value</h3>
+      <p>New windows improve curb appeal and add long-term value to your home.</p>
+    </div>
+  </div>
+  <div class="strip-item">
+    <div class="strip-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 2L3 5.5V12c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V5.5L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M7.5 11l3 3 5-5" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Lifetime Product Warranty</h3>
+      <p>We back our windows with industry-leading warranties for complete peace of mind.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WINDOW TYPES -->
+<section class="sec sec-gray center">
+  <div class="eyebrow">Window Types &amp; Styles</div>
+  <div class="rule rule-center"></div>
+  <h2 class="sec-h2">Find the Perfect Window for Every Room</h2>
+  <div class="wgrid">
+
+    <div class="wcard">
+      <div class="wcard-img">
+        <img src="images/doublehung.png" alt="Double Hung Windows" loading="lazy"/>
+      </div>
+      <div class="wcard-body">
+        <h4>Double Hung Windows</h4>
+        <p>Classic style with modern performance.</p>
+        <a href="replacement-window-options.html#window-styles" class="wcard-link">Learn More </a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wcard-img">
+        <img src="images/casement.png" alt="Casement Windows" loading="lazy"/>
+      </div>
+      <div class="wcard-body">
+        <h4>Casement Windows</h4>
+        <p>Maximum ventilation and unobstructed views.</p>
+        <a href="replacement-window-options.html#window-styles" class="wcard-link">Learn More </a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wcard-img">
+        <img src="images/windowestimatephoto.png" alt="Picture Windows" loading="lazy" style="object-position:center top"/>
+      </div>
+      <div class="wcard-body">
+        <h4>Picture Windows</h4>
+        <p>Frame the view with natural light.</p>
+        <a href="replacement-window-options.html#window-styles" class="wcard-link">Learn More </a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wcard-img">
+        <img src="images/slidingwindows.jpeg" alt="Sliding Windows" loading="lazy"/>
+      </div>
+      <div class="wcard-body">
+        <h4>Sliding Windows</h4>
+        <p>Smooth operation and easy maintenance.</p>
+        <a href="replacement-window-options.html#window-styles" class="wcard-link">Learn More </a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wcard-img">
+        <img src="images/bay.jpeg" alt="Bay Windows" loading="lazy"/>
+      </div>
+      <div class="wcard-body">
+        <h4>Bay Windows</h4>
+        <p>Add space, light, and architectural dimension.</p>
+        <a href="replacement-window-options.html#window-styles" class="wcard-link">Learn More </a>
+      </div>
+    </div>
+
+    <div class="wcard">
+      <div class="wcard-img">
+        <img src="images/sliding.jpeg" alt="Patio Doors" loading="lazy"/>
+      </div>
+      <div class="wcard-body">
+        <h4>Patio Doors</h4>
+        <p>Seamless indoor-outdoor living and entertaining.</p>
+        <a href="replacement-window-options.html#window-styles" class="wcard-link">Learn More </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="sec sec-gray" style="padding-top:1rem">
+  <div class="why-grid">
+    <div>
+      <div class="eyebrow">Why Choose THT Windows</div>
+      <div class="rule"></div>
+      <h2 class="why-h2">A Better Experience From Start to Finish</h2>
+      <p class="why-p">We combine premium products with expert installation and unmatched customer care to deliver results you'll love for years to come. Every project is completed on time, on budget, and to the highest standard of quality.</p>
+      <button class="why-btn" onclick="location.href='estimate.html'">Start My Project</button>
+    </div>
+    <div class="why-photo-stack">
+      <div class="why-photo-primary">
+        <img src="images/newheader.png" alt="Beautiful Houston home with premium replacement windows by Home Team Windows" loading="lazy"/>
+      </div>
+      <div class="why-photo-secondary">
+        <img src="images/windowestimatephoto.png" alt="Premium window interior view" loading="lazy"/>
+      </div>
+      <div class="why-badge" style="top:18px;left:16px">
+        <span class="why-badge-stars">★★★★★</span>
+        <span>5-Star Rated</span>
+      </div>
+      <div class="why-badge" style="bottom:140px;left:-14px">
+        <div class="why-badge-dot"></div>
+        <span>Premium Installation</span>
+      </div>
+      <div class="why-badge" style="bottom:20px;right:7%">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.5l3 3 5-6" stroke="#0F4C81" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Energy Efficient</span>
+      </div>
+    </div>
+  </div>
+  <div class="feat4">
+    <div class="f4-item">
+      <div class="f4-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#0F4C81" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div><h4>Experienced Installers</h4><p>Skilled local professionals who take pride in every installation.</p></div>
+    </div>
+    <div class="f4-item">
+      <div class="f4-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#0F4C81" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div><h4>Premium Materials</h4><p>Premium vinyl windows, exclusively installed by our certified team.</p></div>
+    </div>
+    <div class="f4-item">
+      <div class="f4-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="6" width="12" height="9" rx="2" stroke="#0F4C81" stroke-width="1.5"/><path d="M6 6V5a3 3 0 016 0v1" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div><h4>Flexible Financing</h4><p>Financing available — solutions for every home and budget.</p></div>
+    </div>
+    <div class="f4-item">
+      <div class="f4-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L3 4.5V10c0 3.5 2.5 6.7 6 8 3.5-1.3 6-4.5 6-8V4.5L9 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <div><h4>Exceptional Service</h4><p>We're here before, during, and after your project.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="sec sec-white" id="gallery">
+  <div class="eyebrow">Recent Projects</div>
+  <div class="rule"></div>
+  <h2 class="sec-h2">See the THT Windows Difference</h2>
+  <div class="gal-row">
+    <div class="gal-cell">
+      <img src="images/home1.png" alt="Exterior window installation project" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center center" loading="lazy"/>
+    </div>
+    <div class="gal-cell">
+      <img src="images/gallerylightened.png" alt="Luxury home replacement windows" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center center" loading="lazy"/>
+    </div>
+    <div class="gal-cell">
+      <img src="images/home2.png" alt="Farmhouse window replacement project" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center center" loading="lazy"/>
+    </div>
+    <div class="gal-cell">
+      <img src="images/home3.png" alt="Modern interior replacement windows" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center center" loading="lazy"/>
+    </div>
+  </div>
+  <a href="gallery.html" class="gal-link">View Full Gallery </a>
+</section>
+
+<!-- SERVICE AREAS + TESTIMONIALS + FORM -->
+<section class="sec sec-white" id="service-areas" style="padding-top:1.5rem">
+  <div class="bottom-grid">
+    <div>
+      <!-- Service Areas -->
+      <div style="margin-bottom:2.5rem">
+        <div class="area-eyebrow">Proudly Serving</div>
+        <h3 class="area-h3">Houston &amp; Surrounding Areas</h3>
+        <p class="area-sub">Premium window installation across the greater Houston region.</p>
+        <div class="area-list">
+          <div class="area-item">Tomball</div>
+          <div class="area-item">The Woodlands</div>
+          <div class="area-item">Spring</div>
+          <div class="area-item">Conroe</div>
+          <div class="area-item">Magnolia</div>
+          <div class="area-item">Cypress</div>
+          <div class="area-item">Katy</div>
+          <div class="area-item">Richmond</div>
+          <div class="area-item">Galveston</div>
+        </div>
+      </div>
+      <!-- Testimonials -->
+      <div class="testi-block" id="reviews">
+        <div class="testi-eyebrow">What Our Customers Say</div>
+        <h3 class="testi-h3">Real Reviews from Real Homeowners</h3>
+        <p class="testi-sub">Trusted by hundreds of Houston-area families.</p>
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p class="tcard-q">"Professional installation and beautiful windows. Our home feels brand new. The Home Team made the whole process easy."</p>
+          <div class="tcard-name">— Sarah M., The Woodlands</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-stars">★★★★★</div>
+          <p class="tcard-q">"The quality of the windows and level of service exceeded our expectations from start to finish. Highly recommend!"</p>
+          <div class="tcard-name">— James T., Cypress</div>
+        </div>
+      </div>
+    </div>
+    <!-- FORM -->
+    <div id="contact">
+      <div class="form-col">
+        <h3>Get Your Free Estimate</h3>
+        <div class="form-row">
+          <div class="fg"><input type="text" placeholder="Full Name"/></div>
+          <div class="fg"><input type="tel" placeholder="Phone Number"/></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><input type="email" placeholder="Email Address"/></div>
+          <div class="fg"><input type="text" placeholder="City"/></div>
+        </div>
+        <div class="fg">
+          <select>
+            <option value="">Number of Windows</option>
+            <option>1–3 windows</option>
+            <option>4–8 windows</option>
+            <option>9–15 windows</option>
+            <option>Full home (16+)</option>
+          </select>
+        </div>
+        <div class="fg"><textarea placeholder="Message"></textarea></div>
+        <button class="form-submit">Start My Project</button>
+        <p class="form-note">We respect your privacy. Your information is safe with us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>THT WINDOWS</h3>
+      <div class="footer-brand-sub">A Division of Home Team Roofing</div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5A1.5 1.5 0 013.5 1h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.04 6.4a9.085 9.085 0 004.56 4.56l.962-1.564a.5.5 0 01.506-.133l3.07.878A.5.5 0 0113 10.62V11.5a1.5 1.5 0 01-1.5 1.5C5.701 13 1 8.299 1 2.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>(832) 422-3039</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>thehometeamroofing@gmail.com</span>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="fsoc" aria-label="Facebook">f</a>
+        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
+        <a href="#" class="fsoc" aria-label="Google">G</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Window Styles</h4>
+      <a href="replacement-window-options.html#window-styles">Double Hung</a>
+      <a href="replacement-window-options.html#window-styles">Casement</a>
+      <a href="replacement-window-options.html#window-styles">Picture</a>
+      <a href="replacement-window-options.html#window-styles">Sliding</a>
+      <a href="replacement-window-options.html#window-styles">Bay Windows</a>
+      <a href="replacement-window-options.html#window-styles">Patio Doors</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service Areas</h4>
+      <a href="service-areas.html">Tomball</a>
+      <a href="service-areas.html">The Woodlands</a>
+      <a href="service-areas.html">Spring</a>
+      <a href="service-areas.html">Conroe</a>
+      <a href="service-areas.html">Cypress</a>
+      <a href="service-areas.html">Katy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:flex-end">
+      <div class="footer-htr">
+        <div class="footer-htr-div">A Division of</div>
+        <div class="footer-htr-name">HOME TEAM<br>ROOFING</div>
+        <div class="footer-htr-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 THT Windows. All Rights Reserved.</p>
+    <p>Houston, TX &nbsp;·&nbsp; thtwindows.com</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hamburger=document.getElementById('hamburger');
+  var drawer=document.getElementById('mobDrawer');
+  var closeBtn=document.getElementById('mobClose');
+  if(hamburger&&drawer&&closeBtn){
+    hamburger.addEventListener('click',function(){drawer.classList.add('open');});
+    closeBtn.addEventListener('click',function(){drawer.classList.remove('open');});
+    drawer.addEventListener('click',function(e){if(e.target===drawer){drawer.classList.remove('open');}});
+  }
+  var svcToggle=document.getElementById('mobSvcToggle');
+  var svcMenu=document.getElementById('mobSvc');
+  if(svcToggle&&svcMenu){
+    svcToggle.addEventListener('click',function(){svcMenu.classList.toggle('open');});
+  }
+})();
+</script>
+</body>
+</html>

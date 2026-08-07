@@ -3,113 +3,146 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Window Financing | THT Windows — Houston, TX</title>
-<meta name="description" content="THT Windows offers flexible financing options for replacement window projects across Houston. Ask about financing during your free in-home estimate."/>
-<link rel="canonical" href="https://thtwindows.com/financing.html"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<title>Financing | Home Team Home Solutions — Houston, TX</title>
+<meta name="description" content="Home Team Home Solutions offers 0% APR financing options for qualified applicants on roofing, windows, custom doors, and other home improvement projects across greater Houston."/>
+<link rel="canonical" href="https://hometeamhomesolutions.com/financing"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
 
-/* NAV */
-nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:100}
-.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:18px}
-.nav-logo img{height:74px;width:auto;display:block;flex-shrink:0}
-.nav-red-divider{width:2px;height:58px;background:#b91c1c;flex-shrink:0}
-.nav-brand-text{display:flex;flex-direction:column;gap:5px}
-.nav-brand-name{font-family:'Inter',sans-serif;font-size:19px;font-weight:800;color:#1a1f2e;letter-spacing:3px;text-transform:uppercase;line-height:1;white-space:nowrap}
-.nav-brand-sub{font-size:8px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;white-space:nowrap;line-height:1}
-.nav-links{display:flex;gap:36px;flex:1;justify-content:center}
-.nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap}
-.nav-links a:hover{color:#0F4C81}
-.nav-links a.active{color:#0F4C81;font-weight:700}
-.nav-right{width:220px;display:flex;justify-content:flex-end;flex-shrink:0}
-.nav-btn{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 24px;border-radius:6px;border:none;cursor:pointer;min-width:160px;white-space:nowrap;font-family:'Inter',sans-serif}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+/* ── TOKENS ── */
+:root{--red:#C81F25;--red-dim:#a51a1f;--black:#0d0d0d;--dark1:#111111;--dark2:#181818;--offwhite:#f7f6f4;--border:#e5e3df}
 
-/* MOBILE DRAWER */
-.mobile-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(4,14,26,0.55)}
-.mobile-drawer.open{display:block}
-.mobile-panel{position:absolute;top:0;right:0;bottom:0;width:280px;background:#fff;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem}
-.mobile-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:22px;color:#1F2937;margin-bottom:0.25rem}
-.mobile-panel a{font-size:15px;color:#374151;text-decoration:none;font-weight:500;padding:0.5rem 0;border-bottom:1px solid #f3f4f6}
-.mobile-panel a:hover,.mobile-panel a.active{color:#0F4C81}
-.mobile-panel .nav-btn{margin-top:0.5rem;width:100%;text-align:center}
-
-@media(max-width:960px){
-  .nav-links{display:none}
-  .nav-right .nav-btn{display:none}
-  .nav-hamburger{display:flex;flex-direction:column;gap:5px}
-  .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
-  nav{justify-content:space-between}
-  .nav-right{width:auto}
-  .nav-logo{gap:12px}
-  .nav-logo img{height:50px}
-  .nav-red-divider{height:40px}
-  .nav-brand-name{font-size:14px;letter-spacing:2px}
-  .nav-brand-sub{font-size:6.5px;letter-spacing:1.4px}
-}
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid var(--border);padding:0 52px;height:88px;display:flex;align-items:center;gap:0}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{height:56px;width:auto;display:block;flex-shrink:0}
+.nav-brand{display:flex;flex-direction:column;gap:3px}
+.nav-brand-name{font-size:13px;font-weight:800;color:#0d0d0d;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;color:#888;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-links{display:flex;gap:28px;flex:1;justify-content:center;align-items:center}
+.nav-links a{font-size:12.5px;color:#444;text-decoration:none;font-weight:500;letter-spacing:.3px;white-space:nowrap;transition:color .15s;position:relative}
+.nav-links a:hover{color:#0d0d0d}
+.nav-links a.active{color:#0d0d0d;font-weight:600}
+.nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--red);border-radius:1px}
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{font-size:12.5px;color:#444;font-weight:500;letter-spacing:.3px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px;padding:0;transition:color .15s}
+.nav-drop-btn:hover{color:#0d0d0d}
+.nav-drop-btn svg{transition:transform .2s}
+.nav-drop:hover .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:.5rem 0;min-width:170px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;z-index:500}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu::before{content:'';position:absolute;top:-20px;left:0;right:0;height:20px}
+.nav-drop-menu a{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;font-size:12.5px;color:#444;text-decoration:none;font-weight:500;transition:background .12s,color .12s}
+.nav-drop-menu a:hover{background:#faf9f7;color:#0d0d0d}
+.nav-drop-menu a .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:background .15s,transform .12s}
+.nav-cta:hover{background:var(--red-dim);transform:translateY(-1px)}
+.nav-cta svg{flex-shrink:0}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:#0d0d0d;border-radius:1px;transition:.2s}
+.mob-drawer{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.5)}
+.mob-drawer.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;bottom:0;width:300px;background:#fff;padding:2rem 1.875rem;display:flex;flex-direction:column;overflow-y:auto}
+.mob-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:20px;color:#0d0d0d;margin-bottom:1.5rem}
+.mob-link{font-size:15px;color:#333;text-decoration:none;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;display:block}
+.mob-link:hover{color:var(--red)}
+.mob-link.mob-active{color:var(--red);font-weight:700}
+.mob-expand{font-size:15px;color:#333;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;width:100%}
+.mob-sub{display:none;padding-left:1rem}
+.mob-sub.open{display:block}
+.mob-sub a{font-size:13.5px;color:#888;text-decoration:none;padding:.4rem 0;display:block}
+.mob-sub a:hover{color:var(--red)}
+.mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
+@media(max-width:1140px){nav{padding:0 28px}.nav-links{gap:20px}}
+@media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
 /* HERO */
-.hero{position:relative;height:700px;overflow:hidden;background:#040e1a;background-image:url("images/financereplacement.png");background-size:cover;background-repeat:no-repeat;background-position:40% center;margin:0;padding:0}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
+.hero{position:relative;height:720px;overflow:hidden;background:#06090d;background-image:url("images/financehero4.png");background-size:cover;background-repeat:no-repeat;background-position:center center;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,16,0.62) 0%,rgba(8,12,16,0.38) 24%,rgba(8,12,16,0.12) 43%,rgba(8,12,16,0) 58%)}
 .hero-pattern{display:none}
-.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:28px;width:fit-content}
-.hero h1{font-family:'Inter',sans-serif;font-size:44px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-1.5px;margin-bottom:28px;background:none;text-shadow:none;max-width:500px}
-.hero h1 em{font-style:normal;color:#5BA4D4}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:36px;max-width:440px}
-.hero-btns{display:flex;gap:1rem;margin-bottom:32px}
-.btn-solid{background:#0F4C81;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
-.btn-solid:hover{background:#0d4070}
-.btn-outline{background:transparent;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:2px solid rgba(255,255,255,0.42);cursor:pointer;font-family:'Inter',sans-serif}
-.btn-outline:hover{background:rgba(255,255,255,0.08)}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 0 140px 72px;max-width:560px}
+.hero-accent{width:36px;height:3px;background:var(--red);border-radius:2px;margin-bottom:22px}
+.hero-badge{display:inline-block;background:rgba(200,31,37,0.18);border:1px solid rgba(200,31,37,0.45);color:rgba(255,255,255,0.90);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:3px;margin-bottom:24px;width:fit-content}
+.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4.2vw,50px);color:#fff;line-height:1.08;letter-spacing:-.5px;margin-bottom:20px;background:none;text-shadow:none;max-width:500px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero-sub{font-size:15.5px;color:rgba(255,255,255,0.70);line-height:1.72;margin-bottom:34px;max-width:430px}
+.hero-btns{display:flex;gap:1rem;margin-bottom:28px;flex-wrap:wrap}
+.btn-solid{background:var(--red);color:#fff;font-size:13.5px;font-weight:600;padding:13px 28px;border-radius:5px;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block;letter-spacing:.2px;transition:background .15s,transform .12s}
+.btn-solid:hover{background:var(--red-dim);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:#fff;font-size:13.5px;font-weight:600;padding:11px 26px;border-radius:5px;border:1.5px solid rgba(255,255,255,0.38);cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block;letter-spacing:.2px;transition:border-color .15s,background .15s}
+.btn-outline:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.60)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:18px}
+.hero-trust span{font-size:11px;color:rgba(255,255,255,0.50);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+
+/* APR CARD */
+.apr-card{position:absolute;right:clamp(36px,5vw,80px);top:calc(50% - 70px);transform:translateY(-50%);z-index:3;width:clamp(260px,22vw,310px);background:rgba(10,12,14,0.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.18);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.28);padding:2rem 1.75rem;text-align:center}
+.apr-main{display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-bottom:8px}
+.apr-pct{font-family:'Inter',sans-serif;font-size:84px;font-weight:800;color:var(--red);line-height:1;letter-spacing:-3px}
+.apr-unit{font-family:'Inter',sans-serif;font-size:28px;font-weight:700;color:#fff;line-height:1;padding-bottom:11px}
+.apr-offer{font-size:17px;font-weight:700;color:#fff;letter-spacing:3.5px;text-transform:uppercase;line-height:1.3;margin-bottom:1.1rem}
+.apr-divider{width:40px;height:2px;background:var(--red);border-radius:1px;margin:0 auto 1.1rem}
+.apr-qualify{font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:0.7rem}
+.apr-disclosure{font-size:11px;color:rgba(255,255,255,0.42);line-height:1.55}
+.apr-mob-wrap{display:none;background:#0d0d0d;padding:2rem 1.5rem}
+.apr-card-mob{max-width:420px;margin:0 auto;background:rgba(20,22,26,0.97);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.75rem 1.5rem;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,0.22)}
 
 /* STRIP */
 .strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
 .strip-item{padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.1rem}
 .strip-item+.strip-item{border-left:1px solid #e5e7eb}
-.strip-icon{width:44px;height:44px;background:#EBF2FA;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.strip-item h3{font-size:14.5px;font-weight:700;color:#1F2937;margin-bottom:4px}
+.strip-icon{width:44px;height:44px;background:rgba(200,31,37,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.strip-item h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:#1F2937;margin-bottom:4px}
 .strip-item p{font-size:12.5px;color:#6b7280;line-height:1.6}
 
 /* SECTIONS */
 .sec{padding:4.5rem 2.5rem}
 .sec-gray{background:#F8FAFC}
 .sec-white{background:#fff}
-.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:0.875rem}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:0.875rem}
 .eyebrow-light{color:rgba(255,255,255,0.55)}
-.rule{width:42px;height:2px;background:#0F4C81;border-radius:2px;margin:0 0 1.5rem}
+.rule{width:42px;height:2px;background:var(--red);border-radius:2px;margin:0 0 1.5rem}
 .rule-center{margin:0 auto 1.5rem}
 .rule-light{background:rgba(255,255,255,0.35)}
-.sec-h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1F2937;line-height:1.15;letter-spacing:-0.3px;margin-bottom:0.75rem}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,34px);font-weight:500;color:#1F2937;line-height:1.15;letter-spacing:-0.2px;margin-bottom:0.75rem}
 .sec-p{font-size:14px;color:#6b7280;line-height:1.7;max-width:500px}
 .center{text-align:center}
 .center .sec-p{margin:0 auto}
 .center .rule{margin:0 auto 1.5rem}
 
 /* STEPS */
-.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.75rem}
 .step-card{background:#fff;border:1.5px solid #e5e7eb;border-radius:14px;padding:2rem 1.75rem;position:relative}
-.step-num{width:40px;height:40px;background:#0F4C81;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;margin-bottom:1.25rem}
+.step-num{width:40px;height:40px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;margin-bottom:1.25rem}
 .step-card h4{font-size:16px;font-weight:700;color:#1F2937;margin-bottom:0.5rem}
 .step-card p{font-size:13px;color:#6b7280;line-height:1.7}
 
 /* BENEFIT CARDS */
 .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem}
 .ben-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.75rem}
-.ben-icon{width:48px;height:48px;background:#EBF2FA;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.ben-icon{width:48px;height:48px;background:rgba(200,31,37,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
 .ben-card h4{font-size:15px;font-weight:700;color:#1F2937;margin-bottom:0.5rem}
 .ben-card p{font-size:13px;color:#6b7280;line-height:1.7}
+.ben-card .ben-qualifier{font-size:11px;color:#9ca3af;margin-top:0.75rem;line-height:1.5;font-style:italic}
 
 /* BANNER */
-.fin-banner{background:linear-gradient(135deg,#0a2540 0%,#0F4C81 100%);border-radius:16px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-top:0}
-.fin-text h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:0.625rem}
+.fin-banner{background:linear-gradient(135deg,#0d0d0d 0%,#1a0508 100%);border:1px solid rgba(200,31,37,0.25);border-radius:16px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-top:0}
+.fin-text h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:500;color:#fff;margin-bottom:0.625rem}
 .fin-text p{font-size:14px;color:rgba(255,255,255,0.72);line-height:1.7;max-width:480px}
 .fin-actions{display:flex;flex-direction:column;align-items:flex-end;gap:0.75rem;flex-shrink:0}
-.btn-white{background:#fff;color:#0F4C81;font-size:13.5px;font-weight:700;padding:13px 28px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif}
-.btn-white:hover{background:#f0f7ff}
+.btn-white{background:#fff;color:var(--red);font-size:13.5px;font-weight:700;padding:13px 28px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block}
+.btn-white:hover{background:#f5f5f5}
 .fin-note{font-size:11px;color:rgba(255,255,255,0.5);text-align:right}
+
+/* ELIGIBILITY */
+.elig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
+.elig-card{background:#fff;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.5rem 1.25rem;text-align:center;transition:border-color .2s,box-shadow .2s}
+.elig-card:hover{border-color:rgba(200,31,37,0.35);box-shadow:0 6px 24px rgba(200,31,37,0.08)}
+.elig-icon{width:48px;height:48px;background:rgba(200,31,37,0.07);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.875rem}
+.elig-card h4{font-size:13.5px;font-weight:700;color:#1F2937;margin-bottom:0.4rem}
+.elig-card p{font-size:12px;color:#6b7280;line-height:1.55}
 
 /* FAQ */
 .faq-list{margin-top:2.25rem;display:flex;flex-direction:column;gap:0}
@@ -117,7 +150,7 @@ nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;
 .faq-item:first-child{border-top:1px solid #e5e7eb}
 .faq-q{width:100%;background:none;border:none;text-align:left;padding:1.25rem 0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'Inter',sans-serif}
 .faq-q-text{font-size:15px;font-weight:600;color:#1F2937;line-height:1.4}
-.faq-icon{width:24px;height:24px;background:#EBF2FA;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#0F4C81;font-size:16px;font-weight:300;transition:transform 0.2s}
+.faq-icon{width:24px;height:24px;background:rgba(200,31,37,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--red);font-size:16px;font-weight:300;transition:transform 0.2s}
 .faq-item.open .faq-icon{transform:rotate(45deg)}
 .faq-a{display:none;padding-bottom:1.25rem}
 .faq-item.open .faq-a{display:block}
@@ -125,17 +158,17 @@ nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;
 
 /* FINAL CTA */
 .final-cta{background:#040e1a;padding:5rem 2.5rem;text-align:center}
-.final-cta h2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-0.3px}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:500;color:#fff;margin-bottom:1rem;letter-spacing:-0.2px}
 .final-cta p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:500px;margin:0 auto 2.25rem}
 .final-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .cta-phone{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,0.6);font-weight:500;margin-top:1.25rem}
-.cta-phone a{color:#5BA4D4;text-decoration:none;font-weight:700}
+.cta-phone a{color:var(--red);text-decoration:none;font-weight:700}
 .cta-phone a:hover{color:#fff}
 
 /* FOOTER */
 footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:2px}
+.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:#fff;margin-bottom:2px}
 .footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
 .footer-contact-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
 .footer-contact-item span{font-size:12px;color:#9ca3af}
@@ -146,19 +179,24 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .footer-col a:hover{color:#fff}
 .footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
 .footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
-.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.25}
-.footer-htr-line{width:36px;height:2px;background:#0F4C81;margin:8px auto 0;border-radius:1px}
+.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:#fff;line-height:1.25}
+.footer-htr-line{width:36px;height:2px;background:var(--red);margin:8px auto 0;border-radius:1px}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:11.5px;color:#4b5563}
 
+@media(max-width:960px){
+  .apr-card{display:none}
+  .apr-mob-wrap{display:block}
+}
 @media(max-width:768px){
   .hero{height:auto;min-height:480px;background-position:50% center}
   .hero-content{padding:28px 24px 32px 24px;max-width:100%}
-  .hero-bg{background:linear-gradient(to right,rgba(4,14,26,0.94) 0%,rgba(4,14,26,0.92) 50%,rgba(4,14,26,0.78) 100%)}
-  .hero h1{font-size:30px}
+  .hero-bg{background:linear-gradient(to bottom,rgba(8,12,16,0.72) 0%,rgba(8,12,16,0.52) 45%,rgba(8,12,16,0.22) 75%,rgba(8,12,16,0) 100%)}
+  .hero h1{font-size:clamp(22px,5.5vw,30px)}
   .sec{padding:3rem 1.25rem}
   .steps-grid{grid-template-columns:1fr}
   .ben-grid{grid-template-columns:1fr}
+  .elig-grid{grid-template-columns:repeat(2,1fr)}
   .strip{grid-template-columns:1fr}
   .strip-item+.strip-item{border-left:none;border-top:1px solid #e5e7eb}
   .fin-banner{flex-direction:column;align-items:flex-start}
@@ -166,174 +204,276 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   .fin-note{text-align:left}
   .footer-grid{grid-template-columns:1fr 1fr}
   .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
-  .sec-h2{font-size:26px}
-  .final-cta h2{font-size:28px}
+  .sec-h2{font-size:clamp(20px,5vw,26px)}
+  .final-cta h2{font-size:clamp(22px,5.5vw,28px)}
+  .apr-mob-wrap{padding:1.5rem 1rem}
+  .apr-pct{font-size:62px;letter-spacing:-2px}
+  .apr-unit{font-size:22px;padding-bottom:8px}
+  .apr-offer{font-size:14px;letter-spacing:2.5px}
+  .apr-qualify{font-size:13px}
+  .apr-disclosure{font-size:10.5px}
 }
-@media(max-width:1100px){.steps-grid{grid-template-columns:repeat(2,1fr)}.ben-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){nav{padding:0 20px}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:1100px){.steps-grid{grid-template-columns:repeat(2,1fr)}.ben-grid{grid-template-columns:repeat(2,1fr)}.elig-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.elig-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <img src="images/windowlogo.PNG" alt="Home Team Windows" />
-    <div class="nav-red-divider"></div>
-    <div class="nav-brand-text">
-      <div class="nav-brand-name">THT Windows</div>
-      <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+  <a href="index.html" class="nav-logo" aria-label="Home Team Home Solutions">
+    <img src="images/hometeamroofinglogo.png" alt="Home Team Home Solutions" class="nav-logo-img" />
+    <div class="nav-brand">
+      <div class="nav-brand-name">Home Team</div>
+      <div class="nav-brand-sub">Home Solutions</div>
     </div>
-  </div>
+  </a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="replacement-window-options.html">Window Styles</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" aria-haspopup="true">
+        Home Improvements
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="#666" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-drop-menu">
+        <a href="roofing.html"><span class="dot"></span>Roofing</a>
+        <a href="windows.html"><span class="dot"></span>Windows</a>
+        <a href="doors.html"><span class="dot"></span>Custom Doors</a>
+        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
+      </div>
+    </div>
     <a href="gallery.html">Gallery</a>
-    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" class="active" target="_blank" rel="noopener noreferrer">Financing</a>
-    <a href="service-areas.html">Service Areas</a>
+    <a href="financing.html" class="active">Financing</a>
     <a href="reviews.html">Reviews</a>
+    <a href="contact.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
-    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
-    <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
+    <a href="estimate.html" class="nav-cta">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div class="mobile-drawer" id="mobileDrawer">
-  <div class="mobile-panel">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
-    <a href="index.html">Home</a>
-    <a href="replacement-window-options.html">Window Styles</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" class="active" target="_blank" rel="noopener noreferrer">Financing</a>
-    <a href="service-areas.html">Service Areas</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="contact.html">Contact</a>
-    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <button class="mob-expand" id="mobSvcToggle">Home Improvements ›</button>
+    <div class="mob-sub" id="mobSvc">
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="siding.html">Other Home Solutions</a>
+    </div>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="financing.html" class="mob-link mob-active">Financing</a>
+    <a href="reviews.html" class="mob-link">Reviews</a>
+    <a href="contact.html" class="mob-link">About</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero" aria-label="Luxury living room with dramatic floor-to-ceiling replacement windows overlooking a scenic lake at sunset.">
+<section class="hero" aria-label="Home Team Home Solutions financing options for Houston homeowners">
   <div class="hero-bg"></div>
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-badge">Financing Available</div>
-    <h1>New Windows,<br><em>No Financial Stress</em></h1>
-    <p class="hero-sub">THT Windows offers flexible financing options so you can upgrade your home now and manage payments on your timeline — with approved credit.</p>
+    <div class="hero-accent"></div>
+    <div class="hero-badge">0% APR Financing Available</div>
+    <h1>Upgrade Your Home,<br>With 0% APR Financing</h1>
+    <p class="hero-sub">Flexible financing options make it easy to invest in your home now and pay over time. Explore premium home improvements with simple payment options designed for Houston-area homeowners.</p>
     <div class="hero-btns">
-      <button class="btn-solid" onclick="location.href='estimate.html'">Get Free Estimate</button>
-      <button class="btn-outline" onclick="location.href='replacement-window-options.html'">Browse Window Styles</button>
+      <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
+      <button class="btn-outline" onclick="window.scrollTo({top:document.querySelector('.strip').offsetTop,behavior:'smooth'})">View Financing Options</button>
+    </div>
+    <div class="hero-trust">
+      <span>&#10003; No-Obligation Estimate</span>
+      <span>&#10003; Licensed &amp; Insured</span>
+      <span>&#10003; Houston's Home Team</span>
     </div>
   </div>
+  <!-- APR Promotional Card — desktop -->
+  <aside class="apr-card" aria-label="0% APR financing available for qualified applicants on eligible projects">
+    <div class="apr-main">
+      <div class="apr-pct">0%</div>
+      <div class="apr-unit">APR</div>
+    </div>
+    <div class="apr-offer">Financing<br>Available</div>
+    <div class="apr-divider" aria-hidden="true"></div>
+    <p class="apr-qualify">For qualified applicants<br>on eligible projects.</p>
+    <p class="apr-disclosure">Subject to approved credit.<br>Terms and conditions apply.</p>
+  </aside>
 </section>
+
+<!-- APR Card — tablet / mobile -->
+<div class="apr-mob-wrap">
+  <aside class="apr-card-mob" aria-label="0% APR financing available for qualified applicants on eligible projects">
+    <div class="apr-main">
+      <div class="apr-pct">0%</div>
+      <div class="apr-unit">APR</div>
+    </div>
+    <div class="apr-offer">Financing<br>Available</div>
+    <div class="apr-divider" aria-hidden="true"></div>
+    <p class="apr-qualify">For qualified applicants on eligible projects.</p>
+    <p class="apr-disclosure">Subject to approved credit. Terms and conditions apply.</p>
+  </aside>
+</div>
 
 <!-- FEATURE STRIP -->
 <div class="strip">
   <div class="strip-item">
     <div class="strip-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 5.5V12c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V5.5L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 5.5V12c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V5.5L11 2z" stroke="#C81F25" stroke-width="1.5" stroke-linejoin="round"/></svg>
     </div>
     <div>
-      <h3>Free In-Home Estimates</h3>
-      <p>No obligation, no pressure. We measure your home and provide a detailed recommendation at no cost.</p>
+      <h3>0% APR Options Available</h3>
+      <p>For qualified applicants on eligible projects. Subject to approved credit. Ask your estimator for details.</p>
     </div>
   </div>
   <div class="strip-item">
     <div class="strip-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="6" width="16" height="12" rx="2" stroke="#0F4C81" stroke-width="1.5"/><path d="M8 6V5a3 3 0 016 0v1" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="6" width="16" height="12" rx="2" stroke="#C81F25" stroke-width="1.5"/><path d="M8 6V5a3 3 0 016 0v1" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round"/></svg>
     </div>
     <div>
-      <h3>Apply During Your Visit</h3>
-      <p>Ask about financing during your free estimate appointment — simple process, fast decisions.</p>
+      <h3>Apply During Your Estimate</h3>
+      <p>Ask about financing during your free in-home appointment — simple process, fast decisions for qualified applicants.</p>
     </div>
   </div>
   <div class="strip-item">
     <div class="strip-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 16l5-5 4 4 5-7" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 9h4v4" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 16l5-5 4 4 5-7" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 9h4v4" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <div>
-      <h3>Solutions for Every Home</h3>
-      <p>We work with homeowners at all stages — whether you're replacing one window or doing a full home upgrade.</p>
+      <h3>All Home Improvement Projects</h3>
+      <p>Roofing, windows, custom doors, and other home solutions — financing available across the projects we offer.</p>
     </div>
   </div>
 </div>
+
+<!-- BENEFITS -->
+<section class="sec sec-gray">
+  <div class="center">
+    <div class="eyebrow">Why Finance Your Project</div>
+    <div class="rule rule-center"></div>
+    <h2 class="sec-h2">Upgrade Now. Pay Over Time.</h2>
+    <p class="sec-p">Delaying a roof, windows, or doors costs you every month — in energy bills, repairs, and peace of mind. Financing lets you protect your home today.</p>
+  </div>
+  <div class="ben-grid">
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#C81F25" stroke-width="1.6" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>0% APR Options</h4>
+      <p>Qualifying applicants may be eligible for 0% APR financing on eligible projects — meaning no interest during the promotional period when paid as agreed.</p>
+      <p class="ben-qualifier">For qualified applicants on eligible projects. Subject to approved credit. Terms and conditions apply.</p>
+    </div>
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#C81F25" stroke-width="1.6"/><path d="M8 4V2M16 4V2M3 9h18" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h4>Flexible Payment Plans</h4>
+      <p>Spread your project cost over time with payment options designed to fit your budget — rather than waiting until you have the full amount saved.</p>
+    </div>
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#C81F25" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Simple Application</h4>
+      <p>Apply during your free in-home estimate with no obligation. Our team walks you through available options before any work begins or commitment is made.</p>
+    </div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
 <section class="sec sec-white">
   <div class="center">
     <div class="eyebrow">How It Works</div>
     <div class="rule rule-center"></div>
-    <h2 class="sec-h2">Three Simple Steps</h2>
-    <p class="sec-p">Getting new windows with financing is straightforward. Here's what to expect from start to finish.</p>
+    <h2 class="sec-h2">Four Simple Steps</h2>
+    <p class="sec-p">Getting started with financing through Home Team Home Solutions is straightforward. Here's what to expect from first contact to finished project.</p>
   </div>
   <div class="steps-grid">
     <div class="step-card">
       <div class="step-num">1</div>
       <h4>Schedule a Free Estimate</h4>
-      <p>A THT Windows specialist visits your home at no charge. We measure every opening, explain your options, and answer every question — with zero pressure.</p>
+      <p>A Home Team specialist visits your home at no cost. We assess your project, walk you through your options, and answer every question — with zero pressure.</p>
     </div>
     <div class="step-card">
       <div class="step-num">2</div>
-      <h4>Choose Your Windows</h4>
-      <p>Select the window styles, series, and features that fit your home and goals. We'll walk you through our full Home Team Windows product line and what's right for each room.</p>
+      <h4>Choose Your Project</h4>
+      <p>Select the scope of work — whether it's roofing, windows, custom doors, or a combination. We'll walk you through recommendations specific to your home.</p>
     </div>
     <div class="step-card">
       <div class="step-num">3</div>
-      <h4>Ask About Financing</h4>
-      <p>With approved credit, financing options are available to help spread your project over time. Ask your estimator for details during your free consultation.</p>
+      <h4>Apply for Financing</h4>
+      <p>Ask about financing options during your estimate. For qualified applicants, we'll walk you through available terms — including 0% APR options on eligible projects.</p>
     </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="sec sec-gray">
-  <div class="center">
-    <div class="eyebrow">Why Finance Your Windows</div>
-    <div class="rule rule-center"></div>
-    <h2 class="sec-h2">Upgrade Now. Enjoy It Now.</h2>
-    <p class="sec-p">Waiting to replace old, inefficient windows costs you every month in energy bills. Financing lets you solve the problem today.</p>
-  </div>
-  <div class="ben-grid">
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.09 12.37A1 1 0 005 14h7v8l8.91-10.37A1 1 0 0020 10h-7V2z" stroke="#0F4C81" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Start Saving on Energy</h4>
-      <p>New energy-efficient windows reduce heating and cooling loads immediately. You benefit from day one — without waiting to save up the full amount.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9z" stroke="#0F4C81" stroke-width="1.6" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Improve Your Home Today</h4>
-      <p>New windows transform the look and feel of your home from day one — better curb appeal, quieter interiors, and improved comfort for your family.</p>
-    </div>
-    <div class="ben-card">
-      <div class="ben-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0F4C81" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#0F4C81" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Flexible Terms</h4>
-      <p>With approved credit, financing options can be structured to fit your situation. Ask your estimator about available terms during your free in-home visit.</p>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <h4>We Handle the Rest</h4>
+      <p>Once your project is confirmed, our licensed crew handles installation from start to finish. Professional work, clean jobsite, and a home you're proud of.</p>
     </div>
   </div>
 </section>
 
 <!-- BANNER -->
-<section class="sec sec-white">
+<section class="sec sec-gray">
   <div class="fin-banner">
     <div class="fin-text">
       <div class="eyebrow" style="color:rgba(255,255,255,0.55);margin-bottom:0.5rem">Ready to Get Started?</div>
       <h3>Schedule Your Free Estimate</h3>
-      <p>Our team will visit your home, measure every opening, walk you through your options, and explain financing — all in one no-pressure appointment. Custom recommendations based on your home and needs.</p>
+      <p>Our team will visit your home, assess your project, walk you through your options, and explain financing — all in one no-pressure appointment. Custom recommendations based on your home and goals.</p>
     </div>
     <div class="fin-actions">
-      <button class="btn-white" onclick="location.href='estimate.html'">Get Free Estimate</button>
-      <span class="fin-note">Subject to credit approval. Ask for details during your estimate.</span>
+      <a class="btn-white" href="estimate.html">Start My Project</a>
+      <span class="fin-note">0% APR for qualified applicants. Subject to credit approval. Ask for details.</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE ELIGIBILITY -->
+<section class="sec sec-white">
+  <div class="center">
+    <div class="eyebrow">Eligible Projects</div>
+    <div class="rule rule-center"></div>
+    <h2 class="sec-h2">Which Services Qualify?</h2>
+    <p class="sec-p">Financing options are available across the full range of home improvement projects we offer. Ask your estimator about eligibility for your specific project.</p>
+  </div>
+  <div class="elig-grid">
+    <div class="elig-card">
+      <div class="elig-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 13L13 4l10 9" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Roofing</h4>
+      <p>Full replacements, repair work, and storm damage restoration across all roofing systems.</p>
+    </div>
+    <div class="elig-card">
+      <div class="elig-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="4" width="18" height="18" rx="2" stroke="#C81F25" stroke-width="1.6"/><path d="M4 13h18M13 4v18" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </div>
+      <h4>Windows</h4>
+      <p>Single-window replacements to whole-home window upgrades, including energy-efficient options.</p>
+    </div>
+    <div class="elig-card">
+      <div class="elig-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="6" y="3" width="14" height="21" rx="1.5" stroke="#C81F25" stroke-width="1.6"/><circle cx="17" cy="13.5" r="1.2" fill="#C81F25"/></svg>
+      </div>
+      <h4>Custom Doors</h4>
+      <p>Entry doors, patio doors, and custom door solutions that elevate your home's curb appeal.</p>
+    </div>
+    <div class="elig-card">
+      <div class="elig-icon">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 20h18M4 20V8l9-4 9 4v12" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-6h6v6" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h4>Other Home Solutions</h4>
+      <p>Siding, gutters, and additional exterior home improvement projects. Ask for project eligibility.</p>
     </div>
   </div>
 </section>
@@ -344,15 +484,24 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <div class="eyebrow">Financing Questions</div>
     <div class="rule"></div>
     <h2 class="sec-h2">Common Questions About Financing</h2>
-    <p class="sec-p" style="margin-bottom:0">Everything you need to know before asking about financing options.</p>
+    <p class="sec-p" style="margin-bottom:0">Everything you need to know before asking about financing options during your estimate.</p>
     <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="faq-q-text">What does 0% APR financing mean?</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">
+          <p>0% APR means no interest is charged on your balance during the promotional financing period — when you make the required minimum payments on time. This option is available for qualified applicants on eligible projects, subject to approved credit. Ask your estimator about specific terms and whether your project and credit profile qualify.</p>
+        </div>
+      </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
           <span class="faq-q-text">When can I apply for financing?</span>
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-a">
-          <p>You can ask about financing during your free in-home estimate appointment. Our estimator will walk you through the available options, answer any questions, and help you determine the best path forward before any work begins.</p>
+          <p>You can ask about financing during your free in-home estimate appointment. Our estimator will walk you through the available options, answer any questions, and help you determine the best path forward — before any work begins or commitment is made.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -366,11 +515,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
-          <span class="faq-q-text">Can I finance a partial project or just a few windows?</span>
+          <span class="faq-q-text">Can I finance multiple projects at once?</span>
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-a">
-          <p>Yes. Whether you're replacing one window or doing a full home project, financing can be applied to your order. Our team will provide custom recommendations based on your home's specific needs and help you prioritize if you'd like to phase the project over time.</p>
+          <p>In many cases, yes. Whether you're replacing a roof, upgrading windows, or combining multiple home improvement projects, financing options may be applied to your total project scope. Our team will provide recommendations based on your home's needs and help you prioritize if you'd like to phase work over time.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -379,7 +528,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
           <span class="faq-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-a">
-          <p>No problem. We can discuss your options — including phasing your window replacement project over time or focusing on the highest-priority openings first. There is no pressure and no obligation. Our goal is to find a solution that works for your home and your situation.</p>
+          <p>No problem. We can discuss your options — including phasing your project over time or focusing on the highest-priority work first. There is no pressure and no obligation. Our goal is to find a solution that works for your home and your situation.</p>
         </div>
       </div>
     </div>
@@ -390,11 +539,10 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <section class="final-cta">
   <div class="eyebrow eyebrow-light">Take the Next Step</div>
   <div class="rule rule-center rule-light"></div>
-  <h2>Ready to Upgrade Your Windows?</h2>
-  <p>Schedule your free, no-pressure in-home estimate. We'll measure, recommend, and explain all your options — including financing.</p>
+  <h2>Ready to Improve Your Home?</h2>
+  <p>Schedule your free, no-pressure in-home estimate. We'll assess your project, walk you through your options, and explain all available financing — no commitment required.</p>
   <div class="final-cta-btns">
-    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='estimate.html'">Get Free Estimate</button>
-    <button class="btn-outline" style="font-size:14px;padding:14px 32px" onclick="location.href='replacement-window-options.html'">Browse Window Styles</button>
+    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='estimate.html'">Start My Project</button>
   </div>
   <div class="cta-phone">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2A1.5 1.5 0 014 .5h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.64 5.9a8.085 8.085 0 004.06 4.06l1.462-1.464a.5.5 0 01.506-.133l3.07.878A.5.5 0 0114 9.62V10.5a1.5 1.5 0 01-1.5 1.5C6.201 12 .5 6.299.5.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
@@ -406,8 +554,8 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <h3>THT WINDOWS</h3>
-      <div class="footer-brand-sub">A Division of Home Team Roofing</div>
+      <h3>HOME TEAM HOME SOLUTIONS</h3>
+      <div class="footer-brand-sub">Roofing &middot; Windows &middot; Doors &middot; More</div>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
         <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
@@ -427,13 +575,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       </div>
     </div>
     <div class="footer-col">
-      <h4>Window Styles</h4>
-      <a href="replacement-window-options.html">Double Hung</a>
-      <a href="replacement-window-options.html">Casement</a>
-      <a href="replacement-window-options.html">Picture</a>
-      <a href="replacement-window-options.html">Sliding</a>
-      <a href="replacement-window-options.html">Bay Windows</a>
-      <a href="replacement-window-options.html">Patio Doors</a>
+      <h4>Our Services</h4>
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="siding.html">Other Home Solutions</a>
     </div>
     <div class="footer-col">
       <h4>Service Areas</h4>
@@ -448,33 +594,36 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <h4>Company</h4>
       <a href="gallery.html">Gallery</a>
       <a href="reviews.html">Reviews</a>
-      <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+      <a href="financing.html">Financing</a>
       <a href="contact.html">Contact</a>
     </div>
     <div style="display:flex;align-items:flex-start;justify-content:flex-end">
       <div class="footer-htr">
-        <div class="footer-htr-div">A Division of</div>
-        <div class="footer-htr-name">HOME TEAM<br>ROOFING</div>
+        <div class="footer-htr-div">Proudly Serving</div>
+        <div class="footer-htr-name">GREATER<br>HOUSTON</div>
         <div class="footer-htr-line"></div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2025 THT Windows. All Rights Reserved.</p>
-    <p>Houston, TX &nbsp;&middot;&nbsp; thtwindows.com</p>
+    <p>&copy; 2026 Home Team Home Solutions. All Rights Reserved.</p>
+    <p>Houston, TX &nbsp;&middot;&nbsp; Licensed &amp; Insured</p>
   </div>
 </footer>
 
 <script>
 (function(){
-  var hamburger=document.getElementById('hamburger');
-  var drawer=document.getElementById('mobileDrawer');
-  var closeBtn=document.getElementById('mobileClose');
-  if(hamburger&&drawer&&closeBtn){
-    hamburger.addEventListener('click',function(){drawer.classList.add('open');});
-    closeBtn.addEventListener('click',function(){drawer.classList.remove('open');});
-    drawer.addEventListener('click',function(e){if(e.target===drawer){drawer.classList.remove('open');}});
+  var hbg=document.getElementById('hamburger');
+  var drw=document.getElementById('mobDrawer');
+  var cls=document.getElementById('mobClose');
+  if(hbg&&drw&&cls){
+    hbg.addEventListener('click',function(){drw.classList.add('open');});
+    cls.addEventListener('click',function(){drw.classList.remove('open');});
+    drw.addEventListener('click',function(e){if(e.target===drw){drw.classList.remove('open');}});
   }
+  var st=document.getElementById('mobSvcToggle');
+  var ss=document.getElementById('mobSvc');
+  if(st&&ss){st.addEventListener('click',function(){ss.classList.toggle('open');});}
   var faqItems=document.querySelectorAll('.faq-item');
   faqItems.forEach(function(item){
     var btn=item.querySelector('.faq-q');

@@ -3,499 +3,954 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Project Gallery | THT Windows — Houston, TX</title>
-<meta name="description" content="Browse completed window replacement projects by THT Windows across the Houston metro — Tomball, The Woodlands, Spring, Cypress, and beyond."/>
-<link rel="canonical" href="https://thtwindows.com/gallery.html"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<title>Project Gallery | Home Team Home Solutions</title>
+<meta name="description" content="Explore roofing, window and custom door projects completed by Home Team Home Solutions across the Greater Houston area."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0d0d0d;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-/* NAV */
-nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:0 48px;display:flex;align-items:center;height:96px;position:sticky;top:0;z-index:100}
-.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:18px}
-.nav-logo img{height:74px;width:auto;display:block;flex-shrink:0}
-.nav-red-divider{width:2px;height:58px;background:#b91c1c;flex-shrink:0}
-.nav-brand-text{display:flex;flex-direction:column;gap:5px}
-.nav-brand-name{font-family:'Inter',sans-serif;font-size:19px;font-weight:800;color:#1a1f2e;letter-spacing:3px;text-transform:uppercase;line-height:1;white-space:nowrap}
-.nav-brand-sub{font-size:8px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:#6b7280;white-space:nowrap;line-height:1}
-.nav-links{display:flex;gap:36px;flex:1;justify-content:center}
-.nav-links a{font-size:13px;color:#374151;text-decoration:none;font-weight:500;white-space:nowrap}
-.nav-links a:hover{color:#0F4C81}
-.nav-links a.active{color:#0F4C81;font-weight:700}
-.nav-right{width:220px;display:flex;justify-content:flex-end;flex-shrink:0}
-.nav-btn{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 24px;border-radius:6px;border:none;cursor:pointer;min-width:160px;white-space:nowrap;font-family:'Inter',sans-serif}
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+/* ── TOKENS ── */
+:root{
+  --red:#C81F25;--red-dim:#a51a1f;--black:#0d0d0d;
+  --dark1:#111111;--dark2:#181818;
+  --offwhite:#f7f6f4;--border:#e5e3df;
+}
 
-/* MOBILE DRAWER */
-.mobile-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;background:rgba(4,14,26,0.55)}
-.mobile-drawer.open{display:block}
-.mobile-panel{position:absolute;top:0;right:0;bottom:0;width:280px;background:#fff;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1.25rem}
-.mobile-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:22px;color:#1F2937;margin-bottom:0.25rem}
-.mobile-panel a{font-size:15px;color:#374151;text-decoration:none;font-weight:500;padding:0.5rem 0;border-bottom:1px solid #f3f4f6}
-.mobile-panel a:hover,.mobile-panel a.active{color:#0F4C81}
-.mobile-panel .nav-btn{margin-top:0.5rem;width:100%;text-align:center}
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid var(--border);padding:0 52px;height:88px;display:flex;align-items:center;gap:0}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{height:56px;width:auto;display:block;flex-shrink:0}
+.nav-brand{display:flex;flex-direction:column;gap:3px}
+.nav-brand-name{font-size:13px;font-weight:800;color:#0d0d0d;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;color:#888;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-links{display:flex;gap:28px;flex:1;justify-content:center;align-items:center}
+.nav-links a{font-size:12.5px;color:#444;text-decoration:none;font-weight:500;letter-spacing:.3px;white-space:nowrap;transition:color .15s;position:relative}
+.nav-links a:hover{color:#0d0d0d}
+.nav-links a.active{color:#0d0d0d;font-weight:600}
+.nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--red);border-radius:1px}
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{font-size:12.5px;color:#444;font-weight:500;letter-spacing:.3px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px;padding:0;transition:color .15s}
+.nav-drop-btn:hover{color:#0d0d0d}
+.nav-drop-btn svg{transition:transform .2s}
+.nav-drop:hover .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:.5rem 0;min-width:170px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;z-index:500}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu::before{content:'';position:absolute;top:-20px;left:0;right:0;height:20px}
+.nav-drop-menu a{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;font-size:12.5px;color:#444;text-decoration:none;font-weight:500;transition:background .12s,color .12s}
+.nav-drop-menu a:hover{background:#faf9f7;color:#0d0d0d}
+.nav-drop-menu a .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:background .15s,transform .12s}
+.nav-cta:hover{background:var(--red-dim);transform:translateY(-1px)}
+.nav-cta svg{flex-shrink:0}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:#0d0d0d;border-radius:1px;transition:.2s}
+.mob-drawer{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.5)}
+.mob-drawer.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;bottom:0;width:300px;background:#fff;padding:2rem 1.875rem;display:flex;flex-direction:column;overflow-y:auto}
+.mob-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:20px;color:#0d0d0d;margin-bottom:1.5rem}
+.mob-link{font-size:15px;color:#333;text-decoration:none;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;display:block}
+.mob-link:hover{color:var(--red)}
+.mob-link.mob-active{color:var(--red);font-weight:700}
+.mob-expand{font-size:15px;color:#333;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;width:100%}
+.mob-sub{display:none;padding-left:1rem}
+.mob-sub.open{display:block}
+.mob-sub a{font-size:13.5px;color:#888;text-decoration:none;padding:.4rem 0;display:block}
+.mob-sub a:hover{color:var(--red)}
+.mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
+@media(max-width:1140px){nav{padding:0 28px}.nav-links{gap:20px}}
+@media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
+/* ── BUTTONS ── */
+.btn-red{background:var(--red);color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,transform .12s;white-space:nowrap}
+.btn-red:hover{background:var(--red-dim);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:border-color .15s,background .15s;white-space:nowrap}
+.btn-ghost:hover{border-color:rgba(255,255,255,.70);background:rgba(255,255,255,.06)}
+.btn-outline-red{background:transparent;color:var(--red);font-size:12.5px;font-weight:700;padding:13px 26px;border-radius:3px;border:1.5px solid var(--red);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+.btn-outline-red:hover{background:var(--red);color:#fff}
+.btn-filter-link{background:transparent;color:var(--red);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(200,31,37,.30);padding:11px 24px;border-radius:3px;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;transition:background .15s,color .15s,border-color .15s;display:inline-flex;align-items:center;gap:6px}
+.btn-filter-link:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.06s}.reveal.d2{transition-delay:.12s}.reveal.d3{transition-delay:.18s}.reveal.d4{transition-delay:.24s}
+
+/* ── HERO ── */
+.gal-hero{position:relative;min-height:clamp(520px,72vh,700px);background:#111;overflow:hidden;display:flex;align-items:center}
+.gal-hero-bg{position:absolute;inset:0;background-image:url('images/galleryhero.png');background-size:cover;background-position:70% 22%}
+.gal-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 52%,rgba(0,0,0,.22) 100%)}
+.gal-hero-overlay-l{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.60) 0%,rgba(0,0,0,.24) 44%,transparent 64%)}
+.gal-hero-content{position:relative;z-index:2;padding:60px 64px 52px;max-width:620px}
+.gal-eyebrow-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px;margin-bottom:1.375rem;width:fit-content}
+.gal-hero-h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.5px;color:#fff;margin-bottom:0;text-shadow:0 1px 14px rgba(0,0,0,.28)}
+.gal-hero-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:1.125rem 0 .875rem}
+.gal-hero-sub{font-size:clamp(14px,1.4vw,16px);color:rgba(255,255,255,.88);line-height:1.78;margin-bottom:1.75rem;max-width:500px;text-shadow:0 1px 8px rgba(0,0,0,.20)}
+.gal-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.75rem}
+.gal-trust-row{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap}
+.gal-trust-item{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;color:rgba(255,255,255,.75);text-shadow:0 1px 6px rgba(0,0,0,.20)}
+.gal-trust-dot{width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+/* ── FILTER BAR ── */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:88px;z-index:300;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.filter-bar::-webkit-scrollbar{display:none}
+.filter-inner{display:flex;align-items:center;padding:0 52px;min-width:max-content}
+.filter-btn{font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#888;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;padding:1.125rem 1.25rem;font-family:'Inter',sans-serif;transition:color .15s,border-color .15s;white-space:nowrap}
+.filter-btn:hover{color:#0d0d0d}
+.filter-btn.active{color:var(--red);border-bottom-color:var(--red)}
+
+/* ── FEATURED ROOFING ── */
+.featured-section{background:var(--offwhite);padding:5.5rem 52px}
+.featured-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center}
+.featured-img{border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.13)}
+.featured-img img{width:100%;display:block;height:500px;object-fit:cover;object-position:center top}
+.featured-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.875rem}
+.featured-h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3vw,38px);line-height:1.10;letter-spacing:-.3px;color:#0d0d0d}
+.featured-rule{width:36px;height:2px;background:var(--red);border-radius:1px;margin:.875rem 0 1.125rem}
+.featured-desc{font-size:15px;color:#555;line-height:1.78;margin-bottom:1.75rem;max-width:440px}
+.featured-details{list-style:none;display:flex;flex-direction:column;gap:.625rem;margin-bottom:2rem}
+.featured-details li{display:flex;align-items:center;gap:.75rem;font-size:13px;color:#444;font-weight:500}
+.featured-details li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:1px}
+
+/* ── PROJECT GRID ── */
+.projects-section{background:#fff;padding:5.5rem 52px}
+.projects-inner{max-width:1300px;margin:0 auto}
+.sec-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.875rem}
+.sec-rule{width:36px;height:2px;background:var(--red);border-radius:1px;margin:.875rem 0 0}
+.sec-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3.5vw,42px);line-height:1.10;letter-spacing:-.4px;color:#0d0d0d}
+.sec-sub{font-size:15px;color:#666;line-height:1.72;margin-top:.875rem;max-width:520px}
+.section-hdr{margin-bottom:3rem}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj-card{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--border);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;cursor:default}
+.proj-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(0,0,0,.11);border-color:rgba(200,31,37,.18)}
+.proj-card.hidden{display:none}
+.proj-photo{height:240px;overflow:hidden;position:relative;background:#f5f4f2}
+.proj-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.proj-card:hover .proj-photo img{transform:scale(1.05)}
+.proj-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.24) 0%,transparent 55%);pointer-events:none}
+.proj-fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;background:#f5f4f2}
+.proj-photo.missing .proj-fallback{display:flex}
+.proj-photo.missing img{display:none}
+.proj-fallback-icon{width:44px;height:44px;background:#fef2f2;border-radius:10px;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(200,31,37,.12)}
+.proj-fallback span{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#bbb}
+.proj-caption{padding:1.125rem 1.25rem 1.375rem;background:#fff}
+.proj-cat-tag{display:inline-block;background:#fef2f2;color:var(--red);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:.625rem;border:1px solid rgba(200,31,37,.12)}
+.proj-title{font-family:'Playfair Display',serif;font-weight:500;font-size:15px;color:#0d0d0d;letter-spacing:-.1px;line-height:1.25;margin-bottom:.375rem}
+.proj-location{font-size:11px;color:#888;font-weight:500;margin-bottom:.375rem}
+.proj-desc{font-size:12px;color:#666;line-height:1.62}
+.no-results{text-align:center;padding:4rem 1rem;color:#888;font-size:14px;display:none}
+.no-results.visible{display:block}
+
+/* ── CREDIBILITY ── */
+.cred-section{background:var(--offwhite);padding:5rem 52px;border-top:1px solid var(--border)}
+.cred-inner{max-width:1240px;margin:0 auto}
+.cred-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(24px,3vw,36px);line-height:1.12;letter-spacing:-.3px;color:#0d0d0d;text-align:center;margin-bottom:3rem;max-width:600px;margin-left:auto;margin-right:auto}
+.cred-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.cred-item{padding:2rem 1.75rem;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.cred-item+.cred-item{border-left:1px solid var(--border)}
+.cred-icon{width:52px;height:52px;border-radius:14px;background:#fef2f2;border:1.5px solid rgba(200,31,37,.12);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;flex-shrink:0}
+.cred-label{font-size:14px;font-weight:700;color:#0d0d0d;letter-spacing:-.1px;line-height:1.2;margin-bottom:.375rem}
+.cred-sub{font-size:12px;color:#777;line-height:1.55}
+
+/* ── SERVICE PREVIEWS ── */
+.previews-section{background:var(--dark1);padding:6rem 52px}
+.previews-inner{max-width:1300px;margin:0 auto}
+.previews-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3vw,40px);line-height:1.10;letter-spacing:-.4px;color:#fff;margin-bottom:3.5rem}
+.previews-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.38);display:block;margin-bottom:.875rem}
+.svc-preview{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:5.5rem;padding-bottom:5.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.svc-preview:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.svc-preview-images{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:340px}
+.svc-img-main{grid-row:span 2;border-radius:12px;overflow:hidden;height:100%}
+.svc-img-main img{width:100%;height:100%;object-fit:cover;display:block}
+.svc-img-sm{border-radius:10px;overflow:hidden;height:100%}
+.svc-img-sm img{width:100%;height:100%;object-fit:cover;display:block}
+.svc-preview-eyebrow{font-size:9.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.875rem}
+.svc-preview-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(20px,2.2vw,28px);color:#fff;line-height:1.12;letter-spacing:-.2px;margin-bottom:0}
+.svc-preview-rule{width:32px;height:1.5px;background:var(--red);border-radius:1px;margin:.875rem 0 1.125rem}
+.svc-preview-p{font-size:14px;color:rgba(255,255,255,.50);line-height:1.78;margin-bottom:1.75rem;max-width:380px}
+
+/* ── FINAL CTA ── */
+.final-cta-section{background:var(--dark2);padding:6rem 52px;text-align:center}
+.final-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:1rem}
+.final-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,4vw,48px);line-height:1.08;letter-spacing:-.4px;color:#fff;margin-bottom:.875rem}
+.final-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.75;max-width:480px;margin:0 auto 2.25rem}
+.final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.final-badges{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.final-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:rgba(255,255,255,.44)}
+.final-badge-dot{width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:1.375rem 52px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-size:11.5px;color:#555}
+.footer-links{display:flex;align-items:center;gap:20px}
+.footer-links a{font-size:11.5px;color:#555;text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:#888}
+.footer-links .sep{color:#333;font-size:10px}
+.footer-social{display:flex;align-items:center;gap:10px}
+.footer-social-label{font-size:10px;color:#444;text-transform:uppercase;letter-spacing:1.5px;margin-right:4px}
+.fsoc{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:11px;text-decoration:none;font-weight:700;transition:border-color .15s,color .15s}
+.fsoc:hover{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.85)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .proj-grid{grid-template-columns:repeat(2,1fr)}
+  .featured-inner{gap:3.5rem}
+  .svc-preview{gap:3rem}
+}
 @media(max-width:960px){
-  .nav-links{display:none}
-  .nav-right .nav-btn{display:none}
-  .nav-hamburger{display:flex;flex-direction:column;gap:5px}
-  .nav-hamburger span{display:block;width:24px;height:2px;background:#1F2937;border-radius:2px}
-  nav{justify-content:space-between}
-  .nav-right{width:auto}
-  .nav-logo{gap:12px}
-  .nav-logo img{height:50px}
-  .nav-red-divider{height:40px}
-  .nav-brand-name{font-size:14px;letter-spacing:2px}
-  .nav-brand-sub{font-size:6.5px;letter-spacing:1.4px}
+  .gal-hero-content{padding:52px 28px 44px;max-width:100%}
+  .featured-section{padding:4.5rem 28px}
+  .featured-inner{grid-template-columns:1fr;gap:3rem}
+  .featured-img img{height:360px}
+  .projects-section{padding:4.5rem 28px}
+  .cred-section{padding:4rem 28px}
+  .cred-grid{grid-template-columns:repeat(2,1fr)}
+  .cred-item:nth-child(2){border-right:none}
+  .cred-item:nth-child(3),.cred-item:nth-child(4){border-top:1px solid var(--border);border-left:none}
+  .cred-item:nth-child(4){border-left:1px solid var(--border)}
+  .previews-section{padding:4.5rem 28px}
+  .svc-preview{grid-template-columns:1fr;gap:2.5rem}
+  .svc-preview-images{height:260px}
+  .final-cta-section{padding:4.5rem 28px}
+  .filter-inner{padding:0 20px}
 }
-
-/* HERO */
-.hero{position:relative;height:700px;overflow:hidden;background:#040e1a;background-image:url("images/farmhouseupdate.png");background-size:cover;background-repeat:no-repeat;background-position:62% center;margin:0;padding:0}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
-.hero-pattern{display:none}
-.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:28px;width:fit-content}
-.hero h1{font-family:'Inter',sans-serif;font-size:44px;font-weight:800;color:#fff;line-height:1.05;letter-spacing:-1.5px;margin-bottom:28px;background:none;text-shadow:none;max-width:500px}
-.hero h1 em{font-style:normal;color:#5BA4D4}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:36px;max-width:440px}
-.hero-btns{display:flex;gap:1rem;margin-bottom:32px}
-.hero-trust{display:flex;align-items:center;gap:10px}
-.hero-stars{color:#f59e0b;font-size:18px;letter-spacing:2px}
-.hero-trust-text{font-size:14px;color:rgba(255,255,255,0.82);font-weight:400}
-.hero-trust-text strong{color:#fff;font-weight:700}
-.btn-solid{background:#0F4C81;color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
-.btn-solid:hover{background:#0d4070}
-.btn-outline{background:transparent;color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:6px;border:2px solid rgba(255,255,255,0.42);cursor:pointer;font-family:'Inter',sans-serif}
-.btn-outline:hover{background:rgba(255,255,255,0.08)}
-
-/* STRIP */
-.strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
-.strip-item{padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.1rem}
-.strip-item+.strip-item{border-left:1px solid #e5e7eb}
-.strip-icon{width:44px;height:44px;background:#EBF2FA;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.strip-item h3{font-size:14.5px;font-weight:700;color:#1F2937;margin-bottom:4px}
-.strip-item p{font-size:12.5px;color:#6b7280;line-height:1.6}
-
-/* SECTIONS */
-.sec{padding:4.5rem 2.5rem}
-.sec-gray{background:#F8FAFC}
-.sec-white{background:#fff}
-.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0F4C81;margin-bottom:0.875rem}
-.eyebrow-light{color:rgba(255,255,255,0.55)}
-.rule{width:42px;height:2px;background:#0F4C81;border-radius:2px;margin:0 0 1.5rem}
-.rule-center{margin:0 auto 1.5rem}
-.rule-light{background:rgba(255,255,255,0.35)}
-.sec-h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#1F2937;line-height:1.15;letter-spacing:-0.3px;margin-bottom:0.75rem}
-.sec-p{font-size:14px;color:#6b7280;line-height:1.7;max-width:500px}
-.center{text-align:center}
-.center .sec-p{margin:0 auto}
-.center .rule{margin:0 auto 1.5rem}
-
-/* GALLERY GRID */
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem}
-.gal-item{border-radius:12px;overflow:hidden;background:#fff;border:1px solid #e5e7eb;transition:transform .25s,box-shadow .25s,border-color .25s}
-.gal-item:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(15,76,129,.13);border-color:#c8d9ee}
-.gal-photo{height:240px;overflow:hidden;position:relative;background:#f0f4f8}
-.gal-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-.gal-item:hover .gal-photo img{transform:scale(1.05)}
-.gal-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(4,14,26,.32) 0%,transparent 55%);pointer-events:none}
-/* Graceful fallback when project image hasn't been added yet */
-.gal-photo-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.875rem;background:#F8FAFC}
-.gal-photo--missing img{display:none}
-.gal-photo--missing .gal-photo-fallback{display:flex}
-.gal-photo-fallback-icon{width:52px;height:52px;background:#EBF2FA;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(15,76,129,.1)}
-.gal-photo-fallback span{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9ca3af}
-.gal-caption{padding:1rem 1.125rem 1.125rem;background:#fff}
-.gal-tag{display:inline-block;background:#EBF2FA;color:#0F4C81;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:7px}
-.gal-caption strong{font-size:13.5px;font-weight:700;color:#1F2937;display:block;margin-bottom:3px}
-.gal-caption span{font-size:12px;color:#6b7280;line-height:1.5}
-.gal-cta{text-align:center;margin-top:3rem}
-.gal-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:#0F4C81;text-decoration:none;border:1.5px solid #0F4C81;padding:10px 22px;border-radius:6px}
-.gal-link:hover{background:#EBF2FA}
-
-/* FINAL CTA */
-.final-cta{background:#040e1a;padding:5rem 2.5rem;text-align:center}
-.final-cta h2{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;margin-bottom:1rem;letter-spacing:-0.3px}
-.final-cta p{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:500px;margin:0 auto 2.25rem}
-.final-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.cta-phone{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,0.6);font-weight:500;margin-top:1.25rem}
-.cta-phone a{color:#5BA4D4;text-decoration:none;font-weight:700}
-.cta-phone a:hover{color:#fff}
-
-/* FOOTER */
-footer{background:#111827;padding:3rem 2.5rem 1.75rem}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
-.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:2px}
-.footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
-.footer-contact-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
-.footer-contact-item span{font-size:12px;color:#9ca3af}
-.footer-social{display:flex;gap:9px;margin-top:1rem}
-.fsoc{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);font-size:14px;text-decoration:none;font-weight:700}
-.footer-col h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:0.875rem;letter-spacing:0.3px}
-.footer-col a{display:block;font-size:12px;color:#9ca3af;text-decoration:none;margin-bottom:5px}
-.footer-col a:hover{color:#fff}
-.footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
-.footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
-.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.25}
-.footer-htr-line{width:36px;height:2px;background:#0F4C81;margin:8px auto 0;border-radius:1px}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center}
-.footer-bottom p{font-size:11.5px;color:#4b5563}
-
-@media(max-width:768px){
-  .hero{height:auto;min-height:480px;background-position:72% center}
-  .hero-content{padding:28px 24px 32px 24px;max-width:100%}
-  .hero h1{font-size:30px}
-  .sec{padding:3rem 1.25rem}
-  .gal-grid{grid-template-columns:1fr}
-  .strip{grid-template-columns:1fr}
-  .strip-item+.strip-item{border-left:none;border-top:1px solid #e5e7eb}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
-  .sec-h2{font-size:26px}
-  .final-cta h2{font-size:28px}
+@media(max-width:680px){
+  .proj-grid{grid-template-columns:1fr}
+  .gal-hero-btns{flex-direction:column}
+  .gal-hero-btns .btn-red,.gal-hero-btns .btn-ghost{justify-content:center;width:100%}
+  .gal-trust-row{gap:1rem}
+  .final-btns{flex-direction:column}
+  .final-btns .btn-red,.final-btns .btn-ghost{width:100%;justify-content:center}
+  .final-badges{gap:1rem}
+  footer{padding:1.375rem 20px;flex-direction:column;gap:.75rem;text-align:center}
+  .footer-links{justify-content:center}
+  .footer-social{justify-content:center}
 }
-@media(max-width:1100px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){nav{padding:0 20px}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .featured-img img{height:240px}
+  .svc-preview-images{height:200px}
+  .cred-item:nth-child(even){border-left:1px solid var(--border)}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <img src="images/windowlogo.PNG" alt="Home Team Windows" />
-    <div class="nav-red-divider"></div>
-    <div class="nav-brand-text">
-      <div class="nav-brand-name">THT Windows</div>
-      <div class="nav-brand-sub">A Division of Home Team Roofing</div>
+  <a href="index.html" class="nav-logo" aria-label="Home Team Home Solutions">
+    <img src="images/hometeamroofinglogo.png" alt="Home Team Roofing" class="nav-logo-img" />
+    <div class="nav-brand">
+      <div class="nav-brand-name">Home Team</div>
+      <div class="nav-brand-sub">Home Solutions</div>
     </div>
-  </div>
+  </a>
+
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="replacement-window-options.html">Window Styles</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" aria-haspopup="true">
+        Home Improvements
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="#666" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-drop-menu">
+        <a href="roofing.html"><span class="dot"></span>Roofing</a>
+        <a href="windows.html"><span class="dot"></span>Windows</a>
+        <a href="doors.html"><span class="dot"></span>Custom Doors</a>
+        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
+      </div>
+    </div>
     <a href="gallery.html" class="active">Gallery</a>
-    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
-    <a href="service-areas.html">Service Areas</a>
+    <a href="financing.html">Financing</a>
     <a href="reviews.html">Reviews</a>
+    <a href="contact.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
+
   <div class="nav-right">
-    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
-    <button class="nav-hamburger" aria-label="Open menu" id="hamburger">
+    <a href="estimate.html" class="nav-cta">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- MOBILE DRAWER -->
-<div class="mobile-drawer" id="mobileDrawer">
-  <div class="mobile-panel">
-    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
-    <a href="index.html">Home</a>
-    <a href="replacement-window-options.html">Window Styles</a>
-    <a href="gallery.html" class="active">Gallery</a>
-    <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
-    <a href="service-areas.html">Service Areas</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="contact.html">Contact</a>
-    <button class="nav-btn" onclick="location.href='estimate.html'">Get Free Estimate</button>
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <button class="mob-expand" id="mobSvcToggle">Home Improvements ›</button>
+    <div class="mob-sub" id="mobSvc">
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="siding.html">Other Home Solutions</a>
+    </div>
+    <a href="gallery.html" class="mob-link mob-active">Gallery</a>
+    <a href="financing.html" class="mob-link">Financing</a>
+    <a href="reviews.html" class="mob-link">Reviews</a>
+    <a href="contact.html" class="mob-link">About</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
 </div>
 
-<!-- HERO -->
-<section class="hero" aria-label="Luxury modern farmhouse in Houston featuring premium black-framed replacement windows and professionally installed custom windows.">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Houston Window Projects</div>
-    <h1>Real Homes.<br><em>Real Results.</em></h1>
-    <p class="hero-sub">Browse completed replacement window projects from real Houston-area homes — from single-window upgrades to full whole-home replacements, professionally installed.</p>
-    <div class="hero-btns">
-      <button class="btn-solid" onclick="document.querySelector('.gal-grid').scrollIntoView({behavior:'smooth'})">View Recent Projects</button>
-      <button class="btn-outline" onclick="location.href='estimate.html'">Start Your Project</button>
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="gal-hero" aria-label="Home Team Home Solutions Project Gallery">
+  <div class="gal-hero-bg" aria-hidden="true"></div>
+  <div class="gal-hero-overlay" aria-hidden="true"></div>
+  <div class="gal-hero-overlay-l" aria-hidden="true"></div>
+  <div class="gal-hero-content">
+    <span class="gal-eyebrow-pill">Home Team Project Gallery</span>
+    <h1 class="gal-hero-h1">Craftsmanship You Can See.<br>Quality You Can Trust.</h1>
+    <div class="gal-hero-rule" aria-hidden="true"></div>
+    <p class="gal-hero-sub">Explore completed roofing, window and custom door projects across the Greater Houston area. Every project reflects the Home Team commitment to quality craftsmanship, clear communication and lasting results.</p>
+    <div class="gal-hero-btns">
+      <a href="#projects" class="btn-red">
+        Explore Our Projects
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="estimate.html" class="btn-ghost">Start My Project</a>
     </div>
-    <div class="hero-trust">
-      <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <span class="hero-trust-text">Rated <strong>5.0 Stars</strong> by Houston Homeowners</span>
+    <div class="gal-trust-row" role="list">
+      <div class="gal-trust-item" role="listitem"><span class="gal-trust-dot" aria-hidden="true"></span>Houston-Area Projects</div>
+      <div class="gal-trust-item" role="listitem"><span class="gal-trust-dot" aria-hidden="true"></span>Free Inspections</div>
+      <div class="gal-trust-item" role="listitem"><span class="gal-trust-dot" aria-hidden="true"></span>Financing Available</div>
+      <div class="gal-trust-item" role="listitem"><span class="gal-trust-dot" aria-hidden="true"></span>Warranty-Backed Workmanship</div>
     </div>
   </div>
 </section>
 
-<!-- FEATURE STRIP -->
-<div class="strip">
-  <div class="strip-item">
-    <div class="strip-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="3" stroke="#0F4C81" stroke-width="1.5"/><path d="M2 8h18M8 2v18" stroke="#0F4C81" stroke-width="1.5"/></svg>
-    </div>
-    <div>
-      <h3>Real Houston Homes</h3>
-      <p>Every project shown was completed by our local crew across the greater Houston metro area.</p>
-    </div>
-  </div>
-  <div class="strip-item">
-    <div class="strip-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6L11 2z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.5 11l3 3 5-5" stroke="#0F4C81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <div>
-      <h3>Professional Installation</h3>
-      <p>Clean job sites, same-day completion, and a final walkthrough before our crew leaves.</p>
-    </div>
-  </div>
-  <div class="strip-item">
-    <div class="strip-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 10.5V18h14v-7.5M11 3L2 10h18L11 3z" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 18v-5h4v5" stroke="#0F4C81" stroke-width="1.5" stroke-linejoin="round"/></svg>
-    </div>
-    <div>
-      <h3>Single Windows to Full Homes</h3>
-      <p>We handle everything from one replacement window to complete whole-home projects.</p>
-    </div>
+<!-- ── FILTER BAR ─────────────────────────────── -->
+<div class="filter-bar" role="navigation" aria-label="Project category filter" id="filterBar">
+  <div class="filter-inner">
+    <button class="filter-btn" data-filter="all">All Projects</button>
+    <button class="filter-btn active" data-filter="roofing">Roofing</button>
+    <button class="filter-btn" data-filter="windows">Windows</button>
+    <button class="filter-btn" data-filter="doors">Custom Doors</button>
   </div>
 </div>
 
-<!-- GALLERY SECTION -->
-<section class="sec sec-white">
-  <div class="center">
-    <div class="eyebrow">Completed Projects</div>
-    <div class="rule rule-center"></div>
-    <h2 class="sec-h2">Recent Window Installations</h2>
-    <p class="sec-p">These photos represent a sample of our completed work. Every project is different — schedule your free estimate to see what's possible for your home.</p>
-  </div>
-
-  <div class="gal-grid">
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/woodlands.jpeg" alt="Full Home Window Replacement — The Woodlands, TX" loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Double Hung</div>
-        <strong>The Woodlands, TX</strong>
-        <span>Full Home Window Replacement</span>
-      </div>
+<!-- ── FEATURED ROOFING PROJECT ───────────────── -->
+<section class="featured-section" id="featuredRoofing" aria-label="Featured Roofing Project">
+  <div class="featured-inner">
+    <div class="featured-img reveal">
+      <img src="images/Roofingpagephoto.png" alt="Complete roofing transformation on a Houston-area luxury home by Home Team Home Solutions" loading="lazy"/>
     </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/tomball.png" alt="Modern Farmhouse Transformation — Tomball, TX" loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Casement</div>
-        <strong>Tomball, TX</strong>
-        <span>Modern Farmhouse Transformation</span>
-      </div>
+    <div class="reveal d1">
+      <span class="featured-eyebrow">Featured Roofing Project</span>
+      <h2 class="featured-h2">A Complete Roofing Transformation</h2>
+      <div class="featured-rule" aria-hidden="true"></div>
+      <p class="featured-desc">A full roofing system designed to enhance curb appeal, improve long-term protection and complement the architecture of the home. Every detail from the ridge line to the fascia reflects Home Team craftsmanship.</p>
+      <ul class="featured-details" aria-label="Project details">
+        <li>Greater Houston Area</li>
+        <li>Complete Roofing System</li>
+        <li>Premium Material Selection</li>
+        <li>Warranty-Backed Installation</li>
+      </ul>
+      <a href="gallery.html?category=roofing" class="btn-outline-red" id="exploreRoofingBtn">
+        Explore Roofing Projects
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/spring.jpeg" alt="Luxury Full Home Window Replacement — Spring, TX" loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Full Home</div>
-        <strong>Spring, TX</strong>
-        <span>Luxury full-home window replacement featuring oversized black-framed energy-efficient windows.</span>
-      </div>
-    </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/cypress.png" alt="Luxury Estate Window Upgrade — Cypress, TX" loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Luxury Estate</div>
-        <strong>Cypress, TX</strong>
-        <span>Premium whole-home window upgrade with black-framed windows and elevated curb appeal.</span>
-      </div>
-    </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/conroe.png" alt="Luxury custom home surrounded by East Texas pine trees in Conroe, Texas with premium energy-efficient replacement windows." loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Bay Window</div>
-        <strong>Conroe, TX</strong>
-        <span>Bay window &amp; 3 bedroom windows</span>
-      </div>
-    </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/katy.png" alt="Luxury modern home in Katy, Texas inspired by Cinco Ranch with premium replacement windows and elegant curb appeal." loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Sliding Door</div>
-        <strong>Katy, TX</strong>
-        <span>Energy-efficient patio sliding door</span>
-      </div>
-    </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/memorial.png" alt="Luxury Memorial Houston estate featuring premium replacement windows and timeless architectural design." loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Kitchen</div>
-        <strong>Memorial, TX</strong>
-        <span>Full kitchen window replacement</span>
-      </div>
-    </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/thewoodlands2.png" alt="Luxury contemporary home in The Woodlands, Texas featuring premium replacement windows and modern architectural design." loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Living Room</div>
-        <strong>The Woodlands, TX</strong>
-        <span>Picture &amp; double hung combination</span>
-      </div>
-    </div>
-
-    <div class="gal-item">
-      <div class="gal-photo">
-        <img src="images/sugarland.png" alt="Luxury Sugar Land, Texas estate featuring premium replacement windows, elegant Mediterranean-inspired architecture, and resort-style curb appeal." loading="lazy" onerror="this.closest('.gal-photo').classList.add('gal-photo--missing')"/>
-        <div class="gal-photo-fallback" aria-hidden="true">
-          <div class="gal-photo-fallback-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2.5" stroke="#0F4C81" stroke-width="1.5"/><line x1="2" y1="10" x2="20" y2="10" stroke="#0F4C81" stroke-width="1.5"/><line x1="11" y1="2" x2="11" y2="20" stroke="#0F4C81" stroke-width="1.5"/></svg></div>
-          <span>Photo Coming Soon</span>
-        </div>
-      </div>
-      <div class="gal-caption">
-        <div class="gal-tag">Exterior</div>
-        <strong>Sugar Land, TX</strong>
-        <span>Luxury whole-home window replacement with premium architectural windows.</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="gal-cta">
-    <p style="font-size:13.5px;color:#6b7280;margin-bottom:1.25rem">These photos represent a sample of our completed work. We have installed hundreds of windows across the Houston metro.</p>
-    <button class="btn-solid" onclick="location.href='estimate.html'" style="font-size:14px;padding:13px 30px">Start Your Project</button>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="eyebrow eyebrow-light">Ready to Start?</div>
-  <div class="rule rule-center rule-light"></div>
-  <h2>Your Home Could Be Next</h2>
-  <p>Get a free in-home estimate and see what new windows can do for your Houston home. No pressure, no obligation.</p>
-  <div class="final-cta-btns">
-    <button class="btn-solid" style="font-size:14px;padding:14px 32px" onclick="location.href='estimate.html'">Get Free Estimate</button>
-    <button class="btn-outline" style="font-size:14px;padding:14px 32px" onclick="location.href='replacement-window-options.html'">Browse Window Styles</button>
-  </div>
-  <div class="cta-phone">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2A1.5 1.5 0 014 .5h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.64 5.9a8.085 8.085 0 004.06 4.06l1.462-1.464a.5.5 0 01.506-.133l3.07.878A.5.5 0 0114 9.62V10.5a1.5 1.5 0 01-1.5 1.5C6.201 12 .5 6.299.5.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
-    Or call us directly: <a href="tel:+18324223039">(832) 422-3039</a>
+<!-- ── PROJECT GRID ───────────────────────────── -->
+<section class="projects-section" id="projects" aria-label="Project Portfolio">
+  <div class="projects-inner">
+    <div class="section-hdr reveal">
+      <span class="sec-eyebrow">Our Portfolio</span>
+      <h2 class="sec-h">Houston-Area Projects</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">A sample of completed home improvement projects across the Greater Houston area. Every project is different — schedule your free consultation to see what's possible for your home.</p>
+    </div>
+
+    <div class="proj-grid" id="projGrid">
+
+      <!-- ROOFING 1 -->
+      <div class="proj-card reveal d1" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/archshingles.png" alt="Architectural shingle roof installation on Houston-area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Architectural Shingle Installation</div>
+          <div class="proj-location">The Woodlands, TX</div>
+          <div class="proj-desc">Dimensional architectural shingles installed for enhanced curb appeal and superior weather protection.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 2 -->
+      <div class="proj-card reveal d2" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/luxuryshingles.png" alt="Designer luxury shingle roof upgrade on Greater Houston residential home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Designer Shingle Upgrade</div>
+          <div class="proj-location">Tomball, TX</div>
+          <div class="proj-desc">Premium designer shingle profile chosen for elevated aesthetics and long-term performance.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 3 -->
+      <div class="proj-card reveal d3" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/galleryphotofinal.png" alt="Standing-seam metal roof installed on a contemporary Houston-area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Standing-Seam Metal Roofing</div>
+          <div class="proj-location">Cypress, TX</div>
+          <div class="proj-desc">Architectural metal roof system with clean panel lines and long-life durability for a modern Houston home.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 4 -->
+      <div class="proj-card reveal d1" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/roofingpage1.png" alt="Complete roofing system installation on a Greater Houston residential property" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Complete Roofing System</div>
+          <div class="proj-location">Spring, TX</div>
+          <div class="proj-desc">Full system replacement including shingles, underlayment, ridge vents and flashing — fully warranty-backed.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 5 -->
+      <div class="proj-card reveal d2" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/farmhouse2.png" alt="Texas farmhouse roofing installation in Montgomery, TX by Home Team Home Solutions" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Texas Farmhouse Roofing</div>
+          <div class="proj-location">Montgomery, TX</div>
+          <div class="proj-desc">Premium roofing installation on a custom Texas farmhouse, combining timeless architecture with durable materials and elevated curb appeal.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 6 -->
+      <div class="proj-card reveal d3" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/galleryhome.png" alt="Storm-damage roof restoration preserving the architectural character of a Greater Houston area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Storm-Damage Roof Restoration</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">A carefully restored roofing system addressing storm-related damage while preserving the architectural character of the home.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 7 -->
+      <div class="proj-card reveal d1" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/galleryreplace.png" alt="Premium luxury estate roofing installation designed around refined exterior materials on a Greater Houston home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Luxury Estate Roofing System</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">A premium roofing installation designed around the scale, rooflines and refined exterior materials of a luxury estate home.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 8 -->
+      <div class="proj-card reveal d2" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/gallery4.png" alt="Warm brown dimensional shingle roof complementing natural stone and brick on a Greater Houston area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Brown Architectural Shingle Roof</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">Warm dimensional shingles selected to complement natural stone, brick and traditional residential architecture.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 9 -->
+      <div class="proj-card reveal d3" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/gallery5.png" alt="Rich charcoal designer shingle roof with bold contrast and dimensional texture on a Greater Houston area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Charcoal Designer Shingle Roof</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">A rich charcoal designer shingle system creating bold contrast, dimensional texture and an elevated finished appearance.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 10 -->
+      <div class="proj-card reveal d1" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/gallery6.png" alt="Mixed-material roofing combining architectural shingles and metal accents on a Greater Houston area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Mixed-Material Roofing Installation</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">A coordinated roofing design combining architectural shingles and metal accents for added character and performance.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 11 -->
+      <div class="proj-card reveal d2" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/gallery8.png" alt="High-end roofing installation complementing natural stone architecture on a Greater Houston area luxury home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Luxury Stone Estate Roof Upgrade</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">A high-end roofing installation designed to complement natural stone architecture with clean rooflines, premium materials and long-term durability.</div>
+        </div>
+      </div>
+
+      <!-- ROOFING 12 -->
+      <div class="proj-card reveal d3" data-category="roofing">
+        <div class="proj-photo">
+          <img src="images/lastgallery.png" alt="Custom modern farmhouse roofing system with dimensional shingles and sharp detailing on a Greater Houston area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Roofing</div>
+          <div class="proj-title">Modern Farmhouse Roofing Project</div>
+          <div class="proj-location">Greater Houston Area</div>
+          <div class="proj-desc">A custom roofing system created for a modern farmhouse aesthetic, blending dimensional shingles, sharp detailing and strong curb appeal.</div>
+        </div>
+      </div>
+
+      <!-- WINDOWS 1 -->
+      <div class="proj-card reveal d2" data-category="windows">
+        <div class="proj-photo">
+          <img src="images/woodlands.jpeg" alt="Full-home window replacement completed in The Woodlands, TX" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Windows</div>
+          <div class="proj-title">Full-Home Window Replacement</div>
+          <div class="proj-location">The Woodlands, TX</div>
+          <div class="proj-desc">Complete whole-home window upgrade with double hung windows for improved energy performance and curb appeal.</div>
+        </div>
+      </div>
+
+      <!-- WINDOWS 2 -->
+      <div class="proj-card reveal d3" data-category="windows">
+        <div class="proj-photo">
+          <img src="images/spring.jpeg" alt="Contemporary black-framed window installation on a Spring, TX luxury home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Windows</div>
+          <div class="proj-title">Contemporary Black-Framed Windows</div>
+          <div class="proj-location">Spring, TX</div>
+          <div class="proj-desc">Oversized black-frame energy-efficient windows transforming the home's architectural character.</div>
+        </div>
+      </div>
+
+      <!-- WINDOWS 3 -->
+      <div class="proj-card reveal d1" data-category="windows">
+        <div class="proj-photo">
+          <img src="images/cypress.png" alt="Luxury estate window upgrade completed in Cypress, TX" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Windows</div>
+          <div class="proj-title">Luxury Estate Window Upgrade</div>
+          <div class="proj-location">Cypress, TX</div>
+          <div class="proj-desc">Premium whole-home window replacement with elevated framing and enhanced natural light throughout the interior.</div>
+        </div>
+      </div>
+
+      <!-- DOORS 1 -->
+      <div class="proj-card reveal d2" data-category="doors">
+        <div class="proj-photo">
+          <img src="images/updatedoor.png" alt="Custom entry door installation on a Houston-area luxury residence" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Custom Doors</div>
+          <div class="proj-title">Custom Iron Entry Door</div>
+          <div class="proj-location">Tomball, TX</div>
+          <div class="proj-desc">Custom wrought iron entry door with beveled glass panels for a dramatic and lasting first impression.</div>
+        </div>
+      </div>
+
+      <!-- DOORS 2 -->
+      <div class="proj-card reveal d3" data-category="doors">
+        <div class="proj-photo">
+          <img src="images/doorhero3.png" alt="Contemporary glass door installation on a Greater Houston modern home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Custom Doors</div>
+          <div class="proj-title">Contemporary Glass Door</div>
+          <div class="proj-location">The Woodlands, TX</div>
+          <div class="proj-desc">Sleek modern entry door with full-length glass panels bringing natural light and architectural refinement.</div>
+        </div>
+      </div>
+
+      <!-- DOORS 3 -->
+      <div class="proj-card reveal d1" data-category="doors">
+        <div class="proj-photo">
+          <img src="images/hillcountry.png" alt="Texas Hill Country style entry door installed on a Houston area home" loading="lazy" onerror="this.closest('.proj-photo').classList.add('missing')"/>
+          <div class="proj-photo-overlay" aria-hidden="true"></div>
+          <div class="proj-fallback" aria-hidden="true">
+            <div class="proj-fallback-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M2 9l8-7 8 7v9H2V9z" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="#C81F25" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <span>Photo Coming Soon</span>
+          </div>
+        </div>
+        <div class="proj-caption">
+          <div class="proj-cat-tag">Custom Doors</div>
+          <div class="proj-title">Texas Hill Country Entry</div>
+          <div class="proj-location">Conroe, TX</div>
+          <div class="proj-desc">Warm-toned wood-grain entry door with a classic Texas aesthetic, installed with precision and care.</div>
+        </div>
+      </div>
+
+    </div><!-- /proj-grid -->
+
+    <div class="no-results" id="noResults" aria-live="polite">
+      No projects in this category yet — check back soon or <a href="estimate.html" style="color:var(--red);text-decoration:none;font-weight:600">start your own project</a>.
+    </div>
+
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── CREDIBILITY STRIP ───────────────────────── -->
+<section class="cred-section" aria-label="Why Home Team Home Solutions">
+  <div class="cred-inner">
+    <h2 class="cred-h reveal">Built on Roofing.<br>Trusted for Complete Home Solutions.</h2>
+    <div class="cred-grid">
+      <div class="cred-item reveal d1">
+        <div class="cred-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#C81F25" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cred-label">Free Roof Inspections</div>
+        <div class="cred-sub">Honest assessments with no pressure and no obligation — just the truth about your roof.</div>
+      </div>
+      <div class="cred-item reveal d2">
+        <div class="cred-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#C81F25" stroke-width="1.5"/><path d="M3 10h18" stroke="#C81F25" stroke-width="1.5"/><path d="M7 15h4" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="cred-label">Financing Options Available</div>
+        <div class="cred-sub">Flexible payment plans so your project can move forward without delay.</div>
+      </div>
+      <div class="cred-item reveal d3">
+        <div class="cred-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3L4 7v6c0 5.5 3.5 9 8 10 4.5-1 8-4.5 8-10V7L12 3z" stroke="#C81F25" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cred-label">Warranty-Backed Workmanship</div>
+        <div class="cred-sub">Every installation is backed by a workmanship warranty for your peace of mind.</div>
+      </div>
+      <div class="cred-item reveal d4">
+        <div class="cred-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#C81F25" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="#C81F25" stroke-width="1.5"/></svg>
+        </div>
+        <div class="cred-label">Serving Greater Houston</div>
+        <div class="cred-sub">Tomball, The Woodlands, Cypress, Spring, Conroe, Katy and surrounding communities.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICE GALLERY PREVIEWS ───────────────── -->
+<section class="previews-section" aria-label="Service Gallery Previews">
+  <div class="previews-inner">
+    <div class="reveal">
+      <span class="previews-eyebrow">By Service</span>
+      <h2 class="previews-h">Every Project. One Standard.</h2>
+    </div>
+
+    <!-- ROOFING PREVIEW -->
+    <div class="svc-preview reveal">
+      <div class="svc-preview-images">
+        <div class="svc-img-main">
+          <img src="images/Roofingpghero.png" alt="Luxury Houston home with premium roofing by Home Team Home Solutions" loading="lazy"/>
+        </div>
+        <div class="svc-img-sm">
+          <img src="images/roofingpage1.png" alt="Architectural shingle roofing project" loading="lazy"/>
+        </div>
+        <div class="svc-img-sm">
+          <img src="images/brownroofshingles.png" alt="Designer brown shingle roofing installation" loading="lazy"/>
+        </div>
+      </div>
+      <div class="svc-preview-text">
+        <span class="svc-preview-eyebrow">Roofing</span>
+        <h3 class="svc-preview-h">Protection From the Top Down</h3>
+        <div class="svc-preview-rule" aria-hidden="true"></div>
+        <p class="svc-preview-p">From architectural shingles and designer profiles to standing-seam metal systems, every roof we install is built for Houston's climate and your home's unique character.</p>
+        <a href="gallery.html?category=roofing" class="btn-filter-link">
+          View Roofing Projects
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- WINDOWS PREVIEW -->
+    <div class="svc-preview reveal" style="direction:rtl">
+      <div class="svc-preview-images" style="direction:ltr">
+        <div class="svc-img-main">
+          <img src="images/sleekwindowsphoto.png" alt="Sleek modern windows installed on a luxury Houston home" loading="lazy"/>
+        </div>
+        <div class="svc-img-sm">
+          <img src="images/tomball.png" alt="Modern farmhouse window replacement project" loading="lazy"/>
+        </div>
+        <div class="svc-img-sm">
+          <img src="images/katy.png" alt="Energy-efficient window upgrade in Katy TX" loading="lazy"/>
+        </div>
+      </div>
+      <div class="svc-preview-text" style="direction:ltr">
+        <span class="svc-preview-eyebrow">Windows</span>
+        <h3 class="svc-preview-h">Designed for Beauty and Performance</h3>
+        <div class="svc-preview-rule" aria-hidden="true"></div>
+        <p class="svc-preview-p">Our window installations range from single replacements to full whole-home upgrades. Every window is selected for energy efficiency, architectural fit and lasting quality.</p>
+        <a href="gallery.html?category=windows" class="btn-filter-link">
+          View Window Projects
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- DOORS PREVIEW -->
+    <div class="svc-preview reveal">
+      <div class="svc-preview-images">
+        <div class="svc-img-main">
+          <img src="images/doorhero3.png" alt="Custom entry door installed on a Houston luxury residence" loading="lazy"/>
+        </div>
+        <div class="svc-img-sm">
+          <img src="images/updatedoor.png" alt="Custom iron entry door project" loading="lazy"/>
+        </div>
+        <div class="svc-img-sm">
+          <img src="images/hillcountry.png" alt="Texas Hill Country style entry door" loading="lazy"/>
+        </div>
+      </div>
+      <div class="svc-preview-text">
+        <span class="svc-preview-eyebrow">Custom Doors</span>
+        <h3 class="svc-preview-h">A Lasting First Impression</h3>
+        <div class="svc-preview-rule" aria-hidden="true"></div>
+        <p class="svc-preview-p">A custom door is often the first thing guests notice. Our entry door installations combine premium materials, refined hardware and expert fitting for a result that makes a statement.</p>
+        <a href="gallery.html?category=doors" class="btn-filter-link">
+          View Custom Door Projects
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FINAL CTA ───────────────────────────────── -->
+<section class="final-cta-section" aria-label="Start Your Project">
+  <span class="final-eyebrow">Ready to Transform Your Home?</span>
+  <h2 class="final-h reveal">Let's Build Something<br>You'll Be Proud Of.</h2>
+  <p class="final-sub">Schedule your free consultation and discover what the Home Team can create for your home.</p>
+  <div class="final-btns">
+    <a href="estimate.html" class="btn-red">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="contact.html" class="btn-ghost">Contact Home Team</a>
+  </div>
+  <div class="final-badges" role="list">
+    <div class="final-badge" role="listitem"><span class="final-badge-dot" aria-hidden="true"></span>Free Inspections</div>
+    <div class="final-badge" role="listitem"><span class="final-badge-dot" aria-hidden="true"></span>Financing Available</div>
+    <div class="final-badge" role="listitem"><span class="final-badge-dot" aria-hidden="true"></span>Houston-Area Service</div>
+    <div class="final-badge" role="listitem"><span class="final-badge-dot" aria-hidden="true"></span>Warranty-Backed Workmanship</div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────── -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h3>THT WINDOWS</h3>
-      <div class="footer-brand-sub">A Division of Home Team Roofing</div>
-      <div class="footer-contact-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
-        <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
-      </div>
-      <div class="footer-contact-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5A1.5 1.5 0 013.5 1h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.04 6.4a9.085 9.085 0 004.56 4.56l.962-1.564a.5.5 0 01.506-.133l3.07.878A.5.5 0 0113 10.62V11.5a1.5 1.5 0 01-1.5 1.5C5.701 13 1 8.299 1 2.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
-        <span>(832) 422-3039</span>
-      </div>
-      <div class="footer-contact-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <span>thehometeamroofing@gmail.com</span>
-      </div>
-      <div class="footer-social">
-        <a href="#" class="fsoc" aria-label="Facebook">f</a>
-        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-        <a href="#" class="fsoc" aria-label="Google">G</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Window Styles</h4>
-      <a href="replacement-window-options.html">Double Hung</a>
-      <a href="replacement-window-options.html">Casement</a>
-      <a href="replacement-window-options.html">Picture</a>
-      <a href="replacement-window-options.html">Sliding</a>
-      <a href="replacement-window-options.html">Bay Windows</a>
-      <a href="replacement-window-options.html">Patio Doors</a>
-    </div>
-    <div class="footer-col">
-      <h4>Service Areas</h4>
-      <a href="service-areas.html">Tomball</a>
-      <a href="service-areas.html">The Woodlands</a>
-      <a href="service-areas.html">Spring</a>
-      <a href="service-areas.html">Conroe</a>
-      <a href="service-areas.html">Cypress</a>
-      <a href="service-areas.html">Katy</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="gallery.html">Gallery</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div style="display:flex;align-items:flex-start;justify-content:flex-end">
-      <div class="footer-htr">
-        <div class="footer-htr-div">A Division of</div>
-        <div class="footer-htr-name">HOME TEAM<br>ROOFING</div>
-        <div class="footer-htr-line"></div>
-      </div>
-    </div>
+  <p class="footer-copy">&copy; 2025 Home Team Home Solutions. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <span class="sep">|</span>
+    <a href="#">Terms &amp; Conditions</a>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 THT Windows. All Rights Reserved.</p>
-    <p>Houston, TX &nbsp;&middot;&nbsp; thtwindows.com</p>
+  <div class="footer-social">
+    <span class="footer-social-label">Follow Us</span>
+    <a href="#" class="fsoc" aria-label="Facebook">f</a>
+    <a href="#" class="fsoc" aria-label="Instagram">ig</a>
+    <a href="#" class="fsoc" aria-label="Google">G</a>
   </div>
 </footer>
 
 <script>
 (function(){
-  var hamburger=document.getElementById('hamburger');
-  var drawer=document.getElementById('mobileDrawer');
-  var closeBtn=document.getElementById('mobileClose');
-  if(hamburger&&drawer&&closeBtn){
-    hamburger.addEventListener('click',function(){drawer.classList.add('open');});
-    closeBtn.addEventListener('click',function(){drawer.classList.remove('open');});
-    drawer.addEventListener('click',function(e){if(e.target===drawer){drawer.classList.remove('open');}});
+  /* ── NAV MOBILE ── */
+  var hbg = document.getElementById('hamburger');
+  var drw = document.getElementById('mobDrawer');
+  var cls = document.getElementById('mobClose');
+  if(hbg && drw && cls){
+    hbg.addEventListener('click', function(){ drw.classList.add('open'); });
+    cls.addEventListener('click', function(){ drw.classList.remove('open'); });
+    drw.addEventListener('click', function(e){ if(e.target === drw){ drw.classList.remove('open'); } });
   }
+  var st = document.getElementById('mobSvcToggle');
+  var ss = document.getElementById('mobSvc');
+  if(st && ss){
+    st.addEventListener('click', function(){ ss.classList.toggle('open'); });
+  }
+
+  /* ── GALLERY FILTER ── */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var projCards  = document.querySelectorAll('.proj-card');
+  var featured   = document.getElementById('featuredRoofing');
+  var noResults  = document.getElementById('noResults');
+
+  function applyFilter(cat){
+    /* update button states */
+    filterBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === cat); });
+
+    /* show/hide featured roofing section */
+    if(featured){
+      featured.style.display = (cat === 'roofing' || cat === 'all') ? '' : 'none';
+    }
+
+    /* show/hide cards */
+    var visible = 0;
+    projCards.forEach(function(card){
+      var match = cat === 'all' || card.dataset.category === cat;
+      card.classList.toggle('hidden', !match);
+      if(match) visible++;
+    });
+
+    /* no-results message */
+    if(noResults){
+      noResults.classList.toggle('visible', visible === 0);
+    }
+  }
+
+  /* read URL param */
+  var params = new URLSearchParams(window.location.search);
+  var urlCat = (params.get('category') || '').toLowerCase();
+  var validCats = ['all','roofing','windows','doors'];
+  var initCat = validCats.indexOf(urlCat) !== -1 ? urlCat : 'roofing';
+  applyFilter(initCat);
+
+  /* bind clicks */
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      applyFilter(btn.dataset.filter);
+      var projectsSection = document.getElementById('projects');
+      if(projectsSection){
+        projectsSection.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+
+  /* ── SCROLL REVEAL ── */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.12});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* ── IMAGE FALLBACKS ── */
+  document.querySelectorAll('.proj-photo img').forEach(function(img){
+    img.addEventListener('error', function(){
+      img.closest('.proj-photo').classList.add('missing');
+    });
+  });
 })();
 </script>
 </body>

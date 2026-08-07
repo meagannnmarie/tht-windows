@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Roofing | Home Team Home Solutions — Houston, TX</title>
+<meta name="description" content="First-class residential and commercial roofing in Houston, TX. Free roof inspections, storm damage support, warranty-backed craftsmanship, and flexible financing. Serving Tomball, The Woodlands, Cypress, Spring and surrounding areas."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:#0d0d0d;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── TOKENS ── */
+:root{
+  --red:#C81F25;
+  --red-dim:#a51a1f;
+  --black:#0d0d0d;
+  --dark1:#111111;
+  --dark2:#181818;
+  --dark3:#222222;
+  --dborder:rgba(255,255,255,0.08);
+  --white:#ffffff;
+  --offwhite:#f7f6f4;
+  --muted-dark:#888888;
+  --border:#e5e3df;
+}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid var(--border);padding:0 52px;height:88px;display:flex;align-items:center;gap:0}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{height:56px;width:auto;display:block;flex-shrink:0}
+.nav-brand{display:flex;flex-direction:column;gap:3px}
+.nav-brand-name{font-size:13px;font-weight:800;color:#0d0d0d;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;color:#888;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-links{display:flex;gap:28px;flex:1;justify-content:center;align-items:center}
+.nav-links a{font-size:12.5px;color:#444;text-decoration:none;font-weight:500;letter-spacing:.3px;white-space:nowrap;transition:color .15s;position:relative}
+.nav-links a:hover{color:#0d0d0d}
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{font-size:12.5px;color:#0d0d0d;font-weight:700;letter-spacing:.3px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px;padding:0;transition:color .15s;position:relative}
+.nav-drop-btn::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--red);border-radius:1px}
+.nav-drop-btn svg{transition:transform .2s}
+.nav-drop:hover .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:.5rem 0;min-width:170px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;z-index:500}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu::before{content:'';position:absolute;top:-20px;left:0;right:0;height:20px}
+.nav-drop-menu a{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;font-size:12.5px;color:#444;text-decoration:none;font-weight:500;transition:background .12s,color .12s}
+.nav-drop-menu a:hover{background:#faf9f7;color:#0d0d0d}
+.nav-drop-menu a .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.nav-drop-menu a.nav-active{background:#faf9f7;color:#0d0d0d;font-weight:700}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:background .15s,transform .12s}
+.nav-cta:hover{background:var(--red-dim);transform:translateY(-1px)}
+.nav-cta svg{flex-shrink:0}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:#0d0d0d;border-radius:1px;transition:.2s}
+.mob-drawer{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.5)}
+.mob-drawer.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;bottom:0;width:300px;background:#fff;padding:2rem 1.875rem;display:flex;flex-direction:column;overflow-y:auto}
+.mob-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:20px;color:#0d0d0d;margin-bottom:1.5rem}
+.mob-link{font-size:15px;color:#333;text-decoration:none;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;display:block}
+.mob-link:hover{color:var(--red)}
+.mob-expand{font-size:15px;color:#333;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;width:100%}
+.mob-sub{display:none;padding-left:1rem}
+.mob-sub.open{display:block}
+.mob-sub a{font-size:13.5px;color:#888;text-decoration:none;padding:.4rem 0;display:block}
+.mob-sub a:hover{color:var(--red)}
+.mob-sub a.mob-active{color:var(--red);font-weight:700}
+.mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
+@media(max-width:1140px){nav{padding:0 28px}.nav-links{gap:20px}}
+@media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
+
+/* ── SHARED UTILITIES ── */
+.sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:1rem}
+.sec-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:.875rem 0 0}
+.sec-rule.centered{margin:.875rem auto 0}
+.sec-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.5vw,44px);line-height:1.10;letter-spacing:-.4px}
+.sec-sub{font-size:15px;line-height:1.78;margin-top:.875rem}
+.section-header{margin-bottom:3.5rem}
+.section-header.center{text-align:center}
+.section-header.center .sec-rule{margin:.875rem auto 0}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .72s ease,transform .72s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+.reveal.d5{transition-delay:.40s}
+.reveal.d6{transition-delay:.48s}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity .72s ease,transform .72s ease}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity .72s ease,transform .72s ease}
+.reveal-right.visible{opacity:1;transform:none}
+
+/* Buttons */
+.btn-red{background:var(--red);color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,transform .12s;white-space:nowrap}
+.btn-red:hover{background:var(--red-dim);transform:translateY(-1px)}
+.btn-red:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.btn-ghost{background:transparent;color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:border-color .15s,background .15s,color .15s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);color:#fff}
+.btn-ghost:focus-visible{outline:2px solid rgba(255,255,255,.6);outline-offset:3px}
+.btn-red-outline{background:transparent;color:var(--red);font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid var(--red);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,color .15s}
+.btn-red-outline:hover{background:var(--red);color:#fff}
+.btn-red-outline:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:clamp(560px,78vh,740px);background:var(--black);overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background-image:url('images/roofingwinnerhero.png');background-size:cover;background-position:center 46%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 50%,rgba(0,0,0,.22) 100%)}
+.hero-overlay-l{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52) 0%,rgba(0,0,0,.20) 42%,transparent 62%)}
+.hero-content{position:relative;z-index:2;padding:64px 64px 56px;max-width:600px;animation:fadeUp .9s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px;margin-bottom:1.375rem;width:fit-content}
+.hero-h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(36px,5.5vw,62px);line-height:1.05;letter-spacing:-.5px;color:#fff;margin-bottom:0;text-shadow:0 1px 14px rgba(0,0,0,.30),0 2px 4px rgba(0,0,0,.18)}
+.hero-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:1.25rem 0 1rem}
+.hero-tagline{font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.90);line-height:1.75;margin-bottom:1.5rem;max-width:460px;text-shadow:0 1px 8px rgba(0,0,0,.22)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:1.75rem}
+.hero-trust-row{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.hero-trust-item{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.78);text-shadow:0 1px 6px rgba(0,0,0,.20)}
+.hero-trust-dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:color .2s;animation:fadeUp .9s .4s ease both}
+.hero-scroll:hover{color:rgba(255,255,255,.65)}
+.hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
+@media(max-width:900px){.hero-content{padding:56px 28px 48px;max-width:100%}}
+@media(max-width:560px){.hero-btns{flex-direction:column}.btn-red,.btn-ghost{justify-content:center;width:100%}.hero-content{padding:48px 20px 44px}}
+
+/* ── CREDIBILITY STRIP ── */
+.cred-strip{background:#fff;border-bottom:1px solid var(--border)}
+.cred-inner{max-width:1240px;margin:0 auto;padding:0 52px;display:grid;grid-template-columns:repeat(4,1fr)}
+.cred-item{padding:2rem 1.75rem;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.cred-item+.cred-item{border-left:1px solid var(--border)}
+.cred-icon{width:48px;height:48px;border-radius:12px;background:#fef2f2;border:1.5px solid rgba(200,31,37,.12);display:flex;align-items:center;justify-content:center;margin-bottom:.875rem;flex-shrink:0}
+.cred-label{font-size:14px;font-weight:700;color:#0d0d0d;letter-spacing:-.2px;line-height:1.2;margin-bottom:.375rem}
+.cred-sub{font-size:11.5px;color:#777;line-height:1.55}
+@media(max-width:760px){.cred-inner{grid-template-columns:repeat(2,1fr);padding:0 20px}.cred-item{padding:1.5rem 1rem}.cred-item:nth-child(3){border-left:none}.cred-item:nth-child(3),.cred-item:nth-child(4){border-top:1px solid var(--border)}}
+@media(max-width:440px){.cred-inner{grid-template-columns:1fr}.cred-item+.cred-item{border-left:none;border-top:1px solid var(--border)}}
+
+/* ── BRAND STORY ── */
+.story-section{background:var(--offwhite);padding:7rem 52px}
+.story-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center}
+.story-text .sec-h{color:#0d0d0d}
+.story-text .sec-sub{color:#555;max-width:480px;margin-top:.875rem}
+.story-callout{margin-top:2rem;padding:1.5rem 1.75rem;background:#fff;border-left:3px solid var(--red);border-radius:0 8px 8px 0;box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.story-callout-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;display:block}
+.story-callout-text{font-size:13.5px;color:#444;line-height:1.72}
+.story-btns{display:flex;gap:12px;margin-top:2.25rem;flex-wrap:wrap}
+.story-img-wrap{position:relative}
+.story-img-primary{border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.14)}
+.story-img-primary img{width:100%;display:block;height:520px;object-fit:cover;object-position:center}
+.story-img-badge{position:absolute;bottom:-1.375rem;left:-1.375rem;background:#fff;border-radius:12px;padding:1.125rem 1.375rem;box-shadow:0 12px 36px rgba(0,0,0,.12);display:flex;align-items:center;gap:.875rem;border:1px solid var(--border)}
+.story-badge-icon{width:40px;height:40px;border-radius:50%;background:#fef2f2;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.story-badge-text strong{display:block;font-size:13px;color:#0d0d0d;font-weight:700;line-height:1.3}
+.story-badge-text span{font-size:11px;color:#888;font-weight:400}
+@media(max-width:960px){.story-inner{grid-template-columns:1fr;gap:3.5rem}.story-section{padding:5rem 28px}.story-img-primary img{height:380px}}
+@media(max-width:560px){.story-section{padding:4.5rem 20px}.story-img-badge{left:0;bottom:-1rem}.story-img-primary img{height:260px}.story-btns{flex-direction:column}.story-btns .btn-red,.story-btns .btn-red-outline{width:100%;justify-content:center}}
+
+/* ── SERVICES SECTION ── */
+.services-section{background:var(--dark1);padding:7rem 52px}
+.services-inner{max-width:1300px;margin:0 auto}
+.services-section .sec-h{color:#fff}
+.services-section .sec-sub{color:rgba(255,255,255,.44);max-width:540px}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.125rem;margin-top:3rem}
+.svc-card{background:#1a1a1c;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.875rem 1.625rem;display:flex;flex-direction:column;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;cursor:default}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 20px 52px rgba(0,0,0,.5);border-color:rgba(200,31,37,.22)}
+.svc-icon{width:48px;height:48px;border-radius:12px;background:rgba(200,31,37,.10);border:1px solid rgba(200,31,37,.18);display:flex;align-items:center;justify-content:center;margin-bottom:1.375rem;flex-shrink:0}
+.svc-title{font-family:'Playfair Display',serif;font-weight:500;font-size:16px;color:#fff;letter-spacing:-.1px;line-height:1.2;margin-bottom:.5rem}
+.svc-rule{width:24px;height:1.5px;background:var(--red);border-radius:1px;margin-bottom:.875rem;flex-shrink:0}
+.svc-desc{font-size:12.5px;color:rgba(255,255,255,.42);line-height:1.65;margin-bottom:auto;padding-bottom:1.125rem;flex:1}
+.svc-link{font-size:10px;font-weight:700;color:var(--red);letter-spacing:1.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:5px;margin-top:auto;transition:gap .2s;text-decoration:none}
+.svc-link:hover{gap:9px}
+.svc-link:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+@media(max-width:1200px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}.services-section{padding:5rem 28px}}
+@media(max-width:560px){.services-grid{grid-template-columns:1fr}.services-section{padding:4.5rem 20px}}
+
+/* ── SYSTEMS SECTION ── */
+.systems-section{background:var(--dark2);padding:7rem 52px}
+.systems-inner{max-width:1300px;margin:0 auto}
+.systems-section .sec-h{color:#fff}
+.systems-section .sec-sub{color:rgba(255,255,255,.42);max-width:520px}
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:280px;gap:14px;margin-top:3rem}
+.sys-card{position:relative;border-radius:14px;overflow:hidden;background:var(--dark3);box-shadow:0 8px 32px rgba(0,0,0,.4);transition:box-shadow .4s ease,transform .4s ease;cursor:default}
+.sys-card:hover{box-shadow:0 24px 56px rgba(0,0,0,.6);transform:translateY(-5px)}
+.sys-card.tall{grid-row:span 2}
+.sys-card-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+.sys-card:hover .sys-card-bg{transform:scale(1.07)}
+.sys-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,rgba(0,0,0,.16) 32%,transparent 52%);transition:background .4s ease}
+.sys-card:hover .sys-card-overlay{background:linear-gradient(to top,rgba(0,0,0,.62) 0%,rgba(0,0,0,.20) 35%,transparent 56%)}
+.sys-card-badge{position:absolute;top:1rem;left:1rem;z-index:2;font-size:8px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#fff;background:rgba(200,31,37,.88);padding:4px 11px;border-radius:2px}
+.sys-card-body{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:1.375rem 1.5rem 1.625rem}
+.sys-card-name{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(16px,1.6vw,20px);color:#fff;letter-spacing:-.1px;line-height:1.15;margin-bottom:0;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.sys-card:hover .sys-card-name{margin-bottom:.5rem}
+.sys-card-desc{font-size:12.5px;color:rgba(255,255,255,.50);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s ease;opacity:0}
+.sys-card:hover .sys-card-desc{max-height:80px;opacity:1}
+.sys-card-learn{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--red);letter-spacing:1.2px;text-transform:uppercase;max-height:0;overflow:hidden;margin-top:0;opacity:0;transform:translateY(5px);transition:opacity .3s ease,transform .3s ease,max-height .3s ease,margin-top .3s ease,gap .2s;text-decoration:none}
+.sys-card:hover .sys-card-learn{max-height:40px;margin-top:.75rem;opacity:1;transform:translateY(0)}
+.sys-card-learn:hover{gap:9px}
+@media(max-width:1100px){.systems-grid{grid-template-columns:repeat(2,1fr)}.systems-section{padding:5rem 28px}.sys-card.tall{grid-row:span 1}}
+@media(max-width:680px){.systems-grid{grid-template-columns:1fr;grid-auto-rows:240px;gap:10px}.systems-section{padding:4.5rem 20px}}
+
+/* ── INSTALLATION & WARRANTY ── */
+.install-section{background:var(--dark1);padding:7rem 52px}
+.install-inner{max-width:1240px;margin:0 auto}
+.install-section .sec-h{color:#fff}
+.install-section .sec-sub{color:rgba(255,255,255,.42);max-width:560px;margin:0 auto}
+.install-section .section-header{text-align:center;margin-bottom:0}
+.install-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:0 3.5rem;margin-top:4.5rem;align-items:start}
+.install-divider{background:rgba(255,255,255,.07);align-self:stretch;min-height:300px}
+.install-col-icon{width:56px;height:56px;border-radius:14px;background:rgba(200,31,37,.10);border:1px solid rgba(200,31,37,.20);display:flex;align-items:center;justify-content:center;margin-bottom:1.375rem}
+.install-col-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(20px,2.5vw,26px);color:#fff;letter-spacing:-.2px;line-height:1.2;margin-bottom:.875rem}
+.install-col-rule{width:32px;height:1.5px;background:var(--red);border-radius:1px;margin-bottom:1.25rem}
+.install-col-p{font-size:14px;color:rgba(255,255,255,.46);line-height:1.82;margin-bottom:1rem}
+.install-features{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:1.375rem}
+.install-features li{display:flex;align-items:flex-start;gap:.875rem;font-size:13px;color:rgba(255,255,255,.55);line-height:1.62}
+.install-feature-check{width:20px;height:20px;border-radius:50%;background:rgba(200,31,37,.14);border:1px solid rgba(200,31,37,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.install-cta-wrap{margin-top:4rem;text-align:center}
+@media(max-width:900px){.install-grid{grid-template-columns:1fr;row-gap:3rem}.install-divider{display:none;min-height:0}.install-section{padding:5rem 28px}}
+@media(max-width:560px){.install-section{padding:4.5rem 20px}}
+
+/* ── STORM SECTION ── */
+.storm-section{position:relative;background:var(--black);overflow:hidden;padding:8rem 52px}
+.storm-bg{position:absolute;inset:0;background-image:url('images/farmheronew.png');background-size:cover;background-position:center;opacity:.14}
+.storm-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.76) 100%)}
+.storm-inner{position:relative;z-index:2;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:start}
+.storm-section .sec-h{color:#fff}
+.storm-section .sec-sub{color:rgba(255,255,255,.42);max-width:480px}
+.storm-steps{margin-top:3rem;display:flex;flex-direction:column;gap:1.125rem}
+.storm-step{display:flex;align-items:flex-start;gap:1.25rem;padding:1.125rem 1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;transition:background .2s,border-color .2s}
+.storm-step:hover{background:rgba(255,255,255,.07);border-color:rgba(200,31,37,.20)}
+.storm-num{font-size:clamp(22px,2.8vw,32px);font-weight:800;color:rgba(200,31,37,.28);line-height:1;letter-spacing:-1px;flex-shrink:0;min-width:44px}
+.storm-step-h{font-family:'Playfair Display',serif;font-weight:500;font-size:15px;color:#fff;margin-bottom:.3rem;letter-spacing:-.05px}
+.storm-step-p{font-size:12.5px;color:rgba(255,255,255,.40);line-height:1.62}
+.storm-aside-callout{background:rgba(200,31,37,.09);border:1px solid rgba(200,31,37,.20);border-radius:14px;padding:2rem 1.875rem;margin-bottom:1.875rem}
+.storm-aside-callout-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(18px,2.2vw,24px);color:#fff;letter-spacing:-.2px;margin-bottom:.75rem;line-height:1.2}
+.storm-aside-callout-p{font-size:13.5px;color:rgba(255,255,255,.46);line-height:1.72;margin-bottom:1.5rem}
+.storm-disclaimer{padding:1.125rem 1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;font-size:11.5px;color:rgba(255,255,255,.28);line-height:1.68;margin-top:2rem}
+@media(max-width:960px){.storm-inner{grid-template-columns:1fr;gap:3.5rem}.storm-section{padding:5rem 28px}}
+@media(max-width:560px){.storm-section{padding:4.5rem 20px}}
+
+/* ── GALLERY SECTION ── */
+.gallery-section{background:var(--dark1);padding:6.5rem 52px}
+.gallery-inner{max-width:1300px;margin:0 auto}
+.gallery-section .sec-h{color:#fff}
+.gallery-section .sec-sub{color:rgba(255,255,255,.40);max-width:520px}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;margin-top:3rem}
+.gallery-item{position:relative;border-radius:12px;overflow:hidden;background:var(--dark3);cursor:pointer}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.25,.46,.45,.94),filter .4s ease;filter:brightness(.80)}
+.gallery-item:hover img{transform:scale(1.06);filter:brightness(.95)}
+.gallery-item-tag{position:absolute;bottom:0;left:0;right:0;padding:1.125rem 1rem 1rem;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 100%);font-size:10px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:2px;text-transform:uppercase;opacity:0;transition:opacity .3s}
+.gallery-item:hover .gallery-item-tag{opacity:1}
+.gallery-cta-row{margin-top:2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.gallery-cta-row p{font-size:12.5px;color:rgba(255,255,255,.28)}
+@media(max-width:1100px){.gallery-grid{grid-template-columns:repeat(3,1fr)}.gallery-item.wide{grid-column:span 1}}
+@media(max-width:768px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}.gallery-section{padding:4.5rem 20px}.gallery-item.tall{grid-row:span 1}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr;grid-auto-rows:220px}}
+
+/* ── REVIEWS SECTION ── */
+.reviews-section{background:var(--dark2);padding:7rem 52px}
+.reviews-inner{max-width:1240px;margin:0 auto}
+.reviews-section .sec-h{color:#fff}
+.reviews-section .sec-sub{color:rgba(255,255,255,.42);max-width:520px}
+.reviews-top{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:start;margin-top:3rem}
+.reviews-rating-block{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.75rem 2rem;text-align:center;min-width:160px}
+.reviews-rating-num{font-size:56px;font-weight:800;color:#fff;line-height:1;letter-spacing:-2px}
+.reviews-stars{color:#f59e0b;font-size:20px;letter-spacing:3px;margin:.4rem 0}
+.reviews-rating-label{font-size:10.5px;color:rgba(255,255,255,.32);font-weight:500;letter-spacing:.5px}
+.reviews-platforms{display:flex;flex-direction:column;gap:.75rem}
+.reviews-platform{display:flex;align-items:center;gap:1rem;padding:.875rem 1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px}
+.reviews-platform-stars{color:#f59e0b;font-size:13px;letter-spacing:2px;flex-shrink:0}
+.reviews-platform-info{flex:1}
+.reviews-platform-name{font-size:13px;font-weight:600;color:#fff;margin-bottom:.2rem}
+.reviews-platform-count{font-size:11px;color:rgba(255,255,255,.32)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.review-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.625rem;display:flex;flex-direction:column;gap:1rem;transition:background .2s,border-color .2s}
+.review-card:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.14)}
+.review-tag{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--red);background:rgba(200,31,37,.10);padding:3px 9px;border-radius:3px;align-self:flex-start;width:fit-content}
+.review-stars{color:#f59e0b;font-size:15px;letter-spacing:2px}
+.review-text{font-size:13.5px;color:rgba(255,255,255,.56);line-height:1.78;font-style:italic;flex:1}
+.review-author{font-size:12px;font-weight:600;color:rgba(255,255,255,.36);letter-spacing:.3px}
+.reviews-cta-row{margin-top:3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.reviews-cta-row p{font-size:12.5px;color:rgba(255,255,255,.28)}
+@media(max-width:960px){.reviews-top{grid-template-columns:1fr;gap:1.5rem}.reviews-rating-block{display:flex;gap:1.5rem;align-items:center;text-align:left;min-width:auto}.reviews-grid{grid-template-columns:repeat(2,1fr)}.reviews-section{padding:5rem 28px}}
+@media(max-width:560px){.reviews-grid{grid-template-columns:1fr}.reviews-section{padding:4.5rem 20px}.reviews-rating-block{flex-direction:column;text-align:center}}
+
+/* ── PROCESS SECTION ── */
+.process-section{background:var(--offwhite);padding:7rem 52px}
+.process-inner{max-width:1000px;margin:0 auto;text-align:center}
+.process-section .sec-eyebrow{color:var(--red)}
+.process-section .sec-h{color:#0d0d0d}
+.process-section .sec-sub{color:#666;max-width:520px;margin:0 auto}
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:4rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:35px;left:calc(16.67% + 36px);right:calc(16.67% + 36px);height:1px;background:rgba(200,31,37,.18);z-index:0}
+.process-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
+.process-num-wrap{width:70px;height:70px;border-radius:50%;border:2px solid var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;position:relative;background:var(--offwhite)}
+.process-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red)}
+.process-step-h{font-family:'Playfair Display',serif;font-weight:500;font-size:16px;color:#0d0d0d;letter-spacing:-.1px;margin-bottom:.625rem}
+.process-step-p{font-size:13px;color:#666;line-height:1.68;max-width:240px}
+.process-cta{margin-top:3.5rem;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+@media(max-width:768px){.process-steps{grid-template-columns:1fr;gap:2rem}.process-steps::before{display:none}.process-section{padding:5rem 28px}}
+@media(max-width:560px){.process-section{padding:4.5rem 20px}.process-cta{flex-direction:column}.process-cta .btn-red,.process-cta .btn-red-outline{width:100%;justify-content:center}}
+
+/* ── FINANCING STRIP ── */
+.fin-strip{background:var(--dark2);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:2.5rem 52px;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.fin-strip-left{display:flex;align-items:center;gap:1.375rem}
+.fin-icon-circle{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fin-strip-text h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:3px}
+.fin-strip-text p{font-size:12.5px;color:var(--muted-dark)}
+.fin-btns{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:760px){.fin-strip{padding:2.5rem 20px;flex-direction:column;align-items:flex-start}.fin-btns{width:100%;flex-direction:column}.fin-btns .btn-red,.fin-btns .btn-ghost{width:100%;justify-content:center}}
+
+/* ── FINAL CTA ── */
+.final-cta{background:var(--dark1);padding:8.5rem 52px;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;top:-25%;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(200,31,37,.07) 0%,transparent 65%);pointer-events:none}
+.final-cta-inner{position:relative;z-index:1;max-width:780px;margin:0 auto;text-align:center}
+.final-cta .sec-eyebrow{margin-bottom:1.25rem}
+.final-cta-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4.5vw,52px);color:#fff;line-height:1.10;letter-spacing:-.4px;margin-bottom:1.125rem}
+.final-cta-sub{font-size:15px;color:rgba(255,255,255,.42);line-height:1.82;max-width:520px;margin:0 auto 2.75rem}
+.final-cta-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.625rem;margin-bottom:2.75rem}
+.final-cta-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.68);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:24px;padding:8px 16px;transition:background .2s,border-color .2s,color .2s}
+.final-cta-badge:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);color:#fff}
+.final-cta-badge-dot{width:16px;height:16px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.final-cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+@media(max-width:680px){.final-cta{padding:5.5rem 20px}.final-cta-btns{flex-direction:column}.final-cta-btns .btn-red,.final-cta-btns .btn-ghost{width:100%;justify-content:center}}
+
+/* ── FOOTER ── */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:1.375rem 52px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.footer-copy{font-size:11.5px;color:#555}
+.footer-links{display:flex;align-items:center;gap:20px}
+.footer-links a{font-size:11.5px;color:#555;text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:#888}
+.footer-links .sep{color:#333;font-size:10px}
+.footer-social{display:flex;align-items:center;gap:10px}
+.footer-social-label{font-size:10px;color:#444;text-transform:uppercase;letter-spacing:1.5px;margin-right:4px}
+.fsoc{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.40);font-size:11px;text-decoration:none;font-weight:700;transition:border-color .15s,color .15s}
+.fsoc:hover{border-color:rgba(255,255,255,.40);color:rgba(255,255,255,.85)}
+@media(max-width:760px){footer{padding:1.375rem 20px;flex-direction:column;gap:.75rem;text-align:center}.footer-links{justify-content:center}.footer-social{justify-content:center}}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Home Team Home Solutions — Home">
+    <img src="images/hometeamroofinglogo.png" alt="Home Team Roofing" class="nav-logo-img"/>
+    <div class="nav-brand">
+      <div class="nav-brand-name">Home Team</div>
+      <div class="nav-brand-sub">Home Solutions</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Home Improvements
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="#0d0d0d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-drop-menu">
+        <a href="roofing.html" class="nav-active"><span class="dot"></span>Roofing</a>
+        <a href="windows.html"><span class="dot"></span>Windows</a>
+        <a href="doors.html"><span class="dot"></span>Custom Doors</a>
+        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
+      </div>
+    </div>
+    <a href="gallery.html">Gallery</a>
+    <a href="financing.html">Financing</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="estimate.html" class="nav-cta">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE DRAWER ── -->
+<div class="mob-drawer" id="mobDrawer" role="dialog" aria-label="Navigation menu">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose" aria-label="Close navigation menu">&#x2715;</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <button class="mob-expand" id="mobSvcToggle" aria-expanded="false">Home Improvements ›</button>
+    <div class="mob-sub" id="mobSvc">
+      <a href="roofing.html" class="mob-active">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="siding.html">Other Home Solutions</a>
+    </div>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="financing.html" class="mob-link">Financing</a>
+    <a href="reviews.html" class="mob-link">Reviews</a>
+    <a href="contact.html" class="mob-link">About</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <a href="estimate.html" class="mob-cta">Start My Project →</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     1 · HERO
+══════════════════════════ -->
+<section class="hero" aria-label="Flagship Roofing Hero">
+  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-overlay-l" aria-hidden="true"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow-pill">Home Team Roofing</span>
+    <h1 class="hero-h1">First-Class Roofing.<br>Built to Protect.</h1>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p class="hero-tagline">Protect your home with expert roofing backed by proven craftsmanship and a team committed to guiding you from inspection through installation.</p>
+    <div class="hero-btns">
+      <a href="estimate.html" class="btn-red">
+        Start My Roofing Project
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#roofing-services" class="btn-ghost">Explore Roofing Services</a>
+    </div>
+    <div class="hero-trust-row" role="list">
+      <div class="hero-trust-item" role="listitem">
+        <span class="hero-trust-dot" aria-hidden="true"></span>
+        Free Roof Inspections
+      </div>
+      <div class="hero-trust-item" role="listitem">
+        <span class="hero-trust-dot" aria-hidden="true"></span>
+        Financing Available
+      </div>
+      <div class="hero-trust-item" role="listitem">
+        <span class="hero-trust-dot" aria-hidden="true"></span>
+        Warranty-Backed Workmanship
+      </div>
+    </div>
+  </div>
+  <a href="#cred-strip" class="hero-scroll" aria-label="Scroll down to learn more">
+    <div class="hero-scroll-line" aria-hidden="true"></div>
+    <span>Explore</span>
+  </a>
+</section>
+
+<!-- ══════════════════════════
+     2 · CREDIBILITY STRIP
+══════════════════════════ -->
+<div class="cred-strip" id="cred-strip">
+  <div class="cred-inner">
+
+    <div class="cred-item reveal">
+      <div class="cred-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L2 6v7c0 5 4 9 9 10 5-1 9-5 9-10V6L11 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 11l3 3 5-5" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="cred-label">Free Roof Inspections</div>
+      <div class="cred-sub">No-cost assessments for every Houston homeowner</div>
+    </div>
+
+    <div class="cred-item reveal d1">
+      <div class="cred-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="6" width="16" height="13" rx="2" stroke="var(--red)" stroke-width="1.5"/><path d="M7 6V5a4 4 0 018 0v1" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M11 12v3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="cred-label">Flexible Financing</div>
+      <div class="cred-sub">Payment options designed to fit your budget</div>
+    </div>
+
+    <div class="cred-item reveal d2">
+      <div class="cred-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3l-8 4v5c0 4.5 3.5 8.5 8 10 4.5-1.5 8-5.5 8-10V7L11 3z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 11l2 2 4-4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="cred-label">Warranty-Backed Work</div>
+      <div class="cred-sub">Craftsmanship backed by a workmanship guarantee</div>
+    </div>
+
+    <div class="cred-item reveal d3">
+      <div class="cred-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L2 8v12h5v-7h8v7h5V8L11 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="cred-label">Greater Houston Area</div>
+      <div class="cred-sub">Serving Tomball, The Woodlands, Cypress &amp; more</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     3 · BRAND STORY
+══════════════════════════ -->
+<section class="story-section" aria-labelledby="story-heading">
+  <div class="story-inner">
+
+    <div class="story-text reveal-left">
+      <span class="sec-eyebrow">Our Foundation</span>
+      <h2 class="sec-h" id="story-heading">Roofing Is Where the Home Team Standard Began</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">Before Home Team expanded into windows, doors and complete home solutions, the company built its reputation by protecting homes from the top down. Roofing remains the foundation of the Home Team name and the service that established its commitment to quality, communication and dependable workmanship.</p>
+      <p class="sec-sub" style="margin-top:.875rem">Every roofing project is approached with the same care and professionalism the company was founded on — clear communication, thorough preparation and craftsmanship that stands behind every nail.</p>
+
+      <div class="story-callout">
+        <span class="story-callout-label">Houston's Roofing Specialists</span>
+        <p class="story-callout-text">From Tomball to The Woodlands and across the Greater Houston metro, Home Team has been protecting local homes with quality roofing services, free inspections and responsive customer care.</p>
+      </div>
+
+      <div class="story-btns">
+        <a href="estimate.html" class="btn-red">
+          Schedule My Free Inspection
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="contact.html" class="btn-red-outline">Contact Home Team</a>
+      </div>
+    </div>
+
+    <div class="story-img-wrap reveal-right">
+      <div class="story-img-primary">
+        <img src="images/Roofingpagephoto.png" alt="Luxury Houston home with a beautifully installed residential roof by Home Team Roofing" loading="lazy" width="620" height="520"/>
+      </div>
+      <div class="story-img-badge" aria-hidden="true">
+        <div class="story-badge-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5L2 5v6c0 4 3 7 7 8 4-1 7-4 7-8V5L9 1.5z" stroke="var(--red)" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 9l2 2 4-4" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="story-badge-text">
+          <strong>Home Team Roofing</strong>
+          <span>Tomball, Texas</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     4 · ROOFING SERVICES
+══════════════════════════ -->
+<section class="services-section" id="roofing-services" aria-labelledby="services-heading">
+  <div class="services-inner">
+
+    <div class="section-header reveal">
+      <span class="sec-eyebrow">Complete Roofing Solutions</span>
+      <h2 class="sec-h" id="services-heading">Everything Your Roof Needs. One Trusted Team.</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">From full roof replacements to storm damage restoration and emergency repairs, Home Team offers comprehensive roofing services for homeowners across the Houston area.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Residential Replacement -->
+      <div class="svc-card reveal d1">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 10L11 3l9 7" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 9v10h5v-6h4v6h5V9" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="svc-title">Residential Roof Replacement</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">Full roof replacement for Houston-area homes using quality materials and expert installation — completed efficiently with minimal disruption.</p>
+        <a href="estimate.html" class="svc-link">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Roof Repair -->
+      <div class="svc-card reveal d2">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M14 3l5 5-9 9-5-5 9-9z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 19l3-3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="svc-title">Roof Repair</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">Targeted repairs for leaks, missing shingles, flashing issues and localized damage — performed by experienced technicians who get it right.</p>
+        <a href="estimate.html" class="svc-link">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Storm & Hail -->
+      <div class="svc-card reveal d3">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 13a6 6 0 1112 0H5z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13v5M13 13v5M11 16v3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="svc-title">Storm &amp; Hail Damage</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">Rapid response to storm and hail damage. We inspect, document and restore your roof so your home is protected as quickly as possible.</p>
+        <a href="estimate.html" class="svc-link">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Free Inspections -->
+      <div class="svc-card reveal d4">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="10" cy="10" r="6" stroke="var(--red)" stroke-width="1.5"/><path d="M14.5 14.5l4 4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="svc-title">Free Roof Inspections</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">A thorough, no-cost roof inspection from a roofing professional. Know exactly what your roof needs — with no obligation and no pressure.</p>
+        <a href="estimate.html" class="svc-link">
+          Schedule Now
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Insurance Restoration -->
+      <div class="svc-card reveal d5">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3 5.5V12c0 4.5 3.5 8.7 8 10 4.5-1.3 8-5.5 8-10V5.5L11 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 11l2 2 4-4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="svc-title">Insurance Restoration Support</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">We help homeowners navigate the insurance restoration process — documenting damage and supporting you at every step. Coverage decisions remain with your carrier.</p>
+        <a href="estimate.html" class="svc-link">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Commercial -->
+      <div class="svc-card reveal d6">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="8" width="18" height="12" rx="1.5" stroke="var(--red)" stroke-width="1.5"/><path d="M5 8V6a6 6 0 0112 0v2" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M9 14h4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="svc-title">Commercial Roofing</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">Commercial roofing solutions for businesses and investment properties across the Houston area — durable systems with professional installation.</p>
+        <a href="estimate.html" class="svc-link">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Metal Roofing -->
+      <div class="svc-card reveal d1">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 18L11 4l9 14H2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 4v14M6.5 11h9" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="svc-title">Metal Roofing</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">Long-lasting metal roofing systems — including standing-seam options — for homeowners seeking superior durability and a modern architectural look.</p>
+        <a href="estimate.html" class="svc-link">
+          Learn More
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Emergency -->
+      <div class="svc-card reveal d2">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="var(--red)" stroke-width="1.5"/><path d="M11 7v4" stroke="var(--red)" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="15" r="1" fill="var(--red)"/></svg>
+        </div>
+        <div class="svc-title">Emergency Roofing Assistance</div>
+        <div class="svc-rule" aria-hidden="true"></div>
+        <p class="svc-desc">When a roof emergency can't wait, Home Team is ready to respond. We help secure your home and prevent further damage until full restoration can be completed.</p>
+        <a href="contact.html" class="svc-link">
+          Contact Us Now
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     5 · ROOFING SYSTEMS
+══════════════════════════ -->
+<section class="systems-section" id="roofing-options" aria-labelledby="systems-heading">
+  <div class="systems-inner">
+
+    <div class="section-header reveal">
+      <span class="sec-eyebrow">Roofing Options</span>
+      <h2 class="sec-h" id="systems-heading">A Roofing System Designed Around Your Home</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">Whether you are replacing an aging roof or upgrading to a premium system, Home Team helps you choose the right material, style and color for your home.</p>
+    </div>
+
+    <div class="systems-grid">
+
+      <div class="sys-card tall reveal d1">
+        <div class="sys-card-bg" style="background-image:url('images/archshingles.png')" role="img" aria-label="Luxury Houston home with architectural shingle roofing"></div>
+        <div class="sys-card-overlay" aria-hidden="true"></div>
+        <span class="sys-card-badge">Most Popular</span>
+        <div class="sys-card-body">
+          <div class="sys-card-name">Architectural Shingles</div>
+          <div class="sys-card-desc">Dimensional asphalt shingles that provide superior protection, enhanced curb appeal and long-lasting performance for Houston homes.</div>
+          <a href="estimate.html" class="sys-card-learn" aria-label="Learn more about Architectural Shingles">
+            Explore Option
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="sys-card reveal d2">
+        <div class="sys-card-bg" style="background-image:url('images/luxuryshingles.png')" role="img" aria-label="Houston home with designer shingle roof installation"></div>
+        <div class="sys-card-overlay" aria-hidden="true"></div>
+        <span class="sys-card-badge">Premium Collection</span>
+        <div class="sys-card-body">
+          <div class="sys-card-name">Designer &amp; Luxury Shingles</div>
+          <div class="sys-card-desc">Elevated shingle profiles that replicate the look of slate or wood shake with the performance of modern roofing technology.</div>
+          <a href="estimate.html" class="sys-card-learn" aria-label="Learn more about Designer and Luxury Shingles">
+            Explore Option
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="sys-card reveal d3">
+        <div class="sys-card-bg" style="background-image:url('images/galleryphotofinal.png')" role="img" aria-label="Modern home with standing-seam metal roof"></div>
+        <div class="sys-card-overlay" aria-hidden="true"></div>
+        <span class="sys-card-badge">Long-Life System</span>
+        <div class="sys-card-body">
+          <div class="sys-card-name">Standing-Seam Metal Roofing</div>
+          <div class="sys-card-desc">A sleek, architectural metal roof system offering outstanding longevity, energy reflectance and modern design for Houston homes.</div>
+          <a href="estimate.html" class="sys-card-learn" aria-label="Learn more about Standing-Seam Metal Roofing">
+            Explore Option
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="sys-card reveal d1">
+        <div class="sys-card-bg" style="background-image:url('images/roofingpage1.png')" role="img" aria-label="Completed residential roofing project by Home Team Roofing"></div>
+        <div class="sys-card-overlay" aria-hidden="true"></div>
+        <div class="sys-card-body">
+          <div class="sys-card-name">Complete Roofing Systems</div>
+          <div class="sys-card-desc">Full system installations including shingles, underlayment, ridge vents, ice &amp; water shield and flashing for total roof performance.</div>
+          <a href="estimate.html" class="sys-card-learn" aria-label="Learn more about Complete Roofing Systems">
+            Explore Option
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="sys-card reveal d2">
+        <div class="sys-card-bg" style="background-image:url('images/brownroofshingles.png');background-position:center top" role="img" aria-label="Ventilation and roofing components for Houston residential roofing"></div>
+        <div class="sys-card-overlay" aria-hidden="true"></div>
+        <div class="sys-card-body">
+          <div class="sys-card-name">Color &amp; Material Selection</div>
+          <div class="sys-card-desc">Work with Home Team to choose the right shingle color, profile and material that complements your home's exterior and neighborhood style.</div>
+          <a href="estimate.html" class="sys-card-learn" aria-label="Start your color and material selection">
+            Start Selecting
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     6 · INSTALLATION & WARRANTY
+══════════════════════════ -->
+<section class="install-section" id="home-team-difference" aria-labelledby="install-heading">
+  <div class="install-inner">
+
+    <div class="section-header reveal">
+      <span class="sec-eyebrow">The Home Team Difference</span>
+      <h2 class="sec-h" id="install-heading">Efficient Installation. Long-Term Protection.</h2>
+      <div class="sec-rule centered" aria-hidden="true"></div>
+      <p class="sec-sub" style="margin-top:.875rem">Home Team combines quality craftsmanship with a streamlined approach — so your new roof goes on right and stays that way for years to come.</p>
+    </div>
+
+    <div class="install-grid">
+
+      <div class="install-col reveal-left">
+        <div class="install-col-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--red)" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="install-col-h">A Streamlined Installation Process</h3>
+        <div class="install-col-rule" aria-hidden="true"></div>
+        <p class="install-col-p">Home Team works to complete roofing projects efficiently while protecting your property and minimizing disruption to your daily life. From pre-installation preparation through final cleanup, every step is managed by an experienced crew that respects your home.</p>
+        <p class="install-col-p">Protective tarps are laid to safeguard landscaping. Old materials are removed and disposed of properly. Your property is thoroughly cleaned at the end of every project day.</p>
+        <ul class="install-features" role="list">
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Property protection before work begins
+          </li>
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Experienced installation crew on every project
+          </li>
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Thorough cleanup and final walkthrough
+          </li>
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Clear communication throughout the process
+          </li>
+        </ul>
+      </div>
+
+      <div class="install-divider" aria-hidden="true"></div>
+
+      <div class="install-col reveal-right">
+        <div class="install-col-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v8c0 5 4 9 9 10 5-1 9-5 9-10V6L12 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 9" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="install-col-h">Warranty-Backed Confidence</h3>
+        <div class="install-col-rule" aria-hidden="true"></div>
+        <p class="install-col-p">Every roofing project completed by Home Team is backed by a workmanship warranty that protects you after the crew leaves. The products we install carry manufacturer warranties designed to give you long-term peace of mind.</p>
+        <p class="install-col-p">When your roof is installed correctly from the start — with quality materials and an experienced team — you can trust it to perform through Texas weather, year after year.</p>
+        <ul class="install-features" role="list">
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Workmanship warranty on every installation
+          </li>
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Manufacturer product warranties on materials
+          </li>
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Post-installation follow-through and support
+          </li>
+          <li>
+            <div class="install-feature-check" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            Quality materials selected for Texas climate
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="install-cta-wrap reveal">
+      <a href="estimate.html" class="btn-red">
+        Schedule a Free Inspection
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     7 · STORM DAMAGE SUPPORT
+══════════════════════════ -->
+<section class="storm-section" id="storm-damage" aria-labelledby="storm-heading">
+  <div class="storm-bg" aria-hidden="true"></div>
+  <div class="storm-overlay" aria-hidden="true"></div>
+  <div class="storm-inner">
+
+    <div class="reveal-left">
+      <span class="sec-eyebrow">Storm Damage Support</span>
+      <h2 class="sec-h" id="storm-heading">When the Storm Passes, Home Team Is Ready.</h2>
+      <div class="sec-rule" style="margin:.875rem 0 0" aria-hidden="true"></div>
+      <p class="sec-sub">Houston weather can move fast. When it does, Home Team can inspect your roof, document visible damage, walk you through your options and support you throughout the restoration process.</p>
+      <div class="storm-steps" role="list">
+        <div class="storm-step reveal d1" role="listitem">
+          <div class="storm-num" aria-hidden="true">01</div>
+          <div class="storm-step-text">
+            <div class="storm-step-h">Schedule an Inspection</div>
+            <p class="storm-step-p">Contact Home Team to arrange a free post-storm roof inspection at your earliest convenience.</p>
+          </div>
+        </div>
+        <div class="storm-step reveal d2" role="listitem">
+          <div class="storm-num" aria-hidden="true">02</div>
+          <div class="storm-step-text">
+            <div class="storm-step-h">Assess and Document Damage</div>
+            <p class="storm-step-p">Our team walks your roof and records all visible storm-related damage with photos and a written assessment.</p>
+          </div>
+        </div>
+        <div class="storm-step reveal d3" role="listitem">
+          <div class="storm-num" aria-hidden="true">03</div>
+          <div class="storm-step-text">
+            <div class="storm-step-h">Review Roofing Recommendations</div>
+            <p class="storm-step-p">We present your options clearly — repair or full replacement — and explain what each approach involves and why.</p>
+          </div>
+        </div>
+        <div class="storm-step reveal d4" role="listitem">
+          <div class="storm-num" aria-hidden="true">04</div>
+          <div class="storm-step-text">
+            <div class="storm-step-h">Coordinate the Restoration Process</div>
+            <p class="storm-step-p">We support you through the insurance process and work to coordinate restoration as smoothly as possible.</p>
+          </div>
+        </div>
+        <div class="storm-step reveal d5" role="listitem">
+          <div class="storm-num" aria-hidden="true">05</div>
+          <div class="storm-step-text">
+            <div class="storm-step-h">Install and Complete the Final Walkthrough</div>
+            <p class="storm-step-p">Your roof is restored by an experienced crew. We complete a final walkthrough together before considering the project done.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="storm-aside reveal-right">
+      <div class="storm-aside-callout">
+        <h3 class="storm-aside-callout-h">Hail or Wind Damage? Don't Wait.</h3>
+        <p class="storm-aside-callout-p">Even minor storm damage can worsen over time, especially with Houston's climate. A free inspection gives you the information you need — with no obligation to proceed.</p>
+        <a href="estimate.html" class="btn-red">
+          Request My Free Inspection
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <p class="storm-disclaimer">
+        <strong style="color:rgba(255,255,255,.42);font-weight:600">Important:</strong> Insurance coverage and claim decisions are determined solely by the homeowner's insurance carrier. Home Team does not guarantee claim approval, coverage amounts or specific payout results. We support homeowners through the documentation and restoration process.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     8 · PROJECT GALLERY
+══════════════════════════ -->
+<section class="gallery-section" id="our-work" aria-labelledby="gallery-heading">
+  <div class="gallery-inner">
+
+    <div class="section-header reveal">
+      <span class="sec-eyebrow">Our Work</span>
+      <h2 class="sec-h" id="gallery-heading">Roofing Projects Built to Be Seen — and Built to Last</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">A selection of residential roofing projects completed across the Greater Houston area by the Home Team crew.</p>
+    </div>
+
+    <div class="gallery-grid" role="list">
+
+      <div class="gallery-item tall reveal d1" role="listitem">
+        <img src="images/home1.png" alt="Luxury Houston home with a freshly installed architectural shingle roof" loading="lazy" width="400" height="880"/>
+        <div class="gallery-item-tag">Residential Replacement</div>
+      </div>
+
+      <div class="gallery-item wide reveal d2" role="listitem">
+        <img src="images/galleryphotofinal.png" alt="Home Team Roofing completed project — residential shingle installation" loading="lazy" width="800" height="440"/>
+        <div class="gallery-item-tag">Shingle Installation</div>
+      </div>
+
+      <div class="gallery-item reveal d3" role="listitem">
+        <img src="images/home2.png" alt="Before and after residential roof replacement in The Woodlands, TX" loading="lazy" width="400" height="440"/>
+        <div class="gallery-item-tag">Roof Replacement</div>
+      </div>
+
+      <div class="gallery-item reveal d4" role="listitem">
+        <img src="images/home3.png" alt="Houston area home after storm damage restoration by Home Team Roofing" loading="lazy" width="400" height="440"/>
+        <div class="gallery-item-tag">Storm Restoration</div>
+      </div>
+
+      <div class="gallery-item reveal d5" role="listitem">
+        <img src="images/gallerylightened.png" alt="Completed residential roofing project showcasing new architectural shingles" loading="lazy" width="400" height="440"/>
+        <div class="gallery-item-tag">Architectural Shingles</div>
+      </div>
+
+      <div class="gallery-item reveal d6" role="listitem">
+        <img src="images/finalhero.png" alt="Premium home exterior with new roof installation by Home Team Home Solutions" loading="lazy" width="400" height="440"/>
+        <div class="gallery-item-tag">Premium Installation</div>
+      </div>
+
+    </div>
+
+    <div class="gallery-cta-row">
+      <p>More projects available — ask about our portfolio during your free inspection.</p>
+      <a href="gallery.html" class="btn-red">
+        View the Roofing Gallery
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     9 · REVIEWS
+══════════════════════════ -->
+<section class="reviews-section" id="homeowner-experiences" aria-labelledby="reviews-heading">
+  <div class="reviews-inner">
+
+    <div class="section-header reveal">
+      <span class="sec-eyebrow">Homeowner Experiences</span>
+      <h2 class="sec-h" id="reviews-heading">A Reputation Built One Roof at a Time</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">Houston homeowners have trusted Home Team for roofing, windows and custom doors. Here is what they have to say about the experience.</p>
+    </div>
+
+    <div class="reviews-top">
+      <div class="reviews-rating-block reveal-left">
+        <div class="reviews-rating-num" aria-label="5.0 star rating">5.0</div>
+        <div class="reviews-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="reviews-rating-label">Overall Rating</div>
+      </div>
+      <div class="reviews-platforms reveal-right">
+        <div class="reviews-platform">
+          <div class="reviews-platform-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="reviews-platform-info">
+            <div class="reviews-platform-name">Google Reviews</div>
+            <div class="reviews-platform-count">5.0 stars — Greater Houston Area</div>
+          </div>
+        </div>
+        <div class="reviews-platform">
+          <div class="reviews-platform-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="reviews-platform-info">
+            <div class="reviews-platform-name">Facebook</div>
+            <div class="reviews-platform-count">5.0 stars — Homeowner Reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card reveal d1">
+        <span class="review-tag">Communication</span>
+        <div class="review-stars" aria-label="5 star review">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"The team was professional from start to finish. They kept us informed throughout the entire project, showed up on time and left the property cleaner than they found it. Could not have asked for a better experience."</p>
+        <div class="review-author">— Verified Google Review &middot; Houston, TX</div>
+      </div>
+
+      <div class="review-card reveal d2">
+        <span class="review-tag">Storm Restoration</span>
+        <div class="review-stars" aria-label="5 star review">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"After the last big storm came through, I did not know where to start. Home Team came out quickly, walked me through everything they found and handled the whole process. Very thankful for the guidance and professionalism."</p>
+        <div class="review-author">— Verified Google Review &middot; Tomball, TX</div>
+      </div>
+
+      <div class="review-card reveal d3">
+        <span class="review-tag">Workmanship</span>
+        <div class="review-stars" aria-label="5 star review">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Quality of work was excellent. The crew worked efficiently and with care. My yard was clean, the roof looks great, and the final walkthrough gave me confidence that everything was done right. Highly recommend."</p>
+        <div class="review-author">— Verified Google Review &middot; The Woodlands, TX</div>
+      </div>
+
+    </div>
+
+    <div class="reviews-cta-row">
+      <p>All reviews verified through Google and Facebook Business Profiles.</p>
+      <a href="reviews.html" class="btn-red">
+        Read More Reviews
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     10 · 3-STEP PROCESS
+══════════════════════════ -->
+<section class="process-section" id="what-to-expect" aria-labelledby="process-heading">
+  <div class="process-inner">
+
+    <div class="reveal">
+      <span class="sec-eyebrow">What to Expect</span>
+      <h2 class="sec-h" id="process-heading">A Clearer Path to a Better Roof</h2>
+      <div class="sec-rule centered" aria-hidden="true"></div>
+      <p class="sec-sub" style="margin-top:.875rem">Getting a new roof should feel straightforward. Home Team keeps the process simple, transparent and stress-free for every homeowner.</p>
+    </div>
+
+    <div class="process-steps">
+
+      <div class="process-step reveal d1">
+        <div class="process-num-wrap" aria-hidden="true">
+          <span class="process-num">Step 1</span>
+        </div>
+        <h3 class="process-step-h">Schedule Your Free Inspection</h3>
+        <p class="process-step-p">Contact Home Team to arrange a no-cost roof inspection at a time that works for you. No obligation, no pressure.</p>
+      </div>
+
+      <div class="process-step reveal d2">
+        <div class="process-num-wrap" aria-hidden="true">
+          <span class="process-num">Step 2</span>
+        </div>
+        <h3 class="process-step-h">Review Your Roofing Options</h3>
+        <p class="process-step-p">We walk you through our findings and your roofing options clearly — so you can make a confident, informed decision.</p>
+      </div>
+
+      <div class="process-step reveal d3">
+        <div class="process-num-wrap" aria-hidden="true">
+          <span class="process-num">Step 3</span>
+        </div>
+        <h3 class="process-step-h">Complete Your Installation</h3>
+        <p class="process-step-p">Your roof is installed by an experienced crew, with a final walkthrough completed before we call the project done.</p>
+      </div>
+
+    </div>
+
+    <div class="process-cta">
+      <a href="estimate.html" class="btn-red">
+        Schedule My Free Inspection
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn-red-outline">Contact Home Team</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     11 · FINANCING STRIP
+══════════════════════════ -->
+<div class="fin-strip" id="financing" role="region" aria-label="Financing information">
+  <div class="fin-strip-left">
+    <div class="fin-icon-circle" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="6" width="18" height="13" rx="2" stroke="var(--red)" stroke-width="1.5"/><path d="M6 6V5a5 5 0 0110 0v1" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13h6M11 11v4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="fin-strip-text">
+      <h3>Protect Your Home Without Delaying the Project</h3>
+      <p>Explore flexible financing options designed to help make your roofing project more manageable.</p>
+    </div>
+  </div>
+  <div class="fin-btns">
+    <a href="financing.html" class="btn-red">
+      Explore Financing
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="estimate.html" class="btn-ghost">Start My Project</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     12 · FINAL CTA
+══════════════════════════ -->
+<section class="final-cta" id="get-started" aria-labelledby="final-cta-heading">
+  <div class="final-cta-inner">
+
+    <span class="sec-eyebrow reveal">Let's Get Started</span>
+    <h2 class="final-cta-h reveal">Your Home Deserves a Roof You Can Depend On.</h2>
+    <p class="final-cta-sub reveal">Schedule a free roof inspection and let the Home Team guide you through the next step with clear recommendations and first-class service.</p>
+
+    <div class="final-cta-badges reveal" role="list">
+      <div class="final-cta-badge" role="listitem">
+        <div class="final-cta-badge-dot" aria-hidden="true">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Free Roof Inspections
+      </div>
+      <div class="final-cta-badge" role="listitem">
+        <div class="final-cta-badge-dot" aria-hidden="true">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Financing Available
+      </div>
+      <div class="final-cta-badge" role="listitem">
+        <div class="final-cta-badge-dot" aria-hidden="true">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Warranty-Backed Workmanship
+      </div>
+      <div class="final-cta-badge" role="listitem">
+        <div class="final-cta-badge-dot" aria-hidden="true">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Serving Greater Houston
+      </div>
+    </div>
+
+    <div class="final-cta-btns reveal">
+      <a href="estimate.html" class="btn-red">
+        Schedule My Free Inspection
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn-ghost">Contact Home Team</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-copy">© 2025 Home Team Home Solutions. All Rights Reserved.</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="gallery.html">Gallery</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="financing.html">Financing</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="reviews.html">Reviews</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="contact.html">Contact</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="estimate.html">Free Estimate</a>
+  </div>
+  <div class="footer-social" aria-label="Social media links">
+    <span class="footer-social-label" aria-hidden="true">Follow</span>
+    <a href="#" class="fsoc" aria-label="Facebook">f</a>
+    <a href="#" class="fsoc" aria-label="Instagram">ig</a>
+    <a href="#" class="fsoc" aria-label="Google">G</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ── Hero background parallax load ── */
+  var bg = document.getElementById('heroBg');
+  if(bg){
+    var img = new Image();
+    img.onload = function(){ bg.classList.add('loaded'); };
+    img.src = 'images/Roofingpghero.png';
+  }
+
+  /* ── Mobile nav drawer ── */
+  var hamburger = document.getElementById('hamburger');
+  var drawer    = document.getElementById('mobDrawer');
+  var closeBtn  = document.getElementById('mobClose');
+  if(hamburger && drawer && closeBtn){
+    hamburger.addEventListener('click', function(){
+      drawer.classList.add('open');
+      hamburger.setAttribute('aria-expanded','true');
+    });
+    closeBtn.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      hamburger.setAttribute('aria-expanded','false');
+    });
+    drawer.addEventListener('click', function(e){
+      if(e.target === drawer){
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && drawer.classList.contains('open')){
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded','false');
+        hamburger.focus();
+      }
+    });
+  }
+
+  /* ── Mobile services sub-menu ── */
+  var svcToggle = document.getElementById('mobSvcToggle');
+  var svcMenu   = document.getElementById('mobSvc');
+  if(svcToggle && svcMenu){
+    svcToggle.addEventListener('click', function(){
+      var isOpen = svcMenu.classList.toggle('open');
+      svcToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  /* ── Scroll reveal ── */
+  var revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+  if(!revealEls.length) return;
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -48px 0px' });
+
+  revealEls.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+</body>
+</html>

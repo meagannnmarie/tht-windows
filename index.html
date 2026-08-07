@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Home Team Home Solutions — Luxury Home Improvements | Houston, TX</title>
-<meta name="description" content="Houston's premier luxury home improvement company. Premium roofing, windows, doors, gutters, and siding — expert installation, lifetime warranties, and 0% APR financing available."/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta name="description" content="Houston's premier luxury home improvement company. Premium roofing, windows, custom doors, and exterior home solutions — expert installation, lifetime warranties, and 0% APR financing available."/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@72,400;72,500&family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
 /* ── RESET & BASE ───────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -122,58 +122,47 @@ nav{
 /* ── HERO ────────────────────────────────────────────────────── */
 .hero{
   position:relative;min-height:88vh;
-  display:flex;align-items:center;
   background:var(--black);overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('images/newhero.png');
-  background-size:cover;background-position:65% center;
-  opacity:.55;
-  transform:scale(1.03);
-  transition:transform 8s ease;
+  background-image:url('images/noclouds.png');
+  background-size:cover;background-position:center center;
+  opacity:1;
 }
-.hero-bg.loaded{transform:scale(1)}
 .hero-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to right,
-    rgba(0,0,0,.88) 0%,
-    rgba(0,0,0,.82) 28%,
-    rgba(0,0,0,.5) 55%,
-    rgba(0,0,0,.12) 80%,
-    rgba(0,0,0,.05) 100%
-  );
+  background:linear-gradient(90deg,rgba(0,0,0,0.68) 0%,rgba(0,0,0,0.42) 24%,rgba(0,0,0,0.12) 42%,rgba(0,0,0,0) 58%);
 }
 .hero-content{
-  position:relative;z-index:2;
-  padding:0 52px;max-width:680px;
+  position:absolute;inset:0;z-index:2;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:10px 0 0 64px;max-width:510px;
   animation:fadeUp .9s ease both;
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{
-  font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
-  color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:#fff;margin-bottom:16px;display:inline-flex;align-items:center;
+  background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);
+  padding:7px 15px;border-radius:3px;width:fit-content;
 }
-.hero-eyebrow::after{content:'';display:block;width:28px;height:1.5px;background:var(--red);flex-shrink:0}
+.hero-eyebrow::after{display:none}
 .hero-h1{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5.2vw,66px);
-  font-weight:700;line-height:1.0;letter-spacing:0.08em;text-transform:uppercase;
-  margin-bottom:0;
+  font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(38px,4vw,51px);
+  line-height:1.0;letter-spacing:-0.03em;text-transform:none;
+  color:#fff;margin-bottom:16px;
 }
-.hero-h1 .line1{color:#fff;text-shadow:0 2px 28px rgba(0,0,0,.28);display:block}
-.hero-h1 .line2{
-  font-family:'Great Vibes',cursive;font-size:clamp(38px,4.6vw,58px);
-  font-weight:400;color:var(--red);text-transform:none;letter-spacing:0;
-  display:block;margin-top:-0.2em;
-}
-.hero-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:1.375rem 0 1.125rem}
+.hero-h1 .line1{display:block}
+.hero-h1 .line2{display:block}
+.hero-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:0.75rem 0 0.5rem}
 .fin-red{color:var(--red)}
 .hero-financing{
   font-size:clamp(14px,1.6vw,18px);font-weight:700;
   color:#fff;letter-spacing:1px;text-transform:uppercase;
-  margin-bottom:1rem;
+  margin-bottom:0.5rem;
 }
-.hero-tagline{font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:2.25rem;max-width:420px}
+.hero-tagline{font-size:16px;color:#E5E5E5;line-height:1.7;margin-bottom:24px;max-width:440px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0}
 .btn-gold{
   background:var(--red);color:#fff;
@@ -202,15 +191,31 @@ nav{
 }
 .hero-scroll:hover{color:rgba(255,255,255,.65)}
 .hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
+.hero-logo{
+  position:absolute;top:calc(5% - 36px);left:calc(50% - 102px);transform:translateX(-50%);
+  z-index:3;width:187px;
+  animation:fadeUp .9s .15s ease both;
+  background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:none;outline:none;padding:0;margin:0;
+}
+.hero-logo::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:900px;height:900px;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,0.32) 0%,transparent 50%);
+  pointer-events:none;z-index:-1;
+}
+.hero-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 3px rgba(255,255,255,0.66)) drop-shadow(0 0 6px rgba(255,255,255,0.40)) drop-shadow(0 0 10px rgba(255,255,255,0.18))}
 
 @media(max-width:900px){
-  .hero-content{padding:0 28px;max-width:100%}
+  .hero-content{padding:60px 0 0 28px;max-width:100%}
   .hero-h1{letter-spacing:-1px}
+  .hero-logo{width:149px;left:50%}
 }
 @media(max-width:560px){
   .hero-btns{flex-direction:column}
   .btn-gold,.btn-outline-white{justify-content:center;width:100%;font-size:13px}
-  .hero-content{padding:0 20px}
+  .hero-content{padding:48px 0 0 20px}
+  .hero-logo{display:none}
 }
 
 /* ── FEATURE STRIP ───────────────────────────────────────────── */
@@ -224,31 +229,31 @@ nav{
 @media(max-width:560px){.feat-strip{grid-template-columns:1fr 1fr}.feat-item:nth-child(even){border-right:none}}
 
 /* ── SERVICES ────────────────────────────────────────────────── */
-.services-section{background:#fff;padding:6rem 52px}
+.services-section{background:#fff;padding:5.5rem 52px}
 .services-header{margin-bottom:3.5rem}
 .eyebrow-gold{font-size:10.5px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:block}
-.sec-h{font-size:clamp(30px,3.5vw,46px);font-weight:800;color:var(--black);line-height:1.1;letter-spacing:-1px}
-.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sec-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,3.5vw,46px);color:var(--black);line-height:1.12;letter-spacing:-.5px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .svc-card{
-  background:var(--dark2);border-radius:10px;
-  overflow:hidden;transition:transform .3s,box-shadow .3s;
-  cursor:pointer;text-decoration:none;display:block;
-  border:1px solid rgba(255,255,255,.04);
+  background:var(--dark2);border-radius:12px;
+  overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;
+  cursor:pointer;text-decoration:none;display:flex;flex-direction:column;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 4px 20px rgba(0,0,0,.22);
 }
-.svc-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.svc-card-img{height:180px;overflow:hidden;position:relative}
-.svc-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease;filter:brightness(.85)}
-.svc-card:hover .svc-card-img img{transform:scale(1.06)}
-.svc-card-body{padding:1.375rem 1.25rem 1.5rem}
-.svc-icon{margin-bottom:.875rem;opacity:.9}
-.svc-name{font-size:12.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2px;margin-bottom:.5rem}
-.svc-desc{font-size:12px;color:var(--muted-dark);line-height:1.6;margin-bottom:1.125rem}
-.svc-arrow{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
-.svc-card:hover .svc-arrow{color:rgba(255,255,255,.9)}
-.svc-card:hover .svc-arrow{gap:9px}
+.svc-card:hover{transform:translateY(-7px);box-shadow:0 22px 52px rgba(0,0,0,.42)}
+.svc-card-img{height:220px;overflow:hidden;position:relative;flex-shrink:0}
+.svc-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;filter:brightness(.88)}
+.svc-card:hover .svc-card-img img{transform:scale(1.03)}
+.svc-card-body{padding:1.125rem 1.25rem 1.375rem;display:flex;flex-direction:column;flex:1;border-top:2px solid var(--red)}
+.svc-icon{margin-bottom:.625rem;opacity:.9}
+.svc-name{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:.4rem}
+.svc-desc{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:.875rem}
+.svc-arrow{font-size:12.5px;color:rgba(255,255,255,.50);font-weight:500;display:inline-flex;align-items:center;transition:color .25s ease,transform .25s ease;margin-top:auto}
+.svc-card:hover .svc-arrow{color:var(--red);transform:translateX(4px)}
 
-@media(max-width:1100px){.svc-grid{grid-template-columns:repeat(3,1fr)}.svc-card-img{height:160px}}
-@media(max-width:680px){.svc-grid{grid-template-columns:repeat(2,1fr)}.services-section{padding:4rem 20px}}
+@media(max-width:1000px){.svc-grid{grid-template-columns:repeat(2,1fr)}.svc-card-img{height:200px}}
+@media(max-width:680px){.services-section{padding:4rem 20px}}
 @media(max-width:400px){.svc-grid{grid-template-columns:1fr}}
 
 /* ── WHY HOME TEAM ───────────────────────────────────────────── */
@@ -315,7 +320,7 @@ nav{
   display:flex;align-items:center;justify-content:center;
   flex-shrink:0;
 }
-.fin-strip-text h3{font-size:16px;font-weight:700;color:#fff;letter-spacing:.3px;margin-bottom:2px}
+.fin-strip-text h3{font-family:'Playfair Display',serif;font-weight:500;font-size:16px;color:#fff;letter-spacing:.1px;margin-bottom:2px}
 .fin-strip-text p{font-size:12.5px;color:var(--muted-dark)}
 @media(max-width:680px){.fin-strip{padding:2rem 20px;flex-direction:column;align-items:flex-start}}
 
@@ -357,7 +362,7 @@ nav{
 .cta-col+.cta-col{border-left:1px solid var(--dborder)}
 /* Left col */
 .cta-eyebrow{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:.875rem}
-.cta-h{font-size:clamp(22px,2.5vw,32px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.5px;margin-bottom:.875rem}
+.cta-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(22px,2.5vw,32px);color:#fff;line-height:1.18;letter-spacing:-.3px;margin-bottom:.875rem}
 .cta-sub{font-size:13px;color:var(--muted-dark);line-height:1.65;margin-bottom:2rem}
 /* Center col */
 .cta-features{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
@@ -366,8 +371,8 @@ nav{
 .ctaf-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;line-height:1.4}
 /* Right col */
 .cta-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;text-align:center}
-.cta-monogram{width:72px;height:72px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.cta-monogram img{width:100%;height:100%;display:block;object-fit:cover}
+.cta-monogram{width:120px;height:auto;display:flex;align-items:center;justify-content:center}
+.cta-monogram img{width:100%;height:auto;display:block;object-fit:contain}
 .cta-brand-name{font-size:13px;font-weight:700;color:#fff;letter-spacing:3px;text-transform:uppercase;line-height:1.5}
 .cta-brand-sub{font-size:9.5px;color:var(--muted-dark);text-transform:uppercase;letter-spacing:2px}
 
@@ -414,7 +419,7 @@ footer{
 <!-- ── NAV ──────────────────────────────────────────────────── -->
 <nav>
   <a href="index.html" class="nav-logo" aria-label="Home Team Home Solutions">
-    <img src="images/windowlogo.PNG" alt="Home Team" class="nav-logo-img" />
+    <img src="images/hometeamroofinglogo.png" alt="Home Team Roofing" class="nav-logo-img" />
     <div class="nav-brand">
       <div class="nav-brand-name">Home Team</div>
       <div class="nav-brand-sub">Home Solutions</div>
@@ -431,9 +436,8 @@ footer{
       <div class="nav-drop-menu">
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html"><span class="dot"></span>Windows</a>
-        <a href="doors.html"><span class="dot"></span>Doors</a>
-        <a href="gutters.html"><span class="dot"></span>Gutters</a>
-        <a href="siding.html"><span class="dot"></span>Siding</a>
+        <a href="doors.html"><span class="dot"></span>Custom Doors</a>
+        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
@@ -445,7 +449,7 @@ footer{
 
   <div class="nav-right">
     <a href="estimate.html" class="nav-cta">
-      Get My Free Estimate
+      Start My Project
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -463,16 +467,15 @@ footer{
     <div class="mob-sub" id="mobSvc">
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
-      <a href="doors.html">Doors</a>
-      <a href="gutters.html">Gutters</a>
-      <a href="siding.html">Siding</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="financing.html" class="mob-link">Financing</a>
     <a href="reviews.html" class="mob-link">Reviews</a>
     <a href="contact.html" class="mob-link">About</a>
     <a href="contact.html" class="mob-link">Contact</a>
-    <a href="estimate.html" class="mob-cta">Get My Free Estimate →</a>
+    <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
 </div>
 
@@ -484,14 +487,14 @@ footer{
     <span class="hero-eyebrow">Houston's Premier Exterior Specialists</span>
     <h1 class="hero-h1">
       <span class="line1">Luxury Home</span>
-      <span class="line2">Improvements</span>
+      <span class="line2">Solutions</span>
     </h1>
     <div class="hero-rule"></div>
     <div class="hero-financing"><span class="fin-red">0% APR</span> Financing Available</div>
     <div class="hero-tagline">Elevating Houston's finest homes with premium exterior solutions and unmatched craftsmanship.</div>
     <div class="hero-btns">
       <a href="estimate.html" class="btn-gold">
-        Get My Free Estimate
+        Start My Project
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="gallery.html" class="btn-outline-white">
@@ -499,6 +502,9 @@ footer{
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
+  </div>
+  <div class="hero-logo">
+    <img src="images/home_team_roofing_logo_master.png" alt="Home Team Home Solutions" />
   </div>
 </section>
 
@@ -551,7 +557,7 @@ footer{
 
     <a href="roofing.html" class="svc-card">
       <div class="svc-card-img">
-        <img src="images/farmhouseupdate.png" alt="Premium roofing installation" loading="lazy"/>
+        <img src="images/roofingcloseup.png" alt="Premium roofing installation" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-icon">
@@ -565,7 +571,7 @@ footer{
 
     <a href="windows.html" class="svc-card">
       <div class="svc-card-img">
-        <img src="images/newheader.png" alt="Energy-efficient replacement windows" loading="lazy"/>
+        <img src="images/windowsfrontpage.png" alt="Energy-efficient replacement windows" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-icon">
@@ -579,28 +585,14 @@ footer{
 
     <a href="doors.html" class="svc-card">
       <div class="svc-card-img">
-        <img src="images/new2.png" alt="Beautiful door installation" loading="lazy"/>
+        <img src="images/updatedoor.png" alt="Luxury custom door installation" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-icon">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="2" width="13" height="19" rx="1" stroke="#ffffff" stroke-width="1.4"/><circle cx="14" cy="11.5" r="1" fill="#ffffff"/><path d="M16 2h2a1 1 0 011 1v17a1 1 0 01-1 1h-2" stroke="#ffffff" stroke-width="1.4"/></svg>
         </div>
-        <div class="svc-name">Doors</div>
-        <div class="svc-desc">Beautiful, secure doors that make an entrance.</div>
-        <div class="svc-arrow">Learn More →</div>
-      </div>
-    </a>
-
-    <a href="gutters.html" class="svc-card">
-      <div class="svc-card-img">
-        <img src="images/newhouse.png" alt="Seamless gutter installation" loading="lazy"/>
-      </div>
-      <div class="svc-card-body">
-        <div class="svc-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 7h16a1 1 0 010 2H3a1 1 0 010-2z" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/><path d="M17 9v4a2 2 0 01-2 2H7a2 2 0 01-2-2V9" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/><path d="M10 15v4M12 15v4" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </div>
-        <div class="svc-name">Gutters</div>
-        <div class="svc-desc">Seamless gutters that protect your investment.</div>
+        <div class="svc-name">Custom Doors</div>
+        <div class="svc-desc">Custom-crafted entries that define your home.</div>
         <div class="svc-arrow">Learn More →</div>
       </div>
     </a>
@@ -613,8 +605,8 @@ footer{
         <div class="svc-icon">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="4" rx="1" stroke="#ffffff" stroke-width="1.4"/><rect x="2" y="9" width="18" height="4" rx="1" stroke="#ffffff" stroke-width="1.4"/><rect x="2" y="16" width="18" height="4" rx="1" stroke="#ffffff" stroke-width="1.4"/></svg>
         </div>
-        <div class="svc-name">Siding</div>
-        <div class="svc-desc">Siding that enhances beauty and performance.</div>
+        <div class="svc-name">Home Solutions</div>
+        <div class="svc-desc">Exterior solutions that enhance beauty and performance.</div>
         <div class="svc-arrow">Learn More →</div>
       </div>
     </a>
@@ -723,7 +715,7 @@ footer{
     </div>
     <div class="rcard">
       <div class="rcard-stars">★★★★★</div>
-      <p class="rcard-quote">"They installed a new roof and gutters on our home and did an amazing job. The team was on time, clean, and the results speak for themselves."</p>
+      <p class="rcard-quote">"They installed a new roof on our home and did an amazing job. The team was on time, clean, and the results speak for themselves."</p>
       <div class="rcard-author">— Mark T.</div>
     </div>
     <div class="rcard">
@@ -747,7 +739,7 @@ footer{
     <h2 class="cta-h">Let's Bring Your Vision to Life.</h2>
     <p class="cta-sub">Schedule your free, no-pressure in-home estimate. We'll walk through every project area and deliver a clear, honest recommendation.</p>
     <a href="estimate.html" class="btn-gold" style="width:fit-content">
-      Get My Free Estimate
+      Start My Project
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
@@ -783,7 +775,7 @@ footer{
   <!-- Right: Brand lockup -->
   <div class="cta-col">
     <div class="cta-brand">
-      <div class="cta-monogram"><img src="images/projectlogo.png" alt="Home Team" /></div>
+      <div class="cta-monogram"><img src="images/hometeamroofinglogo.png" alt="Home Team Roofing" /></div>
       <div class="cta-brand-name">Home Team<br>Home Solutions</div>
       <div class="cta-brand-sub">Luxury Exterior Home Services</div>
     </div>
@@ -823,9 +815,6 @@ footer{
   if(st && ss){
     st.addEventListener('click', function(){ ss.classList.toggle('open'); });
   }
-  /* Hero bg parallax-lite / load trigger */
-  var bg = document.getElementById('heroBg');
-  if(bg){ requestAnimationFrame(function(){ bg.classList.add('loaded'); }); }
 })();
 </script>
 </body>
