@@ -1,2 +1,10 @@
 .vercel
 .env*
+node_modules
+.DS_Store
+
+# Original source videos — large files, never commit
+videos/home-team/originals/
+
+# Large production video, not yet ready to commit
+public/videos/home-team-roofing.mp4
