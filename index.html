@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Home Team Home Solutions — Luxury Home Improvements | Houston, TX</title>
 <meta name="description" content="Houston's premier luxury home improvement company. Premium roofing, windows, custom doors, and exterior home solutions — expert installation, lifetime warranties, and 0% APR financing available."/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@72,400;72,500&family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@72,400;72,500&family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
 /* ── RESET & BASE ───────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -121,14 +121,14 @@ nav{
 
 /* ── HERO ────────────────────────────────────────────────────── */
 .hero{
-  position:relative;min-height:88vh;
+  position:relative;
   background:var(--black);overflow:hidden;
 }
 .hero-bg{
-  position:absolute;inset:0;
-  background-image:url('images/noclouds.png');
-  background-size:cover;background-position:center center;
-  opacity:1;
+  position:relative;width:100%;
+}
+.hero-bg picture,.hero-bg img{
+  display:block;width:100%;height:auto;
 }
 .hero-overlay{
   position:absolute;inset:0;
@@ -142,12 +142,10 @@ nav{
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{
-  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  color:#fff;margin-bottom:16px;display:inline-flex;align-items:center;
-  background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);
-  padding:7px 15px;border-radius:3px;width:fit-content;
+  display:block;
+  font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(255,255,255,.75);margin-bottom:14px;
 }
-.hero-eyebrow::after{display:none}
 .hero-h1{
   font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(38px,4vw,51px);
   line-height:1.0;letter-spacing:-0.03em;text-transform:none;
@@ -191,77 +189,67 @@ nav{
 }
 .hero-scroll:hover{color:rgba(255,255,255,.65)}
 .hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
-.hero-logo{
-  position:absolute;top:calc(5% - 36px);left:calc(50% - 102px);transform:translateX(-50%);
-  z-index:3;width:187px;
-  animation:fadeUp .9s .15s ease both;
-  background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:none;outline:none;padding:0;margin:0;
-}
-.hero-logo::before{
-  content:'';position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:900px;height:900px;
-  background:radial-gradient(ellipse at center,rgba(0,0,0,0.32) 0%,transparent 50%);
-  pointer-events:none;z-index:-1;
-}
-.hero-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 0 3px rgba(255,255,255,0.66)) drop-shadow(0 0 6px rgba(255,255,255,0.40)) drop-shadow(0 0 10px rgba(255,255,255,0.18))}
 
 @media(max-width:900px){
-  .hero-content{padding:60px 0 0 28px;max-width:100%}
+  .hero-content{justify-content:flex-start;padding:60px 0 0 28px;max-width:100%}
   .hero-h1{letter-spacing:-1px}
-  .hero-logo{width:149px;left:50%}
 }
 @media(max-width:560px){
   .hero-btns{flex-direction:column}
   .btn-gold,.btn-outline-white{justify-content:center;width:100%;font-size:13px}
   .hero-content{padding:48px 0 0 20px}
-  .hero-logo{display:none}
 }
 
 /* ── FEATURE STRIP ───────────────────────────────────────────── */
-.feat-strip{background:#111111;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(255,255,255,.06)}
-.feat-item{padding:2.25rem 1.25rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.75rem;border-right:1px solid rgba(255,255,255,.06)}
-.feat-item:last-child{border-right:none}
-.feat-icon{width:50px;height:50px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.feat-title{font-size:10.5px;font-weight:700;color:#fff;letter-spacing:2px;text-transform:uppercase}
-.feat-desc{font-size:11.5px;color:rgba(255,255,255,.42);line-height:1.6}
-@media(max-width:900px){.feat-strip{grid-template-columns:repeat(3,1fr)}.feat-item:nth-child(3){border-right:none}.feat-item:nth-child(4){border-top:1px solid rgba(255,255,255,.06)}.feat-item:nth-child(5){border-top:1px solid rgba(255,255,255,.06)}}
-@media(max-width:560px){.feat-strip{grid-template-columns:1fr 1fr}.feat-item:nth-child(even){border-right:none}}
 
 /* ── SERVICES ────────────────────────────────────────────────── */
-.services-section{background:#fff;padding:5.5rem 52px}
-.services-header{margin-bottom:3.5rem}
+.services-section{background:#fff;padding:3rem 52px 5.5rem}
+.services-header{text-align:center;max-width:860px;margin:0 auto 2.25rem}
+.svc-header-body{font-size:15px;color:#666;line-height:1.72;max-width:560px;margin:1.375rem auto 0;text-align:center}
+.services-section .sec-h{font-weight:700;letter-spacing:-.6px}
+.services-section .eyebrow-gold{margin-bottom:1.375rem}
+.svc-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.25rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.svc-footer-trust{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.svc-footer-trust span{font-size:11.5px;font-weight:600;letter-spacing:.5px;color:#555;text-transform:uppercase;position:relative}
+.svc-footer-trust span:not(:last-child)::after{content:'·';position:absolute;right:-1.125rem;color:#bbb}
+.svc-footer-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:.75rem 1.625rem;border-radius:6px;transition:background .18s,transform .18s;flex-shrink:0}
+.svc-footer-cta:hover{background:var(--red-dim);transform:translateY(-1px)}
+@media(max-width:760px){.svc-footer{flex-direction:column;align-items:flex-start}.svc-footer-trust{gap:1rem}}
 .eyebrow-gold{font-size:10.5px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--red);margin-bottom:1rem;display:block}
 .sec-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,3.5vw,46px);color:var(--black);line-height:1.12;letter-spacing:-.5px}
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
 .svc-card{
-  background:var(--dark2);border-radius:12px;
-  overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;
-  cursor:pointer;text-decoration:none;display:flex;flex-direction:column;
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow:0 4px 20px rgba(0,0,0,.22);
+  display:flex;flex-direction:column;
+  text-decoration:none;
+  transition:transform .35s ease;
 }
-.svc-card:hover{transform:translateY(-7px);box-shadow:0 22px 52px rgba(0,0,0,.42)}
-.svc-card-img{height:220px;overflow:hidden;position:relative;flex-shrink:0}
-.svc-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;filter:brightness(.88)}
-.svc-card:hover .svc-card-img img{transform:scale(1.03)}
-.svc-card-body{padding:1.125rem 1.25rem 1.375rem;display:flex;flex-direction:column;flex:1;border-top:2px solid var(--red)}
-.svc-icon{margin-bottom:.625rem;opacity:.9}
-.svc-name{font-size:13px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:.4rem}
-.svc-desc{font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:.875rem}
-.svc-arrow{font-size:12.5px;color:rgba(255,255,255,.50);font-weight:500;display:inline-flex;align-items:center;transition:color .25s ease,transform .25s ease;margin-top:auto}
-.svc-card:hover .svc-arrow{color:var(--red);transform:translateX(4px)}
+.svc-card:hover{transform:translateY(-5px)}
+.svc-card-img{position:relative;overflow:hidden;border-radius:12px;aspect-ratio:4/3}
+.svc-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.svc-card:hover .svc-card-img img{transform:scale(1.04)}
+.svc-card-body{
+  padding:1.375rem 0 0;
+  display:flex;flex-direction:column;gap:.25rem;
+  background:transparent;
+}
+.svc-card-body::before{display:none}
+.svc-icon{display:none}
+.svc-name{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:.2rem}
+.svc-heading{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(17px,1.5vw,21px);color:#0d0d0d;line-height:1.22;letter-spacing:-.2px;margin-bottom:.375rem}
+.svc-desc{font-size:14px;color:#666;line-height:1.7;max-width:340px}
+.svc-arrow{font-size:10.5px;color:var(--red);font-weight:700;letter-spacing:.9px;text-transform:uppercase;display:inline-flex;align-items:center;margin-top:.875rem;transition:color .2s,transform .2s}
+.svc-card:hover .svc-arrow{color:var(--red-dim);transform:translateX(4px)}
 
-@media(max-width:1000px){.svc-grid{grid-template-columns:repeat(2,1fr)}.svc-card-img{height:200px}}
-@media(max-width:680px){.services-section{padding:4rem 20px}}
-@media(max-width:400px){.svc-grid{grid-template-columns:1fr}}
+@media(max-width:1000px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.services-section{padding:2.5rem 20px 4rem}.svc-grid{gap:2rem}}
+@media(max-width:480px){.svc-grid{grid-template-columns:1fr}}
 
 /* ── WHY HOME TEAM ───────────────────────────────────────────── */
 .why-section{background:var(--dark1);padding:0;display:grid;grid-template-columns:1fr 1fr}
 .why-photo{position:relative;min-height:560px;overflow:hidden}
 .why-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8)}
 .why-text{padding:5.5rem 4.5rem 5.5rem 5rem;display:flex;flex-direction:column;justify-content:center}
-.why-h{font-size:clamp(26px,3vw,40px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.75px;margin-bottom:1.875rem}
+.why-h{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);font-weight:500;color:#fff;line-height:1.12;letter-spacing:-.75px;margin-bottom:1.875rem}
 .why-features{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:0}
 .wf-item{display:flex;flex-direction:column;gap:.625rem}
 .wf-icon-wrap{width:44px;height:44px;border:1.5px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.25rem}
@@ -279,7 +267,7 @@ nav{
 /* ── PROJECTS ────────────────────────────────────────────────── */
 .projects-section{background:var(--dark1);padding:5rem 52px 5.5rem}
 .projects-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;gap:1.5rem;flex-wrap:wrap}
-.projects-h{font-size:clamp(26px,3vw,40px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.75px}
+.projects-h{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);font-weight:500;color:#fff;line-height:1.1;letter-spacing:-.75px}
 .btn-outline-gold{
   background:transparent;color:rgba(255,255,255,.75);
   font-size:11.5px;font-weight:600;padding:11px 22px;
@@ -327,7 +315,7 @@ nav{
 /* ── REVIEWS ─────────────────────────────────────────────────── */
 .reviews-section{background:var(--offwhite);padding:5.5rem 52px}
 .reviews-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;gap:1.5rem;flex-wrap:wrap}
-.reviews-h{font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--black);line-height:1.1;letter-spacing:-.75px}
+.reviews-h{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,40px);font-weight:500;color:var(--black);line-height:1.1;letter-spacing:-.75px}
 .btn-outline-dark{
   background:transparent;color:var(--black);
   font-size:11.5px;font-weight:700;padding:11px 22px;
@@ -388,30 +376,253 @@ nav{
 }
 
 /* ── FOOTER ──────────────────────────────────────────────────── */
-footer{
-  background:var(--black);border-top:1px solid rgba(255,255,255,.06);
-  padding:1.375rem 52px;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-}
-.footer-copy{font-size:11.5px;color:#555}
-.footer-links{display:flex;align-items:center;gap:20px}
-.footer-links a{font-size:11.5px;color:#555;text-decoration:none;transition:color .15s}
-.footer-links a:hover{color:#888}
-.footer-links .sep{color:#333;font-size:10px}
-.footer-social{display:flex;align-items:center;gap:10px}
-.footer-social-label{font-size:10px;color:#444;text-transform:uppercase;letter-spacing:1.5px;margin-right:4px}
+footer{background:#111827;padding:3.5rem 52px 1.75rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:#fff;margin-bottom:2px}
+.footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
+.footer-contact-item{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.footer-contact-item span{font-size:12px;color:#9ca3af}
+.footer-social{display:flex;gap:9px;margin-top:1rem}
 .fsoc{
-  width:28px;height:28px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.15);
+  width:32px;height:32px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
   display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.4);font-size:11px;text-decoration:none;font-weight:700;
+  color:rgba(255,255,255,.55);font-size:14px;text-decoration:none;font-weight:700;
   transition:border-color .15s,color .15s;
 }
 .fsoc:hover{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.85)}
-@media(max-width:760px){footer{padding:1.375rem 20px;flex-direction:column;gap:.75rem;text-align:center}.footer-links{justify-content:center}.footer-social{justify-content:center}}
+.footer-col h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:0.875rem;letter-spacing:0.3px}
+.footer-col a{display:block;font-size:12px;color:#9ca3af;text-decoration:none;margin-bottom:5px;transition:color .15s}
+.footer-col a:hover{color:#fff}
+.footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
+.footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:#fff;line-height:1.25}
+.footer-htr-line{width:36px;height:2px;background:var(--red);margin:8px auto 0;border-radius:1px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:11.5px;color:#4b5563}
+@media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){footer{padding:3rem 20px 1.5rem}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 
 /* ── SHARED UTIL ─────────────────────────────────────────────── */
 @media(max-width:760px){.services-header{margin-bottom:2rem}}
+
+/* ── PROOF BAR ──────────────────────────────────────────────────── */
+.proof-bar{
+  position:relative;
+  background:linear-gradient(90deg,#8f1419 0%,#C81F25 22%,#C81F25 78%,#8f1419 100%);
+  box-shadow:inset 0 2px 0 rgba(0,0,0,0.24),inset 0 -1px 0 rgba(255,255,255,0.10);
+  overflow:hidden;
+}
+.proof-bar::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%,rgba(0,0,0,0.08) 0%,transparent 55%);
+}
+.proof-bar-inner{
+  position:relative;z-index:1;
+  max-width:1450px;margin:0 auto;
+  display:flex;align-items:center;
+  height:115px;padding:0 52px;
+}
+.proof-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.3rem;text-align:center;padding:0 1.25rem;position:relative;
+}
+.proof-item+.proof-item::before{
+  content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:1px;height:44px;background:rgba(255,255,255,0.18);
+}
+.proof-stars{color:#f4b942;font-size:11px;letter-spacing:3px;line-height:1;display:block}
+.proof-stat{
+  font-family:'Inter',sans-serif;font-weight:700;
+  font-size:clamp(24px,2.4vw,32px);
+  color:#fff;line-height:1;letter-spacing:-.02em;
+}
+.proof-label{
+  font-size:8.5px;font-weight:600;
+  letter-spacing:.145em;text-transform:uppercase;
+  color:rgba(255,255,255,0.70);line-height:1.4;margin-top:.1rem;
+}
+.proof-gaf-stat{
+  font-family:'Inter',sans-serif;font-weight:800;
+  font-size:clamp(20px,2vw,26px);
+  color:#fff;line-height:1;letter-spacing:.06em;
+}
+@media(max-width:1000px){
+  .proof-bar-inner{height:auto;flex-wrap:wrap;padding:2.25rem 28px;gap:0}
+  .proof-item{flex:0 0 50%;padding:1.25rem .75rem}
+  .proof-item+.proof-item::before{display:none}
+  .proof-item:nth-child(5){flex:0 0 100%}
+}
+@media(max-width:560px){
+  .proof-bar-inner{padding:1.75rem 20px}
+  .proof-item{padding:1rem .5rem}
+}
+
+/* ── TEAM / CUSTOMER TRUST ──────────────────────────────────────── */
+.team-cust-section{background:#f4f2ef;padding:5rem 52px;border-bottom:1px solid #e0ddd8}
+.team-cust-wrap{max-width:1340px;margin:0 auto}
+.team-cust-inner{display:grid;grid-template-columns:9fr 11fr;gap:4.5rem;align-items:center}
+/* Vertical red accent + heading composition */
+.team-heading-block{display:flex;align-items:stretch;gap:1.25rem;margin-bottom:1.5rem}
+.team-red-accent{width:3px;min-height:80px;background:var(--red);border-radius:2px;flex-shrink:0}
+.team-heading-content{flex:1}
+.team-heading-content .eyebrow-gold{display:block;margin-bottom:.75rem}
+.team-heading-content .sec-h{margin-top:0}
+/* Body copy */
+.team-cust-body{font-size:15px;line-height:1.72;color:#484848;max-width:440px}
+.team-cust-body+.team-cust-body{margin-top:.875rem}
+/* Premium statement pullquote */
+.team-cust-emphasis{
+  font-family:'Playfair Display',serif;font-weight:500;font-style:italic;
+  font-size:clamp(15.5px,1.5vw,18.5px);color:#1e1e1e;
+  background:rgba(255,255,255,.75);
+  border-left:3px solid var(--red);
+  padding:.875rem 1.125rem;
+  border-radius:0 6px 6px 0;
+  margin:1.5rem 0 1.25rem;
+  max-width:440px;
+  line-height:1.45;
+}
+/* Review cards */
+.team-review-grid{display:flex;flex-direction:column;gap:10px}
+.team-rcard{background:#fff;border:1px solid #e0ddd8;border-radius:10px;padding:1.25rem 1.375rem;transition:box-shadow .22s}
+.team-rcard:hover{box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.team-rcard-stars{color:#f59e0b;font-size:12.5px;letter-spacing:3px;margin-bottom:.5rem}
+.team-rcard-quote{font-family:'Playfair Display',serif;font-size:13px;color:#333;line-height:1.72;font-style:italic;margin-bottom:.5rem}
+.team-rcard-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.team-rcard-author{font-size:11px;color:#888;font-weight:500}
+.team-rcard-time{font-size:10px;color:#bbb}
+.team-review-notice{font-size:12px;color:#bbb;padding:.375rem 0 0}
+/* Reviews CTA link */
+.team-reviews-cta{display:inline-flex;align-items:center;gap:.375rem;color:var(--red);font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;margin-top:1.125rem;transition:color .15s}
+.team-reviews-cta:hover{color:var(--red-dim)}
+/* Right column & collage */
+.team-cust-right{display:flex;align-items:center}
+.team-collage{width:100%}
+.team-collage-frame{background:#fff;border:1px solid #dedad5;border-radius:14px;padding:14px;box-shadow:0 4px 32px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04)}
+.team-collage-frame img{width:100%;height:auto;display:block;border-radius:10px}
+@media(max-width:1140px){.team-cust-inner{gap:3rem}}
+@media(max-width:960px){
+  .team-cust-section{padding:3.75rem 28px}
+  .team-cust-inner{grid-template-columns:1fr;gap:2.5rem;align-items:start}
+  .team-cust-body{max-width:none}
+  .team-cust-emphasis{max-width:none}
+}
+@media(max-width:680px){.team-cust-section{padding:3rem 20px}}
+
+/* ── HOME PAGE REVIEW HIGHLIGHTS ───────────────────────────────── */
+.ht-reviews-section{background:#fff;padding:5.5rem 52px;border-top:1px solid var(--border)}
+.ht-reviews-wrap{max-width:1200px;margin:0 auto}
+.ht-reviews-head{text-align:center;margin-bottom:2.25rem}
+.ht-reviews-head .eyebrow-gold{margin-bottom:.875rem}
+.ht-reviews-head .sec-h{margin-bottom:0}
+.ht-reviews-subhead{font-size:15px;color:#666;line-height:1.6;margin-top:.75rem}
+.ht-reviews-trust{display:flex;align-items:center;justify-content:center;gap:.625rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.ht-reviews-trust-stars{color:#f59e0b;font-size:15px;letter-spacing:2px}
+.ht-reviews-trust-text{font-size:12.5px;color:#777;font-weight:500}
+.ht-reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:2.75rem}
+.ht-rcard{
+  background:var(--offwhite);border:1px solid var(--border);border-radius:12px;
+  padding:2rem 2rem 1.625rem;display:flex;flex-direction:column;gap:.875rem;
+  position:relative;overflow:hidden;
+  transition:box-shadow .28s,transform .28s;
+}
+.ht-rcard:hover{box-shadow:0 14px 44px rgba(0,0,0,.07);transform:translateY(-2px)}
+.ht-rcard-qmark{
+  position:absolute;top:.625rem;right:1.25rem;
+  font-family:'Playfair Display',serif;font-size:80px;line-height:1;
+  color:rgba(200,31,37,0.06);font-style:italic;pointer-events:none;user-select:none;
+  font-weight:500;
+}
+.ht-rcard-stars{color:#f59e0b;font-size:12.5px;letter-spacing:2.5px}
+.ht-rcard-text{
+  font-family:'Playfair Display',serif;font-size:14.5px;color:#222;
+  line-height:1.74;font-style:italic;flex:1;
+}
+.ht-rcard-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:.5rem;
+  padding-top:1rem;border-top:1px solid #e0ddd8;
+}
+.ht-rcard-author{font-size:12px;font-weight:600;color:#444;letter-spacing:.2px}
+.ht-rcard-service{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red)}
+.ht-reviews-cta-wrap{text-align:center}
+.ht-reviews-cta{
+  display:inline-flex;align-items:center;gap:.4rem;
+  color:var(--red);font-size:11.5px;font-weight:700;letter-spacing:.8px;
+  text-transform:uppercase;text-decoration:none;
+  transition:color .15s,gap .18s;
+}
+.ht-reviews-cta:hover{color:var(--red-dim);gap:.7rem}
+@media(max-width:960px){.ht-reviews-section{padding:4.5rem 28px}}
+@media(max-width:700px){
+  .ht-reviews-grid{grid-template-columns:1fr}
+  .ht-reviews-section{padding:3.5rem 20px}
+}
+
+/* ── TRUST & REPUTATION ─────────────────────────────────────────── */
+.trust-rep-section{background:var(--offwhite);padding:5.5rem 52px;border-top:1px solid var(--border)}
+.trust-rep-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;align-items:center}
+.trust-rep-photo img{width:100%;height:auto;display:block;border-radius:14px}
+.trust-rep-copy .sec-h{margin-top:.75rem}
+.trust-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:.9rem 0 1.625rem}
+.trust-body{font-size:15px;line-height:1.72;color:#484848}
+.trust-body+.trust-body{margin-top:1rem}
+.trust-callout{margin-top:1.75rem;padding:.875rem 1.125rem;border-left:2px solid var(--red);background:rgba(200,31,37,.04)}
+.trust-callout p{font-size:14px;font-style:italic;color:#444;line-height:1.68}
+.trust-copy-cta{display:inline-flex;align-items:center;gap:.375rem;color:var(--red);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;margin-top:1.625rem;transition:color .15s}
+.trust-copy-cta:hover{color:var(--red-dim)}
+.trust-creds-wrap{display:flex;flex-direction:column;gap:12px}
+.trust-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.trust-logo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tr-card{
+  background:#fff;border:1px solid var(--border);border-radius:10px;
+  padding:1.625rem 1.125rem 1.375rem;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;
+  transition:box-shadow .22s,border-color .22s;
+}
+.tr-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.07);border-color:#d4d0ca}
+.tr-stat-num{
+  font-family:'Playfair Display',serif;font-weight:500;
+  font-size:clamp(30px,3vw,42px);color:var(--red);line-height:1;
+}
+.tr-stat-stars{font-size:16px;color:#f59e0b;letter-spacing:3px;line-height:1;min-height:18px}
+.tr-card-lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#777;line-height:1.55;margin-top:auto}
+.tr-logo-img{height:54px;width:auto;object-fit:contain;display:block;flex-shrink:0}
+@media(max-width:1140px){.trust-rep-inner{gap:3.5rem}}
+@media(max-width:960px){
+  .trust-rep-section{padding:4.5rem 28px}
+  .trust-rep-inner{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:680px){
+  .trust-rep-section{padding:4rem 20px}
+  .trust-logo-row .tr-card:last-child{grid-column:1/-1;max-width:220px;margin:0 auto;width:100%}
+}
+@media(max-width:420px){
+  .trust-stat-row{grid-template-columns:1fr}
+  .trust-logo-row{grid-template-columns:1fr 1fr}
+  .trust-logo-row .tr-card:last-child{grid-column:1/-1;max-width:180px}
+}
+
+/* ── TEAM STORY ── */
+.story-section{background:#fff;padding:3.5rem 52px 2.5rem}
+.story-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.story-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:1rem}
+.story-h{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.2vw,42px);line-height:1.08;letter-spacing:-.4px;color:#0d0d0d}
+.story-rule{width:36px;height:2px;background:var(--red);border-radius:1px;margin:1.25rem 0 1.375rem}
+.story-body{font-size:15px;color:#555;line-height:1.78;max-width:460px}
+.story-body+.story-body{margin-top:.875rem}
+.story-cta{display:inline-flex;align-items:center;gap:.5rem;color:var(--red);font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;margin-top:1.625rem;transition:color .15s}
+.story-cta:hover{color:var(--red-dim)}
+.story-photo img{width:100%;height:auto;display:block;border-radius:12px}
+@media(max-width:1100px){.story-inner{gap:3.5rem}}
+@media(max-width:960px){
+  .story-section{padding:3rem 28px 2rem}
+  .story-inner{grid-template-columns:1fr;gap:2.5rem}
+  .story-body{max-width:none}
+}
+@media(max-width:680px){.story-section{padding:2.5rem 20px 1.5rem}}
 </style>
 </head>
 <body>
@@ -437,13 +648,12 @@ footer{
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html"><span class="dot"></span>Windows</a>
         <a href="doors.html"><span class="dot"></span>Custom Doors</a>
-        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
     <a href="financing.html">Financing</a>
     <a href="reviews.html">Reviews</a>
-    <a href="contact.html">About</a>
+    <a href="meet-the-team.html">Meet the Team</a>
     <a href="contact.html">Contact</a>
   </div>
 
@@ -468,12 +678,11 @@ footer{
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="financing.html" class="mob-link">Financing</a>
     <a href="reviews.html" class="mob-link">Reviews</a>
-    <a href="contact.html" class="mob-link">About</a>
+    <a href="meet-the-team.html" class="mob-link">Meet the Team</a>
     <a href="contact.html" class="mob-link">Contact</a>
     <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
@@ -481,7 +690,13 @@ footer{
 
 <!-- ── HERO ──────────────────────────────────────────────────── -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg" id="heroBg">
+    <picture>
+      <source media="(max-width: 767px)" srcset="images/mobilehero.png">
+      <source media="(max-width: 1199px)" srcset="images/hero2.png">
+      <img src="images/laptophero.png" alt="" aria-hidden="true">
+    </picture>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-eyebrow">Houston's Premier Exterior Specialists</span>
@@ -503,55 +718,81 @@ footer{
       </a>
     </div>
   </div>
-  <div class="hero-logo">
-    <img src="images/home_team_roofing_logo_master.png" alt="Home Team Home Solutions" />
-  </div>
 </section>
 
-<!-- ── FEATURE STRIP ──────────────────────────────────────────── -->
-<div class="feat-strip">
-  <div class="feat-item">
-    <div class="feat-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L3.5 5.5v6C3.5 16 7 19.5 11 21c4-1.5 7.5-5 7.5-9.5v-6L11 2z" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linejoin="round"/><path d="M7.5 11l2.5 2.5 5-5" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<!-- ── PROOF BAR ─────────────────────────────────────────────────── -->
+<div class="proof-bar" role="region" aria-label="Credentials and recognition">
+  <div class="proof-bar-inner">
+
+    <div class="proof-item">
+      <span class="proof-stars" id="cbStars">★★★★★</span>
+      <span class="proof-stat" id="cbRating">4.9</span>
+      <span class="proof-label">Google Rating</span>
     </div>
-    <div class="feat-title">Premium Quality</div>
-    <div class="feat-desc">Top-tier materials and craftsmanship built to last.</div>
-  </div>
-  <div class="feat-item">
-    <div class="feat-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7" r="3.5" stroke="rgba(255,255,255,.75)" stroke-width="1.4"/><path d="M4 19c0-3.9 3.1-7 7-7h0c3.9 0 7 3.1 7 7" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linecap="round"/></svg>
+
+    <div class="proof-item">
+      <span class="proof-stat" id="cbReviews">500+</span>
+      <span class="proof-label">Google Reviews</span>
     </div>
-    <div class="feat-title">Trusted Experts</div>
-    <div class="feat-desc">Experienced professionals dedicated to perfection.</div>
-  </div>
-  <div class="feat-item">
-    <div class="feat-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 10l8-7 8 7v9a1 1 0 01-1 1H4a1 1 0 01-1-1V10z" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 21v-7h6v7" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+
+    <div class="proof-item">
+      <span class="proof-stat">25+</span>
+      <span class="proof-label">Years of<br>Experience</span>
     </div>
-    <div class="feat-title">Built to Last</div>
-    <div class="feat-desc">Durable solutions designed for Texas weather.</div>
-  </div>
-  <div class="feat-item">
-    <div class="feat-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8.5" stroke="rgba(255,255,255,.75)" stroke-width="1.4"/><path d="M11 6.5v1M11 14.5v1M8.5 9A2.5 2.5 0 0111 7.5a2.5 2.5 0 012.5 2.5c0 1.5-2.5 2.5-2.5 3.5" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linecap="round"/></svg>
+
+    <div class="proof-item">
+      <span class="proof-gaf-stat">GAF</span>
+      <span class="proof-label">Master Elite<br>Certified</span>
     </div>
-    <div class="feat-title">Financing Options</div>
-    <div class="feat-desc">Flexible financing solutions to fit your budget.</div>
-  </div>
-  <div class="feat-item">
-    <div class="feat-icon">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 6.5H20l-5.5 4 2 6.5L11 15l-5.5 4 2-6.5L2 8.5h6.5L11 2z" stroke="rgba(255,255,255,.75)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+
+    <div class="proof-item">
+      <span class="proof-stat">A+</span>
+      <span class="proof-label">BBB<br>Accredited</span>
     </div>
-    <div class="feat-title">5-Star Service</div>
-    <div class="feat-desc">Highly rated by homeowners across Houston, TX.</div>
+
   </div>
 </div>
+
+<!-- ── TEAM / CUSTOMER TRUST ──────────────────────────────────── -->
+<section class="team-cust-section" id="our-team">
+  <div class="team-cust-wrap">
+    <div class="team-cust-inner">
+
+      <!-- LEFT: copy + review cards -->
+      <div class="team-cust-left">
+        <div class="team-heading-block">
+          <div class="team-red-accent" aria-hidden="true"></div>
+          <div class="team-heading-content">
+            <span class="eyebrow-gold">More Than a Contractor</span>
+            <h2 class="sec-h">A Team That Puts You First</h2>
+          </div>
+        </div>
+        <p class="team-cust-body">Awards, certifications, warranties, and industry credentials matter — but they are only part of why homeowners choose Home Team.</p>
+        <p class="team-cust-body">We believe every homeowner should feel like part of the Home Team family. From the first conversation through the final walkthrough, our goal is to deliver not only exceptional workmanship, but also the communication, care, and personal service our customers deserve.</p>
+        <p class="team-cust-emphasis">You're never just another project.</p>
+        <div class="team-review-grid" id="teamReviewGrid"></div>
+        <a href="reviews.html" class="team-reviews-cta">Read Our 5-Star Reviews &#x2192;</a>
+      </div>
+
+      <!-- RIGHT: authentic team photo collage -->
+      <div class="team-cust-right">
+        <div class="team-collage">
+          <div class="team-collage-frame">
+            <img src="images/meet-the-team/team-photo-1.webp" alt="Home Team crew — Greater Houston" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ── SERVICES ───────────────────────────────────────────────── -->
 <section class="services-section" id="services">
   <div class="services-header">
-    <span class="eyebrow-gold">Our Solutions</span>
-    <h2 class="sec-h">Expert Service. Premium Results.</h2>
+    <span class="eyebrow-gold">Roofing &bull; Windows &bull; Custom Doors</span>
+    <h2 class="sec-h">Texas' Premier Roofing, Windows &amp; Custom Doors</h2>
+    <p class="svc-header-body">Home Team provides roofing replacements, energy-efficient windows, and custom doors to homeowners throughout the Greater Houston area — from the first consultation through the final installation.</p>
   </div>
   <div class="svc-grid">
 
@@ -560,12 +801,10 @@ footer{
         <img src="images/roofingcloseup.png" alt="Premium roofing installation" loading="lazy"/>
       </div>
       <div class="svc-card-body">
-        <div class="svc-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 10l9-8 9 8v10a1 1 0 01-1 1H3a1 1 0 01-1-1V10z" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 21V13h6v8" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/></svg>
-        </div>
         <div class="svc-name">Roofing</div>
-        <div class="svc-desc">Premium roofing systems built to last.</div>
-        <div class="svc-arrow">Learn More →</div>
+        <div class="svc-heading">Protect What Matters Most.</div>
+        <div class="svc-desc">Full replacements, repairs, and storm damage — with manufacturer certifications and warranties to back it up.</div>
+        <div class="svc-arrow">Explore Roofing →</div>
       </div>
     </a>
 
@@ -574,12 +813,10 @@ footer{
         <img src="images/windowsfrontpage.png" alt="Energy-efficient replacement windows" loading="lazy"/>
       </div>
       <div class="svc-card-body">
-        <div class="svc-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="2" stroke="#ffffff" stroke-width="1.4"/><line x1="11" y1="2" x2="11" y2="20" stroke="#ffffff" stroke-width="1.4"/><line x1="2" y1="11" x2="20" y2="11" stroke="#ffffff" stroke-width="1.4"/></svg>
-        </div>
         <div class="svc-name">Windows</div>
-        <div class="svc-desc">Energy-efficient windows that elevate your home.</div>
-        <div class="svc-arrow">Learn More →</div>
+        <div class="svc-heading">See the Difference From Day One.</div>
+        <div class="svc-desc">New windows that cut your energy bills, reduce outside noise, and look great from the street.</div>
+        <div class="svc-arrow">Explore Windows →</div>
       </div>
     </a>
 
@@ -588,28 +825,51 @@ footer{
         <img src="images/updatedoor.png" alt="Luxury custom door installation" loading="lazy"/>
       </div>
       <div class="svc-card-body">
-        <div class="svc-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="2" width="13" height="19" rx="1" stroke="#ffffff" stroke-width="1.4"/><circle cx="14" cy="11.5" r="1" fill="#ffffff"/><path d="M16 2h2a1 1 0 011 1v17a1 1 0 01-1 1h-2" stroke="#ffffff" stroke-width="1.4"/></svg>
-        </div>
         <div class="svc-name">Custom Doors</div>
-        <div class="svc-desc">Custom-crafted entries that define your home.</div>
-        <div class="svc-arrow">Learn More →</div>
+        <div class="svc-heading">Make a Lasting First Impression.</div>
+        <div class="svc-desc">Entry, patio, and French doors that change the way your home looks — and how it feels to walk in.</div>
+        <div class="svc-arrow">Explore Doors →</div>
       </div>
     </a>
 
-    <a href="siding.html" class="svc-card">
-      <div class="svc-card-img">
-        <img src="images/gallerylightened.png" alt="Premium siding installation" loading="lazy"/>
+
+  </div>
+
+  <div class="svc-footer">
+    <div class="svc-footer-trust">
+      <span>Free In-Home Consultations</span>
+      <span>Financing Options Available</span>
+      <span>Serving Greater Houston</span>
+    </div>
+    <a href="estimate.html" class="svc-footer-cta">Start My Project →</a>
+  </div>
+
+</section>
+
+<!-- ── TRUST & REPUTATION ─────────────────────────────────────── -->
+<section class="trust-rep-section" id="credentials">
+  <div class="trust-rep-inner">
+
+    <!-- LEFT: copy -->
+    <div class="trust-rep-copy">
+      <span class="eyebrow-gold">Trust Built One Home at a Time</span>
+      <h2 class="sec-h">Trusted on 45,000+ Projects — and Counting.</h2>
+      <div class="trust-rule"></div>
+      <p class="trust-body">Home Team has completed more than 45,000 projects, and we know that kind of trust isn't built with a sales pitch. It's earned by showing up, doing what you said you would do, and standing behind the work when the job is finished.</p>
+      <p class="trust-body">From the first conversation to the final walkthrough, our team goes the extra mile. We keep homeowners informed, help make the process easier to understand, respect the home we're working on, and make sure the details don't get overlooked.</p>
+      <div class="trust-callout">
+        <p>45,000+ projects later, we still treat every home like it matters.</p>
       </div>
-      <div class="svc-card-body">
-        <div class="svc-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="4" rx="1" stroke="#ffffff" stroke-width="1.4"/><rect x="2" y="9" width="18" height="4" rx="1" stroke="#ffffff" stroke-width="1.4"/><rect x="2" y="16" width="18" height="4" rx="1" stroke="#ffffff" stroke-width="1.4"/></svg>
-        </div>
-        <div class="svc-name">Home Solutions</div>
-        <div class="svc-desc">Exterior solutions that enhance beauty and performance.</div>
-        <div class="svc-arrow">Learn More →</div>
-      </div>
-    </a>
+      <a href="reviews.html" class="trust-copy-cta">
+        Read Our 5-Star Reviews
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- RIGHT: team photo -->
+    <div class="trust-rep-photo">
+      <img src="images/home-team-group-photo.png" alt="The Home Team crew — based in Tomball, serving the Greater Houston area" loading="lazy"/>
+    </div>
 
   </div>
 </section>
@@ -731,6 +991,65 @@ footer{
   </div>
 </section>
 
+<!-- ── HOME PAGE REVIEW HIGHLIGHTS ───────────────────────────────── -->
+<section class="ht-reviews-section">
+  <div class="ht-reviews-wrap">
+    <div class="ht-reviews-head">
+      <span class="eyebrow-gold">Proven by Homeowners</span>
+      <h2 class="sec-h">Trusted Across Houston.</h2>
+      <p class="ht-reviews-subhead">Real homeowners. Real projects. Real experiences with the Home Team.</p>
+    </div>
+    <div class="ht-reviews-trust">
+      <span class="ht-reviews-trust-stars" id="htStarline">★★★★★</span>
+      <span class="ht-reviews-trust-text" id="htReviewCount">Rated by hundreds of Houston-area homeowners</span>
+    </div>
+    <div class="ht-reviews-grid">
+      <div class="ht-rcard">
+        <div class="ht-rcard-qmark" aria-hidden="true">"</div>
+        <div class="ht-rcard-stars">★★★★★</div>
+        <p class="ht-rcard-text">"The job was completed in one day, the team was professional and personable, and I couldn't be happier. I've already referred them to my best friend."</p>
+        <div class="ht-rcard-footer">
+          <span class="ht-rcard-author">T. Landry</span>
+          <span class="ht-rcard-service">Roof Installation</span>
+        </div>
+      </div>
+      <div class="ht-rcard">
+        <div class="ht-rcard-qmark" aria-hidden="true">"</div>
+        <div class="ht-rcard-stars">★★★★★</div>
+        <p class="ht-rcard-text">"The entire process was incredibly easy and stress-free. They kept me informed every step of the way and the workmanship was outstanding."</p>
+        <div class="ht-rcard-footer">
+          <span class="ht-rcard-author">Mark M.</span>
+          <span class="ht-rcard-service">Roof Installation</span>
+        </div>
+      </div>
+      <div class="ht-rcard">
+        <div class="ht-rcard-qmark" aria-hidden="true">"</div>
+        <div class="ht-rcard-stars">★★★★★</div>
+        <p class="ht-rcard-text">"They worked with our insurance, the install took one day, and the team was meticulous about cleaning up. The process was smooth from start to finish."</p>
+        <div class="ht-rcard-footer">
+          <span class="ht-rcard-author">Dave Ross</span>
+          <span class="ht-rcard-service">Roof Replacement</span>
+        </div>
+      </div>
+      <div class="ht-rcard">
+        <div class="ht-rcard-qmark" aria-hidden="true">"</div>
+        <div class="ht-rcard-stars">★★★★★</div>
+        <p class="ht-rcard-text">"They guided us through the entire process, helped with our insurance claim, arrived right on time, and left the property spotless."</p>
+        <div class="ht-rcard-footer">
+          <span class="ht-rcard-author">Nathan Collier</span>
+          <span class="ht-rcard-service">Roof Installation</span>
+        </div>
+      </div>
+    </div>
+    <div class="ht-reviews-cta-wrap">
+      <a href="reviews.html" class="ht-reviews-cta">
+        View All Customer Reviews
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── FINAL CTA ──────────────────────────────────────────────── -->
 <div class="cta-section">
   <!-- Left: CTA text -->
@@ -784,17 +1103,62 @@ footer{
 
 <!-- ── FOOTER ─────────────────────────────────────────────────── -->
 <footer>
-  <p class="footer-copy">&copy; 2025 Home Team Home Solutions. All rights reserved.</p>
-  <div class="footer-links">
-    <a href="#">Privacy Policy</a>
-    <span class="sep">|</span>
-    <a href="#">Terms &amp; Conditions</a>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>HOME TEAM HOME SOLUTIONS</h3>
+      <div class="footer-brand-sub">Serving Greater Houston, TX</div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5A1.5 1.5 0 013.5 1h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.04 6.4a9.085 9.085 0 004.56 4.56l.962-1.564a.5.5 0 01.506-.133l3.07.878A.5.5 0 0113 10.62V11.5a1.5 1.5 0 01-1.5 1.5C5.701 13 1 8.299 1 2.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>(832) 422-3039</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>thehometeamroofing@gmail.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="fsoc" aria-label="Facebook">f</a>
+        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
+        <a href="#" class="fsoc" aria-label="Google">G</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+      <a href="gallery.html">Project Gallery</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service Areas</h4>
+      <a href="service-areas.html">Tomball</a>
+      <a href="service-areas.html">The Woodlands</a>
+      <a href="service-areas.html">Spring</a>
+      <a href="service-areas.html">Conroe</a>
+      <a href="service-areas.html">Cypress</a>
+      <a href="service-areas.html">Katy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:flex-end">
+      <div class="footer-htr">
+        <div class="footer-htr-div">A Division of</div>
+        <div class="footer-htr-name">HOME TEAM<br>ROOFING</div>
+        <div class="footer-htr-line"></div>
+      </div>
+    </div>
   </div>
-  <div class="footer-social">
-    <span class="footer-social-label">Follow Us</span>
-    <a href="#" class="fsoc" aria-label="Facebook">f</a>
-    <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-    <a href="#" class="fsoc" aria-label="Google">G</a>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Home Team Home Solutions. All Rights Reserved.</p>
+    <p>Houston, TX &nbsp;&middot;&nbsp; Greater Houston Area</p>
   </div>
 </footer>
 
@@ -816,6 +1180,78 @@ footer{
     st.addEventListener('click', function(){ ss.classList.toggle('open'); });
   }
 })();
+</script>
+
+<script>
+/* Single fetch populates proof bar, trust stat card, team review cards, and review highlights */
+(function(){
+  var rEl=document.getElementById('trRating');
+  var sEl=document.getElementById('trStars');
+  var lEl=document.getElementById('trReviewLbl');
+  var grid=document.getElementById('teamReviewGrid');
+  var htStars=document.getElementById('htStarline');
+  var htCount=document.getElementById('htReviewCount');
+  var cbRating=document.getElementById('cbRating');
+  var cbStars=document.getElementById('cbStars');
+  var cbReviews=document.getElementById('cbReviews');
+  if(!rEl&&!grid&&!htStars&&!htCount&&!cbRating)return;
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  fetch('/api/google-reviews')
+    .then(function(r){return r.ok?r.json():Promise.reject();})
+    .then(function(d){
+      /* Trust stat card */
+      if(rEl&&d.rating){
+        rEl.textContent=Number(d.rating).toFixed(1);
+        var s='',rnd=Math.round(d.rating);
+        for(var i=1;i<=5;i++)s+=i<=rnd?'★':'☆';
+        if(sEl)sEl.textContent=s;
+      }
+      if(d.totalReviews&&lEl)lEl.textContent=d.totalReviews.toLocaleString()+' Google Reviews';
+      else if(lEl)lEl.textContent='Google Reviews';
+      /* Proof bar */
+      if(cbRating&&d.rating)cbRating.textContent=Number(d.rating).toFixed(1);
+      if(cbStars){var cs='';var crnd=Math.round(d.rating||5);for(var k=1;k<=5;k++)cs+=k<=crnd?'★':'☆';cbStars.textContent=cs;}
+      if(cbReviews&&d.totalReviews)cbReviews.textContent=d.totalReviews.toLocaleString()+'+';
+      /* Review highlights trust line */
+      if(htStars){var hs='';var hrnd=Math.round(d.rating||5);for(var j=1;j<=5;j++)hs+=j<=hrnd?'★':'☆';htStars.textContent=hs;}
+      if(htCount&&d.totalReviews)htCount.textContent='Rated by '+d.totalReviews.toLocaleString()+' Houston-area homeowners';
+      /* Team review cards */
+      var reviews=d.reviews||[];
+      if(grid){
+        if(!reviews.length){grid.innerHTML='';return;}
+        grid.innerHTML='';
+        reviews.slice(0,2).forEach(function(rev){
+          var stars='',rnd2=Math.round(rev.rating||5);
+          for(var i=1;i<=5;i++)stars+=i<=rnd2?'★':'☆';
+          var txt=rev.text||'';
+          if(txt.length>260)txt=txt.slice(0,257)+'…';
+          var card=document.createElement('div');
+          card.className='team-rcard';
+          card.innerHTML='<div class="team-rcard-stars">'+stars+'</div>'
+            +'<p class="team-rcard-quote">“'+esc(txt)+'”</p>'
+            +'<div class="team-rcard-footer">'
+            +'<span class="team-rcard-author">— '+esc((rev.author&&rev.author.displayName)||'Google Reviewer')+'</span>'
+            +(rev.relativePublishTimeDescription?'<span class="team-rcard-time">'+esc(rev.relativePublishTimeDescription)+'</span>':'')
+            +'</div>';
+          grid.appendChild(card);
+        });
+      }
+    })
+    .catch(function(){
+      if(rEl){rEl.style.fontSize='20px';rEl.style.color='#f59e0b';rEl.textContent='★★★★★';}
+      if(sEl)sEl.textContent='';
+      if(lEl)lEl.textContent='Hundreds of 5-Star Reviews';
+      if(grid)grid.innerHTML='';
+      if(htStars)htStars.textContent='★★★★★';
+      if(htCount)htCount.textContent='Rated by hundreds of Houston-area homeowners';
+      /* proof bar — keep static fallback values as-is */
+    });
+})();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
 </body>
 </html>
