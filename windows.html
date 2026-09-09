@@ -207,10 +207,28 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
 
 @media(max-width:900px){.hero h1{letter-spacing:-1px}}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+@media(max-width:767px){
+  /* Hero section: photograph only, fixed height */
+  .hero{height:300px;overflow:hidden;background-position:65% center}
+  .hero-overlay{display:none}
+  .hero-content{display:none}
+  /* Mobile hero content — normal document flow below image */
+  .mob-hero-content{
+    display:block;
+    background:#040e1a;
+    padding:28px 20px 36px;
+    color:#fff;
+  }
+  .mob-hero-content .hero-badge{display:inline-block;margin-bottom:14px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px}
+  .mob-hero-content h1{font-family:'Inter',sans-serif;font-size:34px;font-weight:700;line-height:0.95;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+  .mob-hero-content .hero-sub{font-size:15px;color:rgba(255,255,255,.75);line-height:1.65;margin-bottom:22px}
+  .mob-hero-content .hero-btns{flex-direction:column;gap:10px;flex-wrap:nowrap;margin-bottom:16px}
+  .mob-hero-content .btn-solid,.mob-hero-content .btn-outline{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+  .mob-hero-content .hero-trust{display:flex;align-items:center;gap:8px}
+}
 @media(max-width:768px){
-  .hero{height:auto;min-height:520px;background-position:65% top}
-  .hero-overlay{background:linear-gradient(to bottom,rgba(5,15,25,0.84) 0%,rgba(5,15,25,0.72) 45%,rgba(5,15,25,0.40) 75%,rgba(5,15,25,0.10) 100%)}
-  .hero-content{padding:32px 24px 32px 24px;max-width:100%}
   .wgrid{grid-template-columns:repeat(2,1fr)}
   .gal-row{grid-template-columns:repeat(2,1fr)}
   .bottom-grid{grid-template-columns:1fr}
@@ -305,6 +323,22 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     </div>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <div class="hero-badge">Houston's Premium Window Specialists</div>
+  <h1>Beautiful Windows<br>Designed for<br>Texas Homes</h1>
+  <p class="hero-sub">Energy-efficient replacement windows professionally installed by the trusted team behind Home Team Home Solutions.</p>
+  <div class="hero-btns">
+    <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
+    <a class="btn-outline" href="https://payzer.com/Payment/ExternalMake/businessId/9487" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+    <a class="btn-outline" href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+  </div>
+  <div class="hero-trust">
+    <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    <span class="hero-trust-text">Rated <strong>5.0</strong> Stars by Houston Homeowners</span>
+  </div>
+</div>
 
 <!-- FEATURE STRIP -->
 <div class="strip">

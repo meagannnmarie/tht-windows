@@ -201,19 +201,30 @@ nav{
   .hero-content{justify-content:flex-start;padding:60px 0 0 28px;max-width:100%}
   .hero-h1{letter-spacing:-1px}
 }
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
 @media(max-width:767px){
-  /* Overlay: darken lower-left where text sits; leave upper logo area mostly clear */
-  .hero-overlay{
-    background:
-      linear-gradient(to right, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.20) 45%, transparent 68%),
-      linear-gradient(to bottom, transparent 0%, transparent 24%, rgba(0,0,0,0.42) 42%, rgba(0,0,0,0.65) 100%);
+  /* Hero section: photograph only, fixed height */
+  .hero{overflow:hidden}
+  .hero-bg{height:320px;overflow:hidden}
+  .hero-bg picture{display:block;width:100%;height:100%}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 68%}
+  .hero-overlay{display:none}
+  .hero-content{display:none}
+  /* Mobile hero content — normal document flow below image */
+  .mob-hero-content{
+    display:block;
+    background:#0d0d0d;
+    padding:28px 20px 36px;
+    color:#fff;
   }
-  /* Push text below the logo (~27% of portrait image height = ~190-207px at 360-430px widths) */
-  .hero-content{padding:210px 20px 16px 20px;max-width:100%}
-}
-@media(max-width:560px){
-  .hero-btns{flex-direction:column}
-  .btn-gold,.btn-outline-white{justify-content:center;width:100%;font-size:13px}
+  .mob-hero-content .hero-eyebrow{display:block;margin-bottom:12px}
+  .mob-hero-content .hero-h1{font-size:34px;line-height:1.05;margin-bottom:14px}
+  .mob-hero-content .hero-rule{margin:0 0 12px}
+  .mob-hero-content .hero-financing{font-size:16px;margin-bottom:10px}
+  .mob-hero-content .hero-tagline{font-size:15px;line-height:1.65;margin-bottom:24px;max-width:100%;color:rgba(255,255,255,.75)}
+  .mob-hero-content .hero-btns{flex-direction:column;gap:10px;flex-wrap:nowrap;margin-bottom:0}
+  .mob-hero-content .btn-gold,.mob-hero-content .btn-outline-white{width:100%;justify-content:center;font-size:14px;padding:14px 20px}
 }
 
 /* ── FEATURE STRIP ───────────────────────────────────────────── */
@@ -740,6 +751,28 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
     </div>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="hero-eyebrow">Houston's Premier Exterior Specialists</span>
+  <h1 class="hero-h1">
+    <span class="line1">Luxury Home</span>
+    <span class="line2">Solutions</span>
+  </h1>
+  <div class="hero-rule"></div>
+  <div class="hero-financing"><span class="fin-red">0% APR</span> Financing Available</div>
+  <div class="hero-tagline">Elevating Houston's finest homes with premium exterior solutions and unmatched craftsmanship.</div>
+  <div class="hero-btns">
+    <a href="estimate.html" class="btn-gold">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="gallery.html" class="btn-outline-white">
+      View Our Projects
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
 
 <!-- ── PROOF BAR ─────────────────────────────────────────────────── -->
 <div class="proof-bar" role="region" aria-label="Credentials and recognition">

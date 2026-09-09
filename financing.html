@@ -187,10 +187,33 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 @media(max-width:960px){
   .apr-float{top:9%;left:80px}
 }
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+@media(max-width:767px){
+  /* Hero section: photograph only, fixed height */
+  .hero{height:300px;overflow:hidden;background-position:center 30%}
+  .hero-content{display:none}
+  .apr-float{display:none}
+  /* Mobile hero content — normal document flow below image */
+  .mob-hero-content{
+    display:block;
+    background:#06090d;
+    padding:28px 20px 36px;
+    color:#fff;
+  }
+  .mob-hero-content .mob-badge{display:inline-block;background:rgba(200,31,37,0.18);border:1px solid rgba(200,31,37,0.45);color:rgba(255,255,255,0.90);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:3px;margin-bottom:16px}
+  .mob-hero-content h1{font-family:'Inter',sans-serif;font-size:30px;font-weight:700;line-height:1.0;letter-spacing:-0.03em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+  .mob-hero-content .mob-apr{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .mob-hero-content .mob-apr-pct{font-family:'Inter',sans-serif;font-size:38px;font-weight:800;color:#C81F25;line-height:1;letter-spacing:-1px}
+  .mob-hero-content .mob-apr-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:3px;text-transform:uppercase}
+  .mob-hero-content .hero-sub{font-size:15px;color:rgba(255,255,255,.72);line-height:1.65;margin-bottom:22px}
+  .mob-hero-content .mob-btns{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+  .mob-hero-content .btn-solid{width:100%;justify-content:center;font-size:14px;padding:13px 16px;display:flex}
+  .mob-hero-content .btn-outline{width:100%;justify-content:center;font-size:14px;padding:13px 16px;display:flex}
+  .mob-hero-content .hero-trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+  .mob-hero-content .hero-trust span{font-size:11px;color:rgba(255,255,255,.50);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
+}
 @media(max-width:768px){
-  .hero{height:auto;min-height:480px;background-position:50% center}
-  .hero-content{padding:28px 24px 32px 24px;max-width:100%}
-  .hero-bg{background:linear-gradient(to bottom,rgba(8,12,16,0.72) 0%,rgba(8,12,16,0.52) 45%,rgba(8,12,16,0.22) 75%,rgba(8,12,16,0) 100%)}
   .sec{padding:3rem 1.25rem}
   .steps-grid{grid-template-columns:1fr}
   .ben-grid{grid-template-columns:1fr}
@@ -206,7 +229,6 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
   .sec-h2{font-size:clamp(20px,5vw,26px)}
   .final-cta h2{font-size:clamp(22px,5.5vw,28px)}
-  .apr-float{top:10%;left:0}
 }
 @media(max-width:1100px){.steps-grid{grid-template-columns:repeat(2,1fr)}.ben-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
@@ -295,6 +317,26 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <span class="apr-float-label">Financing Available</span>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <div class="mob-badge">Financing Options</div>
+  <h1>Upgrade Your Home<br>With Financing</h1>
+  <div class="mob-apr">
+    <span class="mob-apr-pct">0% APR</span>
+    <span class="mob-apr-label">Financing Available</span>
+  </div>
+  <p class="hero-sub">Flexible financing options make it easy to invest in your home now and pay over time. Explore premium home improvements with simple payment options designed for Houston-area homeowners.</p>
+  <div class="mob-btns">
+    <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
+    <button class="btn-outline" onclick="window.scrollTo({top:document.querySelector('.strip').offsetTop,behavior:'smooth'})">View Financing Options</button>
+  </div>
+  <div class="hero-trust">
+    <span>&#10003; No-Obligation Estimate</span>
+    <span>&#10003; Licensed &amp; Insured</span>
+    <span>&#10003; Houston's Home Team</span>
+  </div>
+</div>
 
 <!-- FEATURE STRIP -->
 <div class="strip">

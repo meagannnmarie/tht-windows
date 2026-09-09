@@ -134,17 +134,26 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .hero-scroll:hover{color:rgba(255,255,255,.65)}
 .hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
 @media(max-width:900px){.hero-h1{letter-spacing:-1px}}
-@media(max-width:768px){
-  .hero{height:auto;min-height:520px}
-  .hero-content{padding:28px 24px 52px 24px;max-width:100%}
-  .hero-eyebrow-pill{margin-bottom:0.75rem}
-  .hero-h1{margin-bottom:12px}
-  .hero-tagline{margin-bottom:0.875rem;font-size:14px}
-  .hero-btns{margin-bottom:16px}
-  .hero-trust-row{gap:0.625rem}
-  .hero-scroll{display:none}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+@media(max-width:767px){
+  /* Hero section: photograph only, fixed height */
+  .hero{height:300px;overflow:hidden}
+  .hero-overlay,.hero-overlay-l,.hero-content,.hero-scroll{display:none}
+  /* Mobile hero content — normal document flow below image */
+  .mob-hero-content{
+    display:block;
+    background:#0d0d0d;
+    padding:28px 20px 36px;
+    color:#fff;
+  }
+  .mob-hero-content .hero-eyebrow-pill{display:inline-block;margin-bottom:14px}
+  .mob-hero-content .hero-h1{font-size:34px;line-height:0.95;margin-bottom:14px}
+  .mob-hero-content .hero-tagline{font-size:15px;line-height:1.65;margin-bottom:22px;color:rgba(255,255,255,.82);max-width:100%}
+  .mob-hero-content .hero-btns{flex-direction:column;gap:10px;margin-bottom:20px;flex-wrap:nowrap}
+  .mob-hero-content .btn-red,.mob-hero-content .btn-ghost{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+  .mob-hero-content .hero-trust-row{flex-wrap:wrap;gap:10px}
 }
-@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.btn-red,.btn-ghost,.btn-solid,.btn-outline{justify-content:center;width:100%;font-size:14px;padding:13px 16px}}
 
 /* ── CREDIBILITY STRIP ── */
 .cred-strip{background:#fff;border-bottom:1px solid var(--border)}
@@ -506,6 +515,22 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
     <span>Explore</span>
   </a>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="hero-eyebrow-pill">Home Team Roofing</span>
+  <h1 class="hero-h1">First-Class Roofing.<br>Built to Protect.</h1>
+  <p class="hero-tagline">Protect your home with expert roofing backed by proven craftsmanship and a team committed to guiding you from inspection through installation.</p>
+  <div class="hero-btns">
+    <button class="btn-red" onclick="location.href='estimate.html'">Start My Project</button>
+    <a class="btn-ghost" href="https://payzer.com/Payment/ExternalMake/businessId/9487" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+  </div>
+  <div class="hero-trust-row">
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>Free Roof Inspections</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>Financing Available</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>Warranty-Backed</div>
+  </div>
+</div>
 
 <!-- ══════════════════════════
      2 · CREDIBILITY STRIP
