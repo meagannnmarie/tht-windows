@@ -201,10 +201,19 @@ nav{
   .hero-content{justify-content:flex-start;padding:60px 0 0 28px;max-width:100%}
   .hero-h1{letter-spacing:-1px}
 }
+@media(max-width:767px){
+  /* Overlay: darken lower-left where text sits; leave upper logo area mostly clear */
+  .hero-overlay{
+    background:
+      linear-gradient(to right, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.20) 45%, transparent 68%),
+      linear-gradient(to bottom, transparent 0%, transparent 24%, rgba(0,0,0,0.42) 42%, rgba(0,0,0,0.65) 100%);
+  }
+  /* Push text below the logo (~27% of portrait image height = ~190-207px at 360-430px widths) */
+  .hero-content{padding:210px 20px 16px 20px;max-width:100%}
+}
 @media(max-width:560px){
   .hero-btns{flex-direction:column}
   .btn-gold,.btn-outline-white{justify-content:center;width:100%;font-size:13px}
-  .hero-content{padding:48px 0 0 20px}
 }
 
 /* ── FEATURE STRIP ───────────────────────────────────────────── */
