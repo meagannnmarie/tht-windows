@@ -4,6 +4,10 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
+<link rel="preload" as="image" href="images/mobilehero.webp" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero2.webp" media="(min-width: 768px) and (max-width: 1199px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/laptophero.webp" media="(min-width: 1200px)" fetchpriority="high">
+
 <title>Home Team Home Solutions — Luxury Home Improvements | Houston, TX</title>
 <meta name="description" content="Texas' premier luxury home improvement company. Premium roofing, windows, custom doors, and exterior home solutions — expert installation, lifetime warranties, and 0% APR financing available."/>
 <link rel="canonical" href="https://ththomesolutions.com/"/>
@@ -12,7 +16,9 @@
 <meta property="og:title" content="Home Team Home Solutions — Luxury Home Improvements | Houston, TX"/>
 <meta property="og:description" content="Texas' premier luxury home improvement company. Premium roofing, windows, custom doors, and exterior home solutions — expert installation, lifetime warranties, and 0% APR financing available."/>
 <meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@72,400;72,500&family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
 /* ── RESET & BASE ───────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -726,9 +732,9 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 <section class="hero">
   <div class="hero-bg" id="heroBg">
     <picture>
-      <source media="(max-width: 767px)" srcset="images/mobilehero.png">
-      <source media="(max-width: 1199px)" srcset="images/hero2.png">
-      <img src="images/laptophero.png" alt="" aria-hidden="true">
+      <source media="(max-width: 767px)" srcset="images/mobilehero.webp">
+      <source media="(max-width: 1199px)" srcset="images/hero2.webp">
+      <img src="images/laptophero.webp" alt="" aria-hidden="true" fetchpriority="high">
     </picture>
   </div>
   <div class="hero-overlay"></div>
@@ -854,7 +860,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 
     <a href="roofing.html" class="svc-card">
       <div class="svc-card-img">
-        <img src="images/roofingcloseup.png" alt="Premium roofing installation" loading="lazy"/>
+        <img src="images/roofingcloseup.webp" alt="Premium roofing installation" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-name">Roofing</div>
@@ -866,7 +872,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 
     <a href="windows.html" class="svc-card">
       <div class="svc-card-img">
-        <img src="images/windowsfrontpage.png" alt="Energy-efficient replacement windows" loading="lazy"/>
+        <img src="images/windowsfrontpage.webp" alt="Energy-efficient replacement windows" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-name">Windows</div>
@@ -878,7 +884,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 
     <a href="doors.html" class="svc-card">
       <div class="svc-card-img">
-        <img src="images/updatedoor.png" alt="Luxury custom door installation" loading="lazy"/>
+        <img src="images/updatedoor.webp" alt="Luxury custom door installation" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-name">Custom Doors</div>
@@ -933,7 +939,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 <!-- ── WHY HOME TEAM ──────────────────────────────────────────── -->
 <section class="why-section">
   <div class="why-photo">
-    <img src="images/homepagereplace.png" alt="Luxury Houston home by Home Team Home Solutions" loading="lazy"/>
+    <img src="images/homepagereplace.webp" alt="Luxury Houston home by Home Team Home Solutions" loading="lazy"/>
   </div>
   <div class="why-text">
     <span class="eyebrow-gold" style="margin-bottom:1rem">Why Home Team?</span>
@@ -961,7 +967,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
     <span class="sa-eyebrow">Serving Texas Homeowners</span>
     <p class="sa-sub">Home Team proudly serves homeowners across Texas with roofing, windows, doors, and exterior home improvement services.</p>
   </div>
-  <img src="images/servicemap.png" alt="Home Team service area map — Greater Houston, Harris, Montgomery, Fort Bend, Waller, and Grimes counties" class="sa-map" loading="lazy">
+  <img src="images/servicemap.webp" alt="Home Team service area map — Greater Houston, Harris, Montgomery, Fort Bend, Waller, and Grimes counties" class="sa-map" loading="lazy">
 </section>
 
 <!-- ── FINANCING STRIP ────────────────────────────────────────── -->
@@ -980,7 +986,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 <!-- ── COMMUNITY HEROES ──────────────────────────────────────── -->
 <section class="heroes-section">
   <div class="heroes-img-col">
-    <img src="images/firstresponse.png" alt="Military veterans, first responders, and educators — Home Team Community Heroes" loading="lazy">
+    <img src="images/firstresponse.webp" alt="Military veterans, first responders, and educators — Home Team Community Heroes" loading="lazy">
   </div>
   <div class="heroes-content">
     <span class="heroes-eyebrow">Community Heroes Program</span>
@@ -1017,19 +1023,19 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
   </div>
   <div class="projects-grid">
     <div class="proj-cell">
-      <img src="images/home1.png" alt="Houston home improvement project" loading="lazy"/>
+      <img src="images/home1.webp" alt="Houston home improvement project" loading="lazy"/>
       <div class="proj-cell-tag">Houston, TX</div>
     </div>
     <div class="proj-cell">
-      <img src="images/gallerylightened.png" alt="The Woodlands home exterior upgrade" loading="lazy"/>
+      <img src="images/gallerylightened.webp" alt="The Woodlands home exterior upgrade" loading="lazy"/>
       <div class="proj-cell-tag">The Woodlands, TX</div>
     </div>
     <div class="proj-cell">
-      <img src="images/home2.png" alt="Tomball home improvement" loading="lazy"/>
+      <img src="images/home2.webp" alt="Tomball home improvement" loading="lazy"/>
       <div class="proj-cell-tag">Tomball, TX</div>
     </div>
     <div class="proj-cell">
-      <img src="images/home3.png" alt="Spring, TX home improvement" loading="lazy"/>
+      <img src="images/home3.webp" alt="Spring, TX home improvement" loading="lazy"/>
       <div class="proj-cell-tag">Spring, TX</div>
     </div>
   </div>
@@ -1293,6 +1299,7 @@ footer{background:#111827;padding:3.5rem 52px 1.75rem}
 </script>
 
 <script
+  defer
   src="https://link.msgsndr.com/js/external-tracking.js"
   data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
