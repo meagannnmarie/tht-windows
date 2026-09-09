@@ -266,8 +266,21 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){.hero-h1{letter-spacing:-1px}}
-@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
-@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.btn-red,.btn-ghost{width:100%;justify-content:center}}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+.hero-mob-img{display:none}
+@media(max-width:767px){
+  .hero{height:auto;overflow:visible}
+  .hero-bg{display:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
+  .hero-overlay,.hero-overlay-l,.hero-content{display:none}
+  .mob-hero-content{display:block;background:#0d0d0d;padding:28px 20px 36px;color:#fff}
+  .mob-hero-content .hero-eyebrow-pill{display:inline-flex;margin-bottom:14px}
+  .mob-hero-content .hero-h1{font-size:34px;line-height:0.95;margin-bottom:14px}
+  .mob-hero-content .hero-tagline{font-size:15px;line-height:1.65;margin-bottom:22px;color:rgba(255,255,255,.82);max-width:100%}
+  .mob-hero-content .hero-btns{flex-direction:column;gap:10px;margin-bottom:0;flex-wrap:nowrap}
+  .mob-hero-content .btn-red,.mob-hero-content .btn-ghost{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+}
 @media(max-width:1100px){
   .ownership-inner{grid-template-columns:340px 1fr;gap:3rem}
   .community-inner{gap:3rem}
@@ -363,6 +376,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 
 <!-- ══ HERO ══════════════════════════════════════════════════════════════ -->
 <section class="hero" aria-label="Meet the Home Team Home Solutions team">
+  <img class="hero-mob-img" src="images/home-team-group-photo.png" alt="" aria-hidden="true">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-overlay-l"></div>
@@ -376,6 +390,17 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     </div>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="hero-eyebrow-pill">Meet the Home Team</span>
+  <h1 class="hero-h1">More Than<br>a Company.<br>We're a <em>Team.</em></h1>
+  <p class="hero-tagline">Home Team Home Solutions was built on relationships, hard work, and the belief that the strongest companies are built by people who genuinely care about one another and the customers they serve.</p>
+  <div class="hero-btns">
+    <a href="estimate.html" class="btn-red">Start My Project</a>
+    <a href="#ourTeam" class="btn-ghost">Meet Our Team</a>
+  </div>
+</div>
 
 <!-- ══ FOUNDER STORY ════════════════════════════════════════════════════════ -->
 <section class="ownership" id="ourTeam">

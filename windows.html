@@ -211,9 +211,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 @media(max-width:900px){.hero h1{letter-spacing:-1px}}
 /* Mobile hero: image-only visual + content below in document flow */
 .mob-hero-content{display:none}
+.hero-mob-img{display:none}
 @media(max-width:767px){
-  /* Hero section: photograph only, fixed height */
-  .hero{height:300px;overflow:hidden;background-position:65% center}
+  /* Hero section: photograph only, natural aspect ratio */
+  .hero{height:auto;overflow:visible;background:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
   .hero-overlay{display:none}
   .hero-content{display:none}
   /* Mobile hero content — normal document flow below image */
@@ -310,6 +312,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 
 <!-- HERO -->
 <section class="hero">
+  <img class="hero-mob-img" src="images/finalwindowshero.webp" alt="" aria-hidden="true">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">Texas' Premium Window Specialists</div>

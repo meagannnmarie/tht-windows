@@ -188,8 +188,21 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   .contact-sidebar{order:-1}
 }
 @media(max-width:900px){.hero-h1{letter-spacing:-1px}}
-@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
-@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.hero-cta-btn{width:100%;justify-content:center;font-size:14px;padding:13px 16px}}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+.hero-mob-img{display:none}
+@media(max-width:767px){
+  .hero{height:auto;overflow:visible}
+  .hero-bg{display:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
+  .hero-overlay,.hero-overlay-l,.hero-content{display:none}
+  .mob-hero-content{display:block;background:#0d0d0d;padding:28px 20px 36px;color:#fff}
+  .mob-hero-content .hero-eyebrow-pill{display:inline-flex;margin-bottom:14px}
+  .mob-hero-content .hero-h1{font-size:34px;line-height:0.95;margin-bottom:14px}
+  .mob-hero-content .hero-tagline{font-size:15px;line-height:1.65;margin-bottom:22px;color:rgba(255,255,255,.82);max-width:100%}
+  .mob-hero-content .hero-btns{flex-direction:column;gap:10px;margin-bottom:0;flex-wrap:nowrap}
+  .mob-hero-content .hero-cta-btn{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+}
 @media(max-width:768px){
   .sec{padding:3rem 1.25rem}
   .form-row{grid-template-columns:1fr}
@@ -270,6 +283,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 
 <!-- HERO -->
 <section class="hero" aria-label="Contact Home Team Home Solutions — serving homeowners across Texas with premium roofing, windows, and custom doors.">
+  <img class="hero-mob-img" src="images/gallery4.webp" alt="" aria-hidden="true">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-overlay-l"></div>
@@ -282,6 +296,16 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     </div>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="hero-eyebrow-pill">Free In-Home Estimate</span>
+  <h1 class="hero-h1">Let's Talk About<br><em>Your Home</em></h1>
+  <p class="hero-tagline">Tell us about your roofing, window, or custom door project, and a Home Team specialist will reach out to schedule your free, no-pressure in-home consultation. We serve homeowners across Texas.</p>
+  <div class="hero-btns">
+    <button class="hero-cta-btn" onclick="location.href='estimate.html'">Start My Project</button>
+  </div>
+</div>
 
 <!-- FEATURE STRIP -->
 <div class="strip">

@@ -79,6 +79,20 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .btn-red:hover{background:var(--red-dim);transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:rgba(255,255,255,.7);font-size:12px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid rgba(255,255,255,.22);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .15s,border-color .15s,color .15s}
 .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.45);color:#fff}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+.hero-mob-img{display:none}
+@media(max-width:767px){
+  .hero{height:auto;min-height:0;overflow:visible;display:block}
+  .hero-bg,.hero-overlay,.hero-content{display:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
+  .mob-hero-content{display:block;background:#0d0d0d;padding:32px 20px 40px;color:#fff;text-align:center}
+  .mob-hero-content .eyebrow{margin-bottom:1.25rem}
+  .mob-hero-content .service-h1{font-size:clamp(44px,14vw,72px)}
+  .mob-hero-content .hero-desc{margin-bottom:1.75rem}
+  .mob-hero-content .btns{flex-direction:column}
+  .mob-hero-content .btn-red,.mob-hero-content .btn-ghost{width:100%;justify-content:center}
+}
 @media(max-width:560px){.btns{flex-direction:column}.btn-red,.btn-ghost{width:100%;justify-content:center}}
 footer{padding:1.375rem 52px;display:flex;align-items:center;justify-content:space-between;background:#0d0d0d;border-top:1px solid rgba(255,255,255,.07)}
 .foot-copy{font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.3px}
@@ -151,6 +165,7 @@ footer{padding:1.375rem 52px;display:flex;align-items:center;justify-content:spa
 </div>
 
 <section class="hero">
+  <img class="hero-mob-img" src="images/newhouse.webp" alt="" aria-hidden="true">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -170,6 +185,24 @@ footer{padding:1.375rem 52px;display:flex;align-items:center;justify-content:spa
     </div>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="eyebrow">Home Team Home Solutions</span>
+  <h1 class="service-h1">Gutters</h1>
+  <div class="coming-tag">
+    <span class="coming-dot"></span>
+    Page Coming Soon
+  </div>
+  <p class="hero-desc">We're finishing this page. In the meantime, contact us directly for a free gutter installation estimate — our team is ready to help.</p>
+  <div class="btns">
+    <a href="estimate.html" class="btn-red">
+      Get My Free Estimate
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="index.html" class="btn-ghost">Return Home</a>
+  </div>
+</div>
 
 <footer>
   <span class="foot-copy">© 2025 Home Team Home Solutions. All Rights Reserved.</span>

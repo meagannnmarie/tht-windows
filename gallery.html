@@ -96,8 +96,21 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .gal-eyebrow-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px;margin-bottom:1.375rem;width:fit-content}
 .gal-hero-h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
 @media(max-width:900px){.gal-hero-h1{letter-spacing:-1px}}
-@media(max-width:768px){.gal-hero{height:auto;min-height:520px}.gal-hero-content{padding:32px 24px 32px 24px;max-width:100%}}
-@media(max-width:640px){.gal-hero-btns{flex-direction:column;gap:0.5rem}.gal-hero-btns .btn-red,.gal-hero-btns .btn-ghost{width:100%;justify-content:center}}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+.hero-mob-img{display:none}
+@media(max-width:767px){
+  .gal-hero{height:auto;overflow:visible}
+  .gal-hero-bg,.gal-hero-overlay,.gal-hero-overlay-l,.gal-hero-content{display:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
+  .mob-hero-content{display:block;background:#111;padding:28px 20px 36px;color:#fff}
+  .mob-hero-content .gal-eyebrow-pill{display:inline-flex;margin-bottom:14px}
+  .mob-hero-content .gal-hero-h1{font-size:34px;line-height:0.95;margin-bottom:14px}
+  .mob-hero-content .gal-hero-sub{font-size:15px;line-height:1.65;margin-bottom:22px;color:rgba(255,255,255,.82);max-width:100%}
+  .mob-hero-content .gal-hero-btns{flex-direction:column;gap:10px;margin-bottom:16px;flex-wrap:nowrap}
+  .mob-hero-content .gal-hero-btns .btn-red,.mob-hero-content .gal-hero-btns .btn-ghost{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+  .mob-hero-content .gal-trust-row{flex-wrap:wrap;gap:10px}
+}
 .gal-hero-sub{font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.90);line-height:1.75;max-width:480px;text-shadow:0 1px 8px rgba(0,0,0,.22);margin-bottom:1.75rem}
 .gal-hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
 .gal-trust-row{display:flex;align-items:center;gap:1.75rem;flex-wrap:wrap}
@@ -302,6 +315,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 
 <!-- ── HERO ─────────────────────────────────────── -->
 <section class="gal-hero" aria-label="Home Team Home Solutions Project Gallery">
+  <img class="hero-mob-img" src="images/conroe.webp" alt="" aria-hidden="true">
   <div class="gal-hero-bg" aria-hidden="true"></div>
   <div class="gal-hero-overlay" aria-hidden="true"></div>
   <div class="gal-hero-overlay-l" aria-hidden="true"></div>
@@ -324,6 +338,23 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
     </div>
   </div>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="gal-eyebrow-pill">Home Team Project Gallery</span>
+  <h1 class="gal-hero-h1">Craftsmanship You Can See.<br>Quality You Can Trust.</h1>
+  <p class="gal-hero-sub">Explore completed roofing, window and custom door projects across Texas. Every project reflects the Home Team commitment to quality craftsmanship, clear communication and lasting results.</p>
+  <div class="gal-hero-btns">
+    <a href="#projects" class="btn-red">Explore Our Projects</a>
+    <a href="estimate.html" class="btn-ghost">Start My Project</a>
+  </div>
+  <div class="gal-trust-row">
+    <div class="gal-trust-item"><span class="gal-trust-dot"></span>Texas Projects</div>
+    <div class="gal-trust-item"><span class="gal-trust-dot"></span>Free Inspections</div>
+    <div class="gal-trust-item"><span class="gal-trust-dot"></span>Financing Available</div>
+    <div class="gal-trust-item"><span class="gal-trust-dot"></span>Warranty-Backed</div>
+  </div>
+</div>
 
 <!-- ── FILTER BAR ─────────────────────────────── -->
 <div class="filter-bar" role="navigation" aria-label="Project category filter" id="filterBar">

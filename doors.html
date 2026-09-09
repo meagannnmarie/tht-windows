@@ -106,8 +106,21 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .hero-scroll:hover{color:rgba(255,255,255,.65)}
 .hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
 @media(max-width:900px){.hero-h1{letter-spacing:-1px}}
-@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
-@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.btn-gold,.btn-outline-white,.btn-solid,.btn-outline{justify-content:center;width:100%;font-size:14px;padding:13px 16px}}
+/* Mobile hero: image-only visual + content below in document flow */
+.mob-hero-content{display:none}
+.hero-mob-img{display:none}
+@media(max-width:767px){
+  .hero{height:auto;overflow:visible}
+  .hero-bg{display:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
+  .hero-overlay,.hero-overlay-v,.hero-content,.hero-scroll{display:none}
+  .mob-hero-content{display:block;background:#0d0d0d;padding:28px 20px 36px;color:#fff}
+  .mob-hero-content .hero-eyebrow{display:inline-block;margin-bottom:14px}
+  .mob-hero-content .hero-h1{font-size:34px;line-height:0.95;margin-bottom:14px}
+  .mob-hero-content .hero-tagline{font-size:15px;line-height:1.65;margin-bottom:22px;color:rgba(255,255,255,.82);max-width:100%}
+  .mob-hero-content .hero-btns{flex-direction:column;gap:10px;margin-bottom:0;flex-wrap:nowrap}
+  .mob-hero-content .btn-solid,.mob-hero-content .btn-outline{width:100%;justify-content:center;font-size:14px;padding:13px 16px}
+}
 
 /* ── SHARED SECTION UTILITIES ── */
 .sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:1rem}
@@ -835,6 +848,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
      HERO — UNTOUCHED
 ═══════════════════════════════════════════════════ -->
 <section class="hero">
+  <img class="hero-mob-img" src="images/upclosedoorhero.webp" alt="" aria-hidden="true">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-overlay-v"></div>
@@ -857,6 +871,18 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
     <span>Explore</span>
   </a>
 </section>
+
+<!-- Mobile hero content: shown below image on ≤767px, hidden on desktop -->
+<div class="mob-hero-content">
+  <span class="hero-eyebrow">Custom Luxury Entry Doors</span>
+  <h1 class="hero-h1">The Entrance<br>That Defines<br>Your Home.</h1>
+  <p class="hero-tagline">Every custom door is designed around your home's architecture, your lifestyle, and the statement you want to make before anyone steps inside.</p>
+  <div class="hero-btns">
+    <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
+    <a class="btn-outline" href="https://payzer.com/Payment/ExternalMake/businessId/9487" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+    <a class="btn-outline" href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════════
      SECTION 1 — BROWSE DOOR STYLES

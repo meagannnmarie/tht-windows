@@ -135,12 +135,15 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:color .2s;animation:fadeUp .9s .4s ease both}
 .hero-scroll:hover{color:rgba(255,255,255,.65)}
 .hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
+.hero-mob-img{display:none}
 @media(max-width:900px){.hero-h1{letter-spacing:-1px}}
 /* Mobile hero: image-only visual + content below in document flow */
 .mob-hero-content{display:none}
 @media(max-width:767px){
-  /* Hero section: photograph only, fixed height */
-  .hero{height:300px;overflow:hidden}
+  /* Hero section: photograph only, natural aspect ratio */
+  .hero{height:auto;overflow:visible}
+  .hero-bg{display:none}
+  .hero-mob-img{display:block;width:100%;height:auto}
   .hero-overlay,.hero-overlay-l,.hero-content,.hero-scroll{display:none}
   /* Mobile hero content — normal document flow below image */
   .mob-hero-content{
@@ -486,6 +489,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
      1 · HERO
 ══════════════════════════ -->
 <section class="hero" aria-label="Flagship Roofing Hero">
+  <img class="hero-mob-img" src="images/roofing.webp" alt="" aria-hidden="true">
   <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-overlay-l" aria-hidden="true"></div>
