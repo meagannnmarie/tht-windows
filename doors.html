@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
 <title>Custom Doors — Home Team Home Solutions | Houston, TX</title>
 <meta name="description" content="Luxury custom exterior doors designed for your Houston home. Modern pivot, Texas Hill Country, grand estate, farmhouse, and contemporary glass — custom built for your home."/>
+<link rel="canonical" href="https://ththomesolutions.com/doors"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ththomesolutions.com/doors"/>
+<meta property="og:title" content="Custom Doors — Home Team Home Solutions | Houston, TX"/>
+<meta property="og:description" content="Luxury custom exterior doors designed for your Houston home. Modern pivot, Texas Hill Country, grand estate, farmhouse, and contemporary glass — custom built for your home."/>
+<meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@72,400;72,500&family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
 /* ── RESET & BASE ── */
@@ -73,27 +80,32 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 @media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:100vh;background:var(--black);overflow:hidden}
-.hero-bg{position:absolute;inset:0;background-image:url('images/doorhero4.png');background-size:110% auto;background-position:center 43%}
+.hero{position:relative;height:700px;background:var(--black);overflow:hidden;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background-image:url('images/upclosedoorhero.png');background-size:cover;background-position:center 18%;background-repeat:no-repeat}
+@media(max-width:900px){.hero-bg{background-position:55% 18%}}
+@media(max-width:560px){.hero-bg{background-position:60% 22%}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18) 0%,rgba(0,0,0,.08) 45%,rgba(0,0,0,.48) 100%)}
 .hero-overlay-v{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52) 0%,rgba(0,0,0,.26) 30%,rgba(0,0,0,0) 58%)}
-.hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:0 0 210px 64px;max-width:510px;animation:fadeUp .9s ease both}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;margin-bottom:16px;display:inline-flex;align-items:center;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);padding:7px 15px;border-radius:3px;width:fit-content}
 .hero-h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
 .hero-h1 .line1,.hero-h1 .line2,.hero-h1 .line3{display:block}
-.hero-rule{width:40px;height:2px;background:var(--red);border-radius:1px;margin:0.75rem 0 0.5rem}
 .hero-tagline{font-size:16px;color:#E5E5E5;line-height:1.7;margin-bottom:24px;max-width:440px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:0}
+.hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
 .btn-gold{background:var(--red);color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,transform .12s}
 .btn-gold:hover{background:var(--red-dim);transform:translateY(-1px)}
 .btn-outline-white{background:transparent;color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:border-color .15s,background .15s}
 .btn-outline-white:hover{border-color:rgba(255,255,255,.72);background:rgba(255,255,255,.06)}
+.btn-solid{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 18px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center}
+.btn-outline{background:rgba(10,10,15,0.55);color:#fff;font-size:13px;font-weight:600;padding:11px 18px;border-radius:6px;border:1px solid #b91c1c;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s,border-color .15s}
+.btn-outline:hover{background:rgba(185,28,28,0.25);border-color:#dc2626}
 .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.35);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:color .2s;animation:fadeUp .9s .4s ease both}
 .hero-scroll:hover{color:rgba(255,255,255,.65)}
 .hero-scroll-line{width:1px;height:32px;background:rgba(255,255,255,.25)}
-@media(max-width:900px){.hero-content{padding:0 28px 270px;max-width:100%}.hero-h1{letter-spacing:-1px}}
-@media(max-width:560px){.hero-btns{flex-direction:column}.btn-gold,.btn-outline-white{justify-content:center;width:100%;font-size:13px}.hero-content{padding:0 20px 270px}}
+@media(max-width:900px){.hero-h1{letter-spacing:-1px}}
+@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
+@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.btn-gold,.btn-outline-white,.btn-solid,.btn-outline{justify-content:center;width:100%;font-size:14px;padding:13px 16px}}
 
 /* ── SHARED SECTION UTILITIES ── */
 .sec-eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--red);display:block;margin-bottom:1rem}
@@ -376,10 +388,11 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .viz-reset-btn:hover{color:rgba(255,255,255,.70);border-color:rgba(255,255,255,.28)}
 
 /* Glass thumbnails */
-.viz-glass-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.viz-glass-grid{display:flex;gap:8px}
 .viz-glass-btn{
   display:flex;flex-direction:column;align-items:center;gap:5px;
   cursor:pointer;background:none;border:none;padding:0;font-family:'Inter',sans-serif;
+  width:72px;flex-shrink:0;
 }
 .viz-glass-wrap{
   width:100%;aspect-ratio:2/3;border-radius:6px;overflow:hidden;
@@ -427,7 +440,7 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
   .paint-section{padding:4rem 20px}
   .viz-door-frame{max-height:300px}
   .viz-swatch-circle{width:52px;height:52px}
-  .viz-glass-grid{grid-template-columns:repeat(4,1fr)}
+  .viz-glass-grid{gap:8px}
   .viz-cta-row{flex-direction:column}
 }
 
@@ -776,13 +789,12 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html"><span class="dot"></span>Windows</a>
         <a href="doors.html" class="nav-active"><span class="dot"></span>Custom Doors</a>
-        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
     <a href="financing.html">Financing</a>
     <a href="reviews.html">Reviews</a>
-    <a href="contact.html">About</a>
+    <a href="meet-the-team.html">Meet the Team</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
@@ -806,12 +818,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html" class="mob-active">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="financing.html" class="mob-link">Financing</a>
     <a href="reviews.html" class="mob-link">Reviews</a>
-    <a href="contact.html" class="mob-link">About</a>
+    <a href="meet-the-team.html" class="mob-link">Meet the Team</a>
     <a href="contact.html" class="mob-link">Contact</a>
     <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
@@ -831,17 +842,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
       <span class="line2">That Defines</span>
       <span class="line3">Your Home.</span>
     </h1>
-    <div class="hero-rule"></div>
     <p class="hero-tagline">Every custom door is designed around your home's architecture, your lifestyle, and the statement you want to make before anyone steps inside.</p>
     <div class="hero-btns">
-      <a href="estimate.html" class="btn-gold">
-        Start My Project
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="financing.html" class="btn-outline-white">
-        0% Financing Options
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+      <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
+      <a class="btn-outline" href="https://payzer.com/Payment/ExternalMake/businessId/9487" target="_blank" rel="noopener noreferrer">Make a Payment</a>
+      <a class="btn-outline" href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
     </div>
   </div>
   <a href="#door-styles" class="hero-scroll" aria-label="Scroll down">
@@ -1180,36 +1185,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
             <button class="viz-glass-btn active" data-preview="images/doortool.png" data-name="Clear" aria-pressed="true" aria-label="Clear glass">
               <div class="viz-glass-wrap"><img src="images/clearglass.png" alt="Clear glass" loading="lazy"></div>
               <span class="viz-glass-name">Clear</span>
-            </button>
-
-            <button class="viz-glass-btn" data-preview="images/Reeded.png" data-name="Reeded" aria-pressed="false" aria-label="Reeded glass">
-              <div class="viz-glass-wrap"><img src="images/Reeded.png" alt="Reeded" loading="lazy"></div>
-              <span class="viz-glass-name">Reeded</span>
-            </button>
-
-            <button class="viz-glass-btn" data-preview="images/frostedglass.png" data-name="Frosted" aria-pressed="false" aria-label="Frosted glass">
-              <div class="viz-glass-wrap"><img src="images/frostedglass.png" alt="Frosted" loading="lazy"></div>
-              <span class="viz-glass-name">Frosted</span>
-            </button>
-
-            <button class="viz-glass-btn" data-preview="images/Rain.png" data-name="Rain" aria-pressed="false" aria-label="Rain glass">
-              <div class="viz-glass-wrap"><img src="images/Rain.png" alt="Rain" loading="lazy"></div>
-              <span class="viz-glass-name">Rain</span>
-            </button>
-
-            <button class="viz-glass-btn" data-preview="images/hammeredglass.png" data-name="Hammered" aria-pressed="false" aria-label="Hammered glass">
-              <div class="viz-glass-wrap"><img src="images/hammeredglass.png" alt="Hammered" loading="lazy"></div>
-              <span class="viz-glass-name">Hammered</span>
-            </button>
-
-            <button class="viz-glass-btn" data-preview="images/satinetched.png" data-name="Satin Etched" aria-pressed="false" aria-label="Satin Etched glass">
-              <div class="viz-glass-wrap"><img src="images/satinetched.png" alt="Satin Etched" loading="lazy"></div>
-              <span class="viz-glass-name">Satin</span>
-            </button>
-
-            <button class="viz-glass-btn" data-preview="images/custom2.png" data-name="Decorative" aria-pressed="false" aria-label="Decorative glass">
-              <div class="viz-glass-wrap"><img src="images/custom2.png" alt="Decorative" loading="lazy"></div>
-              <span class="viz-glass-name">Deco</span>
             </button>
 
           </div>
@@ -1592,15 +1567,9 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <footer>
   <p class="footer-copy">&copy; 2025 Home Team Home Solutions. All rights reserved.</p>
   <div class="footer-links">
-    <a href="#">Privacy Policy</a>
+    Privacy Policy
     <span class="sep">|</span>
-    <a href="#">Terms &amp; Conditions</a>
-  </div>
-  <div class="footer-social">
-    <span class="footer-social-label">Follow Us</span>
-    <a href="#" class="fsoc" aria-label="Facebook">f</a>
-    <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-    <a href="#" class="fsoc" aria-label="Google">G</a>
+    Terms &amp; Conditions
   </div>
 </footer>
 
@@ -1858,8 +1827,18 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
       }).join('');
     }
 
+    function hexLuminance(hex){
+      if(!hex||hex.length<7)return 0;
+      var r=parseInt(hex.slice(1,3),16)/255;
+      var g=parseInt(hex.slice(3,5),16)/255;
+      var b=parseInt(hex.slice(5,7),16)/255;
+      return 0.2126*r+0.7152*g+0.0722*b;
+    }
+
     function paint(hex){
       currentHex=hex;
+      /* overlay blend mode lets light/white colors appear; color mode works for darks */
+      cvs.style.mixBlendMode=hexLuminance(hex)>0.5?'overlay':'color';
 
       /* Read the image's actual rendered rect — respects object-fit:contain */
       var imgRect=doorImgEl.getBoundingClientRect();
@@ -1935,6 +1914,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
   })();
 
 })();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
 </body>
 </html>

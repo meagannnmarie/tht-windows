@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
 <title>Customer Reviews | Home Team Home Solutions — Houston, TX</title>
 <meta name="description" content="Read live Google reviews from Houston-area homeowners who trusted Home Team Home Solutions for roofing, windows, custom doors, and home improvements."/>
-<link rel="canonical" href="https://hometeamhomesolutions.com/reviews"/>
+<link rel="canonical" href="https://ththomesolutions.com/reviews"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ththomesolutions.com/reviews"/>
+<meta property="og:title" content="Customer Reviews | Home Team Home Solutions — Houston, TX"/>
+<meta property="og:description" content="Read live Google reviews from Houston-area homeowners who trusted Home Team Home Solutions for roofing, windows, custom doors, and home improvements."/>
+<meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -60,19 +66,35 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 @media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
 /* HERO */
-.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;background-image:url("images/reviewspage.png");background-size:cover;background-repeat:no-repeat;background-position:55% center;margin:0;padding:0}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
-.hero-pattern{display:none}
+.hero{position:relative;height:700px;background:var(--black);overflow:hidden;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background-image:url('images/updatedhero.png');background-size:cover;background-position:center 30%;background-repeat:no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 50%,rgba(0,0,0,.22) 100%)}
+.hero-overlay-l{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52) 0%,rgba(0,0,0,.20) 42%,transparent 62%)}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:28px;width:fit-content}
-.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,4vw,44px);color:#fff;line-height:1.1;letter-spacing:-.5px;margin-bottom:28px;background:none;text-shadow:none;max-width:500px}
-.hero h1 em{font-style:normal;color:var(--red)}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:36px;max-width:440px}
-.hero-btns{display:flex;gap:1rem;margin-bottom:32px;flex-wrap:wrap}
-.btn-solid{background:var(--red);color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block;transition:background .15s}
-.btn-solid:hover{background:var(--red-dim)}
-.btn-outline{background:transparent;color:#fff;font-size:13.5px;font-weight:600;padding:13px 26px;border-radius:6px;border:2px solid rgba(255,255,255,0.42);cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block}
-.btn-outline:hover{background:rgba(255,255,255,0.08)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px;margin-bottom:1.375rem;width:fit-content}
+.hero-h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.hero-h1 em{font-style:normal;color:var(--red)}
+.hero-tagline{font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.90);line-height:1.75;max-width:480px;text-shadow:0 1px 8px rgba(0,0,0,.22);margin-bottom:1.75rem}
+.hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
+/* Hero review cards */
+.hero-reviews{display:flex;flex-direction:column;gap:14px}
+.hr-card{background:rgba(255,255,255,0.97);border-radius:14px;padding:18px 22px;box-shadow:0 16px 56px rgba(0,0,0,0.28),0 2px 8px rgba(0,0,0,0.1);border:1px solid rgba(255,255,255,0.55)}
+.hr-card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.hr-author{display:flex;align-items:center;gap:10px}
+.hr-avatar{width:38px;height:38px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0;overflow:hidden}
+.hr-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.hr-name{font-size:13.5px;font-weight:700;color:#111827;line-height:1.2;margin-bottom:3px}
+.hr-stars{font-size:14px;letter-spacing:1px}
+.hr-text{font-size:13px;color:#4b5563;line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:0}
+.hr-foot{display:flex;align-items:center;gap:6px;margin-top:10px;padding-top:8px;border-top:1px solid #f3f4f6}
+.hr-g-label{font-size:10.5px;color:#9ca3af;font-weight:500;letter-spacing:.2px}
+a.hr-card{text-decoration:none;display:block;transition:transform .18s,box-shadow .18s}
+a.hr-card:hover{transform:translateY(-2px);box-shadow:0 22px 64px rgba(0,0,0,0.35),0 4px 12px rgba(0,0,0,0.12)}
+.btn-red{background:var(--red);color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,transform .12s;white-space:nowrap}
+.btn-red:hover{background:var(--red-dim);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:border-color .15s,background .15s,color .15s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);color:#fff}
 
 /* STRIP */
 .strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
@@ -185,11 +207,10 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center}
 .footer-bottom p{font-size:11.5px;color:#4b5563}
 
+@media(max-width:900px){.hero-h1{letter-spacing:-1px}}
+@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
+@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.btn-red,.btn-ghost{width:100%;justify-content:center}}
 @media(max-width:768px){
-  .hero{min-height:360px;background-position:center center}
-  .hero-content{padding:28px 24px 32px 24px;max-width:100%}
-  .hero-bg{background:linear-gradient(to right,rgba(4,14,26,0.94) 0%,rgba(4,14,26,0.92) 50%,rgba(4,14,26,0.78) 100%)}
-  .hero h1{font-size:clamp(22px,5.5vw,30px)}
   .sec{padding:3rem 1.25rem}
   .g-reviews-grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:repeat(2,1fr)}
@@ -228,13 +249,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html"><span class="dot"></span>Windows</a>
         <a href="doors.html"><span class="dot"></span>Custom Doors</a>
-        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
     <a href="financing.html">Financing</a>
     <a href="reviews.html" class="active">Reviews</a>
-    <a href="contact.html">About</a>
+    <a href="meet-the-team.html">Meet the Team</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
@@ -258,12 +278,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="financing.html" class="mob-link">Financing</a>
     <a href="reviews.html" class="mob-link mob-active">Reviews</a>
-    <a href="contact.html" class="mob-link">About</a>
+    <a href="meet-the-team.html" class="mob-link">Meet the Team</a>
     <a href="contact.html" class="mob-link">Contact</a>
     <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
@@ -272,16 +291,18 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <!-- HERO -->
 <section class="hero" aria-label="Home Team Home Solutions customer reviews hero">
   <div class="hero-bg"></div>
-  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-l"></div>
   <div class="hero-content">
-    <div class="hero-badge">Verified Google Reviews</div>
-    <h1>Houston Homeowners<br>Trust <em>Home Team</em></h1>
-    <p class="hero-sub">From Tomball to The Woodlands, Greater Houston families trust Home Team Home Solutions for premium roofing, windows, custom doors, and home improvements — professionally done and built to last.</p>
+    <span class="hero-eyebrow-pill">Verified Google Reviews</span>
+    <h1 class="hero-h1">Houston Homeowners<br>Trust <em>Home Team</em></h1>
+    <p class="hero-tagline">From Tomball to The Woodlands, Greater Houston families trust Home Team Home Solutions for premium roofing, windows, custom doors, and home improvements — professionally done and built to last.</p>
     <div class="hero-btns">
-      <button class="btn-solid" onclick="location.href='estimate.html'">Start My Project</button>
-      <button class="btn-outline" onclick="document.getElementById('googleReviewsSection').scrollIntoView({behavior:'smooth'})">Read Google Reviews</button>
+      <a href="estimate.html" class="btn-red">Start My Project</a>
+      <button class="btn-ghost" onclick="document.getElementById('googleReviewsSection').scrollIntoView({behavior:'smooth'})">Read Google Reviews</button>
     </div>
   </div>
+  <div id="heroReviews" style="display:none" aria-hidden="true"></div>
 </section>
 
 <!-- FEATURE STRIP -->
@@ -520,18 +541,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
         <span>thehometeamroofing@gmail.com</span>
       </div>
-      <div class="footer-social">
-        <a href="#" class="fsoc" aria-label="Facebook">f</a>
-        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-        <a href="#" class="fsoc" aria-label="Google">G</a>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Our Services</h4>
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <div class="footer-col">
       <h4>Service Areas</h4>
@@ -562,25 +577,6 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     <p>Houston, TX &nbsp;&middot;&nbsp; Licensed &amp; Insured</p>
   </div>
 </footer>
-
-<!--
-  NOTE ON LOCAL DEVELOPMENT
-  ─────────────────────────
-  The Google Reviews integration calls /api/google-reviews, which is a Vercel
-  serverless function. Opening reviews.html via file:// will NOT trigger the
-  API call — the fetch will fail silently and the error state will appear.
-
-  To test the live Google integration locally:
-    1. Install Vercel CLI:   npm i -g vercel
-    2. Add env vars locally: create a .env.local file (never commit this file)
-         GOOGLE_PLACES_API_KEY=your_key_here
-         GOOGLE_PLACE_ID=ChIJ...
-    3. Run local dev server: npx vercel dev
-    4. Open in browser:      http://localhost:3000/reviews
-
-  Alternatively, use `npx serve .` for the static pages only — but the API
-  endpoint will not be available without `vercel dev`.
--->
 
 <script>
 (function () {
@@ -662,6 +658,58 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 
     show('reviewsGrid');
     show('reviewsAttribution');
+
+    renderHeroCards(reviews.slice(0, 3), data.googleMapsUri);
+  }
+
+  /* ── Hero review cards ── */
+  function renderHeroCards(reviews, fallbackUri) {
+    var wrap = document.getElementById('heroReviews');
+    if (!wrap || !reviews.length) return;
+
+    wrap.innerHTML = reviews.map(function (r) {
+      var stars = Math.round(Number(r.rating || 5));
+      var starsHtml = '';
+      for (var i = 1; i <= 5; i++) {
+        starsHtml += '<span style="color:' + (i <= stars ? '#f59e0b' : '#d1d5db') + '">&#9733;</span>';
+      }
+
+      var avatarContent = r.author.photoUri
+        ? '<img src="' + esc(r.author.photoUri) + '" alt="' + esc(r.author.displayName) + '" loading="lazy"/>'
+        : esc(initials(r.author.displayName));
+
+      var href = esc(r.googleMapsUri || r.author.uri || fallbackUri || '#');
+
+      return [
+        '<a class="hr-card" href="' + href + '" target="_blank" rel="noopener noreferrer" aria-label="Read ' + esc(r.author.displayName) + '\'s Google review">',
+          '<div class="hr-card-head">',
+            '<div class="hr-author">',
+              '<div class="hr-avatar">', avatarContent, '</div>',
+              '<div>',
+                '<div class="hr-name">', esc(r.author.displayName), '</div>',
+                '<div class="hr-stars" aria-label="' + stars + ' out of 5 stars">', starsHtml, '</div>',
+              '</div>',
+            '</div>',
+            '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">',
+              '<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>',
+              '<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>',
+              '<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>',
+              '<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>',
+            '</svg>',
+          '</div>',
+          r.text ? '<p class="hr-text">' + esc(r.text) + '</p>' : '',
+          '<div class="hr-foot">',
+            '<svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" focusable="false">',
+              '<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>',
+              '<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>',
+              '<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>',
+              '<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>',
+            '</svg>',
+            '<span class="hr-g-label">Verified Google Review</span>',
+          '</div>',
+        '</a>',
+      ].join('');
+    }).join('');
   }
 
   function buildCard(r, fallbackUri) {
@@ -756,6 +804,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   function show(id) { var el = document.getElementById(id); if (el) el.style.display = ''; }
   function hide(id) { var el = document.getElementById(id); if (el) el.style.display = 'none'; }
 })();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
 </body>
 </html>

@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
 <title>Financing | Home Team Home Solutions — Houston, TX</title>
 <meta name="description" content="Home Team Home Solutions offers 0% APR financing options for qualified applicants on roofing, windows, custom doors, and other home improvement projects across greater Houston."/>
-<link rel="canonical" href="https://hometeamhomesolutions.com/financing"/>
+<link rel="canonical" href="https://ththomesolutions.com/financing"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ththomesolutions.com/financing"/>
+<meta property="og:title" content="Financing | Home Team Home Solutions — Houston, TX"/>
+<meta property="og:description" content="Home Team Home Solutions offers 0% APR financing options for qualified applicants on roofing, windows, custom doors, and other home improvement projects across greater Houston."/>
+<meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -60,13 +66,13 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 @media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
 /* HERO */
-.hero{position:relative;height:720px;overflow:hidden;background:#06090d;background-image:url("images/financehero4.png");background-size:cover;background-repeat:no-repeat;background-position:center center;margin:0;padding:0}
+.hero{position:relative;height:720px;overflow:hidden;background:#06090d;background-image:url("images/finalfinancinghero.png");background-size:cover;background-repeat:no-repeat;background-position:center 40%;margin:0;padding:0}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,16,0.62) 0%,rgba(8,12,16,0.38) 24%,rgba(8,12,16,0.12) 43%,rgba(8,12,16,0) 58%)}
 .hero-pattern{display:none}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 0 140px 72px;max-width:560px}
-.hero-accent{width:36px;height:3px;background:var(--red);border-radius:2px;margin-bottom:22px}
 .hero-badge{display:inline-block;background:rgba(200,31,37,0.18);border:1px solid rgba(200,31,37,0.45);color:rgba(255,255,255,0.90);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:3px;margin-bottom:24px;width:fit-content}
-.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4.2vw,50px);color:#fff;line-height:1.08;letter-spacing:-.5px;margin-bottom:20px;background:none;text-shadow:none;max-width:500px}
+.hero h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+@media(max-width:900px){.hero h1{letter-spacing:-1px}}
 .hero h1 em{font-style:normal;color:var(--red)}
 .hero-sub{font-size:15.5px;color:rgba(255,255,255,0.70);line-height:1.72;margin-bottom:34px;max-width:430px}
 .hero-btns{display:flex;gap:1rem;margin-bottom:28px;flex-wrap:wrap}
@@ -77,17 +83,10 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .hero-trust{display:flex;flex-wrap:wrap;gap:18px}
 .hero-trust span{font-size:11px;color:rgba(255,255,255,0.50);font-weight:500;letter-spacing:.5px;text-transform:uppercase}
 
-/* APR CARD */
-.apr-card{position:absolute;right:clamp(36px,5vw,80px);top:calc(50% - 70px);transform:translateY(-50%);z-index:3;width:clamp(260px,22vw,310px);background:rgba(10,12,14,0.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.18);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.28);padding:2rem 1.75rem;text-align:center}
-.apr-main{display:flex;align-items:flex-end;justify-content:center;gap:4px;margin-bottom:8px}
-.apr-pct{font-family:'Inter',sans-serif;font-size:84px;font-weight:800;color:var(--red);line-height:1;letter-spacing:-3px}
-.apr-unit{font-family:'Inter',sans-serif;font-size:28px;font-weight:700;color:#fff;line-height:1;padding-bottom:11px}
-.apr-offer{font-size:17px;font-weight:700;color:#fff;letter-spacing:3.5px;text-transform:uppercase;line-height:1.3;margin-bottom:1.1rem}
-.apr-divider{width:40px;height:2px;background:var(--red);border-radius:1px;margin:0 auto 1.1rem}
-.apr-qualify{font-size:14px;color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:0.7rem}
-.apr-disclosure{font-size:11px;color:rgba(255,255,255,0.42);line-height:1.55}
-.apr-mob-wrap{display:none;background:#0d0d0d;padding:2rem 1.5rem}
-.apr-card-mob{max-width:420px;margin:0 auto;background:rgba(20,22,26,0.97);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.75rem 1.5rem;text-align:center;box-shadow:0 12px 36px rgba(0,0,0,0.22)}
+/* APR FLOAT */
+.apr-float{position:absolute;left:160px;right:0;top:11%;text-align:center;z-index:4;pointer-events:none}
+.apr-float-pct{display:block;font-family:'Inter',sans-serif;font-size:clamp(58px,7vw,100px);font-weight:800;color:var(--red);line-height:1;letter-spacing:-2px;text-shadow:0 1px 10px rgba(0,0,0,0.28),0 1px 3px rgba(0,0,0,0.18)}
+.apr-float-label{display:block;font-family:'Inter',sans-serif;font-size:clamp(10px,1.1vw,14px);font-weight:700;color:#fff;letter-spacing:4px;text-transform:uppercase;margin-top:10px;text-shadow:0 1px 10px rgba(0,0,0,0.40),0 1px 3px rgba(0,0,0,0.25)}
 
 /* STRIP */
 .strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
@@ -137,12 +136,13 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .fin-note{font-size:11px;color:rgba(255,255,255,0.5);text-align:right}
 
 /* ELIGIBILITY */
-.elig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem}
-.elig-card{background:#fff;border:1.5px solid #e5e7eb;border-radius:12px;padding:1.5rem 1.25rem;text-align:center;transition:border-color .2s,box-shadow .2s}
-.elig-card:hover{border-color:rgba(200,31,37,0.35);box-shadow:0 6px 24px rgba(200,31,37,0.08)}
-.elig-icon{width:48px;height:48px;background:rgba(200,31,37,0.07);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 0.875rem}
-.elig-card h4{font-size:13.5px;font-weight:700;color:#1F2937;margin-bottom:0.4rem}
-.elig-card p{font-size:12px;color:#6b7280;line-height:1.55}
+.elig-wrap{max-width:840px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr)}
+.elig-col{padding:2.25rem 2.75rem;text-align:center;position:relative}
+.elig-col+.elig-col::before{content:'';position:absolute;left:0;top:18%;bottom:18%;width:1px;background:rgba(0,0,0,0.09)}
+.elig-col svg{display:block;margin:0 auto 1.125rem}
+.elig-name{font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#1a1a1a;margin-bottom:0.625rem}
+.elig-accent{width:22px;height:1.5px;background:var(--red);border-radius:1px;margin:0 auto 0.875rem}
+.elig-desc{font-size:13px;color:#6b7280;line-height:1.7;max-width:210px;margin:0 auto}
 
 /* FAQ */
 .faq-list{margin-top:2.25rem;display:flex;flex-direction:column;gap:0}
@@ -185,18 +185,18 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .footer-bottom p{font-size:11.5px;color:#4b5563}
 
 @media(max-width:960px){
-  .apr-card{display:none}
-  .apr-mob-wrap{display:block}
+  .apr-float{top:9%;left:80px}
 }
 @media(max-width:768px){
   .hero{height:auto;min-height:480px;background-position:50% center}
   .hero-content{padding:28px 24px 32px 24px;max-width:100%}
   .hero-bg{background:linear-gradient(to bottom,rgba(8,12,16,0.72) 0%,rgba(8,12,16,0.52) 45%,rgba(8,12,16,0.22) 75%,rgba(8,12,16,0) 100%)}
-  .hero h1{font-size:clamp(22px,5.5vw,30px)}
   .sec{padding:3rem 1.25rem}
   .steps-grid{grid-template-columns:1fr}
   .ben-grid{grid-template-columns:1fr}
-  .elig-grid{grid-template-columns:repeat(2,1fr)}
+  .elig-wrap{grid-template-columns:1fr}
+  .elig-col+.elig-col::before{top:0;bottom:auto;left:20%;right:20%;width:auto;height:1px}
+  .elig-col{padding:1.75rem 1.5rem}
   .strip{grid-template-columns:1fr}
   .strip-item+.strip-item{border-left:none;border-top:1px solid #e5e7eb}
   .fin-banner{flex-direction:column;align-items:flex-start}
@@ -206,15 +206,10 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
   .sec-h2{font-size:clamp(20px,5vw,26px)}
   .final-cta h2{font-size:clamp(22px,5.5vw,28px)}
-  .apr-mob-wrap{padding:1.5rem 1rem}
-  .apr-pct{font-size:62px;letter-spacing:-2px}
-  .apr-unit{font-size:22px;padding-bottom:8px}
-  .apr-offer{font-size:14px;letter-spacing:2.5px}
-  .apr-qualify{font-size:13px}
-  .apr-disclosure{font-size:10.5px}
+  .apr-float{top:10%;left:0}
 }
-@media(max-width:1100px){.steps-grid{grid-template-columns:repeat(2,1fr)}.ben-grid{grid-template-columns:repeat(2,1fr)}.elig-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.footer-grid{grid-template-columns:1fr}.elig-grid{grid-template-columns:1fr}}
+@media(max-width:1100px){.steps-grid{grid-template-columns:repeat(2,1fr)}.ben-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -239,13 +234,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html"><span class="dot"></span>Windows</a>
         <a href="doors.html"><span class="dot"></span>Custom Doors</a>
-        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
     <a href="financing.html" class="active">Financing</a>
     <a href="reviews.html">Reviews</a>
-    <a href="contact.html">About</a>
+    <a href="meet-the-team.html">Meet the Team</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
@@ -269,12 +263,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="financing.html" class="mob-link mob-active">Financing</a>
     <a href="reviews.html" class="mob-link">Reviews</a>
-    <a href="contact.html" class="mob-link">About</a>
+    <a href="meet-the-team.html" class="mob-link">Meet the Team</a>
     <a href="contact.html" class="mob-link">Contact</a>
     <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
@@ -285,8 +278,6 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   <div class="hero-bg"></div>
   <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-accent"></div>
-    <div class="hero-badge">0% APR Financing Available</div>
     <h1>Upgrade Your Home,<br>With 0% APR Financing</h1>
     <p class="hero-sub">Flexible financing options make it easy to invest in your home now and pay over time. Explore premium home improvements with simple payment options designed for Houston-area homeowners.</p>
     <div class="hero-btns">
@@ -299,32 +290,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <span>&#10003; Houston's Home Team</span>
     </div>
   </div>
-  <!-- APR Promotional Card — desktop -->
-  <aside class="apr-card" aria-label="0% APR financing available for qualified applicants on eligible projects">
-    <div class="apr-main">
-      <div class="apr-pct">0%</div>
-      <div class="apr-unit">APR</div>
-    </div>
-    <div class="apr-offer">Financing<br>Available</div>
-    <div class="apr-divider" aria-hidden="true"></div>
-    <p class="apr-qualify">For qualified applicants<br>on eligible projects.</p>
-    <p class="apr-disclosure">Subject to approved credit.<br>Terms and conditions apply.</p>
-  </aside>
+  <div class="apr-float" aria-label="0% APR Financing Available">
+    <span class="apr-float-pct">0% APR</span>
+    <span class="apr-float-label">Financing Available</span>
+  </div>
 </section>
-
-<!-- APR Card — tablet / mobile -->
-<div class="apr-mob-wrap">
-  <aside class="apr-card-mob" aria-label="0% APR financing available for qualified applicants on eligible projects">
-    <div class="apr-main">
-      <div class="apr-pct">0%</div>
-      <div class="apr-unit">APR</div>
-    </div>
-    <div class="apr-offer">Financing<br>Available</div>
-    <div class="apr-divider" aria-hidden="true"></div>
-    <p class="apr-qualify">For qualified applicants on eligible projects.</p>
-    <p class="apr-disclosure">Subject to approved credit. Terms and conditions apply.</p>
-  </aside>
-</div>
 
 <!-- FEATURE STRIP -->
 <div class="strip">
@@ -442,38 +412,27 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <section class="sec sec-white">
   <div class="center">
     <div class="eyebrow">Eligible Projects</div>
-    <div class="rule rule-center"></div>
     <h2 class="sec-h2">Which Services Qualify?</h2>
     <p class="sec-p">Financing options are available across the full range of home improvement projects we offer. Ask your estimator about eligibility for your specific project.</p>
   </div>
-  <div class="elig-grid">
-    <div class="elig-card">
-      <div class="elig-icon">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M3 13L13 4l10 9" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Roofing</h4>
-      <p>Full replacements, repair work, and storm damage restoration across all roofing systems.</p>
+  <div class="elig-wrap">
+    <div class="elig-col">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15L14 5l11 10"/><path d="M7 13v11a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V13"/></svg>
+      <div class="elig-name">Roofing</div>
+      <div class="elig-accent"></div>
+      <p class="elig-desc">Full replacements, repair work, and storm damage restoration across all roofing systems.</p>
     </div>
-    <div class="elig-card">
-      <div class="elig-icon">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="4" width="18" height="18" rx="2" stroke="#C81F25" stroke-width="1.6"/><path d="M4 13h18M13 4v18" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </div>
-      <h4>Windows</h4>
-      <p>Single-window replacements to whole-home window upgrades, including energy-efficient options.</p>
+    <div class="elig-col">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="20" height="20" rx="1.5"/><line x1="4" y1="14" x2="24" y2="14"/><line x1="14" y1="4" x2="14" y2="24"/></svg>
+      <div class="elig-name">Windows</div>
+      <div class="elig-accent"></div>
+      <p class="elig-desc">Single-window replacements to whole-home upgrades, including energy-efficient options.</p>
     </div>
-    <div class="elig-card">
-      <div class="elig-icon">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="6" y="3" width="14" height="21" rx="1.5" stroke="#C81F25" stroke-width="1.6"/><circle cx="17" cy="13.5" r="1.2" fill="#C81F25"/></svg>
-      </div>
-      <h4>Custom Doors</h4>
-      <p>Entry doors, patio doors, and custom door solutions that elevate your home's curb appeal.</p>
-    </div>
-    <div class="elig-card">
-      <div class="elig-icon">
-        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 20h18M4 20V8l9-4 9 4v12" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20v-6h6v6" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <h4>Other Home Solutions</h4>
-      <p>Siding, gutters, and additional exterior home improvement projects. Ask for project eligibility.</p>
+    <div class="elig-col">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#C81F25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="14" height="22" rx="1.5"/><circle cx="18" cy="14" r="1.25" fill="#C81F25" stroke="none"/></svg>
+      <div class="elig-name">Custom Doors</div>
+      <div class="elig-accent"></div>
+      <p class="elig-desc">Entry doors, patio doors, and custom solutions that elevate your home's curb appeal.</p>
     </div>
   </div>
 </section>
@@ -568,18 +527,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
         <span>thehometeamroofing@gmail.com</span>
       </div>
-      <div class="footer-social">
-        <a href="#" class="fsoc" aria-label="Facebook">f</a>
-        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-        <a href="#" class="fsoc" aria-label="Google">G</a>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Our Services</h4>
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <div class="footer-col">
       <h4>Service Areas</h4>
@@ -630,6 +583,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     if(btn){btn.addEventListener('click',function(){var isOpen=item.classList.contains('open');faqItems.forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});}
   });
 })();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
 </body>
 </html>

@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
 <title>Windows | Home Team Home Solutions — Houston, TX</title>
 <meta name="description" content="Premium energy-efficient replacement windows professionally installed across Houston, TX. Double hung, casement, bay, picture windows and more. Get a free estimate."/>
+<link rel="canonical" href="https://ththomesolutions.com/windows"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ththomesolutions.com/windows"/>
+<meta property="og:title" content="Windows | Home Team Home Solutions — Houston, TX"/>
+<meta property="og:description" content="Premium energy-efficient replacement windows professionally installed across Houston, TX. Double hung, casement, bay, picture windows and more. Get a free estimate."/>
+<meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -44,11 +51,11 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 @media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
 /* HERO */
-.hero{position:relative;height:700px;overflow:hidden;background:#040e1a;background-image:url("images/sleekwindowsphoto.png");background-size:cover;background-repeat:no-repeat;background-position:60% center;margin:0;padding:0}
+.hero{position:relative;height:700px;overflow:hidden;background:#040e1a;background-image:url("images/finalwindowshero.png");background-size:cover;background-repeat:no-repeat;background-position:60% center;margin:0;padding:0}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,15,25,0.78) 0%,rgba(5,15,25,0.55) 25%,rgba(5,15,25,0.18) 45%,rgba(5,15,25,0) 62%)}
 .hero-badge{display:inline-block;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 15px;border-radius:3px;margin-bottom:28px;width:fit-content}
-.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,44px);color:#fff;line-height:1.1;letter-spacing:-.5px;margin-bottom:28px;background:none;text-shadow:none;max-width:500px}
+.hero h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
 .hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:36px;max-width:440px}
 .hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
 .hero-trust{display:flex;align-items:center;gap:10px}
@@ -199,11 +206,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 .mob-sub a:hover{color:var(--red)}
 .mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
 
+@media(max-width:900px){.hero h1{letter-spacing:-1px}}
 @media(max-width:768px){
   .hero{height:auto;min-height:520px;background-position:65% top}
   .hero-overlay{background:linear-gradient(to bottom,rgba(5,15,25,0.84) 0%,rgba(5,15,25,0.72) 45%,rgba(5,15,25,0.40) 75%,rgba(5,15,25,0.10) 100%)}
   .hero-content{padding:32px 24px 32px 24px;max-width:100%}
-  .hero h1{font-size:clamp(24px,6vw,32px)}
   .wgrid{grid-template-columns:repeat(2,1fr)}
   .gal-row{grid-template-columns:repeat(2,1fr)}
   .bottom-grid{grid-template-columns:1fr}
@@ -241,13 +248,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html" class="active-svc"><span class="dot"></span>Windows</a>
         <a href="doors.html"><span class="dot"></span>Custom Doors</a>
-        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
     <a href="financing.html">Financing</a>
     <a href="reviews.html">Reviews</a>
-    <a href="contact.html">About</a>
+    <a href="meet-the-team.html">Meet the Team</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="nav-right">
@@ -271,12 +277,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="financing.html" class="mob-link">Financing</a>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="reviews.html" class="mob-link">Reviews</a>
-    <a href="contact.html" class="mob-link">About</a>
+    <a href="meet-the-team.html" class="mob-link">Meet the Team</a>
     <a href="contact.html" class="mob-link">Contact</a>
     <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
@@ -420,7 +425,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <section class="sec sec-gray" style="padding-top:1rem">
   <div class="why-grid">
     <div>
-      <div class="eyebrow">Why Choose THT Windows</div>
+      <div class="eyebrow">Why Choose Home Team</div>
       <div class="rule"></div>
       <h2 class="why-h2">A Better Experience From Start to Finish</h2>
       <p class="why-p">We combine premium products with expert installation and unmatched customer care to deliver results you'll love for years to come. Every project is completed on time, on budget, and to the highest standard of quality.</p>
@@ -428,7 +433,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     </div>
     <div class="why-photo-stack">
       <div class="why-photo-primary">
-        <img src="images/newheader.png" alt="Beautiful Houston home with premium replacement windows by Home Team Windows" loading="lazy"/>
+        <img src="images/websitepic.png" alt="Beautiful Houston home with premium replacement windows by Home Team Windows" loading="lazy"/>
       </div>
       <div class="why-photo-secondary">
         <img src="images/windowestimatephoto.png" alt="Premium window interior view" loading="lazy"/>
@@ -479,7 +484,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <section class="sec sec-white" id="gallery">
   <div class="eyebrow">Recent Projects</div>
   <div class="rule"></div>
-  <h2 class="sec-h2">See the THT Windows Difference</h2>
+  <h2 class="sec-h2">See the Home Team Difference</h2>
   <div class="gal-row">
     <div class="gal-cell">
       <img src="images/home1.png" alt="Exterior window installation project" style="width:100%;height:100%;object-fit:cover;display:block;object-position:center center" loading="lazy"/>
@@ -568,8 +573,7 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <h3>THT WINDOWS</h3>
-      <div class="footer-brand-sub">A Division of Home Team Roofing</div>
+      <h3>HOME TEAM HOME SOLUTIONS</h3>
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
         <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
@@ -581,11 +585,6 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <div class="footer-contact-item">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
         <span>thehometeamroofing@gmail.com</span>
-      </div>
-      <div class="footer-social">
-        <a href="#" class="fsoc" aria-label="Facebook">f</a>
-        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-        <a href="#" class="fsoc" aria-label="Google">G</a>
       </div>
     </div>
     <div class="footer-col">
@@ -613,17 +612,10 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <a href="https://payzer.com/Account/FinancingOptions/businessId/9487" target="_blank" rel="noopener noreferrer">Financing</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div style="display:flex;align-items:flex-start;justify-content:flex-end">
-      <div class="footer-htr">
-        <div class="footer-htr-div">A Division of</div>
-        <div class="footer-htr-name">HOME TEAM<br>ROOFING</div>
-        <div class="footer-htr-line"></div>
-      </div>
-    </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 THT Windows. All Rights Reserved.</p>
-    <p>Houston, TX &nbsp;·&nbsp; thtwindows.com</p>
+    <p>© 2025 Home Team Home Solutions. All Rights Reserved.</p>
+    <p>Houston, TX &nbsp;·&nbsp; ththomesolutions.com</p>
   </div>
 </footer>
 
@@ -643,6 +635,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     svcToggle.addEventListener('click',function(){svcMenu.classList.toggle('open');});
   }
 })();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
 </body>
 </html>

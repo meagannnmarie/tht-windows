@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
+<title>Meet the Team | Home Team Home Solutions — Houston, TX</title>
+<meta name="description" content="Meet the people behind Home Team Home Solutions. Built on relationships, craftsmanship, accountability, and genuine care for every homeowner we serve across Greater Houston."/>
+<link rel="canonical" href="https://ththomesolutions.com/meet-the-team"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ththomesolutions.com/meet-the-team"/>
+<meta property="og:title" content="Meet the Team | Home Team Home Solutions — Houston, TX"/>
+<meta property="og:description" content="Meet the people behind Home Team Home Solutions. Built on relationships, craftsmanship, accountability, and genuine care for every homeowner we serve across Greater Houston."/>
+<meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1F2937}
+
+/* ── TOKENS ── */
+:root{--red:#C81F25;--red-dim:#a51a1f;--black:#0d0d0d;--dark1:#111111;--dark2:#181818;--navy:#040e1a;--charcoal:#111827;--offwhite:#f7f6f4;--border:#e5e3df}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid var(--border);padding:0 52px;height:88px;display:flex;align-items:center;gap:0}
+.nav-logo{flex-shrink:0;display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-img{height:56px;width:auto;display:block;flex-shrink:0}
+.nav-brand{display:flex;flex-direction:column;gap:3px}
+.nav-brand-name{font-size:13px;font-weight:800;color:#0d0d0d;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:8px;font-weight:500;color:#888;letter-spacing:2px;text-transform:uppercase;line-height:1;white-space:nowrap}
+.nav-links{display:flex;gap:28px;flex:1;justify-content:center;align-items:center}
+.nav-links a{font-size:12.5px;color:#444;text-decoration:none;font-weight:500;letter-spacing:.3px;white-space:nowrap;transition:color .15s;position:relative}
+.nav-links a:hover{color:#0d0d0d}
+.nav-links a.active{color:#0d0d0d;font-weight:600}
+.nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--red);border-radius:1px}
+.nav-drop{position:relative;display:flex;align-items:center}
+.nav-drop-btn{font-size:12.5px;color:#444;font-weight:500;letter-spacing:.3px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:4px;padding:0;transition:color .15s}
+.nav-drop-btn:hover{color:#0d0d0d}
+.nav-drop-btn svg{transition:transform .2s}
+.nav-drop:hover .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.12);padding:.5rem 0;min-width:170px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s;z-index:500}
+.nav-drop:hover .nav-drop-menu,.nav-drop:focus-within .nav-drop-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop-menu::before{content:'';position:absolute;top:-20px;left:0;right:0;height:20px}
+.nav-drop-menu a{display:flex;align-items:center;gap:10px;padding:.6rem 1.25rem;font-size:12.5px;color:#444;text-decoration:none;font-weight:500;transition:background .12s,color .12s}
+.nav-drop-menu a:hover{background:#faf9f7;color:#0d0d0d}
+.nav-drop-menu a .dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.nav-cta{background:var(--red);color:#fff;font-size:12px;font-weight:700;padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:background .15s,transform .12s}
+.nav-cta:hover{background:var(--red-dim);transform:translateY(-1px)}
+.nav-cta svg{flex-shrink:0}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:#0d0d0d;border-radius:1px;transition:.2s}
+.mob-drawer{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.5)}
+.mob-drawer.open{display:block}
+.mob-panel{position:absolute;top:0;right:0;bottom:0;width:300px;background:#fff;padding:2rem 1.875rem;display:flex;flex-direction:column;overflow-y:auto}
+.mob-close{align-self:flex-end;background:none;border:none;cursor:pointer;font-size:20px;color:#0d0d0d;margin-bottom:1.5rem}
+.mob-link{font-size:15px;color:#333;text-decoration:none;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;display:block}
+.mob-link:hover{color:var(--red)}
+.mob-link.mob-active{color:var(--red);font-weight:700}
+.mob-expand{font-size:15px;color:#333;font-weight:500;padding:.75rem 0;border-bottom:1px solid #f0f0f0;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;font-family:'Inter',sans-serif;text-align:left;width:100%}
+.mob-sub{display:none;padding-left:1rem}
+.mob-sub.open{display:block}
+.mob-sub a{font-size:13.5px;color:#888;text-decoration:none;padding:.4rem 0;display:block}
+.mob-sub a:hover{color:var(--red)}
+.mob-cta{margin-top:1.5rem;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:13px;border-radius:4px;text-align:center;text-decoration:none;text-transform:uppercase;letter-spacing:.5px;display:block}
+@media(max-width:1140px){nav{padding:0 28px}.nav-links{gap:20px}}
+@media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
+
+/* ── HERO ── */
+.hero{position:relative;height:700px;background:var(--black);overflow:hidden;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background-image:url('images/home-team-group-photo.png');background-size:cover;background-position:center 25%;background-repeat:no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 50%,rgba(0,0,0,.28) 100%)}
+.hero-overlay-l{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.52) 0%,rgba(0,0,0,.20) 42%,transparent 62%)}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px;margin-bottom:1.375rem;width:fit-content}
+.hero-h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.hero-h1 em{font-style:italic;color:var(--red)}
+.hero-tagline{font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.90);line-height:1.75;max-width:480px;text-shadow:0 1px 8px rgba(0,0,0,.22);margin-bottom:1.75rem}
+.hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
+.btn-red{background:var(--red);color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:none;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:background .15s,transform .12s;white-space:nowrap}
+.btn-red:hover{background:var(--red-dim);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:#fff;font-size:12.5px;font-weight:700;padding:14px 28px;border-radius:3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.8px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:border-color .15s,background .15s,color .15s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.72);background:rgba(255,255,255,.06);color:#fff}
+
+/* ── SHARED SECTION TOKENS ── */
+.sec{padding:5.5rem 2.5rem}
+.sec-gray{background:#F8FAFC}
+.inner{max-width:1120px;margin:0 auto}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:.875rem}
+.eyebrow-light{color:rgba(255,255,255,.45)}
+.rule{width:42px;height:2px;background:var(--red);border-radius:2px;margin:0 0 1.625rem}
+.rule-center{margin:0 auto 1.625rem}
+.rule-light{background:rgba(255,255,255,.3)}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:500;color:#1F2937;line-height:1.12;letter-spacing:-.25px;margin-bottom:.875rem}
+.sec-h2-light{color:#fff}
+.sec-p{font-size:14.5px;color:#6b7280;line-height:1.8;max-width:580px}
+.sec-p-light{color:rgba(255,255,255,.6)}
+.center{text-align:center}
+.center .sec-p{margin:0 auto}
+.center .rule{margin:0 auto 1.625rem}
+
+/* ── MISSION SECTION ── */
+.ownership{background:#111111;padding:4.5rem 2.5rem}
+.ownership-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:400px 1fr;gap:4rem;align-items:start}
+.mike-photo-wrap{position:relative}
+.mike-photo-frame{border-radius:16px;overflow:hidden;line-height:0;box-shadow:0 32px 80px rgba(0,0,0,.55)}
+.mike-photo-frame img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.mike-label{position:absolute;bottom:-1px;left:0;right:0;background:linear-gradient(to top,rgba(17,17,17,1) 0%,rgba(17,17,17,0.7) 60%,transparent 100%);padding:2rem 1.625rem 1.5rem;border-radius:0 0 16px 16px}
+.mike-label-title{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:5px}
+.mike-label-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#fff;line-height:1.1}
+.ownership-text .eyebrow{margin-bottom:.75rem}
+.ownership-text .rule{margin-bottom:1.125rem}
+.ownership-text .sec-h2-light{margin-bottom:1rem}
+.ownership-copy{font-size:15.5px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:1rem}
+.ownership-copy+.ownership-copy{margin-top:0}
+.mission-credo{border-left:5px solid var(--red);background:rgba(200,31,37,.06);border-radius:0 8px 8px 0;padding:1.375rem 1.75rem;margin-top:2.25rem}
+.mission-credo p{font-family:'Playfair Display',serif;font-size:clamp(17px,1.7vw,21px);font-style:italic;color:#fff;line-height:1.52;letter-spacing:-.1px}
+
+/* ── FOUNDER STORY SECTION ── */
+.founder{background:#0d0d0d;padding:5.5rem 2.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.founder-inner{max-width:760px;margin:0 auto}
+.founder-header{margin-bottom:2.5rem}
+.founder-header .eyebrow-light{margin-bottom:.875rem}
+.founder-header .rule-light{margin-bottom:2rem}
+.founder-copy{font-size:15.5px;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:1.5rem}
+.founder-copy:last-child{margin-bottom:0}
+.founder-pull{border-left:3px solid var(--red);padding-left:1.5rem;margin:1.5rem 0}
+.founder-pull p{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:rgba(255,255,255,.82);line-height:1.55}
+
+/* ── CREDENTIALS SECTION ── */
+.creds{background:#0a0a0a;padding:6rem 2.5rem}
+.creds-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.creds-left .eyebrow-light{margin-bottom:1.25rem}
+.creds-left .rule-light{margin-bottom:2rem}
+.creds-headline{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.2vw,44px);color:#fff;line-height:1.18;letter-spacing:-.5px}
+.creds-list{display:flex;flex-direction:column;gap:1.375rem}
+.cred-row{display:flex;align-items:center;gap:1.125rem}
+.cred-check{width:26px;height:26px;background:var(--red);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cred-label{font-size:16.5px;font-weight:500;color:rgba(255,255,255,.88);line-height:1;letter-spacing:-.1px}
+@media(max-width:820px){.creds-inner{grid-template-columns:1fr;gap:2.75rem}.creds-headline{font-size:clamp(26px,5.5vw,36px)}}
+@media(max-width:500px){.creds{padding:4rem 1.25rem}.cred-label{font-size:15px}}
+
+/* ── VIDEO SECTION ── */
+.videos{background:#111111;padding:6rem 2.5rem;border-top:1px solid rgba(255,255,255,.05)}
+.videos-inner{max-width:1100px;margin:0 auto}
+.videos-header{text-align:center;max-width:700px;margin:0 auto 5rem}
+.videos-header .eyebrow-light{margin-bottom:.875rem}
+.videos-header .rule-light{margin-bottom:1.75rem}
+.videos-header .sec-h2-light{font-size:clamp(26px,3.2vw,40px);margin-bottom:1rem}
+.videos-header .sec-p-light{margin:0 auto}
+.vid-featured{position:relative;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 32px 80px rgba(0,0,0,.7);margin-bottom:1.25rem;aspect-ratio:16/9}
+.vid-featured video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.vid-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.22);transition:background .2s;cursor:pointer}
+.vid-overlay.hidden{display:none}
+.vid-featured:hover .vid-overlay{background:rgba(0,0,0,.35)}
+.vid-play-lg{width:72px;height:72px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(200,31,37,.55);transition:transform .18s,box-shadow .18s;flex-shrink:0}
+.vid-featured .vid-overlay:hover .vid-play-lg{transform:scale(1.08);box-shadow:0 12px 40px rgba(200,31,37,.7)}
+.vid-play-lg svg{margin-left:5px}
+.vid-feat-label{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem 1.75rem;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 100%);pointer-events:none}
+.vid-feat-title{font-size:13px;font-weight:700;color:rgba(255,255,255,.88);letter-spacing:.8px;text-transform:uppercase;margin-bottom:5px}
+.vid-feat-sub{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.3px}
+/* 6-col grid: each card spans 2 cols = identical 1/3 width every row.
+   Cards 4+5 are pinned to cols 2–3 and 4–5 to center them in row 2. */
+.vid-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+.vid-card{grid-column:span 2;position:relative;border-radius:12px;overflow:hidden;background:#000;line-height:0;cursor:pointer}
+.vid-card:nth-child(4){grid-column:2/span 2}
+.vid-card:nth-child(5){grid-column:4/span 2}
+.vid-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.vid-card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.vid-card-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.28);transition:background .2s}
+.vid-card-overlay.hidden{display:none}
+.vid-card:hover .vid-card-overlay{background:rgba(0,0,0,.48)}
+.vid-play-sm{width:48px;height:48px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(200,31,37,.5);transition:transform .18s;flex-shrink:0}
+.vid-card .vid-card-overlay:hover .vid-play-sm{transform:scale(1.1)}
+.vid-play-sm svg{margin-left:3px}
+.vid-card-label{position:absolute;bottom:0;left:0;right:0;padding:4rem 1.125rem 2rem;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 50%,transparent 100%);pointer-events:none}
+.vid-card-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.88);letter-spacing:.7px;text-transform:uppercase}
+/* Tablet: 4-col grid → cards span 2 = 2 per row; card 5 alone is centered */
+@media(max-width:900px){
+  .vid-grid{grid-template-columns:repeat(4,1fr)}
+  .vid-card{grid-column:span 2}
+  .vid-card:nth-child(4){grid-column:1/span 2}
+  .vid-card:nth-child(5){grid-column:2/span 2}
+}
+/* Mobile: 1 column */
+@media(max-width:600px){
+  .vid-grid{grid-template-columns:1fr;gap:.75rem}
+  .vid-card,.vid-card:nth-child(4),.vid-card:nth-child(5){grid-column:1/-1}
+  .videos{padding:4rem 1.25rem}
+}
+
+/* ── TEAM COLLAGE SECTION ── */
+.team-moment{background:var(--charcoal);padding:6rem 2.5rem}
+.team-moment-inner{max-width:1080px;margin:0 auto}
+.team-moment-top{text-align:center;max-width:700px;margin:0 auto 3.5rem}
+.team-moment-top .sec-h2-light{font-size:clamp(28px,3.5vw,44px);margin-bottom:1rem}
+.collage-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6);line-height:0;max-width:840px;margin:0 auto}
+.collage-wrap img{width:100%;display:block}
+.collage-caption{text-align:center;margin-top:2rem;font-size:13px;color:rgba(255,255,255,.35);letter-spacing:.4px}
+
+/* ── TEAM PANORAMIC SECTION ── */
+.team-pano{background:var(--black);padding:6rem 0 0}
+.team-pano-copy-wrap{max-width:1080px;margin:0 auto;text-align:center;padding:0 2.5rem 4rem}
+.team-pano-copy-wrap .eyebrow-light{margin-bottom:.875rem}
+.team-pano-copy-wrap .rule-light{margin-bottom:1.75rem}
+.team-pano-copy-wrap .sec-h2-light{font-size:clamp(26px,3.5vw,42px);margin-bottom:.875rem}
+.team-pano-copy-wrap .sec-p-light{margin:0 auto}
+.team-pano-img-wrap{width:100%;line-height:0;border-top:1px solid rgba(255,255,255,.06)}
+.team-pano-img-wrap img{width:100%;height:auto;display:block}
+@media(max-width:700px){.team-pano{padding:4rem 0 0}.team-pano-copy-wrap{padding:0 1.25rem 3rem}}
+
+/* ── COMMUNITY SECTION ── */
+.community{background:#fff;padding:5.5rem 2.5rem}
+.community-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.community-img-wrap{border-radius:16px;overflow:hidden;line-height:0;box-shadow:0 16px 52px rgba(0,0,0,.12)}
+.community-img-wrap img{width:100%;display:block}
+.community-text .sec-p{max-width:100%;margin-bottom:1.25rem}
+.community-text .sec-p:last-of-type{margin-bottom:0}
+.community-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+.c-stat{background:#F8FAFC;border:1.5px solid var(--border);border-radius:12px;padding:1.25rem 1.375rem}
+.c-stat-num{font-size:28px;font-weight:800;color:var(--red);font-family:'Inter',sans-serif;line-height:1;margin-bottom:4px}
+.c-stat-label{font-size:11.5px;color:#6b7280;font-weight:500}
+
+/* ── TRUST SECTION ── */
+.trust{background:var(--navy);padding:5.5rem 2.5rem}
+.trust-inner{max-width:1080px;margin:0 auto}
+.trust-header{text-align:center;max-width:680px;margin:0 auto 3.5rem}
+.trust-header .sec-h2-light{font-size:clamp(24px,3vw,38px);margin-bottom:.875rem}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06);border-radius:16px;overflow:hidden}
+.trust-item{padding:2.75rem 2.25rem;background:rgba(255,255,255,.02)}
+.trust-icon{width:52px;height:52px;background:rgba(200,31,37,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.trust-title{font-size:12px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:.75rem}
+.trust-desc{font-size:13.5px;color:rgba(255,255,255,.52);line-height:1.75}
+
+/* ── FINAL CTA ── */
+.final-cta{background:var(--charcoal);padding:6rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(200,31,37,.12) 0%,transparent 70%);pointer-events:none}
+.final-cta-inner{position:relative;z-index:1}
+.final-cta h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:500;color:#fff;margin-bottom:1rem;letter-spacing:-.25px}
+.final-cta p{font-size:15px;color:rgba(255,255,255,.58);line-height:1.78;max-width:520px;margin:0 auto 2.5rem}
+.final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-phone{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(255,255,255,.45);font-weight:500;margin-top:1.375rem}
+.cta-phone a{color:var(--red);text-decoration:none;font-weight:700;transition:color .15s}
+.cta-phone a:hover{color:#fff}
+
+/* ── FOOTER ── */
+footer{background:#111827;padding:3rem 2.5rem 1.75rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand h3{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:#fff;margin-bottom:2px}
+.footer-brand-sub{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:1.1rem}
+.footer-contact-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px}
+.footer-contact-item span{font-size:12px;color:#9ca3af}
+.footer-social{display:flex;gap:9px;margin-top:1rem}
+.fsoc{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);font-size:14px;text-decoration:none;font-weight:700}
+.footer-col h4{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:.875rem;letter-spacing:0.3px}
+.footer-col a{display:block;font-size:12px;color:#9ca3af;text-decoration:none;margin-bottom:5px}
+.footer-col a:hover{color:#fff}
+.footer-htr{background:#1a2535;border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:1.1rem 1.25rem;text-align:center}
+.footer-htr-div{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.footer-htr-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:500;color:#fff;line-height:1.25}
+.footer-htr-line{width:36px;height:2px;background:var(--red);margin:8px auto 0;border-radius:1px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{font-size:11.5px;color:#4b5563}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){.hero-h1{letter-spacing:-1px}}
+@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
+@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.btn-red,.btn-ghost{width:100%;justify-content:center}}
+@media(max-width:1100px){
+  .ownership-inner{grid-template-columns:340px 1fr;gap:3rem}
+  .community-inner{gap:3rem}
+  .trust-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .ownership-inner{grid-template-columns:1fr;gap:3rem}
+  .mike-photo-wrap{max-width:400px}
+  .community-inner{grid-template-columns:1fr}
+  .community-stats{grid-template-columns:repeat(4,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .sec{padding:3.75rem 1.25rem}
+  .ownership{padding:3.75rem 1.25rem}
+  .founder{padding:3.75rem 1.25rem}
+  .team-moment{padding:4rem 1.25rem}
+  .community{padding:3.75rem 1.25rem}
+  .trust{padding:3.75rem 1.25rem}
+  .final-cta{padding:4.5rem 1.25rem}
+  .trust-grid{grid-template-columns:1fr}
+  .community-stats{grid-template-columns:1fr 1fr}
+  .ownership-text .sec-h2-light{font-size:clamp(24px,6vw,34px)}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:.5rem;text-align:center}
+  .community-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Home Team Home Solutions">
+    <img src="images/hometeamroofinglogo.png" alt="Home Team Home Solutions" class="nav-logo-img"/>
+    <div class="nav-brand">
+      <div class="nav-brand-name">Home Team</div>
+      <div class="nav-brand-sub">Home Solutions</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" aria-haspopup="true">
+        Home Improvements
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="#666" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-drop-menu">
+        <a href="roofing.html"><span class="dot"></span>Roofing</a>
+        <a href="windows.html"><span class="dot"></span>Windows</a>
+        <a href="doors.html"><span class="dot"></span>Custom Doors</a>
+      </div>
+    </div>
+    <a href="gallery.html">Gallery</a>
+    <a href="financing.html">Financing</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="meet-the-team.html" class="active">Meet the Team</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="estimate.html" class="nav-cta">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose">&#x2715;</button>
+    <a href="index.html" class="mob-link">Home</a>
+    <button class="mob-expand" id="mobSvcToggle">Home Improvements ›</button>
+    <div class="mob-sub" id="mobSvc">
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+    </div>
+    <a href="gallery.html" class="mob-link">Gallery</a>
+    <a href="financing.html" class="mob-link">Financing</a>
+    <a href="reviews.html" class="mob-link">Reviews</a>
+    <a href="meet-the-team.html" class="mob-link mob-active">Meet the Team</a>
+    <a href="contact.html" class="mob-link">Contact</a>
+    <a href="estimate.html" class="mob-cta">Start My Project →</a>
+  </div>
+</div>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Meet the Home Team Home Solutions team">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-l"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow-pill">Meet the Home Team</span>
+    <h1 class="hero-h1">More Than<br>a Company.<br>We're a <em>Team.</em></h1>
+    <p class="hero-tagline">Home Team Home Solutions was built on relationships, hard work, and the belief that the strongest companies are built by people who genuinely care about one another and the customers they serve.</p>
+    <div class="hero-btns">
+      <a href="estimate.html" class="btn-red">Start My Project</a>
+      <a href="#ourTeam" class="btn-ghost">Meet Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER STORY ════════════════════════════════════════════════════════ -->
+<section class="ownership" id="ourTeam">
+  <div class="ownership-inner">
+
+    <div class="mike-photo-wrap">
+      <div class="mike-photo-frame">
+        <img src="images/meet-the-team/mike-headshot.png" alt="Mike Martin, Owner and Founder of Home Team Home Solutions" loading="eager"/>
+        <div class="mike-label">
+          <div class="mike-label-title">Owner &amp; Founder</div>
+          <div class="mike-label-name">Mike Martin</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ownership-text">
+      <div class="eyebrow eyebrow-light">About Our Founder</div>
+      <div class="rule rule-light"></div>
+      <h2 class="sec-h2 sec-h2-light">Why Mike Built Home Team</h2>
+
+      <p class="ownership-copy">Mike Martin didn't start Home Team to build another roofing company. He started it because he knew homeowners deserved a better experience.</p>
+
+      <p class="ownership-copy">Before founding Home Team, Mike worked as an insurance adjuster, where he saw firsthand how overwhelming the repair process could become for homeowners — especially when major damage, insurance claims, and contractors all collided at once. That experience gave him a rare perspective on what homeowners actually needed: straight answers, clear communication, quality work, and a team willing to take ownership from start to finish.</p>
+
+      <p class="ownership-copy">He saw an opportunity to do it differently.</p>
+
+      <p class="ownership-copy">Home Team was built around a higher standard: communicate clearly, show up when you say you will, take pride in the craftsmanship, and stand behind the work long after the project is complete.</p>
+
+      <p class="ownership-copy">That philosophy turned one roofing company into a trusted Greater Houston home improvement team with more than 45,000 installations completed.</p>
+
+      <p class="ownership-copy">The company has grown. The standard hasn't.</p>
+
+      <div class="founder-pull">
+        <p>"When someone trusts us with their home, they're trusting our entire team to do things the right way. That responsibility means everything to me."</p>
+      </div>
+
+      <p class="ownership-copy">Today, Mike still leads Home Team by the same principle it was built on: take care of people, build something you're proud to put your name on, and earn the customer's trust every step of the way.</p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MISSION ═════════════════════════════════════════════════════════════ -->
+<section class="founder">
+  <div class="founder-inner">
+
+    <div class="founder-header">
+      <div class="eyebrow eyebrow-light">Our Mission</div>
+      <div class="rule rule-light"></div>
+      <h2 class="sec-h2 sec-h2-light">The Mission of Home Team Roofing</h2>
+    </div>
+
+    <p class="founder-copy">Our mission is simple: to take care of people, protect their homes, and deliver work we are proud to put the Home Team name behind.</p>
+
+    <p class="founder-copy">We believe homeowners deserve more than a contractor. They deserve a team that communicates clearly, shows up when promised, respects their property, stands behind its workmanship, and treats every project with the same care we would expect for our own families.</p>
+
+    <p class="founder-copy">Home Team was built on the belief that strong companies are created through strong relationships, honest service, skilled craftsmanship, and accountability at every level. From the first conversation to the final walkthrough, our goal is to make every homeowner feel informed, respected, and confident in the team they chose.</p>
+
+    <p class="founder-copy">As we continue to grow throughout Greater Houston, our commitment remains the same: never sacrifice quality for growth, never lose sight of the people we serve, and never compromise the standards attached to the Home Team name.</p>
+
+    <div class="mission-credo">
+      <p>"One team. One standard. Take care of people and do the job right."</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CREDENTIALS ═════════════════════════════════════════════════════════ -->
+<section class="creds">
+  <div class="creds-inner">
+    <div class="creds-left">
+      <div class="eyebrow eyebrow-light">Credentials &amp; Recognition</div>
+      <div class="rule rule-light"></div>
+      <h2 class="creds-headline">Recognized With The Highest Awards &amp; Certifications in Roofing</h2>
+    </div>
+    <div class="creds-list">
+      <div class="cred-row">
+        <div class="cred-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="cred-label">A+ BBB Accredited</span>
+      </div>
+      <div class="cred-row">
+        <div class="cred-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="cred-label">CertainTeed SELECT ShingleMaster</span>
+      </div>
+      <div class="cred-row">
+        <div class="cred-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="cred-label">GAF Master Elite Certified</span>
+      </div>
+      <div class="cred-row">
+        <div class="cred-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="cred-label">Tomball Chamber of Commerce</span>
+      </div>
+      <div class="cred-row">
+        <div class="cred-check"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="cred-label">RCAT Licensed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO SECTION ═══════════════════════════════════════════════════════ -->
+<section class="videos">
+  <div class="videos-inner">
+
+    <div class="videos-header">
+      <div class="eyebrow eyebrow-light">Inside the Home Team</div>
+      <div class="rule rule-center rule-light"></div>
+      <h2 class="sec-h2 sec-h2-light">Meet the People Behind the Work</h2>
+      <p class="sec-p sec-p-light">Get to know the people, values, and process behind Home Team through real moments from our team, our projects, and the communities we serve.</p>
+    </div>
+
+    <!-- Featured Video: Video 01 — Team Training / Good Neighbor -->
+    <div class="vid-featured" id="vidFeat">
+      <video id="v1" src="videos/home-team/web/home-team-video-01-web.mp4" poster="videos/home-team/posters/home-team-video-01-poster.jpg" preload="metadata" playsinline controls style="display:none"></video>
+      <img id="v1poster" src="videos/home-team/posters/home-team-video-01-poster.jpg" alt="Home Team team meeting — Good Neighbor" style="position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center"/>
+      <div class="vid-overlay" id="v1overlay">
+        <div class="vid-play-lg">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M7 4.5l13 6.5-13 6.5V4.5z" fill="#fff"/></svg>
+        </div>
+      </div>
+      <div class="vid-feat-label" id="v1label">
+        <div class="vid-feat-title">The Good Neighbor</div>
+        <div class="vid-feat-sub">Home Team team training &amp; culture</div>
+      </div>
+    </div>
+
+    <!-- Supporting Grid: Videos 02–06 -->
+    <div class="vid-grid">
+
+      <div class="vid-card" id="vidCard2">
+        <video id="v2" src="videos/home-team/web/home-team-video-02-web.mp4" poster="videos/home-team/posters/home-team-video-02-poster.jpg" preload="metadata" playsinline controls style="display:none"></video>
+        <img id="v2poster" src="videos/home-team/posters/home-team-video-02-poster.jpg" alt="Joseph Miller — Home Team team member" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+        <div class="vid-card-overlay" id="v2overlay">
+          <div class="vid-play-sm">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="vid-card-label"><div class="vid-card-name">Joseph Miller</div></div>
+      </div>
+
+      <div class="vid-card" id="vidCard3">
+        <video id="v3" src="videos/home-team/web/home-team-video-03-web.mp4" poster="videos/home-team/posters/home-team-video-03-poster.jpg" preload="metadata" playsinline controls style="display:none"></video>
+        <img id="v3poster" src="videos/home-team/posters/home-team-video-03-poster.jpg" alt="The Replacement Process — Christopher Cantu on site" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+        <div class="vid-card-overlay" id="v3overlay">
+          <div class="vid-play-sm">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="vid-card-label"><div class="vid-card-name">The Replacement Process</div></div>
+      </div>
+
+      <div class="vid-card" id="vidCard4">
+        <video id="v4" src="videos/home-team/web/home-team-video-04-web.mp4" poster="videos/home-team/posters/home-team-video-04-poster.jpg" preload="metadata" playsinline controls style="display:none"></video>
+        <img id="v4poster" src="videos/home-team/posters/home-team-video-04-poster.jpg" alt="Daniel — Home Team team member" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+        <div class="vid-card-overlay" id="v4overlay">
+          <div class="vid-play-sm">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="vid-card-label"><div class="vid-card-name">Daniel</div></div>
+      </div>
+
+      <div class="vid-card" id="vidCard5">
+        <video id="v5" src="videos/home-team/web/home-team-video-05-web.mp4" poster="videos/home-team/posters/home-team-video-05-poster.jpg" preload="metadata" playsinline controls style="display:none"></video>
+        <img id="v5poster" src="videos/home-team/posters/home-team-video-05-poster.jpg" alt="Brad Orr — Home Team operations" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+        <div class="vid-card-overlay" id="v5overlay">
+          <div class="vid-play-sm">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="vid-card-label"><div class="vid-card-name">Brad Orr</div></div>
+      </div>
+
+      <div class="vid-card" id="vidCard6">
+        <video id="v6" src="videos/home-team/web/home-team-video-06-web.mp4" poster="videos/home-team/posters/home-team-video-06-poster.jpg" preload="metadata" playsinline controls style="display:none"></video>
+        <img id="v6poster" src="videos/home-team/posters/home-team-video-06-poster.jpg" alt="Jordyn — Home Team team member" style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover"/>
+        <div class="vid-card-overlay" id="v6overlay">
+          <div class="vid-play-sm">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l8 4.5-8 4.5V2.5z" fill="#fff"/></svg>
+          </div>
+        </div>
+        <div class="vid-card-label"><div class="vid-card-name">Jordyn</div></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ TEAM COLLAGE ════════════════════════════════════════════════════════ -->
+<section class="team-moment">
+  <div class="team-moment-inner">
+
+    <div class="team-moment-top">
+      <div class="eyebrow eyebrow-light">The Home Team</div>
+      <div class="rule rule-center rule-light"></div>
+      <h2 class="sec-h2 sec-h2-light">When You Hire Home Team,<br>You Get the Whole Team.</h2>
+      <p class="sec-p sec-p-light">You're not hiring a single person to do a job. You're working with an entire organization — leadership, project managers, installers, and crew — all committed to protecting your home, communicating throughout the process, and standing behind everything we do.</p>
+    </div>
+
+    <div class="collage-wrap">
+      <img src="images/meet-the-team/team-photo-1.webp" alt="Home Team Home Solutions team — real candid moments from our crew" loading="lazy"/>
+    </div>
+
+    <p class="collage-caption">Real moments from a real team — Greater Houston's Home Team.</p>
+
+  </div>
+</section>
+
+<!-- ══ TEAM PANORAMIC ═══════════════════════════════════════════════════════ -->
+<section class="team-pano" aria-label="Home Team crew photo">
+  <div class="team-pano-copy-wrap">
+    <span class="eyebrow eyebrow-light">The People Behind the Work</span>
+    <div class="rule rule-center rule-light"></div>
+    <h2 class="sec-h2 sec-h2-light">Greater Houston's Home Team.</h2>
+    <p class="sec-p sec-p-light">From project managers to installation crews, every person wearing the Home Team name is committed to protecting your home and standing behind the work.</p>
+  </div>
+  <div class="team-pano-img-wrap">
+    <img src="public/images/home-team-team-photo.webp" alt="The Home Team Home Solutions crew — Greater Houston's local home improvement team" loading="lazy" width="1800" height="500"/>
+  </div>
+</section>
+
+<!-- ══ COMMUNITY ══════════════════════════════════════════════════════════ -->
+<section class="community">
+  <div class="community-inner">
+
+    <div class="community-img-wrap">
+      <img src="images/meet-the-team/community-photo.webp" alt="Home Team at the Greater Tomball Area Chamber of Commerce — local community involvement" loading="lazy"/>
+    </div>
+
+    <div class="community-text">
+      <div class="eyebrow">Established &amp; Local</div>
+      <div class="rule"></div>
+      <h2 class="sec-h2">We Don't Just Work Here.<br>We Live Here.</h2>
+
+      <p class="sec-p">Home Team isn't a national franchise or an out-of-town contractor chasing storm work. We're a Greater Houston company — headquartered in Tomball, rooted in this community, and invested in the relationships we build here.</p>
+
+      <p class="sec-p">We're members of the Greater Tomball Area Chamber of Commerce. We sponsor local events. We hire local. We know the neighborhoods, the builders, and the homeowners — because we're part of the same community we serve.</p>
+
+      <p class="sec-p">That's not a marketing line. It's the reason our reputation matters so much to us.</p>
+
+      <div class="community-stats">
+        <div class="c-stat">
+          <div class="c-stat-num">500+</div>
+          <div class="c-stat-label">Projects Completed</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat-num">5.0</div>
+          <div class="c-stat-label">Google Star Rating</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat-num">11+</div>
+          <div class="c-stat-label">Cities Served</div>
+        </div>
+        <div class="c-stat">
+          <div class="c-stat-num">1-Day</div>
+          <div class="c-stat-label">Most Installations</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ TRUST ══════════════════════════════════════════════════════════════ -->
+<section class="trust">
+  <div class="trust-inner">
+
+    <div class="trust-header">
+      <div class="eyebrow eyebrow-light">Why It Matters</div>
+      <div class="rule rule-center rule-light"></div>
+      <h2 class="sec-h2 sec-h2-light">A Company Built on Trust.<br>Every Single Day.</h2>
+      <p class="sec-p sec-p-light">The way a company treats its team is the way that team treats its customers. At Home Team, we build both with the same level of care.</p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.5 2 5.5 5 5.5 8.5c0 6 6.5 13 6.5 13s6.5-7 6.5-13C18.5 5 15.5 2 12 2z" stroke="#C81F25" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="8.5" r="2.5" stroke="#C81F25" stroke-width="1.6"/></svg>
+        </div>
+        <div class="trust-title">Local Relationships</div>
+        <div class="trust-desc">We live and work in the communities we serve. These aren't just project addresses — they're our neighbors' homes. That's not something we take lightly.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v7c0 5.5 3.9 10.7 9 12 5.1-1.3 9-6.5 9-12V6L12 2z" stroke="#C81F25" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 12l3 3 5-5" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="trust-title">Team Accountability</div>
+        <div class="trust-desc">Our reputation belongs to every person wearing the Home Team name. Our crew understands that and takes it as seriously as we do.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22c-5.5 0-10-4.5-10-10S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z" stroke="#C81F25" stroke-width="1.6"/><path d="M8 12l3 3 5-5" stroke="#C81F25" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="trust-title">Long-Term Trust</div>
+        <div class="trust-desc">We want to be the company homeowners feel confident calling back — and recommending to their family and friends without a second thought.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ═══════════════════════════════════════════════════════════ -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="eyebrow eyebrow-light">Welcome to the Home Team</div>
+    <div class="rule rule-center rule-light"></div>
+    <h2>Your Home Deserves a Team That Cares.</h2>
+    <p>Experience the difference of working with a company built around people, relationships, and genuine pride in the work we leave behind.</p>
+    <div class="final-btns">
+      <a href="estimate.html" class="btn-red">Start My Project</a>
+      <a href="tel:+18324223039" class="btn-ghost">Call Home Team</a>
+    </div>
+    <div class="cta-phone">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 2A1.5 1.5 0 014 .5h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.64 5.9a8.085 8.085 0 004.06 4.06l1.462-1.464a.5.5 0 01.506-.133l3.07.878A.5.5 0 0114 9.62V10.5a1.5 1.5 0 01-1.5 1.5C6.201 12 .5 6.299.5.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
+      Or call us directly: <a href="tel:+18324223039">(832) 422-3039</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>HOME TEAM HOME SOLUTIONS</h3>
+      <div class="footer-brand-sub">Roofing &middot; Windows &middot; Doors &middot; More</div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2.5A1.5 1.5 0 013.5 1h.879a.5.5 0 01.48.362l.878 3.07a.5.5 0 01-.133.506L4.04 6.4a9.085 9.085 0 004.56 4.56l.962-1.564a.5.5 0 01.506-.133l3.07.878A.5.5 0 0113 10.62V11.5a1.5 1.5 0 01-1.5 1.5C5.701 13 1 8.299 1 2.5z" stroke="#6b7280" stroke-width="1.2"/></svg>
+        <span>(832) 422-3039</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="#6b7280" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="#6b7280" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>thehometeamroofing@gmail.com</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a href="roofing.html">Roofing</a>
+      <a href="windows.html">Windows</a>
+      <a href="doors.html">Custom Doors</a>
+    </div>
+    <div class="footer-col">
+      <h4>Service Areas</h4>
+      <a href="service-areas.html">Tomball</a>
+      <a href="service-areas.html">The Woodlands</a>
+      <a href="service-areas.html">Spring</a>
+      <a href="service-areas.html">Conroe</a>
+      <a href="service-areas.html">Cypress</a>
+      <a href="service-areas.html">Katy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="financing.html">Financing</a>
+      <a href="meet-the-team.html">Meet the Team</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:flex-end">
+      <div class="footer-htr">
+        <div class="footer-htr-div">Proudly Serving</div>
+        <div class="footer-htr-name">GREATER<br>HOUSTON</div>
+        <div class="footer-htr-line"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Home Team Home Solutions. All Rights Reserved.</p>
+    <p>Houston, TX &nbsp;&middot;&nbsp; Licensed &amp; Insured</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var hbg = document.getElementById('hamburger');
+  var drw = document.getElementById('mobDrawer');
+  var cls = document.getElementById('mobClose');
+  if (hbg && drw && cls) {
+    hbg.addEventListener('click', function () { drw.classList.add('open'); });
+    cls.addEventListener('click', function () { drw.classList.remove('open'); });
+    drw.addEventListener('click', function (e) { if (e.target === drw) drw.classList.remove('open'); });
+  }
+  var st = document.getElementById('mobSvcToggle');
+  var ss = document.getElementById('mobSvc');
+  if (st && ss) { st.addEventListener('click', function () { ss.classList.toggle('open'); }); }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+})();
+
+/* ── VIDEO PLAYER ── */
+(function () {
+  var vids = [
+    { vid: 'v1', overlay: 'v1overlay', poster: 'v1poster', label: 'v1label', featured: true },
+    { vid: 'v2', overlay: 'v2overlay', poster: 'v2poster', featured: false },
+    { vid: 'v3', overlay: 'v3overlay', poster: 'v3poster', featured: false },
+    { vid: 'v4', overlay: 'v4overlay', poster: 'v4poster', featured: false },
+    { vid: 'v5', overlay: 'v5overlay', poster: 'v5poster', featured: false },
+    { vid: 'v6', overlay: 'v6overlay', poster: 'v6poster', featured: false }
+  ];
+
+  function pauseAll(except) {
+    vids.forEach(function (cfg) {
+      if (cfg.vid === except) return;
+      var el = document.getElementById(cfg.vid);
+      var ov = document.getElementById(cfg.overlay);
+      var po = document.getElementById(cfg.poster);
+      if (!el) return;
+      if (!el.paused) el.pause();
+      if (el.readyState > 0) el.currentTime = 0;
+      el.style.display = 'none';
+      if (po) po.style.display = 'block';
+      if (ov) ov.classList.remove('hidden');
+    });
+  }
+
+  vids.forEach(function (cfg) {
+    var vidEl = document.getElementById(cfg.vid);
+    var ovEl = document.getElementById(cfg.overlay);
+    var poEl = document.getElementById(cfg.poster);
+    var lblEl = cfg.label ? document.getElementById(cfg.label) : null;
+    if (!vidEl || !ovEl) return;
+
+    ovEl.addEventListener('click', function () {
+      pauseAll(cfg.vid);
+      vidEl.style.display = 'block';
+      if (poEl) poEl.style.display = 'none';
+      if (lblEl) lblEl.style.display = 'none';
+      ovEl.classList.add('hidden');
+      vidEl.play();
+    });
+
+    vidEl.addEventListener('pause', function () {
+      if (vidEl.ended) return;
+      ovEl.classList.remove('hidden');
+    });
+
+    vidEl.addEventListener('ended', function () {
+      vidEl.style.display = 'none';
+      if (poEl) poEl.style.display = 'block';
+      if (lblEl) lblEl.style.display = '';
+      ovEl.classList.remove('hidden');
+    });
+  });
+})();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
+</script>
+</body>
+</html>

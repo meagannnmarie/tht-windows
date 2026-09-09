@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="images/hometeamroofinglogo.png"/>
 <title>Free In-Home Estimate | Home Team Home Solutions — Houston, TX</title>
 <meta name="description" content="Schedule your free in-home consultation with Home Team Home Solutions. We offer roofing, window, and custom door services throughout Greater Houston. No pressure, no obligation."/>
-<link rel="canonical" href="https://thtwindows.com/contact.html"/>
+<link rel="canonical" href="https://ththomesolutions.com/contact"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ththomesolutions.com/contact"/>
+<meta property="og:title" content="Free In-Home Estimate | Home Team Home Solutions — Houston, TX"/>
+<meta property="og:description" content="Schedule your free in-home consultation with Home Team Home Solutions. We offer roofing, window, and custom door services throughout Greater Houston. No pressure, no obligation."/>
+<meta property="og:image" content="https://ththomesolutions.com/images/websitepic.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -60,14 +66,20 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 @media(max-width:960px){.nav-links,.nav-right .nav-cta{display:none}.nav-hamburger{display:flex}nav{padding:0 20px;justify-content:space-between}}
 
 /* HERO */
-.hero{position:relative;min-height:440px;overflow:hidden;background:#040e1a;background-image:url("images/contactfinal.png");background-size:cover;background-repeat:no-repeat;background-position:center center;margin:0;padding:0}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(4,14,26,0.88) 0%,rgba(4,14,26,0.88) 22%,rgba(4,14,26,0.55) 38%,rgba(4,14,26,0.0) 58%)}
+.hero{position:relative;height:700px;background:var(--black);overflow:hidden;margin:0;padding:0}
+.hero-bg{position:absolute;inset:0;background-image:url('images/gallery4.png');background-size:cover;background-position:center 30%;background-repeat:no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 60%,rgba(0,0,0,.15) 100%)}
+.hero-overlay-l{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.44) 0%,rgba(0,0,0,.14) 42%,transparent 60%)}
 .hero-pattern{display:none}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;padding:32px 0 0 64px;max-width:500px}
-.hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.88);font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem}
-.hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,4vw,46px);color:#fff;line-height:1.12;letter-spacing:-.4px;margin-bottom:1.25rem}
-.hero h1 em{font-style:normal;color:var(--red)}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.72);line-height:1.75;max-width:520px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow-pill{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);padding:7px 15px;border-radius:3px;margin-bottom:1.375rem;width:fit-content}
+.hero-h1{font-family:'Inter',sans-serif;font-size:clamp(38px,4vw,51px);font-weight:700;line-height:0.85;letter-spacing:-0.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.hero-h1 em{font-style:normal;color:var(--red)}
+.hero-tagline{font-size:clamp(14px,1.5vw,17px);color:rgba(255,255,255,.90);line-height:1.75;max-width:480px;text-shadow:0 1px 8px rgba(0,0,0,.22);margin-bottom:1.75rem}
+.hero-btns{display:flex;flex-wrap:nowrap;gap:0.625rem;margin-bottom:32px}
+.hero-cta-btn{background:#0F4C81;color:#fff;font-size:13px;font-weight:600;padding:11px 18px;border-radius:6px;border:none;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s}
+.hero-cta-btn:hover{background:#0c3d6a}
 
 /* STRIP */
 .strip{background:#fff;border-bottom:1px solid #e5e7eb;display:grid;grid-template-columns:repeat(3,1fr)}
@@ -173,8 +185,10 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   .contact-layout{grid-template-columns:1fr}
   .contact-sidebar{order:-1}
 }
+@media(max-width:900px){.hero-h1{letter-spacing:-1px}}
+@media(max-width:768px){.hero{height:auto;min-height:520px}.hero-content{padding:32px 24px 32px 24px;max-width:100%}}
+@media(max-width:640px){.hero-btns{flex-direction:column;gap:0.5rem}.hero-cta-btn{width:100%;justify-content:center;font-size:14px;padding:13px 16px}}
 @media(max-width:768px){
-  .hero h1{font-size:clamp(22px,5.5vw,30px)}
   .sec{padding:3rem 1.25rem}
   .form-row{grid-template-columns:1fr}
   .expect-grid{grid-template-columns:1fr}
@@ -211,13 +225,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <a href="roofing.html"><span class="dot"></span>Roofing</a>
         <a href="windows.html"><span class="dot"></span>Windows</a>
         <a href="doors.html"><span class="dot"></span>Custom Doors</a>
-        <a href="siding.html"><span class="dot"></span>Other Home Solutions</a>
       </div>
     </div>
     <a href="gallery.html">Gallery</a>
     <a href="financing.html">Financing</a>
     <a href="reviews.html">Reviews</a>
-    <a href="contact.html">About</a>
+    <a href="meet-the-team.html">Meet the Team</a>
     <a href="contact.html" class="active">Contact</a>
   </div>
   <div class="nav-right">
@@ -241,25 +254,28 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Home Solutions</a>
     </div>
     <a href="gallery.html" class="mob-link">Gallery</a>
     <a href="financing.html" class="mob-link">Financing</a>
     <a href="reviews.html" class="mob-link">Reviews</a>
-    <a href="contact.html" class="mob-link">About</a>
+    <a href="meet-the-team.html" class="mob-link">Meet the Team</a>
     <a href="contact.html" class="mob-link mob-active">Contact</a>
     <a href="estimate.html" class="mob-cta">Start My Project →</a>
   </div>
 </div>
 
 <!-- HERO -->
-<section class="hero" aria-label="Contact Home Team Home Solutions for your free in-home consultation — serving Greater Houston with premium roofing, windows, and custom doors.">
+<section class="hero" aria-label="Contact Home Team Home Solutions — serving Greater Houston with premium roofing, windows, and custom doors.">
   <div class="hero-bg"></div>
-  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-l"></div>
   <div class="hero-content">
-    <div class="hero-badge">Free In-Home Estimate</div>
-    <h1>Let's Talk About<br><em>Your Home</em></h1>
-    <p class="hero-sub">Tell us about your roofing, window, or custom door project, and a Home Team specialist will reach out to schedule your free, no-pressure in-home consultation. We proudly serve homeowners throughout Tomball, The Woodlands, Spring, Conroe, Cypress, Katy, and surrounding Greater Houston communities.</p>
+    <span class="hero-eyebrow-pill">Free In-Home Estimate</span>
+    <h1 class="hero-h1">Let's Talk About<br><em>Your Home</em></h1>
+    <p class="hero-tagline">Tell us about your roofing, window, or custom door project, and a Home Team specialist will reach out to schedule your free, no-pressure in-home consultation. We serve homeowners throughout Greater Houston and surrounding communities.</p>
+    <div class="hero-btns">
+      <button class="hero-cta-btn" onclick="location.href='estimate.html'">Start My Project</button>
+    </div>
   </div>
 </section>
 
@@ -493,18 +509,12 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#6b7280" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#6b7280" stroke-width="1.2"/></svg>
         <span>11709 Boudreaux Road<br>Suite 1150<br>Tomball, Texas 77375</span>
       </div>
-      <div class="footer-social">
-        <a href="#" class="fsoc" aria-label="Facebook">f</a>
-        <a href="#" class="fsoc" aria-label="Instagram">ig</a>
-        <a href="#" class="fsoc" aria-label="Google">G</a>
-      </div>
     </div>
     <div class="footer-col">
       <h4>Our Services</h4>
       <a href="roofing.html">Roofing</a>
       <a href="windows.html">Windows</a>
       <a href="doors.html">Custom Doors</a>
-      <a href="siding.html">Other Solutions</a>
       <a href="gallery.html">Project Gallery</a>
     </div>
     <div class="footer-col">
@@ -554,11 +564,11 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
   }
 })();
 
-/* ── Project Inquiry Form → /api/submit-inquiry ───────────────────────────── */
+/* ── Contact Form — captured by HighLevel External Tracking ────────── */
 (function(){
-  var form   = document.getElementById('inquiry-form');
-  var btn    = document.getElementById('inquiry-submit');
-  var msgEl  = document.getElementById('inquiry-msg');
+  var form  = document.getElementById('inquiry-form');
+  var btn   = document.getElementById('inquiry-submit');
+  var msgEl = document.getElementById('inquiry-msg');
   if (!form || !btn || !msgEl) return;
 
   function showMsg(text, type) {
@@ -570,7 +580,6 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
     e.preventDefault();
     if (btn.disabled) return;
 
-    // ── Client-side validation ────────────────────────────────────────────────
     var firstName = (document.getElementById('first-name').value || '').trim();
     var lastName  = (document.getElementById('last-name').value  || '').trim();
     var email     = (document.getElementById('email').value      || '').trim();
@@ -586,64 +595,20 @@ footer{background:#111827;padding:3rem 2.5rem 1.75rem}
       showMsg('Please enter a valid email address.', 'error'); return;
     }
 
-    // ── Loading state ─────────────────────────────────────────────────────────
-    btn.disabled    = true;
-    btn.textContent = 'Sending…';
-    msgEl.className = 'inquiry-msg';
-
-    // ── Build payload ─────────────────────────────────────────────────────────
-    var hp = document.getElementById('_hp');
-    var payload = {
-      firstName:       firstName,
-      lastName:        lastName,
-      email:           email,
-      phone:           phone,
-      city:            (document.getElementById('city').value    || '').trim(),
-      numberOfWindows: (document.getElementById('windows').value || '').trim(),
-      message:         (document.getElementById('message').value || '').trim(),
-      zipCode:         '',
-      serviceType:     '',
-      projectTimeline: '',
-      _hp:             hp ? hp.value : '',
-      pageUrl:         window.location.href,
-    };
-
-    // ── POST to server-side endpoint ──────────────────────────────────────────
-    fetch('/api/submit-inquiry', {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(payload),
-    })
-    .then(function(res) {
-      return res.json().then(function(data) {
-        return { status: res.status, data: data };
-      });
-    })
-    .then(function(result) {
-      if (result.status === 200 && result.data.ok) {
-        // Success — hide form, show confirmation
-        form.style.display = 'none';
-        msgEl.innerHTML = '<strong>Thank you!</strong> Your request has been received. ' +
-          'A Home Team specialist will contact you within one business day.';
-        msgEl.className = 'inquiry-msg inquiry-msg--success';
-      } else {
-        // Server-side validation or webhook error
-        btn.disabled    = false;
-        btn.textContent = 'Request My Free Estimate';
-        showMsg(
-          (result.data && result.data.error) ||
-          'Something went wrong. Please try again or call us at (832) 422-3039.',
-          'error'
-        );
-      }
-    })
-    .catch(function() {
-      btn.disabled    = false;
-      btn.textContent = 'Request My Free Estimate';
-      showMsg('Unable to submit your request. Please try again or call (832) 422-3039.', 'error');
-    });
+    // HL External Tracking captures the submit event independently.
+    // Show local success state only — no network request sent here.
+    btn.disabled = true;
+    form.style.display = 'none';
+    msgEl.innerHTML = '<strong>Thank you!</strong> Your request has been received. ' +
+      'A Home Team specialist will contact you within one business day.';
+    msgEl.className = 'inquiry-msg inquiry-msg--success';
   });
 })();
+</script>
+
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
 </script>
 </body>
 </html>
