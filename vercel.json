@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": null,
+  "buildCommand": "node generate-sitemap.js",
   "outputDirectory": ".",
   "cleanUrls": true,
   "headers": [

@@ -4,6 +4,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "scripts": {
+    "build": "node generate-sitemap.js"
+  },
   "devDependencies": {
     "sharp": "^0.35.3"
   }
