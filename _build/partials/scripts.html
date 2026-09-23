@@ -1,0 +1,82 @@
+<script>
+(function(){
+  /* ── Mobile nav drawer ── */
+  var hamburger = document.getElementById('hamburger');
+  var drawer    = document.getElementById('mobDrawer');
+  var closeBtn  = document.getElementById('mobClose');
+  if(hamburger && drawer && closeBtn){
+    hamburger.addEventListener('click', function(){
+      drawer.classList.add('open');
+      hamburger.setAttribute('aria-expanded','true');
+    });
+    closeBtn.addEventListener('click', function(){
+      drawer.classList.remove('open');
+      hamburger.setAttribute('aria-expanded','false');
+    });
+    drawer.addEventListener('click', function(e){
+      if(e.target === drawer){
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded','false');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && drawer.classList.contains('open')){
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded','false');
+        hamburger.focus();
+      }
+    });
+  }
+
+  /* ── Mobile services sub-menu ── */
+  var svcToggle = document.getElementById('mobSvcToggle');
+  var svcMenu   = document.getElementById('mobSvc');
+  if(svcToggle && svcMenu){
+    svcToggle.addEventListener('click', function(){
+      var isOpen = svcMenu.classList.toggle('open');
+      svcToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  /* ── Scroll reveal ── */
+  var revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+  if(revealEls.length){
+    var revealObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -48px 0px' });
+    revealEls.forEach(function(el){ revealObs.observe(el); });
+  }
+
+  /* ── FAQ accordion ── */
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item){
+    var btn    = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+    if(!btn || !answer) return;
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      faqItems.forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-question').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+<script
+  defer
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
+</script>

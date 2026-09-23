@@ -1,0 +1,61 @@
+<!-- ── NAV ── -->
+<!-- NOTE: In the nav-drop-menu, mark the active service with class="nav-active"
+     and in mob-sub mark the active link with class="mob-active" -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="Home Team Home Solutions — Home">
+    <img src="/images/hometeamroofinglogo.png" alt="Home Team Home Solutions" class="nav-logo-img"/>
+    <div class="nav-brand">
+      <div class="nav-brand-name">Home Team</div>
+      <div class="nav-brand-sub">Home Solutions</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" aria-haspopup="true" aria-expanded="false">
+        Home Improvements
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="#0d0d0d" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-drop-menu">
+        <a href="/roofing"><span class="dot"></span>Roofing</a>
+        <a href="/windows"><span class="dot"></span>Windows</a>
+        <a href="/doors"><span class="dot"></span>Custom Doors</a>
+      </div>
+    </div>
+    <a href="/gallery">Gallery</a>
+    <a href="/financing">Financing</a>
+    <a href="/reviews">Reviews</a>
+    <a href="/meet-the-team">Meet the Team</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <a href="/estimate" class="nav-cta">
+      Start My Project
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE DRAWER ── -->
+<div class="mob-drawer" id="mobDrawer" role="dialog" aria-label="Navigation menu">
+  <div class="mob-panel">
+    <button class="mob-close" id="mobClose" aria-label="Close navigation menu">&#x2715;</button>
+    <a href="/" class="mob-link">Home</a>
+    <button class="mob-expand" id="mobSvcToggle" aria-expanded="false">Home Improvements ›</button>
+    <div class="mob-sub" id="mobSvc">
+      <a href="/roofing">Roofing</a>
+      <a href="/windows">Windows</a>
+      <a href="/doors">Custom Doors</a>
+    </div>
+    <a href="/gallery" class="mob-link">Gallery</a>
+    <a href="/financing" class="mob-link">Financing</a>
+    <a href="/reviews" class="mob-link">Reviews</a>
+    <a href="/meet-the-team" class="mob-link">Meet the Team</a>
+    <a href="/contact" class="mob-link">Contact</a>
+    <a href="https://payzer.com/Payment/ExternalMake/businessId/9487" class="mob-link" target="_blank" rel="noopener noreferrer">Payments</a>
+    <a href="/estimate" class="mob-cta">Start My Project →</a>
+  </div>
+</div>

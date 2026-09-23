@@ -1,20 +1,633 @@
 {
   "version": 2,
-  "buildCommand": "node generate-sitemap.js",
-  "outputDirectory": ".",
+  "buildCommand": "node _build/lib/generate.js",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "headers": [
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/videos/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/images/64529def-657c-439e-9e93-e913f01eff07.png",
+      "destination": "/images/64529def-657c-439e-9e93-e913f01eff07.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/archshingles.png",
+      "destination": "/images/archshingles.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/awning.png",
+      "destination": "/images/awning.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/brownroofshingles.png",
+      "destination": "/images/brownroofshingles.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/casement.png",
+      "destination": "/images/casement.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/cedar.png",
+      "destination": "/images/cedar.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/changehero.png",
+      "destination": "/images/changehero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/clearglass.png",
+      "destination": "/images/clearglass.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/commericalroofing.png",
+      "destination": "/images/commericalroofing.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/conroe.png",
+      "destination": "/images/conroe.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/contactfinal.png",
+      "destination": "/images/contactfinal.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/contacthero.png",
+      "destination": "/images/contacthero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/contactupdate.png",
+      "destination": "/images/contactupdate.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/contemporary.png",
+      "destination": "/images/contemporary.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/contemporary2.png",
+      "destination": "/images/contemporary2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/custom.png",
+      "destination": "/images/custom.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/custom2.png",
+      "destination": "/images/custom2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/customdoorshero2.png",
+      "destination": "/images/customdoorshero2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/cypress.png",
+      "destination": "/images/cypress.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/doorhero3.png",
+      "destination": "/images/doorhero3.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/doorhero4.png",
+      "destination": "/images/doorhero4.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/doorsectionhero.png",
+      "destination": "/images/doorsectionhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/doorshero.png",
+      "destination": "/images/doorshero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/doublehung.png",
+      "destination": "/images/doublehung.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/espresso.png",
+      "destination": "/images/espresso.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/farmheronew.png",
+      "destination": "/images/farmheronew.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/farmhouse.png",
+      "destination": "/images/farmhouse.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/farmhouse2.png",
+      "destination": "/images/farmhouse2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/farmhouseupdate.png",
+      "destination": "/images/farmhouseupdate.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/finalfinancinghero.png",
+      "destination": "/images/finalfinancinghero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/finalhero.png",
+      "destination": "/images/finalhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/finalwindowshero.png",
+      "destination": "/images/finalwindowshero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/finance2.png",
+      "destination": "/images/finance2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/financefinal.png",
+      "destination": "/images/financefinal.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/financehero.png",
+      "destination": "/images/financehero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/financehero4.png",
+      "destination": "/images/financehero4.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/financeherofinal.png",
+      "destination": "/images/financeherofinal.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/financereplacement.png",
+      "destination": "/images/financereplacement.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/financinghero.png",
+      "destination": "/images/financinghero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/firstresponse.png",
+      "destination": "/images/firstresponse.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/frostedglass.png",
+      "destination": "/images/frostedglass.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gallery3.png",
+      "destination": "/images/gallery3.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gallery4.png",
+      "destination": "/images/gallery4.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gallery5.png",
+      "destination": "/images/gallery5.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gallery6.png",
+      "destination": "/images/gallery6.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gallery8.png",
+      "destination": "/images/gallery8.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/galleryhero.png",
+      "destination": "/images/galleryhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/galleryhome.png",
+      "destination": "/images/galleryhome.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gallerylightened.png",
+      "destination": "/images/gallerylightened.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/galleryphotofinal.png",
+      "destination": "/images/galleryphotofinal.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/galleryreplace.png",
+      "destination": "/images/galleryreplace.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/geometric.png",
+      "destination": "/images/geometric.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/glass.png",
+      "destination": "/images/glass.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gray.png",
+      "destination": "/images/gray.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/gutters.png",
+      "destination": "/images/gutters.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/hammeredglass.png",
+      "destination": "/images/hammeredglass.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/hero2.png",
+      "destination": "/images/hero2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/heroupdated.png",
+      "destination": "/images/heroupdated.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/hillcountry.png",
+      "destination": "/images/hillcountry.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/home1.png",
+      "destination": "/images/home1.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/home2.png",
+      "destination": "/images/home2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/home3.png",
+      "destination": "/images/home3.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/homegallery.png",
+      "destination": "/images/homegallery.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/homepage.png",
+      "destination": "/images/homepage.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/homepagereplace.png",
+      "destination": "/images/homepagereplace.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/katy.png",
+      "destination": "/images/katy.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/laptophero.png",
+      "destination": "/images/laptophero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/lastgallery.png",
+      "destination": "/images/lastgallery.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/luxury.png",
+      "destination": "/images/luxury.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/luxuryestate.png",
+      "destination": "/images/luxuryestate.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/luxuryhero1.png",
+      "destination": "/images/luxuryhero1.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/luxuryshingles.png",
+      "destination": "/images/luxuryshingles.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/luxurywindowspage.png",
+      "destination": "/images/luxurywindowspage.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/mahogany.png",
+      "destination": "/images/mahogany.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/memorial.png",
+      "destination": "/images/memorial.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/metalroofing.png",
+      "destination": "/images/metalroofing.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/mobilehero.png",
+      "destination": "/images/mobilehero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/natural.png",
+      "destination": "/images/natural.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/new2.png",
+      "destination": "/images/new2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/newbow.png",
+      "destination": "/images/newbow.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/newcontemporary.png",
+      "destination": "/images/newcontemporary.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/newheader.png",
+      "destination": "/images/newheader.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/newhero.png",
+      "destination": "/images/newhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/newhouse.png",
+      "destination": "/images/newhouse.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/noclouds.png",
+      "destination": "/images/noclouds.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/picturewindow.png",
+      "destination": "/images/picturewindow.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/Rain.png",
+      "destination": "/images/Rain.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/Reeded.png",
+      "destination": "/images/Reeded.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/replacehero.png",
+      "destination": "/images/replacehero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/reviewspage.png",
+      "destination": "/images/reviewspage.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/roofhomepage.png",
+      "destination": "/images/roofhomepage.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/roofing1.png",
+      "destination": "/images/roofing1.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/roofingcloseup.png",
+      "destination": "/images/roofingcloseup.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/RoofingNewestHero.png",
+      "destination": "/images/RoofingNewestHero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/roofingpage1.png",
+      "destination": "/images/roofingpage1.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/Roofingpagephoto.png",
+      "destination": "/images/Roofingpagephoto.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/Roofingpghero.png",
+      "destination": "/images/Roofingpghero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/roofingwinnerhero.png",
+      "destination": "/images/roofingwinnerhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/satinetched.png",
+      "destination": "/images/satinetched.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/serviceareahero.png",
+      "destination": "/images/serviceareahero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/servicemap.png",
+      "destination": "/images/servicemap.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/sleekwindowsphoto.png",
+      "destination": "/images/sleekwindowsphoto.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/stormdamageroofing.png",
+      "destination": "/images/stormdamageroofing.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/sugarland.png",
+      "destination": "/images/sugarland.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/tanheronew.png",
+      "destination": "/images/tanheronew.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/testhero.png",
+      "destination": "/images/testhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/thewoodlands2.png",
+      "destination": "/images/thewoodlands2.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/tomball.png",
+      "destination": "/images/tomball.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/upclosedoorhero.png",
+      "destination": "/images/upclosedoorhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/updatedhero.png",
+      "destination": "/images/updatedhero.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/updatedoor.png",
+      "destination": "/images/updatedoor.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/walnut.png",
+      "destination": "/images/walnut.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowestimatephoto.png",
+      "destination": "/images/windowestimatephoto.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowfinal.png",
+      "destination": "/images/windowfinal.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowheaderreplacement.png",
+      "destination": "/images/windowheaderreplacement.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowsfixed.png",
+      "destination": "/images/windowsfixed.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowsfrontpage.png",
+      "destination": "/images/windowsfrontpage.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowsheader.png",
+      "destination": "/images/windowsheader.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowsheroforsite.png",
+      "destination": "/images/windowsheroforsite.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowsreplacement.png",
+      "destination": "/images/windowsreplacement.webp",
+      "permanent": true
+    },
+    {
+      "source": "/images/windowstest.png",
+      "destination": "/images/windowstest.webp",
+      "permanent": true
     }
   ]
 }
