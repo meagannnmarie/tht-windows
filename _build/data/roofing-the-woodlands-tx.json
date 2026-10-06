@@ -2,10 +2,10 @@
   "_comment": "Location data for roofing/the-woodlands-tx.html — feed into local-roofing.html template",
 
   "meta": {
-    "title": "Roofing in The Woodlands, TX | Home Team Home Solutions",
-    "description": "Expert residential roofing in The Woodlands, TX. Free roof inspections, hail and storm damage support, warranty-backed installation, and flexible financing. Serving The Woodlands and surrounding Montgomery County communities.",
-    "canonical": "https://ththomesolutions.com/roofing/the-woodlands-tx",
-    "og_image": "https://ththomesolutions.com/images/websitepic.png"
+    "title": "Roofing Contractor The Woodlands TX | Free Inspections | THT Home Solutions",
+    "description": "Expert residential roofing in The Woodlands, TX. Free roof inspections, storm and hail damage restoration, warranty-backed installation, and flexible financing. GAF Master Elite contractor serving The Woodlands and Montgomery County.",
+    "canonical": "https://hometeamroof.com/roofing/the-woodlands-tx",
+    "og_image": "https://hometeamroof.com/images/websitepic.png"
   },
 
   "location": {
@@ -19,10 +19,10 @@
 
   "hero": {
     "eyebrow": "The Woodlands, TX · Roofing",
-    "h1_line1": "Roofing Built",
-    "h1_line2": "for The Woodlands.",
-    "tagline": "Free inspections, storm damage support, and warranty-backed installation for The Woodlands homeowners. Call (832) 422-3039 or schedule online today.",
-    "mob_tagline": "Free inspections, storm damage support, and warranty-backed installation for The Woodlands homeowners.",
+    "h1_line1": "Premium Roofing in",
+    "h1_line2": "The Woodlands, TX",
+    "tagline": "Roof replacement, repairs &amp; storm restoration from a GAF Master Elite roofing team.",
+    "mob_tagline": "Roof replacement, repairs &amp; storm restoration from a GAF Master Elite roofing team.",
     "trust_items": ["Free Roof Inspections", "Serving The Woodlands", "Warranty-Backed Work"],
     "mob_trust_items": ["Free Inspections", "Warranty-Backed", "Local Team"],
     "image": "/images/thewoodlands2.webp",
@@ -38,7 +38,7 @@
 
   "intro": {
     "eyebrow": "The Woodlands, TX",
-    "heading": "Local Roofing Experience for The Woodlands Homeowner",
+    "heading": "Roofing Built for The Woodlands",
     "body_p1": "The Woodlands presents a distinct set of roofing challenges. Dense tree canopy accelerates moisture and debris accumulation on shingles. Seasonal hailstorms — common across Montgomery County — can compromise roofs that appear undamaged from the ground. And the intense heat and humidity of the Houston area puts ongoing stress on every component of a residential roofing system.",
     "body_p2": "Home Team works with homeowners throughout The Woodlands to assess their current roof, identify what needs attention, and deliver honest recommendations — whether that is a targeted repair or a full replacement built to handle whatever Texas weather brings next.",
     "callout_label": "Serving The Woodlands &amp; Surrounding Areas",
@@ -49,24 +49,15 @@
     "badge_span": "The Woodlands, TX"
   },
 
-  "services_heading": "What Home Team Delivers in The Woodlands",
+  "services_heading": "Roofing Services for The Woodlands Homeowners",
   "services_sub": "From free inspections through complete installations, Home Team handles every phase of residential roofing in The Woodlands, TX.",
 
-  "systems": {
-    "heading": "Roofing Systems Designed for The Woodlands Climate",
-    "sub": "The combination of summer heat, humidity, and storm seasons demands roofing solutions built to last. Home Team recommends and installs systems proven in the Houston area."
-  },
-
-  "storm": {
-    "heading": "The Woodlands Gets Hail. Home Team Is Ready.",
-    "sub": "Montgomery County experiences some of the most active severe weather in Texas. After a storm passes, Home Team can inspect your roof, document visible damage, and walk you through your options — clearly, and without pressure.",
-    "aside_heading": "Hail or Wind Damage in The Woodlands? Don't Wait.",
-    "aside_body": "Even minor storm damage can worsen quickly in the Texas heat and humidity. A free inspection gives you the facts — no obligation to proceed with any work."
-  },
-
-  "install": {
-    "process_body_p1": "Home Team works efficiently to protect your property and minimize disruption to your daily life throughout every roofing project in The Woodlands. Protective tarps are laid before work begins. Old materials are removed and disposed of properly. Your property is thoroughly cleaned at the end of every project day.",
-    "cta_label": "Schedule a Free Inspection in The Woodlands"
+  "process": {
+    "heading": "A Better Roof Replacement Experience",
+    "sub": "From the first call to the final walkthrough, every Home Team project in The Woodlands follows a clear, homeowner-friendly process.",
+    "step1_p": "Contact Home Team to schedule a no-cost roof inspection in The Woodlands. We assess your shingles, flashing, decking, and ventilation — then document everything clearly for you.",
+    "step2_p": "We walk through our findings together using photos and plain language. No roofing jargon, no pressure — just an honest picture of what your roof needs and what it will cost.",
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. We handle material selection, scheduling, and required permits so you don't have to."
   },
 
   "financing": {
@@ -74,78 +65,70 @@
     "sub": "Flexible financing options available to The Woodlands homeowners. Ask during your free inspection."
   },
 
-  "process": {
-    "heading": "A Clearer Path to a Better Roof",
-    "sub": "Getting a new roof in The Woodlands should feel straightforward. Home Team keeps the process simple, transparent, and stress-free.",
-    "step1_p": "Contact Home Team to arrange a no-cost roof inspection in The Woodlands. No obligation, no pressure — just clear information about your roof's condition.",
-    "step2_p": "We walk you through our findings and your roofing options in plain language — so you can make an informed decision with confidence.",
-    "step3_p": "Your roof is installed by an experienced crew, with a final walkthrough completed together before we call the project done."
-  },
-
   "faq": {
-    "heading": "Roofing in The Woodlands — Answered",
+    "heading": "Roofing Questions — Answered",
     "items": [
       {
-        "q": "Does Home Team serve The Woodlands, TX?",
-        "a": "Yes. The Woodlands is one of Home Team's primary service areas. The team regularly completes roofing projects throughout The Woodlands and surrounding Montgomery County communities including Spring, Tomball, Conroe, and Cypress."
+        "q": "How do I know if I need a roof repair or a full replacement?",
+        "a": "A repair is usually appropriate when damage is localized — a few missing shingles, isolated flashing issues, or a small leak with an identifiable source. Replacement becomes the better investment when a roof is aging (typically 15–20+ years for standard asphalt shingles in the Texas climate), when damage is widespread, or when repeated repairs are adding up. Home Team will assess your specific roof and give you an honest recommendation — not a sales pitch. The only way to know for certain is a proper inspection."
       },
       {
-        "q": "What roofing services does Home Team offer in The Woodlands?",
-        "a": "Home Team provides residential roof replacements, free roof inspections, storm and hail damage assessment and restoration, roof repairs, and commercial roofing services throughout The Woodlands, TX."
+        "q": "What should I do after a hailstorm in The Woodlands?",
+        "a": "First, avoid getting on the roof yourself — storm damage is not always visible from the ground and wet surfaces are dangerous. Look for obvious signs like dented gutters, cracked or missing shingles, or granules in your downspouts. Then schedule a professional inspection as soon as possible. Storm damage can worsen quickly in the Texas heat and humidity, and timely documentation matters. Home Team offers free post-storm inspections in The Woodlands with no obligation to proceed."
       },
       {
-        "q": "Are roof inspections free in The Woodlands?",
-        "a": "Yes. Home Team offers free roof inspections to homeowners in The Woodlands with no obligation to proceed. An inspection gives you a clear picture of your roof's current condition — shingles, flashing, ventilation, and underlying structure — before you make any decisions."
+        "q": "How long does roof replacement typically take?",
+        "a": "Most residential roof replacements in The Woodlands are completed in one to two days, depending on the size and complexity of the roof, the materials selected, and the weather. Home Team will give you a clear timeline before work begins. The crew protects your property throughout the project and completes a thorough cleanup before each day ends."
       },
       {
-        "q": "How does Home Team handle storm or hail damage in The Woodlands?",
-        "a": "After a storm, Home Team can inspect your roof, document visible damage with photos and a written assessment, walk you through your repair or replacement options, and support you through the restoration process. Insurance coverage decisions are made solely by your carrier — Home Team does not guarantee claim outcomes, but we will support you clearly every step of the way."
+        "q": "What roofing materials work best for Texas weather?",
+        "a": "For The Woodlands climate — intense summer heat, high UV exposure, and active hail and storm seasons — Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed attic ventilation system. Class 4 impact-rated shingles also qualify for insurance discounts under many Texas policies. Your inspector will walk you through the options that fit your home, any applicable HOA requirements, and your budget."
       },
       {
-        "q": "What roofing materials work best for The Woodlands climate?",
-        "a": "The Woodlands experiences intense summer heat, high humidity, and frequent severe storm seasons with hail and high winds. Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed ventilation system. Our team will walk you through the options best suited to your specific home, HOA requirements if applicable, and budget — during your free inspection."
+        "q": "Does Home Team offer free roof inspections in The Woodlands?",
+        "a": "Yes. Home Team provides free, no-obligation roof inspections to homeowners in The Woodlands and throughout Montgomery County. An inspection covers your shingles, flashing, gutters, decking condition, and attic ventilation. You receive honest findings and clear options — no pressure to proceed with any work."
       },
       {
-        "q": "Does Home Team offer financing for roofing projects in The Woodlands?",
-        "a": "Yes. Home Team offers flexible financing options to help The Woodlands homeowners manage the cost of a roofing project. Ask about available payment plans during your free inspection or visit the <a href=\"/financing\" style=\"color:var(--red);text-decoration:none;font-weight:600\">financing page</a> to learn more."
+        "q": "Is financing available for roofing projects in The Woodlands?",
+        "a": "Yes. Home Team offers flexible financing options to help The Woodlands homeowners manage the cost of a roofing project without delay. Ask about available payment plans during your free inspection or visit the <a href=\"/financing\" style=\"color:var(--red);text-decoration:none;font-weight:600\">financing page</a> for more information."
       }
     ]
   },
 
   "final_cta": {
     "eyebrow": "The Woodlands, TX",
-    "heading": "Your Woodlands Home Deserves a Roof You Can Depend On.",
-    "sub": "Schedule a free inspection and let the Home Team guide you through the next step — honest recommendations, warranty-backed craftsmanship, and service built around you."
+    "heading": "Protect Your Home. Start With Your Roof.",
+    "sub": "A free inspection is the first step. Let Home Team assess your roof's condition, walk you through your options honestly, and get started — no pressure, no obligation."
   },
 
   "schema": {
     "breadcrumb_item3_name": "The Woodlands, TX",
     "service_name": "Roofing Services in The Woodlands, TX",
     "service_area_city": "The Woodlands",
-    "service_description": "Residential roofing services in The Woodlands, TX including free inspections, full roof replacements, storm and hail damage restoration, and warranty-backed installation.",
+    "service_description": "Residential roofing services in The Woodlands, TX including free inspections, full roof replacements, storm and hail damage restoration, roof repairs, and warranty-backed installation.",
     "faq_schema": [
       {
-        "q": "Does Home Team serve The Woodlands, TX?",
-        "a": "Yes. The Woodlands is one of Home Team's primary service areas. The team regularly completes roofing projects throughout The Woodlands and surrounding Montgomery County communities."
+        "q": "How do I know if I need a roof repair or a full replacement?",
+        "a": "A repair is usually appropriate when damage is localized — a few missing shingles or isolated flashing issues. Replacement becomes the better investment when a roof is aging (typically 15–20+ years for asphalt shingles in the Texas climate), when damage is widespread, or when repeated repairs are adding up. A professional inspection is the only reliable way to know."
       },
       {
-        "q": "What roofing services does Home Team offer in The Woodlands?",
-        "a": "Home Team provides residential roof replacements, free roof inspections, storm and hail damage assessment and restoration, roof repairs, and commercial roofing services in The Woodlands, TX."
+        "q": "What should I do after a hailstorm in The Woodlands?",
+        "a": "Avoid getting on the roof yourself. Look for obvious signs like dented gutters or granules in downspouts. Schedule a professional inspection as soon as possible — storm damage can worsen quickly in the Texas heat and humidity. Home Team offers free post-storm inspections in The Woodlands with no obligation."
       },
       {
-        "q": "Are roof inspections free in The Woodlands?",
-        "a": "Yes. Home Team offers free roof inspections to homeowners in The Woodlands with no obligation to proceed. An inspection gives you a clear picture of your roof's condition before you make any decisions."
+        "q": "How long does roof replacement typically take?",
+        "a": "Most residential roof replacements are completed in one to two days, depending on the size and complexity of the roof and the materials selected. Home Team provides a clear timeline before work begins."
       },
       {
-        "q": "How does Home Team handle storm or hail damage in The Woodlands?",
-        "a": "After a storm, Home Team can inspect your roof, document visible damage with photos and a written assessment, walk you through your repair or replacement options, and support you through the restoration process. Insurance coverage decisions are made solely by your carrier — we do not guarantee claim outcomes."
+        "q": "What roofing materials work best for Texas weather?",
+        "a": "For The Woodlands climate, Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed attic ventilation system. Class 4 impact-rated shingles also qualify for insurance discounts under many Texas policies."
       },
       {
-        "q": "What roofing materials work best for The Woodlands climate?",
-        "a": "The Woodlands experiences intense summer heat, high humidity, and severe storm seasons with hail and high winds. Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, with proper ventilation and underlayment suited to the Houston-area climate. Our team will walk you through the options that fit your home and budget."
+        "q": "Does Home Team offer free roof inspections in The Woodlands?",
+        "a": "Yes. Home Team provides free, no-obligation roof inspections to homeowners in The Woodlands and throughout Montgomery County. An inspection covers shingles, flashing, gutters, decking, and attic ventilation — with honest findings and clear options."
       },
       {
-        "q": "Does Home Team offer financing for roofing in The Woodlands?",
+        "q": "Is financing available for roofing projects in The Woodlands?",
         "a": "Yes. Home Team offers flexible financing options to help The Woodlands homeowners manage the cost of a roofing project. Contact us or visit the financing page to learn about available payment plans."
       }
     ]

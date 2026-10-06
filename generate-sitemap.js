@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://ththomesolutions.com';
+const BASE_URL = 'https://hometeamroof.com';
 
 // Directories never scanned — assets, build artifacts, dev tooling, server code
 const SKIP_DIRS = new Set([

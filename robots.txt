@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ththomesolutions.com/sitemap.xml
+Sitemap: https://hometeamroof.com/sitemap.xml

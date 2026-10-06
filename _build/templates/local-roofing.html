@@ -12,7 +12,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="index, follow"/>
 <link rel="icon" type="image/png" href="/images/hometeamroofinglogo.png"/>
-<link rel="preload" as="image" href="{{HERO_IMAGE}}" fetchpriority="high">
+<link rel="preload" as="image" href="/images/mobilehero.webp" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="/images/hero2.webp" media="(min-width: 768px) and (max-width: 1199px)" fetchpriority="high">
+<link rel="preload" as="image" href="/images/laptophero.webp" media="(min-width: 1200px)" fetchpriority="high">
 <title>{{META_TITLE}}</title>
 <meta name="description" content="{{META_DESCRIPTION}}"/>
 <link rel="canonical" href="{{CANONICAL_URL}}"/>
@@ -26,8 +28,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://ththomesolutions.com/"},
-    {"@type":"ListItem","position":2,"name":"Roofing","item":"https://ththomesolutions.com/roofing"},
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://hometeamroof.com/"},
+    {"@type":"ListItem","position":2,"name":"Roofing","item":"https://hometeamroof.com/roofing"},
     {"@type":"ListItem","position":3,"name":"{{CITY_STATE}}","item":"{{CANONICAL_URL}}"}
   ]
 }
@@ -41,7 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "@type": "LocalBusiness",
     "name": "{{businessName}}",
     "telephone": "{{PHONE_TEL}}",
-    "url": "https://ththomesolutions.com"
+    "url": "https://hometeamroof.com"
   },
   "serviceType": "Roofing",
   "areaServed": {
@@ -108,34 +110,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 {{PARTIAL:nav}}
 
 <!-- ══════════════════════════
-     1 · HERO
+     HERO
 ══════════════════════════ -->
 <section class="hero" aria-label="Roofing in {{CITY_STATE}}">
-  <img class="hero-mob-img" src="{{HERO_IMAGE}}" alt="{{HERO_IMAGE_ALT}}" fetchpriority="high">
-  <div class="hero-bg" style="background-image:url('{{HERO_IMAGE}}');background-position:{{HERO_IMAGE_POSITION}}" aria-hidden="true"></div>
+  <div class="hero-bg">
+    <picture>
+      <source media="(max-width: 767px)" srcset="/images/mobilehero.webp">
+      <source media="(max-width: 1199px)" srcset="/images/hero2.webp">
+      <img src="/images/laptophero.webp" alt="" aria-hidden="true" fetchpriority="high">
+    </picture>
+  </div>
   <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-overlay-l" aria-hidden="true"></div>
   <div class="hero-content">
-    <span class="hero-eyebrow-pill">{{HERO_EYEBROW}}</span>
-    <h1 class="hero-h1">{{HERO_H1_LINE1}}<br>{{HERO_H1_LINE2}}</h1>
+    <span class="hero-eyebrow">{{HERO_EYEBROW}}</span>
+    <h1 class="hero-h1">
+      <span class="line1">{{HERO_H1_LINE1}}</span>
+      <span class="line2">{{HERO_H1_LINE2}}</span>
+    </h1>
+    <div class="hero-rule"></div>
+    <div class="hero-financing"><span class="fin-red">0% APR</span> Financing Available</div>
     <p class="hero-tagline">{{HERO_TAGLINE}}</p>
     <div class="hero-btns">
-      <button class="btn-solid" onclick="location.href='/estimate'">Schedule Free Inspection</button>
-      <a class="btn-outline" href="tel:{{PHONE_TEL}}">Call {{PHONE_DISPLAY}}</a>
+      <a class="btn-gold" href="/estimate">
+        Get My Free Roof Inspection
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn-outline-white" href="tel:{{PHONE_TEL}}">
+        Call (832) 422-3039
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 2C3.5 2 4.5 3.5 4.5 5c0 .8-.5 1.5-.5 1.5S5.5 8.5 7 9.5c0 0 .7-.5 1.5-.5s2 1 2 1-.5 1.5-1.5 1-4-3-5-5-.5-3 0-4z" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
+    <a href="/financing" class="hero-fin-link">Explore Financing Options &rarr;</a>
     <div class="hero-trust-row" role="list">
-      <div class="hero-trust-item" role="listitem">
-        <span class="hero-trust-dot" aria-hidden="true"></span>
-        Free Roof Inspections
-      </div>
-      <div class="hero-trust-item" role="listitem">
-        <span class="hero-trust-dot" aria-hidden="true"></span>
-        Serving {{CITY}}
-      </div>
-      <div class="hero-trust-item" role="listitem">
-        <span class="hero-trust-dot" aria-hidden="true"></span>
-        Warranty-Backed Work
-      </div>
+      <div class="hero-trust-item" role="listitem"><span class="hero-trust-dot" aria-hidden="true"></span>4.9 Google Rating</div>
+      <div class="hero-trust-item" role="listitem"><span class="hero-trust-dot" aria-hidden="true"></span>552+ Reviews</div>
+      <div class="hero-trust-item" role="listitem"><span class="hero-trust-dot" aria-hidden="true"></span>GAF Master Elite</div>
+      <div class="hero-trust-item" role="listitem"><span class="hero-trust-dot" aria-hidden="true"></span>GAF President's Club</div>
+      <div class="hero-trust-item" role="listitem"><span class="hero-trust-dot" aria-hidden="true"></span>A+ BBB</div>
     </div>
   </div>
   <a href="#breadcrumb" class="hero-scroll" aria-label="Scroll down">
@@ -146,22 +157,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Mobile hero content -->
 <div class="mob-hero-content">
-  <span class="hero-eyebrow-pill">{{HERO_EYEBROW}}</span>
-  <h1 class="hero-h1">{{HERO_H1_LINE1}}<br>{{HERO_H1_LINE2}}</h1>
+  <span class="hero-eyebrow">{{HERO_EYEBROW}}</span>
+  <h1 class="hero-h1">
+    <span class="line1">{{HERO_H1_LINE1}}</span>
+    <span class="line2">{{HERO_H1_LINE2}}</span>
+  </h1>
+  <div class="hero-rule"></div>
+  <div class="hero-financing"><span class="fin-red">0% APR</span> Financing Available</div>
   <p class="hero-tagline">{{HERO_MOB_TAGLINE}}</p>
   <div class="hero-btns">
-    <a class="btn-red" href="/estimate">Schedule Free Inspection</a>
-    <a class="btn-ghost" href="tel:{{PHONE_TEL}}">Call {{PHONE_DISPLAY}}</a>
+    <a class="btn-gold" href="/estimate">
+      Get My Free Roof Inspection
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a class="btn-outline-white" href="tel:{{PHONE_TEL}}">
+      Call (832) 422-3039
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 2C3.5 2 4.5 3.5 4.5 5c0 .8-.5 1.5-.5 1.5S5.5 8.5 7 9.5c0 0 .7-.5 1.5-.5s2 1 2 1-.5 1.5-1.5 1-4-3-5-5-.5-3 0-4z" stroke="#fff" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
+  <a href="/financing" class="hero-fin-link">Explore Financing Options &rarr;</a>
   <div class="hero-trust-row">
-    <div class="hero-trust-item"><span class="hero-trust-dot"></span>Free Inspections</div>
-    <div class="hero-trust-item"><span class="hero-trust-dot"></span>Warranty-Backed</div>
-    <div class="hero-trust-item"><span class="hero-trust-dot"></span>Local Team</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>4.9 Google Rating</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>552+ Reviews</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>GAF Master Elite</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>GAF President's Club</div>
+    <div class="hero-trust-item"><span class="hero-trust-dot"></span>A+ BBB</div>
   </div>
 </div>
 
 <!-- ══════════════════════════
-     2 · BREADCRUMB BAR
+     PROOF BAR
+══════════════════════════ -->
+<div class="proof-bar" role="region" aria-label="Credentials and recognition">
+  <div class="proof-bar-inner">
+    <div class="proof-item">
+      <span class="proof-stars">★★★★★</span>
+      <span class="proof-stat">4.9</span>
+      <span class="proof-label">Google Rating</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-stat">552+</span>
+      <span class="proof-label">Google Reviews</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-gaf-stat">GAF</span>
+      <span class="proof-label">Master Elite&reg; Contractor</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-gaf-stat">GAF</span>
+      <span class="proof-label">President's Club</span>
+    </div>
+    <div class="proof-item">
+      <span class="proof-stat">A+</span>
+      <span class="proof-label">BBB Accredited</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     BREADCRUMB
 ══════════════════════════ -->
 <div class="breadcrumb-bar" id="breadcrumb">
   <div class="breadcrumb-inner">
@@ -176,48 +230,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- ══════════════════════════
-     3 · CREDIBILITY STRIP
-══════════════════════════ -->
-<div class="cred-strip">
-  <div class="cred-inner">
-
-    <div class="cred-item reveal">
-      <div class="cred-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L2 6v7c0 5 4 9 9 10 5-1 9-5 9-10V6L11 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 11l3 3 5-5" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="cred-label">Free Roof Inspections</div>
-      <div class="cred-sub">No-cost assessments with no obligation to proceed</div>
-    </div>
-
-    <div class="cred-item reveal d1">
-      <div class="cred-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="6" width="16" height="13" rx="2" stroke="var(--red)" stroke-width="1.5"/><path d="M7 6V5a4 4 0 018 0v1" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M11 12v3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </div>
-      <div class="cred-label">Warranty-Backed Work</div>
-      <div class="cred-sub">Workmanship and manufacturer warranty on every install</div>
-    </div>
-
-    <div class="cred-item reveal d2">
-      <div class="cred-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 6.5H20l-5.5 4 2 6.5L11 15l-5.5 4 2-6.5L2 8.5h6.5L11 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="cred-label">25+ Years in Business</div>
-      <div class="cred-sub">Trusted by Texas homeowners since 1998</div>
-    </div>
-
-    <div class="cred-item reveal d3">
-      <div class="cred-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2C6 2 2 6 2 11c0 5 4 9 9 9s9-4 9-9c0-5-4-9-9-9z" stroke="var(--red)" stroke-width="1.5"/><path d="M11 7v4l3 2" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="cred-label">Serving {{CITY}}</div>
-      <div class="cred-sub">{{COUNTY}} roofing team you can count on</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ══════════════════════════
-     4 · LOCAL INTRO
+     SECTION 1 — LOCAL INTRO
+     "Roofing Built for The Woodlands"
 ══════════════════════════ -->
 <section class="local-intro" aria-labelledby="local-intro-heading">
   <div class="local-intro-inner">
@@ -236,10 +250,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="local-intro-btns">
         <a href="/estimate" class="btn-red">
-          Schedule My Free Inspection
+          Schedule My Free Roof Inspection
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="/contact" class="btn-red-outline">Contact Home Team</a>
+        <a href="tel:{{PHONE_TEL}}" class="btn-red-outline">Call (832) 422-3039</a>
       </div>
     </div>
 
@@ -262,7 +276,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ══════════════════════════
-     5 · LOCAL SERVICES
+     SECTION 2 — ROOFING SERVICES
+     "Roofing Services for The Woodlands Homeowners"
 ══════════════════════════ -->
 <section class="local-svc" aria-labelledby="local-svc-heading">
   <div class="local-svc-inner">
@@ -274,15 +289,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sec-sub">{{SERVICES_SUB}}</p>
     </div>
 
-    <div class="local-svc-grid" role="list">
+    <div class="local-svc-grid two-col" role="list">
 
       <div class="local-svc-card reveal d1" role="listitem">
         <div class="local-svc-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 19h16M5 19V10l6-7 6 7v9" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="14" width="6" height="5" rx="1" stroke="var(--red)" stroke-width="1.5"/></svg>
         </div>
-        <h3 class="local-svc-name">Full Roof Replacement</h3>
-        <p class="local-svc-desc">Complete tear-off and replacement for aging, storm-damaged, or failing roofing systems. Installed with quality materials suited to the {{CITY}} climate.</p>
-        <a href="/estimate" class="local-svc-cta" aria-label="Get a free estimate for roof replacement">
+        <h3 class="local-svc-name">Roof Replacement</h3>
+        <p class="local-svc-desc">A full replacement is the right call when a roof is aging, extensively storm-damaged, or requiring repairs so frequently that investing in a new system makes more financial sense. Home Team handles the complete tear-off, proper disposal, and installation of a new roofing system designed to perform in the {{CITY}} climate — with workmanship and manufacturer warranties on every installation.</p>
+        <a href="/estimate" class="local-svc-cta" aria-label="Get a free estimate for roof replacement in The Woodlands">
           Get a Free Estimate
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -290,12 +305,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="local-svc-card reveal d2" role="listitem">
         <div class="local-svc-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="9" stroke="var(--red)" stroke-width="1.5"/><path d="M11 7v4l3 2" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18l10-10M8 6l4-4 4 4-4 4-4-4zM6 20l-4-4 4-4 4 4-4 4z" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3 class="local-svc-name">Free Roof Inspections</h3>
-        <p class="local-svc-desc">A thorough on-site inspection of your roof's condition — shingles, flashing, gutters, ventilation, and more — at no cost with no obligation to proceed.</p>
-        <a href="/estimate" class="local-svc-cta" aria-label="Schedule a free roof inspection">
-          Schedule an Inspection
+        <h3 class="local-svc-name">Roof Repair</h3>
+        <p class="local-svc-desc">Not every roof issue requires a full replacement. When damage is isolated — cracked or missing shingles, deteriorating flashing, a failed valley, or a localized leak — a targeted repair can restore your roof's integrity and extend its service life. Home Team assesses the source of the problem first, then recommends the repair that actually solves it.</p>
+        <a href="/estimate" class="local-svc-cta" aria-label="Schedule a roof repair assessment in The Woodlands">
+          Schedule an Assessment
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -305,21 +320,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6l8-4 8 4v5c0 5-4 8-8 9-4-1-8-4-8-9V6z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 11l2 2 4-4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h3 class="local-svc-name">Storm &amp; Hail Damage</h3>
-        <p class="local-svc-desc">Post-storm assessments with photo documentation and written findings. Home Team walks you through repair and replacement options with no pressure tactics.</p>
-        <a href="/estimate" class="local-svc-cta" aria-label="Request a storm damage inspection">
-          Request Inspection
+        <p class="local-svc-desc">Montgomery County experiences some of the most active severe weather in Texas. After a storm, Home Team can inspect your roof, document all visible damage with photos and a written assessment, and walk you through your repair or replacement options clearly — without pressure. Insurance coverage decisions are made solely by your carrier. We support you through the process every step of the way.</p>
+        <a href="#storm-process" class="local-svc-cta" aria-label="Learn about storm damage assessment in The Woodlands">
+          See How It Works
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
 
       <div class="local-svc-card reveal d4" role="listitem">
         <div class="local-svc-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="6" width="18" height="13" rx="2" stroke="var(--red)" stroke-width="1.5"/><path d="M6 6V5a5 5 0 0110 0v1" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M7 13h8" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2C6 2 2 6 2 11c0 5 4 9 9 9s9-4 9-9c0-5-4-9-9-9z" stroke="var(--red)" stroke-width="1.5"/><path d="M5 10l2 5 4-8 2 5 2-3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3 class="local-svc-name">Flexible Financing</h3>
-        <p class="local-svc-desc">Payment plans designed to make your roofing project more manageable. Ask about financing options during your free inspection or contact Home Team directly.</p>
-        <a href="/financing" class="local-svc-cta" aria-label="Learn about financing options">
-          Explore Financing
+        <h3 class="local-svc-name">Residential Roofing</h3>
+        <p class="local-svc-desc">From the initial free inspection through final walkthrough, Home Team manages every aspect of your residential roofing project in {{CITY}}. Impact-resistant shingles, proper ventilation design, quality underlayment, and workmanship that holds up to the demands of the Texas climate. Every project is completed by an experienced crew with clear communication from start to finish.</p>
+        <a href="/roofing" class="local-svc-cta" aria-label="Learn more about residential roofing services">
+          Learn More
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -329,220 +344,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ══════════════════════════
-     6 · ROOFING SYSTEMS
+     SECTION 3 — WHY HOME TEAM
+     "Why The Woodlands Homeowners Choose Home Team"
 ══════════════════════════ -->
-<section class="systems-section" aria-labelledby="systems-heading">
-  <div class="systems-inner">
-
-    <div class="section-header reveal">
-      <span class="sec-eyebrow">Built for Texas</span>
-      <h2 class="sec-h" id="systems-heading">{{SYSTEMS_HEADING}}</h2>
-      <div class="sec-rule" aria-hidden="true"></div>
-      <p class="sec-sub">{{SYSTEMS_SUB}}</p>
-    </div>
-
-    <div class="systems-grid">
-
-      <div class="sys-card tall reveal d1">
-        <div class="sys-card-bg" style="background-image:url('/images/home1.webp')" role="img" aria-label="Architectural shingle roof on a luxury home in {{CITY_STATE}}"></div>
-        <div class="sys-card-overlay" aria-hidden="true"></div>
-        <div class="sys-card-badge">Most Popular</div>
-        <div class="sys-card-body">
-          <div class="sys-card-name">Impact-Resistant Architectural Shingles</div>
-          <div class="sys-card-desc">Class 4 impact-rated shingles provide the strongest protection against hail while qualifying for insurance discounts in many Texas policies. Laminated architecture adds dimension and curb appeal.</div>
-          <a href="/estimate" class="sys-card-learn" aria-label="Learn about impact-resistant shingles">
-            Get a Free Estimate
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="sys-card reveal d2">
-        <div class="sys-card-bg" style="background-image:url('/images/finalhero.webp');background-position:center top" role="img" aria-label="Premium residential roof with proper ventilation in {{CITY}}"></div>
-        <div class="sys-card-overlay" aria-hidden="true"></div>
-        <div class="sys-card-body">
-          <div class="sys-card-name">Attic Ventilation &amp; Underlayment</div>
-          <div class="sys-card-desc">In the Houston-area heat, proper attic ventilation extends shingle life and reduces energy costs. Quality synthetic underlayment provides critical moisture protection beneath the surface.</div>
-          <a href="/estimate" class="sys-card-learn" aria-label="Ask about ventilation and underlayment">
-            Ask at Your Inspection
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="sys-card reveal d3">
-        <div class="sys-card-bg" style="background-image:url('/images/Roofingpagephoto.webp');background-position:center" role="img" aria-label="Home Team roofing installation in progress"></div>
-        <div class="sys-card-overlay" aria-hidden="true"></div>
-        <div class="sys-card-body">
-          <div class="sys-card-name">Decking &amp; Flashing Integrity</div>
-          <div class="sys-card-desc">A replacement is only as strong as what is underneath. Home Team inspects and addresses damaged decking, step flashing, and valley flashing before new materials go on.</div>
-          <a href="/estimate" class="sys-card-learn" aria-label="Schedule a full roof inspection">
-            Schedule Inspection
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════
-     7 · STORM DAMAGE
-══════════════════════════ -->
-<section class="storm-section" id="storm-damage" aria-labelledby="storm-heading">
-  <div class="storm-bg" aria-hidden="true"></div>
-  <div class="storm-overlay" aria-hidden="true"></div>
-  <div class="storm-inner">
-
-    <div class="reveal-left">
-      <span class="sec-eyebrow">Storm Damage Support</span>
-      <h2 class="sec-h" id="storm-heading">{{STORM_HEADING}}</h2>
-      <div class="sec-rule" style="margin:.875rem 0 0" aria-hidden="true"></div>
-      <p class="sec-sub">{{STORM_SUB}}</p>
-      <div class="storm-steps" role="list">
-        <div class="storm-step reveal d1" role="listitem">
-          <div class="storm-num" aria-hidden="true">01</div>
-          <div class="storm-step-text">
-            <div class="storm-step-h">Schedule a Free Inspection</div>
-            <p class="storm-step-p">Contact Home Team after any significant weather event. We'll schedule a free on-site inspection at your convenience.</p>
-          </div>
-        </div>
-        <div class="storm-step reveal d2" role="listitem">
-          <div class="storm-num" aria-hidden="true">02</div>
-          <div class="storm-step-text">
-            <div class="storm-step-h">Assess and Document Damage</div>
-            <p class="storm-step-p">Our team walks the roof and records all visible damage with photos and a written assessment you can keep.</p>
-          </div>
-        </div>
-        <div class="storm-step reveal d3" role="listitem">
-          <div class="storm-num" aria-hidden="true">03</div>
-          <div class="storm-step-text">
-            <div class="storm-step-h">Review Your Options</div>
-            <p class="storm-step-p">We walk you through repair and replacement options in plain language — no technical pressure, no upselling.</p>
-          </div>
-        </div>
-        <div class="storm-step reveal d4" role="listitem">
-          <div class="storm-num" aria-hidden="true">04</div>
-          <div class="storm-step-text">
-            <div class="storm-step-h">Complete the Restoration</div>
-            <p class="storm-step-p">Your roof is restored by an experienced crew, with a final walkthrough before we consider the project done.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="storm-aside reveal-right">
-      <div class="storm-aside-callout">
-        <h3 class="storm-aside-callout-h">{{STORM_ASIDE_HEADING}}</h3>
-        <p class="storm-aside-callout-p">{{STORM_ASIDE_BODY}}</p>
-        <a href="/estimate" class="btn-red">
-          Request My Free Inspection
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <p class="storm-disclaimer">
-        <strong style="color:rgba(255,255,255,.42);font-weight:600">Important:</strong> Insurance coverage and claim decisions are determined solely by the homeowner's insurance carrier. Home Team does not guarantee claim approval, coverage amounts or specific payout results. We support homeowners through the documentation and restoration process.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════════════
-     8 · CREDENTIALS & PROCESS
-══════════════════════════ -->
-<section class="install-section" aria-labelledby="install-heading">
-  <div class="install-inner">
+<section class="why-ht-section" aria-labelledby="why-ht-heading">
+  <div class="why-ht-inner">
 
     <div class="section-header reveal">
       <span class="sec-eyebrow">The Home Team Difference</span>
-      <h2 class="sec-h" id="install-heading">Honest Work. Clear Communication. Warranty-Backed.</h2>
-      <div class="sec-rule centered" aria-hidden="true"></div>
-      <p class="sec-sub" style="margin-top:.875rem">Every project in {{CITY}} follows the same standard — thorough preparation, quality materials, and a crew that respects your property from start to finish.</p>
+      <h2 class="sec-h" id="why-ht-heading">Why {{CITY}} Homeowners Choose Home Team</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub">Choosing a roofing contractor is a significant decision. Here is what sets Home Team apart — in credentials, process, and commitment to every homeowner we work with.</p>
     </div>
 
-    <div class="install-grid">
+    <div class="why-ht-grid">
 
-      <div class="install-col reveal-left">
-        <div class="install-col-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--red)" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="why-ht-card reveal d1">
+        <div class="why-ht-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5.5c0 4 3 7 7 8 4-1 7-4 7-8V5.5L10 2z" stroke="var(--red)" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 10l2 2 4-4" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3 class="install-col-h">A Streamlined Installation Process</h3>
-        <div class="install-col-rule" aria-hidden="true"></div>
-        <p class="install-col-p">Home Team works efficiently to protect your property and minimize disruption to your daily life throughout every roofing project in {{CITY}}. Protective tarps are laid before work begins. Old materials are removed and disposed of properly. Your property is thoroughly cleaned at the end of every project day.</p>
-        <p class="install-col-p">The crew communicates clearly at each stage — so you always know what to expect and when.</p>
-        <ul class="install-features" role="list">
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Property protection before work begins
-          </li>
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Experienced installation crew on every project
-          </li>
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Thorough cleanup and final walkthrough
-          </li>
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            Clear communication throughout the project
-          </li>
-        </ul>
+        <div class="why-ht-name">GAF Master Elite&reg; Contractor</div>
+        <p class="why-ht-desc">Less than 3% of roofing contractors in the United States earn GAF Master Elite status. It requires demonstrated quality standards, proper licensing, and an ongoing commitment to training and customer satisfaction.</p>
       </div>
 
-      <div class="install-divider" aria-hidden="true"></div>
-
-      <div class="install-col reveal-right">
-        <div class="install-col-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 6v8c0 5 4 9 9 10 5-1 9-5 9-10V6L12 2z" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5L15.5 9" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="why-ht-card reveal d2">
+        <div class="why-ht-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 1.5l2.3 6H18l-4.9 3.6 1.8 6L10 14l-4.9 3.1 1.8-6L2 7.5h5.7L10 1.5z" stroke="var(--red)" stroke-width="1.4" stroke-linejoin="round"/></svg>
         </div>
-        <h3 class="install-col-h">Credentials You Can Trust</h3>
-        <div class="install-col-rule" aria-hidden="true"></div>
-        <p class="install-col-p">Home Team has built its reputation one project at a time through quality workmanship, honest communication, and a commitment to standing behind every roof installed. Credentials earned over more than 25 years in business reflect that standard.</p>
-        <p class="install-col-p">Every installation is backed by a workmanship warranty. Materials carry manufacturer warranties designed for long-term performance in the Texas climate.</p>
-        <ul class="install-features" role="list">
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            CertainTeed SELECT ShingleMaster Certified
-          </li>
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            GAF Master Elite Contractor
-          </li>
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            A+ BBB Accredited Business
-          </li>
-          <li>
-            <div class="install-feature-check" aria-hidden="true">
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            25+ Years Serving Texas Homeowners
-          </li>
-        </ul>
+        <div class="why-ht-name">GAF President's Club Award</div>
+        <p class="why-ht-desc">The GAF President's Club Award is one of the most prestigious honors a roofing contractor can receive from GAF. It recognizes exceptional performance across quality of workmanship, customer satisfaction, and business conduct.</p>
+      </div>
+
+      <div class="why-ht-card reveal d3">
+        <div class="why-ht-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="var(--red)" stroke-width="1.4"/><path d="M7 10l2 2 4-4" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-ht-name">CertainTeed SELECT ShingleMaster</div>
+        <p class="why-ht-desc">CertainTeed SELECT ShingleMaster certification recognizes roofing contractors who meet rigorous installation standards and are authorized to offer CertainTeed's enhanced warranty coverage on qualifying installations.</p>
+      </div>
+
+      <div class="why-ht-card reveal d4">
+        <div class="why-ht-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="var(--red)" stroke-width="1.4"/><path d="M7 10l2 2 4-4" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-ht-name">A+ BBB Accredited Business</div>
+        <p class="why-ht-desc">Home Team holds an A+ rating with the Better Business Bureau. BBB accreditation requires meeting standards for trustworthiness, advertising integrity, transparency, and responsive complaint resolution.</p>
+      </div>
+
+      <div class="why-ht-card reveal d5">
+        <div class="why-ht-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l1.8 5.6H18l-4.9 3.6 1.9 5.8L10 14l-5 3 1.9-5.8L2 7.6h6.2L10 2z" stroke="var(--red)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-ht-name">4.9 Google Rating &middot; 552+ Reviews</div>
+        <p class="why-ht-desc">Over 552 verified Google reviews with a 4.9-star rating. Every review is from a real homeowner who experienced Home Team firsthand. <a href="/reviews" style="color:var(--red);text-decoration:none;font-weight:600">Read our reviews &rarr;</a></p>
+      </div>
+
+      <div class="why-ht-card reveal d6">
+        <div class="why-ht-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="6" width="16" height="11" rx="2" stroke="var(--red)" stroke-width="1.4"/><path d="M6 6V5a4 4 0 018 0v1" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round"/><path d="M10 11v2" stroke="var(--red)" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="why-ht-name">Flexible Financing Available</div>
+        <p class="why-ht-desc">Roofing projects should not be delayed because of budget timing. Home Team offers flexible financing options to help {{CITY}} homeowners protect their homes without unnecessary waiting. Ask at your free inspection.</p>
       </div>
 
     </div>
 
-    <div class="install-cta-wrap reveal">
+    <div class="why-ht-cta-wrap reveal">
       <a href="/estimate" class="btn-red">
-        {{INSTALL_CTA_LABEL}}
+        Schedule My Free Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -551,31 +420,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ══════════════════════════
-     9 · FINANCING STRIP
+     SECTION 4 — PROCESS
+     "A Better Roof Replacement Experience"
 ══════════════════════════ -->
-<div class="fin-strip" role="region" aria-label="Financing options">
-  <div class="fin-strip-left">
-    <div class="fin-icon-circle" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="6" width="18" height="13" rx="2" stroke="var(--red)" stroke-width="1.5"/><path d="M6 6V5a5 5 0 0110 0v1" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13h6M11 11v4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </div>
-    <div class="fin-strip-text">
-      <h3>{{FIN_HEADING}}</h3>
-      <p>{{FIN_SUB}}</p>
-    </div>
-  </div>
-  <div class="fin-btns">
-    <a href="/financing" class="btn-red">
-      Explore Financing
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="/estimate" class="btn-ghost">Start My Project</a>
-  </div>
-</div>
-
-<!-- ══════════════════════════
-     10 · PROCESS
-══════════════════════════ -->
-<section class="process-section" aria-labelledby="process-heading">
+<section class="process-section" aria-labelledby="process-heading" id="storm-process">
   <div class="process-inner">
 
     <div class="reveal">
@@ -585,13 +433,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="sec-sub" style="margin-top:.875rem">{{PROCESS_SUB}}</p>
     </div>
 
-    <div class="process-steps">
+    <div class="process-steps five-step">
 
       <div class="process-step reveal d1">
         <div class="process-num-wrap" aria-hidden="true">
           <span class="process-num">Step 1</span>
         </div>
-        <h3 class="process-step-h">Schedule Your Free Inspection</h3>
+        <h3 class="process-step-h">Free Inspection</h3>
         <p class="process-step-p">{{PROCESS_STEP1_P}}</p>
       </div>
 
@@ -599,7 +447,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="process-num-wrap" aria-hidden="true">
           <span class="process-num">Step 2</span>
         </div>
-        <h3 class="process-step-h">Review Your Roofing Options</h3>
+        <h3 class="process-step-h">Review Your Findings</h3>
         <p class="process-step-p">{{PROCESS_STEP2_P}}</p>
       </div>
 
@@ -607,8 +455,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="process-num-wrap" aria-hidden="true">
           <span class="process-num">Step 3</span>
         </div>
-        <h3 class="process-step-h">Complete Your Installation</h3>
+        <h3 class="process-step-h">Choose Your Solution</h3>
         <p class="process-step-p">{{PROCESS_STEP3_P}}</p>
+      </div>
+
+      <div class="process-step reveal d4">
+        <div class="process-num-wrap" aria-hidden="true">
+          <span class="process-num">Step 4</span>
+        </div>
+        <h3 class="process-step-h">Installation</h3>
+        <p class="process-step-p">Your roof is installed by an experienced crew. Tarps protect your property before work begins, materials are removed properly, and your property is cleaned at the end of every project day.</p>
+      </div>
+
+      <div class="process-step reveal d5">
+        <div class="process-num-wrap" aria-hidden="true">
+          <span class="process-num">Step 5</span>
+        </div>
+        <h3 class="process-step-h">Final Walkthrough</h3>
+        <p class="process-step-p">Before we call the project done, we complete a final walkthrough together — confirming every detail meets your expectations and reviewing your warranty coverage with you.</p>
       </div>
 
     </div>
@@ -625,7 +489,159 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ══════════════════════════
-     11 · FAQ
+     SECTION 5 — LOCAL RELEVANCE
+     "Roofing in The Woodlands, Texas"
+══════════════════════════ -->
+<section class="local-ctx-section" aria-labelledby="local-ctx-heading">
+  <div class="local-ctx-inner">
+
+    <div class="local-ctx-body reveal-left">
+      <span class="sec-eyebrow">Local Expertise</span>
+      <h2 class="sec-h" id="local-ctx-heading">Roofing in {{CITY}}, Texas</h2>
+      <div class="sec-rule" aria-hidden="true"></div>
+      <p class="sec-sub" style="margin-top:.875rem;color:rgba(255,255,255,.65);max-width:480px">{{CITY}} sits in one of the most demanding roofing climates in the country. Understanding what that means for your specific home helps you make better decisions.</p>
+
+      <div class="local-ctx-topics" style="margin-top:2rem">
+
+        <div class="local-ctx-topic">
+          <div class="local-ctx-topic-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v2M8 12v2M2 8h2M12 8h2M4.1 4.1l1.4 1.4M10.5 10.5l1.4 1.4M4.1 11.9l1.4-1.4M10.5 5.5l1.4-1.4" stroke="var(--red)" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="8" r="2.5" stroke="var(--red)" stroke-width="1.3"/></svg>
+          </div>
+          <div>
+            <div class="local-ctx-topic-h">Intense Heat and UV Exposure</div>
+            <p class="local-ctx-topic-p">Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement.</p>
+          </div>
+        </div>
+
+        <div class="local-ctx-topic">
+          <div class="local-ctx-topic-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L5 5H2l2.5 3L3 13l5-3 5 3-1.5-5L14 5h-3L8 1z" stroke="var(--red)" stroke-width="1.3" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="local-ctx-topic-h">Hail and Severe Storm Seasons</div>
+            <p class="local-ctx-topic-p">Montgomery County falls within one of the highest hail-frequency corridors in Texas. Hail damage often isn't visible from the ground — bruised shingles, granule loss, and cracked mat layers require close inspection. Even minor damage can allow moisture intrusion that worsens significantly over time.</p>
+          </div>
+        </div>
+
+        <div class="local-ctx-topic">
+          <div class="local-ctx-topic-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 10c0-3 2-6 5-7 3 1 5 4 5 7a5 5 0 01-10 0z" stroke="var(--red)" stroke-width="1.3"/><path d="M8 3v7" stroke="var(--red)" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="local-ctx-topic-h">Tree Canopy and Moisture</div>
+            <p class="local-ctx-topic-p">The Woodlands is defined by its tree cover — which also means shaded roofs, debris accumulation, and slower drying after rain. These conditions accelerate algae growth, moss formation, and granule wear on shingles in areas with persistent shade. Periodic inspections matter more, not less, in heavily wooded neighborhoods.</p>
+          </div>
+        </div>
+
+        <div class="local-ctx-topic">
+          <div class="local-ctx-topic-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12h12M4 12V7l4-5 4 5v5" stroke="var(--red)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="local-ctx-topic-h">HOA Considerations</div>
+            <p class="local-ctx-topic-p">Many neighborhoods throughout The Woodlands are governed by HOA design guidelines that specify approved roofing colors, materials, or profiles. Home Team is familiar with these requirements and can help you select materials that meet your HOA's standards while performing well in the local climate.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="local-ctx-aside reveal-right">
+
+      <div class="local-ctx-warning">
+        <h3 class="local-ctx-warning-h">Signs Your Roof Needs Attention</h3>
+        <ul class="local-ctx-warning-list" role="list">
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>Shingles that are curling, buckling, or missing granules</li>
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>Dented, cracked, or granule-filled gutters after a storm</li>
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>Water stains on ceilings or in the attic</li>
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>Visible daylight through roof boards in the attic</li>
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>Flashing that is lifting, cracking, or separating</li>
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>A roof that is 15+ years old and has never been inspected</li>
+          <li><span class="local-ctx-warning-dot" aria-hidden="true"></span>Recurring leaks in the same location despite past repairs</li>
+        </ul>
+      </div>
+
+      <div class="local-ctx-cta">
+        <p>Not sure if your roof needs attention? A free inspection takes the guesswork out — no cost, no commitment, and no pressure to proceed with any work.</p>
+        <a href="/estimate" class="btn-red">
+          Schedule a Free Inspection
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     SECTION 6 — REVIEWS
+══════════════════════════ -->
+<section class="rv-section" aria-labelledby="rv-heading">
+  <div class="rv-head">
+    <span class="rv-eyebrow">Homeowner Reviews</span>
+    <h2 class="rv-h" id="rv-heading">Real Homeowners.<br>Real Home Team Results.</h2>
+    <p class="rv-sub">See why homeowners trust Home Team for roofing in The Woodlands and across the greater Houston area.</p>
+    <div class="rv-trust-badge">
+      <span class="rv-trust-stars">★★★★★</span>
+      <div class="rv-trust-sep"></div>
+      <span class="rv-trust-label">Verified Home Team Customer Reviews</span>
+    </div>
+  </div>
+  <div class="rv-cards two-card">
+    <div class="rv-card-feat">
+      <div class="rv-card-stars">★★★★★</div>
+      <span class="rv-card-qmark">"</span>
+      <p class="rv-card-quote">"The job was completed in one day, the team was professional and personable, and I couldn't be happier. I've already referred them to my best friend."</p>
+      <div class="rv-card-rule"></div>
+      <div class="rv-card-name">T. Landry</div>
+      <div class="rv-card-meta">Roof Installation &nbsp;·&nbsp; Verified Review</div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-card-stars">★★★★★</div>
+      <span class="rv-card-qmark">"</span>
+      <p class="rv-card-quote">"They guided us through the entire process, helped with our insurance claim, arrived right on time, and left the property spotless."</p>
+      <div class="rv-card-rule"></div>
+      <div class="rv-card-name">Nathan Collier</div>
+      <div class="rv-card-meta">Roof Installation &nbsp;·&nbsp; Verified Review</div>
+    </div>
+  </div>
+  <div class="rv-close">
+    <p class="rv-close-h">Over 552 verified reviews. See what Texas homeowners are saying.</p>
+    <div class="rv-close-btns">
+      <a href="/reviews" class="rv-close-link">Read All Reviews →</a>
+      <a href="/estimate" class="btn-gold">
+        Schedule My Free Inspection
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     SECTION 7 — FINANCING
+══════════════════════════ -->
+<div class="fin-strip" role="region" aria-label="Financing options">
+  <div class="fin-strip-left">
+    <div class="fin-icon-circle" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="6" width="18" height="13" rx="2" stroke="var(--red)" stroke-width="1.5"/><path d="M6 6V5a5 5 0 0110 0v1" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 13h6M11 11v4" stroke="var(--red)" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </div>
+    <div class="fin-strip-text">
+      <h3>{{FIN_HEADING}}</h3>
+      <p>{{FIN_SUB}}</p>
+    </div>
+  </div>
+  <div class="fin-btns">
+    <a href="/financing" class="btn-red">
+      Explore Financing Options
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="/estimate" class="btn-ghost">Schedule a Free Inspection</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     SECTION 8 — FAQ
 ══════════════════════════ -->
 <section class="faq-section" aria-labelledby="faq-heading">
   <div class="faq-inner">
@@ -699,7 +715,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ══════════════════════════
-     12 · FINAL CTA
+     SECTION 9 — FINAL CTA
+     "Protect Your Home. Start With Your Roof."
 ══════════════════════════ -->
 <section class="final-cta" aria-labelledby="final-cta-heading">
   <div class="final-cta-inner">
@@ -723,13 +740,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="final-cta-badge" role="listitem">
         <div class="final-cta-badge-dot" aria-hidden="true"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        Serving {{CITY}} &amp; {{COUNTY}}
+        GAF Master Elite Contractor
       </div>
     </div>
 
     <div class="final-cta-btns reveal">
       <a href="/estimate" class="btn-red">
-        Schedule My Free Inspection
+        Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="tel:{{PHONE_TEL}}" class="btn-ghost">Call {{PHONE_DISPLAY}}</a>

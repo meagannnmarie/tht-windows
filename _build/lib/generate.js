@@ -88,16 +88,6 @@ function buildTokens(site, loc) {
     // Services
     SERVICES_HEADING:    loc.services_heading,
     SERVICES_SUB:        loc.services_sub,
-    // Systems
-    SYSTEMS_HEADING:     loc.systems.heading,
-    SYSTEMS_SUB:         loc.systems.sub,
-    // Storm
-    STORM_HEADING:       loc.storm.heading,
-    STORM_SUB:           loc.storm.sub,
-    STORM_ASIDE_HEADING: loc.storm.aside_heading,
-    STORM_ASIDE_BODY:    loc.storm.aside_body,
-    // Install
-    INSTALL_CTA_LABEL:   loc.install.cta_label,
     // Financing
     FIN_HEADING:         loc.financing.heading,
     FIN_SUB:             loc.financing.sub,
@@ -205,7 +195,7 @@ function collectSourceHtml(dir, results = []) {
 
 // ── Sitemap generation ────────────────────────────────────────────────────────
 
-const BASE_URL = 'https://ththomesolutions.com';
+const BASE_URL = 'https://hometeamroof.com';
 
 function hasNoindex(content) {
   return (
