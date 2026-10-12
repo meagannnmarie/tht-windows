@@ -2,6 +2,18 @@
 // Reads HIGHLEVEL_INQUIRY_WEBHOOK_URL from environment; forwards a flat JSON
 // payload to HighLevel on each valid form submission.
 
+// Maps sanitized source keys (sent from the browser) to human-readable labels
+// stored in HighLevel. Add an entry here whenever a new landing page is created.
+const SOURCE_MAP = {
+  'woodlands-roofing-tx': 'The Woodlands Roofing - hometeamroof.com',
+  'homepage':             'Homepage - hometeamroof.com',
+  'roofing':              'Roofing Page - hometeamroof.com',
+  'windows':              'Windows Page - hometeamroof.com',
+  'doors':                'Doors Page - hometeamroof.com',
+  'estimate':             'Estimate Page - hometeamroof.com',
+  'financing':            'Financing Page - hometeamroof.com',
+};
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -28,17 +40,23 @@ module.exports = async function handler(req, res) {
   }
 
   // ── Extract & trim ───────────────────────────────────────────────────────────
-  const firstName       = (body.firstName       || '').trim();
-  const lastName        = (body.lastName        || '').trim();
-  const email           = (body.email           || '').trim().toLowerCase();
-  const rawPhone        = (body.phone           || '').trim();
-  const city            = (body.city            || '').trim();
-  const zipCode         = (body.zipCode         || '').trim();
-  const serviceType     = (body.serviceType     || '').trim();
-  const numberOfWindows = (body.numberOfWindows || '').trim();
-  const projectTimeline = (body.projectTimeline || '').trim();
-  const message         = (body.message         || '').trim();
-  const pageUrl         = (body.pageUrl         || '').trim();
+  const firstName              = (body.firstName              || '').trim();
+  const lastName               = (body.lastName               || '').trim();
+  const email                  = (body.email                  || '').trim().toLowerCase();
+  const rawPhone               = (body.phone                  || '').trim();
+  const address                = (body.address                || '').trim();
+  const city                   = (body.city                   || '').trim();
+  const zipCode                = (body.zipCode                || '').trim();
+  const serviceType            = (body.serviceType            || '').trim();
+  const preferredContactMethod = (body.preferredContactMethod || '').trim();
+  const numberOfWindows        = (body.numberOfWindows        || '').trim();
+  const projectTimeline        = (body.projectTimeline        || '').trim();
+  const message                = (body.message                || '').trim();
+  const pageUrl                = (body.pageUrl                || '').trim();
+
+  // ── Resolve source label — validate key server-side, never trust raw strings ─
+  const rawSourceKey = (body.sourceKey || '').trim().toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 60);
+  const source = SOURCE_MAP[rawSourceKey] || 'Home Team - hometeamroof.com';
 
   // ── Validation ───────────────────────────────────────────────────────────────
   const errors = [];
@@ -70,18 +88,20 @@ module.exports = async function handler(req, res) {
   const payload = {
     firstName,
     lastName,
-    fullName:        [firstName, lastName].filter(Boolean).join(' '),
+    fullName:              [firstName, lastName].filter(Boolean).join(' '),
     email,
     phone,
+    address,
     city,
     zipCode,
     serviceType,
+    preferredContactMethod,
     numberOfWindows,
     projectTimeline,
     message,
-    source:          'Home Team Windows Website',
+    source,
     pageUrl,
-    submittedAt:     new Date().toISOString(),
+    submittedAt:           new Date().toISOString(),
   };
 
   // ── Forward to HighLevel ─────────────────────────────────────────────────────

@@ -192,6 +192,9 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .pf-submit:active{transform:none}
 .pf-note{font-size:11px;color:#9ca3af;text-align:center;margin-top:.75rem;line-height:1.65}
 .pf-field-err{border-color:#ef4444 !important;box-shadow:0 0 0 3px rgba(239,68,68,.12) !important}
+.pf-submit:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.pf-error-msg{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;border-radius:6px;padding:12px 16px;font-size:13px;font-weight:500;margin-bottom:1rem;line-height:1.5;display:none}
+.pf-hp{position:absolute;left:-9999px;opacity:0;pointer-events:none;width:0;height:0;overflow:hidden}
 .pf-success{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem;min-height:480px}
 .pf-success-ring{width:72px;height:72px;border-radius:50%;background:rgba(185,28,28,.08);border:1.5px solid rgba(185,28,28,.22);display:flex;align-items:center;justify-content:center;margin:0 auto 1.75rem}
 .pf-success-title{font-size:22px;font-weight:700;color:#111;margin-bottom:.625rem;letter-spacing:-.3px}
@@ -483,6 +486,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
+        <!-- Honeypot — hidden from real users, bots may fill it -->
+        <div class="pf-hp" aria-hidden="true">
+          <label for="_hp">Leave this blank</label>
+          <input type="text" id="_hp" name="_hp" tabindex="-1" autocomplete="off"/>
+        </div>
+
+        <div id="pf-error" class="pf-error-msg" role="alert" aria-live="polite"></div>
+
         <button type="submit" class="pf-submit">
           Schedule My Free Consultation →
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -582,24 +593,116 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 <script>
 (function(){
-  var form = document.getElementById('project-inquiry');
+  var form    = document.getElementById('project-inquiry');
   var success = document.getElementById('pf-success');
+  var errBanner = document.getElementById('pf-error');
   if (!form || !success) return;
+
+  var submitBtn      = form.querySelector('button[type="submit"]');
+  var submitBtnOrig  = submitBtn ? submitBtn.innerHTML : '';
+  var submitting     = false;
+
+  // Source key from URL param — sanitised, mapped server-side to a human label
+  var sourceKey = (new URLSearchParams(window.location.search).get('source') || '')
+    .trim().toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 60);
+
+  // Clear field errors as the user corrects them
+  form.querySelectorAll('.pf-input, .pf-textarea').forEach(function(el){
+    el.addEventListener('input', function(){ el.classList.remove('pf-field-err'); });
+  });
+
+  function showError(msg) {
+    if (!errBanner) return;
+    errBanner.textContent = msg || 'Something went wrong. Please try again or call us at (832) 422-3039.';
+    errBanner.style.display = 'block';
+    errBanner.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
+    if (submitting) return;
+
+    // Client-side validation
     var required = form.querySelectorAll('[required]');
     var valid = true;
     required.forEach(function(el){
       el.classList.remove('pf-field-err');
       if (!el.value.trim()) { el.classList.add('pf-field-err'); valid = false; }
     });
-    if (!valid) { form.querySelector('.pf-field-err').scrollIntoView({behavior:'smooth',block:'center'}); return; }
-    form.style.display = 'none';
-    success.style.display = 'flex';
-    success.scrollIntoView({behavior:'smooth',block:'center'});
-  });
-  form.querySelectorAll('.pf-input').forEach(function(el){
-    el.addEventListener('input', function(){ el.classList.remove('pf-field-err'); });
+    if (!valid) {
+      form.querySelector('.pf-field-err').scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    // Gather multi-select services
+    var services = Array.from(
+      form.querySelectorAll('input[name="services_interested_in"]:checked')
+    ).map(function(el){ return el.value; }).join(', ');
+
+    // Preferred contact method
+    var contactEl = form.querySelector('input[name="preferred_contact_method"]:checked');
+    var contactMethod = contactEl ? contactEl.value : '';
+
+    // Honeypot value — real users leave this blank
+    var hp = (form.querySelector('#_hp') || {}).value || '';
+
+    var payload = {
+      firstName:             (form.querySelector('#first_name')    || {}).value || '',
+      lastName:              (form.querySelector('#last_name')      || {}).value || '',
+      email:                 (form.querySelector('#email')          || {}).value || '',
+      phone:                 (form.querySelector('#phone')          || {}).value || '',
+      address:               (form.querySelector('#address1')       || {}).value || '',
+      city:                  (form.querySelector('#city')           || {}).value || '',
+      zipCode:               (form.querySelector('#postal_code')    || {}).value || '',
+      serviceType:           services,
+      preferredContactMethod: contactMethod,
+      message:               (form.querySelector('#project_details') || {}).value || '',
+      sourceKey:             sourceKey,
+      pageUrl:               window.location.href,
+      _hp:                   hp,
+    };
+
+    // Lock UI during submission
+    submitting = true;
+    if (errBanner) errBanner.style.display = 'none';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+    }
+
+    fetch('/api/submit-inquiry', {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify(payload),
+    })
+    .then(function(res) {
+      return res.json().then(function(data){ return {ok: res.ok, data: data}; });
+    })
+    .then(function(result) {
+      if (result.ok) {
+        form.style.display = 'none';
+        success.style.display = 'flex';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+        // GTM conversion event — fired only after backend confirms
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event:      'inspection_request_submitted',
+            form_id:    'project-inquiry',
+            source_key: sourceKey || 'direct',
+          });
+        }
+      } else {
+        throw new Error((result.data && result.data.error) || 'Submission failed.');
+      }
+    })
+    .catch(function(err) {
+      submitting = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = submitBtnOrig;
+      }
+      showError(err && err.message ? err.message : null);
+    });
   });
 })();
 </script>
