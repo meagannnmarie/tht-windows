@@ -408,6 +408,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div id="inquiry-msg" class="inquiry-msg" role="alert"></div>
         <p class="form-note">By submitting this form you agree to be contacted by Home Team Home Solutions regarding your estimate request. We never share your information.</p>
       </form>
+      <!-- Success state — shown after confirmed API delivery, outside <form> so it remains visible -->
+      <div id="contact-success" style="display:none;" role="status" aria-live="polite" class="inquiry-msg inquiry-msg--success">
+        <strong>Thank you!</strong> Your request has been received. A Home Team specialist will contact you within one business day.
+      </div>
     </div>
 
     <!-- SIDEBAR -->
@@ -604,52 +608,107 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 })();
 
-/* ── Contact Form — captured by HighLevel External Tracking ────────── */
+/* ── Contact Form — submitted via /api/submit-inquiry ─────────────── */
 (function(){
-  var form  = document.getElementById('inquiry-form');
-  var btn   = document.getElementById('inquiry-submit');
-  var msgEl = document.getElementById('inquiry-msg');
+  var form       = document.getElementById('inquiry-form');
+  var btn        = document.getElementById('inquiry-submit');
+  var btnOrig    = btn ? btn.innerHTML : '';
+  var msgEl      = document.getElementById('inquiry-msg');
+  var successEl  = document.getElementById('contact-success');
   if (!form || !btn || !msgEl) return;
 
-  function showMsg(text, type) {
-    msgEl.textContent = text;
-    msgEl.className   = 'inquiry-msg inquiry-msg--' + type;
+  var submitting = false;
+
+  function generateId() {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0;
+      return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+
+  function showError(msg) {
+    msgEl.textContent = msg || 'Something went wrong. Please try again or call us at (832) 422-3039.';
+    msgEl.className   = 'inquiry-msg inquiry-msg--error';
   }
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    if (btn.disabled) return;
+    if (submitting) return;
 
     var firstName = (document.getElementById('first-name').value || '').trim();
     var lastName  = (document.getElementById('last-name').value  || '').trim();
     var email     = (document.getElementById('email').value      || '').trim();
     var phone     = (document.getElementById('phone').value      || '').trim();
 
+    // Client-side validation
     if (!firstName && !lastName) {
-      showMsg('Please provide your name.', 'error'); return;
+      e.stopImmediatePropagation();
+      showError('Please provide your name.'); return;
     }
     if (!email && !phone) {
-      showMsg('Please provide an email address or phone number.', 'error'); return;
+      e.stopImmediatePropagation();
+      showError('Please provide an email address or phone number.'); return;
     }
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showMsg('Please enter a valid email address.', 'error'); return;
+      e.stopImmediatePropagation();
+      showError('Please enter a valid email address.'); return;
     }
 
-    // HL External Tracking captures the submit event independently.
-    // Show local success state only — no network request sent here.
-    btn.disabled = true;
-    form.style.display = 'none';
-    msgEl.innerHTML = '<strong>Thank you!</strong> Your request has been received. ' +
-      'A Home Team specialist will contact you within one business day.';
-    msgEl.className = 'inquiry-msg inquiry-msg--success';
+    var payload = {
+      submissionId:    generateId(),
+      firstName:       firstName,
+      lastName:        lastName,
+      email:           email,
+      phone:           phone,
+      city:            (document.getElementById('city')    || {}).value || '',
+      numberOfWindows: (document.getElementById('windows') || {}).value || '',
+      message:         (document.getElementById('message') || {}).value || '',
+      sourceKey:       'contact',
+      pageUrl:         window.location.href,
+      _hp:             (document.getElementById('_hp')     || {}).value || '',
+    };
+
+    // API is the sole submission path — stop ET from also firing
+    e.stopImmediatePropagation();
+    submitting = true;
+    msgEl.className = 'inquiry-msg';
+    btn.disabled    = true;
+    btn.textContent = 'Submitting…';
+
+    fetch('/api/submit-inquiry', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+    })
+    .then(function(res) {
+      return res.json().then(function(data){ return { ok: res.ok, data: data }; });
+    })
+    .then(function(result) {
+      if (result.ok) {
+        form.style.display = 'none';
+        if (successEl) { successEl.style.display = 'block'; }
+        // GTM conversion event — fires only after backend confirms delivery
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event:      'inspection_request_submitted',
+            form_id:    'inquiry-form',
+            source_key: 'contact',
+          });
+        }
+      } else {
+        throw new Error((result.data && result.data.error) || 'Submission failed.');
+      }
+    })
+    .catch(function(err) {
+      submitting   = false;
+      btn.disabled = false;
+      btn.innerHTML = btnOrig;
+      showError(err && err.message ? err.message : null);
+    });
   });
 })();
 </script>
 
-<script
-  defer
-  src="https://link.msgsndr.com/js/external-tracking.js"
-  data-tracking-id="tk_cd0b4f5908524bf8963aec3e50396145">
-</script>
 </body>
 </html>
