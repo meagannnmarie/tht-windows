@@ -231,6 +231,9 @@ function urlMeta(urlPath) {
       return { changefreq: 'monthly', priority: '0.7' };
     case '/meet-the-team':
       return { changefreq: 'monthly', priority: '0.6' };
+    case '/privacy-policy':
+    case '/terms':
+      return { changefreq: 'yearly', priority: '0.3' };
   }
   const [, service] = urlPath.split('/');
   if (['roofing', 'windows', 'doors'].includes(service))
