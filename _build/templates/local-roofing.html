@@ -23,6 +23,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="{{META_TITLE}}"/>
 <meta property="og:description" content="{{META_OG_DESCRIPTION}}"/>
 <meta property="og:image" content="{{OG_IMAGE}}"/>
+<meta property="og:image:width" content="1536"/>
+<meta property="og:image:height" content="1024"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -131,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-financing"><span class="fin-red">0% APR</span> Financing Available</div>
     <p class="hero-tagline">{{HERO_TAGLINE}}</p>
     <div class="hero-btns">
-      <a class="btn-gold" href="/estimate">
+      <a class="btn-gold" href="{{ESTIMATE_URL}}">
         Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -166,7 +168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-financing"><span class="fin-red">0% APR</span> Financing Available</div>
   <p class="hero-tagline">{{HERO_MOB_TAGLINE}}</p>
   <div class="hero-btns">
-    <a class="btn-gold" href="/estimate">
+    <a class="btn-gold" href="{{ESTIMATE_URL}}">
       Get My Free Roof Inspection
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -249,8 +251,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="local-intro-btns">
-        <a href="/estimate" class="btn-red">
-          Schedule My Free Roof Inspection
+        <a href="{{ESTIMATE_URL}}" class="btn-red">
+          Get My Free Roof Inspection
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="tel:{{PHONE_TEL}}" class="btn-red-outline">Call (832) 422-3039</a>
@@ -297,7 +299,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <h3 class="local-svc-name">Roof Replacement</h3>
         <p class="local-svc-desc">A full replacement is the right call when a roof is aging, extensively storm-damaged, or requiring repairs so frequently that investing in a new system makes more financial sense. Home Team handles the complete tear-off, proper disposal, and installation of a new roofing system designed to perform in the {{CITY}} climate — with workmanship and manufacturer warranties on every installation.</p>
-        <a href="/estimate" class="local-svc-cta" aria-label="Get a free estimate for roof replacement in The Woodlands">
+        <a href="{{ESTIMATE_URL}}" class="local-svc-cta" aria-label="Get a free estimate for roof replacement in The Woodlands">
           Get a Free Estimate
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -309,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <h3 class="local-svc-name">Roof Repair</h3>
         <p class="local-svc-desc">Not every roof issue requires a full replacement. When damage is isolated — cracked or missing shingles, deteriorating flashing, a failed valley, or a localized leak — a targeted repair can restore your roof's integrity and extend its service life. Home Team assesses the source of the problem first, then recommends the repair that actually solves it.</p>
-        <a href="/estimate" class="local-svc-cta" aria-label="Schedule a roof repair assessment in The Woodlands">
+        <a href="{{ESTIMATE_URL}}" class="local-svc-cta" aria-label="Schedule a roof repair assessment in The Woodlands">
           Schedule an Assessment
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -410,8 +412,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="why-ht-cta-wrap reveal">
-      <a href="/estimate" class="btn-red">
-        Schedule My Free Inspection
+      <a href="{{ESTIMATE_URL}}" class="btn-red">
+        Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -478,8 +480,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="process-cta">
-      <a href="/estimate" class="btn-red">
-        Schedule My Free Inspection
+      <a href="{{ESTIMATE_URL}}" class="btn-red">
+        Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a href="/contact" class="btn-red-outline">Contact Home Team</a>
@@ -563,8 +565,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="local-ctx-cta">
         <p>Not sure if your roof needs attention? A free inspection takes the guesswork out — no cost, no commitment, and no pressure to proceed with any work.</p>
-        <a href="/estimate" class="btn-red">
-          Schedule a Free Inspection
+        <a href="{{ESTIMATE_URL}}" class="btn-red">
+          Get My Free Roof Inspection
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -610,8 +612,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="rv-close-h">Over 552 verified reviews. See what Texas homeowners are saying.</p>
     <div class="rv-close-btns">
       <a href="/reviews" class="rv-close-link">Read All Reviews →</a>
-      <a href="/estimate" class="btn-gold">
-        Schedule My Free Inspection
+      <a href="{{ESTIMATE_URL}}" class="btn-gold">
+        Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -636,7 +638,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Explore Financing Options
       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="/estimate" class="btn-ghost">Schedule a Free Inspection</a>
+    <a href="{{ESTIMATE_URL}}" class="btn-ghost">Get My Free Roof Inspection</a>
   </div>
 </div>
 
@@ -705,8 +707,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="faq-cta reveal">
-      <a href="/estimate" class="btn-red">
-        Schedule My Free Inspection
+      <a href="{{ESTIMATE_URL}}" class="btn-red">
+        Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -745,7 +747,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="final-cta-btns reveal">
-      <a href="/estimate" class="btn-red">
+      <a href="{{ESTIMATE_URL}}" class="btn-red">
         Get My Free Roof Inspection
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>

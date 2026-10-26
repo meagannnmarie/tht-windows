@@ -63,6 +63,7 @@ function buildTokens(site, loc) {
     META_OG_DESCRIPTION: loc.meta.description,
     CANONICAL_URL:       loc.meta.canonical,
     OG_IMAGE:            loc.meta.og_image,
+    ESTIMATE_URL:        loc.meta.estimate_url || '/estimate',
     // Location
     CITY:                loc.location.city,
     STATE:               loc.location.state,
