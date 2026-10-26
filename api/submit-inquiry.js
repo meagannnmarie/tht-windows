@@ -1,6 +1,15 @@
 // Vercel serverless function — server-side only, never exposed to the browser.
-// Reads HIGHLEVEL_INQUIRY_WEBHOOK_URL from environment; forwards a flat JSON
-// payload to HighLevel on each valid form submission.
+// Reads HIGHLEVEL_INQUIRY_WEBHOOK_URL from environment; forwards a validated,
+// idempotency-keyed JSON payload to HighLevel with one automatic retry and an
+// optional alert webhook on permanent failure.
+//
+// ALERT_WEBHOOK_URL (optional env var): receives the full lead payload on HL
+// delivery failure so no inquiry is permanently lost. Configure to a Zapier /
+// Make.com / Slack incoming webhook that notifies the team by email or SMS.
+//
+// Logs contain only submissionId + outcome — no customer PII in log output.
+
+'use strict';
 
 // Maps sanitized source keys (sent from the browser) to human-readable labels
 // stored in HighLevel. Add an entry here whenever a new landing page is created.
@@ -11,8 +20,50 @@ const SOURCE_MAP = {
   'windows':              'Windows Page - hometeamroof.com',
   'doors':                'Doors Page - hometeamroof.com',
   'estimate':             'Estimate Page - hometeamroof.com',
+  'contact':              'Contact Page - hometeamroof.com',
   'financing':            'Financing Page - hometeamroof.com',
 };
+
+// Single attempt to POST payload to HL with an 8-second hard timeout.
+// Returns { ok, status } on HTTP response; { ok: false, error } on network failure.
+async function attemptDelivery(webhookUrl, payload) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8000);
+  try {
+    const res = await fetch(webhookUrl, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload),
+      signal:  controller.signal,
+    });
+    clearTimeout(timer);
+    return { ok: res.ok, status: res.status };
+  } catch (err) {
+    clearTimeout(timer);
+    return { ok: false, error: err.message };
+  }
+}
+
+// POST a recovery alert to ALERT_WEBHOOK_URL on permanent HL failure.
+// Contains the full submission payload so the operator can create the HL
+// contact manually. A failure here must not mask the original HL error.
+async function sendAlert(submissionId, payload, errorDetail) {
+  const alertUrl = process.env.ALERT_WEBHOOK_URL;
+  if (!alertUrl) return;
+  try {
+    await fetch(alertUrl, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({
+        alert:        'HL_WEBHOOK_FAILURE',
+        submissionId,
+        errorDetail,
+        receivedAt:   new Date().toISOString(),
+        lead:         payload,
+      }),
+    });
+  } catch { /* intentionally swallowed */ }
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -39,6 +90,17 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ ok: true });
   }
 
+  // ── Submission ID — accept valid client UUID or generate server-side ─────────
+  // Used for reconciliation (Vercel logs ↔ HL contact) and future idempotency.
+  // Note: the server does not currently deduplicate on this ID; a second POST
+  // with the same submissionId will be forwarded to HL. True idempotency would
+  // require persistent storage (e.g. Vercel KV) and is a future enhancement.
+  const clientId = (body.submissionId || '').trim();
+  const submissionId = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+    .test(clientId)
+    ? clientId
+    : crypto.randomUUID();
+
   // ── Extract & trim ───────────────────────────────────────────────────────────
   const firstName              = (body.firstName              || '').trim();
   const lastName               = (body.lastName               || '').trim();
@@ -54,7 +116,7 @@ module.exports = async function handler(req, res) {
   const message                = (body.message                || '').trim();
   const pageUrl                = (body.pageUrl                || '').trim();
 
-  // ── Resolve source label — validate key server-side, never trust raw strings ─
+  // ── Resolve source label ─────────────────────────────────────────────────────
   const rawSourceKey = (body.sourceKey || '').trim().toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 60);
   const source = SOURCE_MAP[rawSourceKey] || 'Home Team - hometeamroof.com';
 
@@ -70,22 +132,26 @@ module.exports = async function handler(req, res) {
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     errors.push('Please enter a valid email address.');
   }
+  const phoneDigits = rawPhone.replace(/\D/g, '');
+  if (rawPhone && phoneDigits.length < 7) {
+    errors.push('Please provide a valid phone number.');
+  }
 
   if (errors.length) {
     return res.status(400).json({ error: errors.join(' ') });
   }
 
   // ── Normalize phone ──────────────────────────────────────────────────────────
-  const digits = rawPhone.replace(/\D/g, '');
   let phone = rawPhone;
-  if (digits.length === 10) {
-    phone = `+1${digits}`;
-  } else if (digits.length === 11 && digits.startsWith('1')) {
-    phone = `+${digits}`;
+  if (phoneDigits.length === 10) {
+    phone = `+1${phoneDigits}`;
+  } else if (phoneDigits.length === 11 && phoneDigits.startsWith('1')) {
+    phone = `+${phoneDigits}`;
   }
 
-  // ── Build flat HighLevel payload ─────────────────────────────────────────────
+  // ── Build HighLevel payload ──────────────────────────────────────────────────
   const payload = {
+    submissionId,
     firstName,
     lastName,
     fullName:              [firstName, lastName].filter(Boolean).join(' '),
@@ -104,26 +170,31 @@ module.exports = async function handler(req, res) {
     submittedAt:           new Date().toISOString(),
   };
 
-  // ── Forward to HighLevel ─────────────────────────────────────────────────────
-  try {
-    const hlRes = await fetch(webhookUrl, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body:    JSON.stringify(payload),
-    });
+  // Log context — submissionId + metadata only, no PII
+  const logCtx = `[THT] id=${submissionId} src=${rawSourceKey || 'direct'} svc=${serviceType || 'unset'}`;
 
-    if (!hlRes.ok) {
-      console.error('[THT] HighLevel returned HTTP', hlRes.status);
-      return res.status(502).json({
-        error: 'Unable to process your request right now. Please try again or call us at (832) 422-3039.',
-      });
-    }
+  // ── Attempt 1 ────────────────────────────────────────────────────────────────
+  let result = await attemptDelivery(webhookUrl, payload);
 
-    return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('[THT] Webhook fetch failed:', err.message);
-    return res.status(502).json({
-      error: 'Unable to submit your request. Please try again or call us at (832) 422-3039.',
-    });
+  // ── Retry once after 1 s on any failure ─────────────────────────────────────
+  if (!result.ok) {
+    await new Promise(r => setTimeout(r, 1000));
+    result = await attemptDelivery(webhookUrl, payload);
   }
+
+  // ── Success ──────────────────────────────────────────────────────────────────
+  if (result.ok) {
+    console.log(`${logCtx} status=delivered`);
+    return res.status(200).json({ ok: true, submissionId });
+  }
+
+  // ── Permanent failure — alert and surface error to browser ───────────────────
+  const errorDetail = result.error || `HL HTTP ${result.status}`;
+  console.error(`${logCtx} status=FAILED detail=${errorDetail}`);
+  await sendAlert(submissionId, payload, errorDetail);
+
+  return res.status(502).json({
+    error:        'Unable to submit your request. Please try again or call us at (832) 422-3039.',
+    submissionId,
+  });
 };
