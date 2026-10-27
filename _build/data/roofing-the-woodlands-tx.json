@@ -2,10 +2,11 @@
   "_comment": "Location data for roofing/the-woodlands-tx.html — feed into local-roofing.html template",
 
   "meta": {
-    "title": "Roofing Contractor The Woodlands TX | Free Inspections | THT Home Solutions",
-    "description": "Expert residential roofing in The Woodlands, TX. Free roof inspections, storm and hail damage restoration, warranty-backed installation, and flexible financing. GAF Master Elite contractor serving The Woodlands and Montgomery County.",
+    "title": "Roofing Contractor The Woodlands TX | Free Inspections | Home Team",
+    "description": "Home Team offers expert residential roofing in The Woodlands, TX — free inspections, storm and hail damage restoration, warranty-backed installation, and flexible financing. GAF Master Elite contractor.",
     "canonical": "https://hometeamroof.com/roofing/the-woodlands-tx",
-    "og_image": "https://hometeamroof.com/images/websitepic.png"
+    "og_image": "https://hometeamroof.com/images/thewoodlands2.webp",
+    "estimate_url": "/estimate?source=woodlands-roofing-tx"
   },
 
   "location": {
