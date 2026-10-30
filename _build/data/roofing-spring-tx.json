@@ -1,0 +1,137 @@
+{
+  "_comment": "Location data for roofing/spring-tx.html — feed into local-roofing.html template",
+
+  "meta": {
+    "title": "Roofing Contractor in Spring, TX | Free Inspections | Home Team",
+    "description": "Home Team provides residential roofing in Spring, TX — free inspections, storm and hail damage repairs, and full roof replacements. Serving Harris and Montgomery County homeowners.",
+    "canonical": "https://hometeamroof.com/roofing/spring-tx",
+    "og_image": "https://hometeamroof.com/images/spring.jpeg",
+    "estimate_url": "/estimate?source=spring-roofing-tx"
+  },
+
+  "location": {
+    "city": "Spring",
+    "state": "TX",
+    "county": "Harris and Montgomery County",
+    "slug": "spring-tx",
+    "nearby_cities": "Tomball, The Woodlands, Conroe, and Klein",
+    "climate_notes": "heavy seasonal rainfall, active hail seasons, and high summer humidity common across both Harris and Montgomery Counties"
+  },
+
+  "hero": {
+    "eyebrow": "Spring, TX · Roofing",
+    "h1_line1": "Residential Roofing in",
+    "h1_line2": "Spring, TX",
+    "tagline": "Free inspections, storm damage repairs &amp; full roof replacements for Spring area homeowners.",
+    "mob_tagline": "Free inspections &amp; storm damage repairs for Spring homeowners.",
+    "trust_items": ["Free Roof Inspections", "Serving Spring, TX", "Warranty-Backed Work"],
+    "mob_trust_items": ["Free Inspections", "Warranty-Backed", "Local Team"],
+    "image": "/images/spring.jpeg",
+    "image_position": "center center",
+    "image_alt": "Residential neighborhood in Spring, TX"
+  },
+
+  "breadcrumb": [
+    { "label": "Home",      "url": "/" },
+    { "label": "Roofing",   "url": "/roofing" },
+    { "label": "Spring, TX", "url": null }
+  ],
+
+  "intro": {
+    "eyebrow": "Spring, TX",
+    "heading": "Roofing Built for Spring",
+    "body_p1": "Spring developed rapidly during the 1980s and 1990s as one of the Greater Houston area's most active suburban expansion zones. That housing stock is now entering a critical age window — original roofs in many Spring neighborhoods are at or past their typical service life for asphalt shingles in the Texas climate. Spring straddles the Harris and Montgomery County line, and much of the community sits in unincorporated areas where county building requirements — rather than city permits — govern roof replacement work.",
+    "body_p2": "Home Team works throughout the Spring area to help homeowners understand the actual condition of their roof. We conduct free, thorough inspections that cover shingles, flashing, gutters, decking, and attic ventilation, then walk you through exactly what we found using photos and plain language. Whether your home needs targeted repair after a hail event or a full replacement, we deliver honest recommendations based on what we see.",
+    "callout_label": "Serving Spring &amp; Surrounding Areas",
+    "callout_text": "Home Team serves homeowners throughout Spring and neighboring communities including Tomball, The Woodlands, Conroe, and Klein. Free inspections available — no pressure, no obligation.",
+    "image": "/images/spring.jpeg",
+    "image_alt": "Residential home in Spring, TX with a newly installed roof by Home Team Home Solutions",
+    "badge_strong": "Free Inspection",
+    "badge_span": "Spring, TX"
+  },
+
+  "services_heading": "Roofing Services for Spring Homeowners",
+  "services_sub": "From free inspections through complete installations, Home Team handles every phase of residential roofing in Spring, TX.",
+
+  "process": {
+    "heading": "A Better Roof Replacement Experience",
+    "sub": "From the first call to the final walkthrough, every Home Team project in Spring follows a clear, homeowner-friendly process.",
+    "step1_p": "Contact Home Team to schedule a no-cost roof inspection in Spring. We assess your shingles, flashing, decking, gutters, and attic ventilation — then document everything clearly with photos before discussing any options.",
+    "step2_p": "We walk through our findings together using plain language and photos. No roofing jargon, no pressure — just an honest picture of your roof's condition and what will need attention now versus later.",
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and any required county permits for Spring area projects — so you don't have to navigate the process alone."
+  },
+
+  "financing": {
+    "heading": "Protect Your Spring Home Without Delaying the Project",
+    "sub": "Flexible financing options available to Spring homeowners. Ask during your free inspection."
+  },
+
+  "faq": {
+    "heading": "Roofing Questions — Answered",
+    "items": [
+      {
+        "q": "Spring has a lot of 1980s and 1990s homes — when should those roofs be replaced?",
+        "a": "Standard three-tab and early architectural shingles installed during Spring's main development era are now 30–40 years old in many neighborhoods — well past the typical 20–25 year lifespan for asphalt shingles in the Texas heat and humidity. If your Spring home has never had a roof replacement, an inspection is the right starting point. A professional can document the current condition, identify any hidden damage from past storms, and give you a clear picture of how much useful life remains. Waiting until there is an active leak typically means more damage to decking, insulation, and interior finishes."
+      },
+      {
+        "q": "Do I need a permit for a roof replacement in Spring, TX?",
+        "a": "It depends on which part of Spring your home is in. Much of the Spring community is unincorporated, meaning it falls under Harris County or Montgomery County jurisdiction rather than a city building department. Both counties require permits for roof replacements. Home Team confirms the applicable permit requirements before any project begins and handles the permit process on your behalf — you should not need to manage this yourself."
+      },
+      {
+        "q": "What are the signs that my Spring home's roof has hail damage?",
+        "a": "Hail damage on asphalt shingles often appears as dark spots or bruising where the granule layer has been knocked away, exposing the underlying fiberglass mat. From the ground, look for dented gutters, damaged downspout fins, and granule accumulation in drainage areas. Damaged window screens are another common indicator. Hail impact that is invisible from the ground can still fracture the shingle's structural layer and significantly shorten the roof's remaining lifespan. A professional inspection after any notable hailstorm is the most reliable way to assess actual damage."
+      },
+      {
+        "q": "How does Spring's rainfall affect my roof compared to drier parts of Texas?",
+        "a": "The Greater Houston area — including Spring — averages significantly more annual rainfall than cities like Dallas or Austin, and Spring Creek and the surrounding drainage network can make localized flooding more likely. For roofing, persistent rainfall puts ongoing stress on flashing seals, penetration points around chimneys and vents, and any areas where water has a chance to pool. Gutters and downspouts that are undersized or improperly sloped can cause water to back up against the fascia and underlayment. Home Team evaluates drainage and runoff management as part of every inspection in the Spring area."
+      },
+      {
+        "q": "Does Home Team offer free roof inspections in Spring?",
+        "a": "Yes. Home Team provides free, no-obligation roof inspections to homeowners throughout the Spring area, covering both the Harris County and Montgomery County portions of the community. An inspection covers your shingles, flashing, gutters, decking, and attic ventilation. You receive honest findings and clear options — no pressure to proceed with any work."
+      },
+      {
+        "q": "Is financing available for roofing work in Spring?",
+        "a": "Yes. Home Team offers flexible financing options to help Spring homeowners manage the cost of a roofing project without delaying needed work. Ask about available payment plans during your free inspection or visit the <a href=\"/financing\" style=\"color:var(--red);text-decoration:none;font-weight:600\">financing page</a> for more information."
+      }
+    ]
+  },
+
+  "final_cta": {
+    "eyebrow": "Spring, TX",
+    "heading": "Don't Wait for a Leak to Find Out What Your Roof Needs.",
+    "sub": "Schedule a free inspection with Home Team — honest assessment, clear options, no pressure. Serving Spring and surrounding communities in Harris and Montgomery County."
+  },
+
+  "schema": {
+    "breadcrumb_item3_name": "Spring, TX",
+    "service_name": "Roofing Services in Spring, TX",
+    "service_area_city": "Spring",
+    "service_description": "Residential roofing services in Spring, TX including free inspections, full roof replacements, storm and hail damage restoration, and roof repairs for homeowners in Harris and Montgomery County.",
+    "faq_schema": [
+      {
+        "q": "Spring has a lot of 1980s and 1990s homes — when should those roofs be replaced?",
+        "a": "Shingles from Spring's main development era are now 30–40 years old in many neighborhoods — past the typical 20–25 year lifespan for Texas asphalt shingles. If your home has never had a replacement, an inspection can document current condition, identify past storm damage, and clarify how much useful life remains before moisture intrusion becomes a larger problem."
+      },
+      {
+        "q": "Do I need a permit for a roof replacement in Spring, TX?",
+        "a": "Much of Spring is unincorporated, falling under Harris or Montgomery County jurisdiction rather than a city building department. Both counties require permits for roof replacements. Home Team confirms the applicable requirements and handles the permit process on your behalf before any project begins."
+      },
+      {
+        "q": "What are the signs that my Spring home's roof has hail damage?",
+        "a": "Look for dented gutters, damaged window screens, and granule accumulation in drainage areas. On shingles, hail damage appears as dark spots where the granule layer has been knocked away. Hail impact invisible from the ground can still fracture the shingle structure and shorten the roof's lifespan. A professional inspection after any notable hailstorm is the most reliable assessment."
+      },
+      {
+        "q": "How does Spring's rainfall affect my roof?",
+        "a": "Spring averages significantly more annual rainfall than drier Texas cities, putting ongoing stress on flashing seals, penetration points, and drainage systems. Gutters that are undersized or improperly sloped can cause water to back up against the fascia. Home Team evaluates drainage and runoff as part of every inspection in the Spring area."
+      },
+      {
+        "q": "Does Home Team offer free roof inspections in Spring?",
+        "a": "Yes. Home Team provides free, no-obligation roof inspections throughout the Spring area, covering both Harris County and Montgomery County portions. An inspection covers shingles, flashing, gutters, decking, and attic ventilation — with honest findings and clear options."
+      },
+      {
+        "q": "Is financing available for roofing work in Spring?",
+        "a": "Yes. Home Team offers flexible financing options for Spring homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
+      }
+    ]
+  }
+}
