@@ -133,5 +133,23 @@
         "a": "Yes. Home Team offers flexible financing options for Cypress homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
       }
     ]
+  },
+  "local_context": {
+    "topic1": {
+      "heading": "Intense Heat and UV Exposure",
+      "body": "Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement."
+    },
+    "topic2": {
+      "heading": "Hail and Severe Storm Seasons",
+      "body": "Northwest Harris County — including the Cy-Fair area — is regularly exposed to severe thunderstorms and hail. Hail damage is often invisible from the ground: bruised shingles, compromised granule layers, and cracked underlayment require a professional inspection to identify. Home Team documents all storm-related damage with photos and a written assessment."
+    },
+    "topic3": {
+      "heading": "Heavy Rainfall and Complex Rooflines",
+      "body": "Cypress receives significant annual rainfall, and the subdivision rooflines common in the Cy-Fair area — with multiple valleys, dormers, and hip sections — create more potential water entry points than simpler designs. Every valley and flashing transition is a location where standing water or wind-driven rain can find a gap. Cypress homes benefit from inspection that specifically evaluates each transition, not just the field of shingles."
+    },
+    "topic4": {
+      "heading": "Unincorporated Harris County Permits",
+      "body": "Cypress is an unincorporated community in Harris County. Roof replacements require a permit issued by Harris County rather than a city building department. Home Team handles the Harris County permit process on your behalf and confirms all applicable requirements before your project begins."
+    }
   }
 }

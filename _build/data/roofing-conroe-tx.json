@@ -133,5 +133,23 @@
         "a": "Yes. Home Team offers flexible financing options for Conroe homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
       }
     ]
+  },
+  "local_context": {
+    "topic1": {
+      "heading": "Intense Heat and UV Exposure",
+      "body": "Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement."
+    },
+    "topic2": {
+      "heading": "Hail and Severe Storm Seasons",
+      "body": "Montgomery County experiences some of the most active severe weather in Texas, including frequent hailstorms that can cause damage not visible from the ground. Bruised shingles, granule loss, and cracked mat layers require close inspection. Even minor hail impact can allow moisture intrusion that worsens significantly over time."
+    },
+    "topic3": {
+      "heading": "Tree Canopy and Moisture",
+      "body": "Conroe's pine and hardwood tree coverage — particularly near Lake Conroe — means shaded roofs, persistent debris accumulation, and slower drying after rain. These conditions accelerate algae growth and granule wear. Elevated humidity near the lake compounds the effect, making periodic inspections more important than in drier, more open environments."
+    },
+    "topic4": {
+      "heading": "Permit and Jurisdiction",
+      "body": "Roof replacements within the City of Conroe require a permit through the city's building department. Homeowners in unincorporated Montgomery County outside the city limits fall under county jurisdiction with different requirements. Home Team confirms the applicable permit authority before every project and handles the permit process on your behalf."
+    }
   }
 }

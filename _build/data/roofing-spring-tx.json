@@ -133,5 +133,23 @@
         "a": "Yes. Home Team offers flexible financing options for Spring homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
       }
     ]
+  },
+  "local_context": {
+    "topic1": {
+      "heading": "Intense Heat and UV Exposure",
+      "body": "Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement."
+    },
+    "topic2": {
+      "heading": "Hail and Severe Storm Seasons",
+      "body": "The greater Houston area — including Spring — experiences frequent severe weather with hail that can cause damage invisible from the ground. Bruised shingles, granule loss, and cracked underlayment require close professional inspection. Even minor impact can allow moisture intrusion that worsens significantly over time in the area's humid climate."
+    },
+    "topic3": {
+      "heading": "Rainfall and Drainage",
+      "body": "Spring sits in a high-rainfall corridor, and proximity to Spring Creek and its drainage network means heavy rain events are frequent. Persistent moisture tests every flashing seal and penetration on a roof. Gutters that cannot handle peak rainfall rates allow water to back up against the fascia — a common issue on the 1980s and 1990s homes that define many Spring neighborhoods."
+    },
+    "topic4": {
+      "heading": "Unincorporated Area Permits",
+      "body": "Most of the Spring community is unincorporated, meaning roof replacement permits are issued by Harris County or Montgomery County depending on your specific address — not a city building department. Both counties require permits for full replacements. Home Team confirms which jurisdiction applies to your property and handles the permit process before work begins."
+    }
   }
 }

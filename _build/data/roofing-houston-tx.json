@@ -133,5 +133,23 @@
         "a": "Yes. Home Team offers flexible financing options for Greater Houston homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
       }
     ]
+  },
+  "local_context": {
+    "topic1": {
+      "heading": "Intense Heat and UV Exposure",
+      "body": "Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement."
+    },
+    "topic2": {
+      "heading": "Hurricane and Storm Exposure",
+      "body": "Greater Houston sits in one of the most hurricane-active corridors in the United States. Even storms that make landfall away from the city can deliver sustained winds that stress or damage shingles, flashing, and ridge caps. Between hurricane seasons, frequent severe thunderstorms produce localized hail and high-wind events that can cause damage not visible from the ground."
+    },
+    "topic3": {
+      "heading": "High Annual Rainfall",
+      "body": "Houston averages among the highest annual rainfall of any major U.S. city. Frequent heavy rain events put every flashing seal, penetration, and drainage system on a residential roof under repeated stress. Gutters and downspouts sized for drier climates may be insufficient for peak Houston rainfall rates. Home Team evaluates drainage capacity and waterproofing details as part of every Houston-area inspection."
+    },
+    "topic4": {
+      "heading": "Harris County Permits",
+      "body": "Residential roof replacements in Harris County — including unincorporated areas of Greater Houston — require a county building permit. Work within incorporated city limits may require a separate city permit. Home Team confirms the applicable jurisdiction and permit requirements for your specific address and manages the permit process so you don't have to."
+    }
   }
 }

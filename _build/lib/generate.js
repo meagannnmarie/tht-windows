@@ -106,6 +106,15 @@ function buildTokens(site, loc) {
     FAQ_4_Q: faq[3].q, FAQ_4_A: faq[3].a,
     FAQ_5_Q: faq[4].q, FAQ_5_A: faq[4].a,
     FAQ_6_Q: faq[5].q, FAQ_6_A: faq[5].a,
+    // Local context topics
+    LOCAL_CTX_TOPIC1_H:  loc.local_context.topic1.heading,
+    LOCAL_CTX_TOPIC1_P:  loc.local_context.topic1.body,
+    LOCAL_CTX_TOPIC2_H:  loc.local_context.topic2.heading,
+    LOCAL_CTX_TOPIC2_P:  loc.local_context.topic2.body,
+    LOCAL_CTX_TOPIC3_H:  loc.local_context.topic3.heading,
+    LOCAL_CTX_TOPIC3_P:  loc.local_context.topic3.body,
+    LOCAL_CTX_TOPIC4_H:  loc.local_context.topic4.heading,
+    LOCAL_CTX_TOPIC4_P:  loc.local_context.topic4.body,
     // Final CTA
     FINAL_CTA_EYEBROW:   loc.final_cta.eyebrow,
     FINAL_CTA_HEADING:   loc.final_cta.heading,
