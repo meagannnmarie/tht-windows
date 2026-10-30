@@ -58,7 +58,7 @@
     "sub": "From the first call to the final walkthrough, every Home Team project in Conroe follows a clear, homeowner-friendly process.",
     "step1_p": "Contact Home Team to schedule a no-cost roof inspection in Conroe. We assess shingles, flashing, decking condition, attic ventilation, and any signs of moisture intrusion — then document everything clearly with photos.",
     "step2_p": "We walk through our findings together in plain language. No roofing jargon, no pressure — just an honest picture of what your roof needs, what it will cost, and which options make sense given Conroe's climate conditions.",
-    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles material selection, scheduling, and required Montgomery County permits so you don't have to navigate the process alone."
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles material selection, scheduling, and every project detail from start to completion."
   },
 
   "financing": {
@@ -86,8 +86,8 @@
         "a": "Most residential roof replacements in Conroe are completed in one to two days, depending on roof size, complexity, and the materials selected. Weather is the most common variable — Texas summer storms can interrupt a project, but Home Team monitors conditions and adjusts scheduling accordingly. You will receive a clear timeline before any work begins, and the crew completes a thorough cleanup before each day ends."
       },
       {
-        "q": "Does Home Team handle Montgomery County permit requirements?",
-        "a": "Yes. Roof replacements in the City of Conroe typically require a permit through the City of Conroe building department. Home Team handles the permit process on your behalf — you should not need to navigate permitting yourself. If you are in an unincorporated area of Montgomery County outside the Conroe city limits, permit requirements differ; we confirm the applicable requirements before your project begins."
+        "q": "Does Home Team use CertainTeed shingles in Conroe, and what warranty coverage is included?",
+        "a": "Home Team is a CertainTeed SELECT ShingleMaster, which means we are authorized to install CertainTeed products with enhanced warranty coverage on qualifying installations. These enhanced warranties offer longer coverage periods than standard contractor warranties and cover both material defects and workmanship. When selecting materials for your Conroe roof, the Home Team team will walk through the available options, coverage tiers, and what each means for your specific home."
       },
       {
         "q": "Does Home Team offer financing for roofing projects in Conroe?",
@@ -125,8 +125,8 @@
         "a": "Most residential roof replacements in Conroe are completed in one to two days, depending on size, complexity, and materials. Home Team provides a clear timeline before work begins and handles thorough cleanup after each day."
       },
       {
-        "q": "Does Home Team handle Montgomery County permit requirements?",
-        "a": "Yes. Roof replacements within the City of Conroe typically require a city building permit. Home Team handles the permit process on your behalf. Requirements for unincorporated Montgomery County areas differ; we confirm applicable requirements before any project begins."
+        "q": "Does Home Team use CertainTeed shingles in Conroe, and what warranty coverage is included?",
+        "a": "Home Team holds CertainTeed SELECT ShingleMaster certification, authorizing enhanced warranty coverage on qualifying installations. These warranties cover both material defects and installation workmanship for longer periods than standard contractor warranties. The Home Team team will walk through available material options and coverage tiers during your free inspection."
       },
       {
         "q": "Does Home Team offer financing for roofing projects in Conroe?",
@@ -148,8 +148,8 @@
       "body": "Conroe's pine and hardwood tree coverage — particularly near Lake Conroe — means shaded roofs, persistent debris accumulation, and slower drying after rain. These conditions accelerate algae growth and granule wear. Elevated humidity near the lake compounds the effect, making periodic inspections more important than in drier, more open environments."
     },
     "topic4": {
-      "heading": "Permit and Jurisdiction",
-      "body": "Roof replacements within the City of Conroe require a permit through the city's building department. Homeowners in unincorporated Montgomery County outside the city limits fall under county jurisdiction with different requirements. Home Team confirms the applicable permit authority before every project and handles the permit process on your behalf."
+      "heading": "Attic Ventilation in Conroe's Climate",
+      "body": "Proper attic ventilation is one of the most important and overlooked factors in a roof's longevity. In Conroe's climate — where summer heat is intense and humidity near Lake Conroe is persistent — a poorly ventilated attic traps heat and moisture that degrades shingles from beneath. Adequate soffit intake paired with functional ridge ventilation regulates attic temperature and limits moisture buildup year-round. Home Team evaluates ventilation as a standard part of every inspection in the Conroe area."
     }
   }
 }

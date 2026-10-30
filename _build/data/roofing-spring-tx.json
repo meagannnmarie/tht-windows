@@ -40,7 +40,7 @@
   "intro": {
     "eyebrow": "Spring, TX",
     "heading": "Roofing Built for Spring",
-    "body_p1": "Spring developed rapidly during the 1980s and 1990s as one of the Greater Houston area's most active suburban expansion zones. That housing stock is now entering a critical age window — original roofs in many Spring neighborhoods are at or past their typical service life for asphalt shingles in the Texas climate. Spring straddles the Harris and Montgomery County line, and much of the community sits in unincorporated areas where county building requirements — rather than city permits — govern roof replacement work.",
+    "body_p1": "Spring developed rapidly during the 1980s and 1990s as one of the Greater Houston area's most active suburban expansion zones. That housing stock is now entering a critical age window — original roofs in many Spring neighborhoods are at or past their typical service life for asphalt shingles in the Texas climate. Compounding the age factor is Spring's high annual rainfall — proximity to Spring Creek means roofs here are routinely exposed to the moisture and drainage stress that accelerates wear on shingles, flashing, and gutters alike.",
     "body_p2": "Home Team works throughout the Spring area to help homeowners understand the actual condition of their roof. We conduct free, thorough inspections that cover shingles, flashing, gutters, decking, and attic ventilation, then walk you through exactly what we found using photos and plain language. Whether your home needs targeted repair after a hail event or a full replacement, we deliver honest recommendations based on what we see.",
     "callout_label": "Serving Spring &amp; Surrounding Areas",
     "callout_text": "Home Team serves homeowners throughout Spring and neighboring communities including Tomball, The Woodlands, Conroe, and Klein. Free inspections available — no pressure, no obligation.",
@@ -58,7 +58,7 @@
     "sub": "From the first call to the final walkthrough, every Home Team project in Spring follows a clear, homeowner-friendly process.",
     "step1_p": "Contact Home Team to schedule a no-cost roof inspection in Spring. We assess your shingles, flashing, decking, gutters, and attic ventilation — then document everything clearly with photos before discussing any options.",
     "step2_p": "We walk through our findings together using plain language and photos. No roofing jargon, no pressure — just an honest picture of your roof's condition and what will need attention now versus later.",
-    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and any required county permits for Spring area projects — so you don't have to navigate the process alone."
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and every project detail for Spring area homes through completion."
   },
 
   "financing": {
@@ -74,8 +74,8 @@
         "a": "Standard three-tab and early architectural shingles installed during Spring's main development era are now 30–40 years old in many neighborhoods — well past the typical 20–25 year lifespan for asphalt shingles in the Texas heat and humidity. If your Spring home has never had a roof replacement, an inspection is the right starting point. A professional can document the current condition, identify any hidden damage from past storms, and give you a clear picture of how much useful life remains. Waiting until there is an active leak typically means more damage to decking, insulation, and interior finishes."
       },
       {
-        "q": "Do I need a permit for a roof replacement in Spring, TX?",
-        "a": "It depends on which part of Spring your home is in. Much of the Spring community is unincorporated, meaning it falls under Harris County or Montgomery County jurisdiction rather than a city building department. Both counties require permits for roof replacements. Home Team confirms the applicable permit requirements before any project begins and handles the permit process on your behalf — you should not need to manage this yourself."
+        "q": "Are impact-resistant shingles worth it for a Spring home?",
+        "a": "Class 4 impact-resistant shingles — the highest rating under the UL 2218 standard — are significantly more resistant to hail damage than standard asphalt shingles. For Spring homeowners who have dealt with repeated hail events, upgrading at replacement time reduces the likelihood of storm damage in future years. Many Texas insurance carriers also offer premium discounts for Class 4 installations. Home Team can walk through whether impact-resistant materials make sense for your specific project and what the cost difference looks like compared to standard architectural shingles."
       },
       {
         "q": "What are the signs that my Spring home's roof has hail damage?",
@@ -113,8 +113,8 @@
         "a": "Shingles from Spring's main development era are now 30–40 years old in many neighborhoods — past the typical 20–25 year lifespan for Texas asphalt shingles. If your home has never had a replacement, an inspection can document current condition, identify past storm damage, and clarify how much useful life remains before moisture intrusion becomes a larger problem."
       },
       {
-        "q": "Do I need a permit for a roof replacement in Spring, TX?",
-        "a": "Much of Spring is unincorporated, falling under Harris or Montgomery County jurisdiction rather than a city building department. Both counties require permits for roof replacements. Home Team confirms the applicable requirements and handles the permit process on your behalf before any project begins."
+        "q": "Are impact-resistant shingles worth it for a Spring home?",
+        "a": "Class 4 impact-resistant shingles offer significantly better hail resistance than standard asphalt shingles and may qualify for homeowner insurance discounts in Texas. For Spring homes that have experienced repeated hail events, upgrading at replacement time is a cost-effective long-term decision. Home Team can confirm whether impact-resistant materials are available for your project and what the cost difference looks like."
       },
       {
         "q": "What are the signs that my Spring home's roof has hail damage?",
@@ -148,8 +148,8 @@
       "body": "Spring sits in a high-rainfall corridor, and proximity to Spring Creek and its drainage network means heavy rain events are frequent. Persistent moisture tests every flashing seal and penetration on a roof. Gutters that cannot handle peak rainfall rates allow water to back up against the fascia — a common issue on the 1980s and 1990s homes that define many Spring neighborhoods."
     },
     "topic4": {
-      "heading": "Unincorporated Area Permits",
-      "body": "Most of the Spring community is unincorporated, meaning roof replacement permits are issued by Harris County or Montgomery County depending on your specific address — not a city building department. Both counties require permits for full replacements. Home Team confirms which jurisdiction applies to your property and handles the permit process before work begins."
+      "heading": "Shingle Selection for the Texas Climate",
+      "body": "Not all asphalt shingles perform equally in the Houston-area climate. Architectural shingles with Class 4 impact resistance ratings offer significantly better durability against hail than standard three-tab designs. Algae-resistant shingles — which use copper-infused granules to inhibit growth — address the persistent algae streaking common on roofs in high-humidity environments like Spring. When replacing an aging roof, material selection is an opportunity to improve performance, not just restore it."
     }
   }
 }
