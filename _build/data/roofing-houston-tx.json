@@ -1,0 +1,137 @@
+{
+  "_comment": "Location data for roofing/houston-tx.html — feed into local-roofing.html template. home2.webp is a general roofing photo, not a verified Houston project image.",
+
+  "meta": {
+    "title": "Roofing Contractor in Houston, TX | Free Inspections | Home Team",
+    "description": "Home Team provides residential roofing in Greater Houston, TX — free inspections, hurricane and storm damage repairs, and full roof replacements. Serving Harris County homeowners.",
+    "canonical": "https://hometeamroof.com/roofing/houston-tx",
+    "og_image": "https://hometeamroof.com/images/home2.webp",
+    "estimate_url": "/estimate?source=houston-roofing-tx"
+  },
+
+  "location": {
+    "city": "Houston",
+    "state": "TX",
+    "county": "Harris County",
+    "slug": "houston-tx",
+    "nearby_cities": "Tomball, Cypress, Spring, Katy, and The Woodlands",
+    "climate_notes": "among the highest annual rainfall of any major U.S. city, direct hurricane and tropical storm exposure, and intense heat and humidity that stress every roofing component year-round"
+  },
+
+  "hero": {
+    "eyebrow": "Greater Houston, TX · Roofing",
+    "h1_line1": "Residential Roofing in",
+    "h1_line2": "Greater Houston, TX",
+    "tagline": "Free inspections, hurricane damage repairs &amp; roof replacements for Houston area homeowners.",
+    "mob_tagline": "Free inspections &amp; storm damage repairs for Houston homeowners.",
+    "trust_items": ["Free Roof Inspections", "Serving Greater Houston", "Warranty-Backed Work"],
+    "mob_trust_items": ["Free Inspections", "Warranty-Backed", "Local Team"],
+    "image": "/images/home2.webp",
+    "image_position": "center center",
+    "image_alt": "Residential roofing project in the Greater Houston, TX area"
+  },
+
+  "breadcrumb": [
+    { "label": "Home",        "url": "/" },
+    { "label": "Roofing",     "url": "/roofing" },
+    { "label": "Houston, TX", "url": null }
+  ],
+
+  "intro": {
+    "eyebrow": "Greater Houston, TX",
+    "heading": "Roofing Built for Houston's Climate",
+    "body_p1": "No major U.S. city puts more cumulative stress on residential roofs than Houston. The area averages roughly 50 inches of rainfall per year — surpassing most coastal cities — and sits directly in the path of Atlantic hurricane and tropical storm systems that can deliver sustained winds well above design thresholds for standard asphalt shingles. Between hurricane seasons, the combination of intense UV exposure, high humidity, and extreme summer heat degrades shingles, flashing sealants, and underlayment faster than in drier climates. A Houston roof that is 15 years old has aged harder than a 15-year-old roof almost anywhere else in the country.",
+    "body_p2": "Home Team serves homeowners across the Greater Houston area with the same approach: a thorough, no-pressure inspection that documents what your roof actually looks like right now, followed by honest options and clear pricing. We work from our base in Tomball, making us well-positioned to serve northwest Houston, Harris County, and the surrounding communities. Whether you are assessing hurricane damage, dealing with a persistent leak, or planning ahead for a roof that is approaching the end of its useful life, we provide the information you need to make a confident decision.",
+    "callout_label": "Serving Greater Houston &amp; Surrounding Areas",
+    "callout_text": "Home Team serves homeowners throughout Greater Houston and neighboring communities including Tomball, Cypress, Spring, Katy, and The Woodlands. Free inspections available — no pressure, no obligation.",
+    "image": "/images/home2.webp",
+    "image_alt": "Residential roofing services in the Greater Houston area by Home Team Home Solutions",
+    "badge_strong": "Free Inspection",
+    "badge_span": "Greater Houston, TX"
+  },
+
+  "services_heading": "Roofing Services for Greater Houston Homeowners",
+  "services_sub": "From free inspections through complete installations, Home Team handles every phase of residential roofing across Greater Houston and Harris County.",
+
+  "process": {
+    "heading": "A Better Roof Replacement Experience",
+    "sub": "From the first call to the final walkthrough, every Home Team project in the Houston area follows a clear, homeowner-friendly process.",
+    "step1_p": "Contact Home Team to schedule a no-cost roof inspection. We assess your shingles, flashing, decking condition, drainage, and attic ventilation — with particular attention to storm damage indicators relevant to Houston's hurricane and high-rainfall environment.",
+    "step2_p": "We walk through our findings together using photos and plain language — no roofing jargon, no pressure. You receive an honest picture of your roof's condition and what each option will cost before any decision is required.",
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and required Harris County permits for Houston-area projects so you don't have to navigate the process yourself."
+  },
+
+  "financing": {
+    "heading": "Protect Your Houston Home Without Delaying the Project",
+    "sub": "Flexible financing options available to Greater Houston homeowners. Ask during your free inspection."
+  },
+
+  "faq": {
+    "heading": "Roofing Questions — Answered",
+    "items": [
+      {
+        "q": "How does Houston's hurricane exposure affect residential roofing?",
+        "a": "Houston sits in one of the most hurricane-active coastal corridors in the United States. Even storms that make landfall south of the city can deliver sustained winds of 50–80 mph and higher gusts to the Houston metro area. Standard three-tab asphalt shingles are typically rated for winds up to 60–70 mph; architectural shingles with enhanced wind resistance can be rated considerably higher. After any named storm or significant wind event, a professional inspection is warranted — shingles can sustain structural damage that is not visible from the ground but significantly shortens the roof's remaining lifespan. Home Team offers free post-storm inspections throughout Greater Houston."
+      },
+      {
+        "q": "Houston gets around 50 inches of rain a year — what does that mean for my roof?",
+        "a": "Fifty inches of annual rainfall means every potential vulnerability in your roofing system gets tested repeatedly. Flashing seals at chimneys, vents, skylights, and any roof penetration are exposed to driving rain multiple times per year, and any gap in a sealant allows water to enter slowly but consistently. Gutters and downspouts sized for drier climates may be unable to handle peak Houston rainfall rates, causing water to back up against the fascia. Underlayment condition matters more here than in drier cities because it is regularly called on to prevent the water that shingles alone cannot stop. Home Team evaluates drainage capacity and waterproofing details as part of every Houston-area inspection."
+      },
+      {
+        "q": "My Houston home has an older flat or low-slope section — does Home Team service those?",
+        "a": "Houston's architectural diversity includes a significant number of homes with flat or low-slope roof sections — particularly on covered patios, garage extensions, and mid-century homes. These sections require different materials and installation techniques than pitched asphalt shingle roofing. Contact Home Team to discuss your specific situation; our team can assess the condition of low-slope areas and provide options appropriate for those roof types."
+      },
+      {
+        "q": "When is the right time to replace a roof in Houston versus repair it?",
+        "a": "In Houston's climate, the calculus between repair and replacement tips toward replacement earlier than in milder areas. A roof approaching 15–20 years old on standard asphalt shingles has been through multiple hurricane seasons, tens of thousands of UV hours, and significant cumulative rainfall. If a roof in this age range shows widespread granule loss, multiple areas of damage, or has required repeated repairs, replacement usually delivers better long-term value than continued patch work. Home Team provides an honest assessment rather than defaulting to either option — we show you the actual condition and let you decide with full information."
+      },
+      {
+        "q": "Does Home Team offer free roof inspections in Houston?",
+        "a": "Yes. Home Team provides free, no-obligation roof inspections to homeowners throughout Greater Houston and Harris County. An inspection covers shingles, all flashing details, gutters, decking condition, and attic ventilation — with honest findings and clear options. No pressure to proceed with any work."
+      },
+      {
+        "q": "Is financing available for Houston roofing projects?",
+        "a": "Yes. Home Team offers flexible financing options to help Greater Houston homeowners manage the cost of a roofing project without delay. Ask about available payment plans during your free inspection or visit the <a href=\"/financing\" style=\"color:var(--red);text-decoration:none;font-weight:600\">financing page</a> for more information."
+      }
+    ]
+  },
+
+  "final_cta": {
+    "eyebrow": "Greater Houston, TX",
+    "heading": "Houston's Climate Is Hard on Roofs. We Know What to Look For.",
+    "sub": "Schedule a free inspection with Home Team — thorough assessment of storm damage, drainage, and wear specific to the Houston environment. Honest findings, no pressure."
+  },
+
+  "schema": {
+    "breadcrumb_item3_name": "Houston, TX",
+    "service_name": "Roofing Services in Greater Houston, TX",
+    "service_area_city": "Houston",
+    "service_description": "Residential roofing services in Greater Houston, TX including free inspections, full roof replacements, hurricane and storm damage restoration, and roof repairs for Harris County homeowners.",
+    "faq_schema": [
+      {
+        "q": "How does Houston's hurricane exposure affect residential roofing?",
+        "a": "Houston sits in one of the most active hurricane corridors in the U.S. Even storms making landfall south of the city can deliver sustained winds of 50–80 mph to the metro area. Standard shingles can sustain structural damage not visible from the ground. A professional inspection after any named storm is warranted. Home Team offers free post-storm inspections throughout Greater Houston."
+      },
+      {
+        "q": "Houston gets around 50 inches of rain a year — what does that mean for my roof?",
+        "a": "High annual rainfall means every vulnerability in a roofing system is tested repeatedly. Flashing seals, underlayment condition, and gutter capacity all matter more here than in drier climates. Home Team evaluates drainage capacity and waterproofing details as part of every Houston-area inspection."
+      },
+      {
+        "q": "My Houston home has a flat or low-slope section — does Home Team service those?",
+        "a": "Houston's architectural diversity includes many homes with flat or low-slope sections that require different materials and techniques than pitched shingle roofing. Contact Home Team to discuss your specific situation; we can assess condition and provide options appropriate for those roof types."
+      },
+      {
+        "q": "When is the right time to replace versus repair a roof in Houston?",
+        "a": "In Houston's climate, roofs approaching 15–20 years old have been through multiple hurricane seasons, high UV exposure, and significant cumulative rainfall. If a roof in this age range shows widespread damage or has required repeated repairs, replacement usually delivers better long-term value. Home Team provides honest assessment rather than defaulting to either option."
+      },
+      {
+        "q": "Does Home Team offer free roof inspections in Houston?",
+        "a": "Yes. Home Team provides free, no-obligation inspections throughout Greater Houston and Harris County, covering shingles, all flashing details, gutters, decking, and attic ventilation — with honest findings and no pressure to proceed."
+      },
+      {
+        "q": "Is financing available for Houston roofing projects?",
+        "a": "Yes. Home Team offers flexible financing options for Greater Houston homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
+      }
+    ]
+  }
+}

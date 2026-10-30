@@ -1,0 +1,137 @@
+{
+  "_comment": "Location data for roofing/cypress-tx.html — feed into local-roofing.html template",
+
+  "meta": {
+    "title": "Roofing Contractor in Cypress, TX | Free Inspections | Home Team",
+    "description": "Home Team provides residential roofing in Cypress, TX — free inspections, storm damage repairs, and full roof replacements for Cy-Fair homeowners. Serving Harris County.",
+    "canonical": "https://hometeamroof.com/roofing/cypress-tx",
+    "og_image": "https://hometeamroof.com/images/cypress.webp",
+    "estimate_url": "/estimate?source=cypress-roofing-tx"
+  },
+
+  "location": {
+    "city": "Cypress",
+    "state": "TX",
+    "county": "Harris County",
+    "slug": "cypress-tx",
+    "nearby_cities": "Tomball, Katy, Spring, and Houston",
+    "climate_notes": "high annual rainfall, elevated hail risk, and intense summer heat common throughout the Cy-Fair and northwest Harris County area"
+  },
+
+  "hero": {
+    "eyebrow": "Cypress, TX · Roofing",
+    "h1_line1": "Residential Roofing in",
+    "h1_line2": "Cypress, TX",
+    "tagline": "Free inspections, storm damage repairs &amp; full roof replacements for Cypress area homeowners.",
+    "mob_tagline": "Free inspections &amp; storm damage repairs for Cypress homeowners.",
+    "trust_items": ["Free Roof Inspections", "Serving Cypress, TX", "Warranty-Backed Work"],
+    "mob_trust_items": ["Free Inspections", "Warranty-Backed", "Local Team"],
+    "image": "/images/cypress.webp",
+    "image_position": "center center",
+    "image_alt": "Residential neighborhood in Cypress, TX"
+  },
+
+  "breadcrumb": [
+    { "label": "Home",        "url": "/" },
+    { "label": "Roofing",     "url": "/roofing" },
+    { "label": "Cypress, TX", "url": null }
+  ],
+
+  "intro": {
+    "eyebrow": "Cypress, TX",
+    "heading": "Roofing Built for Cypress",
+    "body_p1": "Cypress emerged as one of the fastest-growing communities in Harris County during the 2000s and 2010s, and that growth shows in the rooflines. The Cy-Fair area's newer subdivisions are characterized by complex multi-plane architectural roofing — hip roofs, multiple valleys, dormers, and geometric features that create more potential failure points than a simple gable design. Proper installation and flashing detail at every valley and transition matters more on these roofs, and so does regular inspection to catch early signs of wear at those stress points.",
+    "body_p2": "Home Team works with Cypress homeowners to assess their specific roof configuration, identify any areas of concern, and deliver honest recommendations. Whether your home needs attention after a hail event, has a persistent leak at a valley or chimney flashing, or is approaching the end of its serviceable life, we provide a clear picture of what is actually going on — and what it will take to fix it.",
+    "callout_label": "Serving Cypress &amp; Surrounding Areas",
+    "callout_text": "Home Team serves homeowners throughout Cypress and neighboring communities including Tomball, Katy, Spring, and northwest Houston. Free inspections available — no pressure, no obligation.",
+    "image": "/images/cypress.webp",
+    "image_alt": "Residential home in Cypress, TX with a newly installed roof by Home Team Home Solutions",
+    "badge_strong": "Free Inspection",
+    "badge_span": "Cypress, TX"
+  },
+
+  "services_heading": "Roofing Services for Cypress Homeowners",
+  "services_sub": "From free inspections through complete installations, Home Team handles every phase of residential roofing in Cypress, TX.",
+
+  "process": {
+    "heading": "A Better Roof Replacement Experience",
+    "sub": "From the first call to the final walkthrough, every Home Team project in Cypress follows a clear, homeowner-friendly process.",
+    "step1_p": "Contact Home Team to schedule a no-cost roof inspection in Cypress. We assess shingles, all flashing transitions, valleys, penetrations, gutters, and attic ventilation — paying close attention to the multi-plane geometry common in Cy-Fair subdivision homes.",
+    "step2_p": "We walk through our findings together using photos and plain language. No roofing jargon, no pressure — just an honest picture of your roof's condition, where the risks are, and what each option will cost.",
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and any required Harris County permits for Cypress projects — you should not have to manage the permit process yourself."
+  },
+
+  "financing": {
+    "heading": "Protect Your Cypress Home Without Delaying the Project",
+    "sub": "Flexible financing options available to Cypress homeowners. Ask during your free inspection."
+  },
+
+  "faq": {
+    "heading": "Roofing Questions — Answered",
+    "items": [
+      {
+        "q": "Why do complex rooflines in Cypress neighborhoods require more careful inspection?",
+        "a": "Multi-plane roofs — hip configurations, multiple valleys, dormers, and multiple penetrations — have significantly more linear feet of flashing transitions than a simple gable design. Every valley, ridge, and penetration is a potential entry point for water if the flashing was improperly installed or has deteriorated over time. Cypress subdivision homes from the 2000s and 2010s often have these more complex profiles, and they benefit from inspection that specifically evaluates each transition point rather than just the field of shingles. Home Team documents every flashing detail as part of a Cypress inspection."
+      },
+      {
+        "q": "What is the most common roofing issue Home Team sees on Cypress homes?",
+        "a": "Valley flashing failures and improper step flashing at dormers and skylights are among the most common issues on complex subdivision rooflines. Wind-driven rain during Houston-area storms finds any gap in a flashing seal. Additionally, attic ventilation problems — both inadequate intake at the soffit and restricted ridge venting — are common on the vaulted and hip roof geometries popular in Cy-Fair area homes. Poor ventilation traps heat and moisture that degrades shingles from beneath, shortening roof life regardless of shingle quality."
+      },
+      {
+        "q": "Does Cypress require permits for roof replacements?",
+        "a": "Cypress is an unincorporated community in Harris County, so roof replacements fall under Harris County permit requirements rather than a city building department. Harris County requires permits for full roof replacements. Home Team handles the permit process on your behalf — you should not need to navigate this yourself. We confirm all applicable requirements before your project begins."
+      },
+      {
+        "q": "How does the Cy-Fair area's rainfall affect roofing in Cypress?",
+        "a": "The northwest Harris County area, including Cypress, receives substantial annual rainfall. Frequent heavy rain events test the watertightness of every flashing seal and penetration on a roof. Gutters and downspouts that cannot keep pace with high-volume rain can cause water to back up behind the fascia board. The Addicks and Barker reservoir areas nearby have also experienced significant flooding; while that is a drainage and foundation issue, it underscores how much water moves through this area and why proper roof drainage management matters."
+      },
+      {
+        "q": "Does Home Team offer free roof inspections in Cypress?",
+        "a": "Yes. Home Team provides free, no-obligation roof inspections to homeowners throughout Cypress and the Cy-Fair area. An inspection covers shingles, all flashing transitions and valleys, gutters and downspouts, decking condition, and attic ventilation. You receive honest findings and clear options with no pressure to proceed."
+      },
+      {
+        "q": "Is financing available for roofing projects in Cypress?",
+        "a": "Yes. Home Team offers flexible financing options to help Cypress homeowners manage the cost of a roofing project without delay. Ask about available payment plans during your free inspection or visit the <a href=\"/financing\" style=\"color:var(--red);text-decoration:none;font-weight:600\">financing page</a> for more information."
+      }
+    ]
+  },
+
+  "final_cta": {
+    "eyebrow": "Cypress, TX",
+    "heading": "Complex Rooflines Need Thorough Inspections.",
+    "sub": "Schedule a free inspection with Home Team — we document every transition, flashing point, and valley on your Cypress home. Honest assessment, clear options, no pressure."
+  },
+
+  "schema": {
+    "breadcrumb_item3_name": "Cypress, TX",
+    "service_name": "Roofing Services in Cypress, TX",
+    "service_area_city": "Cypress",
+    "service_description": "Residential roofing services in Cypress, TX including free inspections, full roof replacements, storm and hail damage restoration, and roof repairs for Cy-Fair and Harris County homeowners.",
+    "faq_schema": [
+      {
+        "q": "Why do complex rooflines in Cypress neighborhoods require more careful inspection?",
+        "a": "Multi-plane roofs with multiple valleys, dormers, and penetrations have significantly more flashing transitions than simple gable designs. Every valley and transition is a potential water entry point if flashing has failed. Cypress subdivision homes often have these complex profiles, so inspection needs to evaluate each transition point, not just the shingle field."
+      },
+      {
+        "q": "What is the most common roofing issue on Cypress homes?",
+        "a": "Valley flashing failures, improper step flashing at dormers, and attic ventilation problems are common on the complex subdivision rooflines in the Cy-Fair area. Poor ventilation traps heat and moisture that degrades shingles from beneath regardless of shingle quality."
+      },
+      {
+        "q": "Does Cypress require permits for roof replacements?",
+        "a": "Cypress is unincorporated Harris County. Roof replacements require Harris County permits rather than a city building permit. Home Team handles the permit process on your behalf and confirms all requirements before your project begins."
+      },
+      {
+        "q": "How does the Cy-Fair area's rainfall affect roofing in Cypress?",
+        "a": "Northwest Harris County receives substantial annual rainfall that tests every flashing seal and penetration. Heavy rain events can overwhelm gutters and cause water to back up behind the fascia. Proper roof drainage management is especially important in this area."
+      },
+      {
+        "q": "Does Home Team offer free roof inspections in Cypress?",
+        "a": "Yes. Home Team provides free, no-obligation inspections throughout Cypress and the Cy-Fair area, covering shingles, all flashing transitions, valleys, gutters, decking, and attic ventilation — with honest findings and no pressure."
+      },
+      {
+        "q": "Is financing available for roofing projects in Cypress?",
+        "a": "Yes. Home Team offers flexible financing options for Cypress homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
+      }
+    ]
+  }
+}

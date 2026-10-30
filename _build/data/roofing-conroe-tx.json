@@ -1,0 +1,137 @@
+{
+  "_comment": "Location data for roofing/conroe-tx.html — feed into local-roofing.html template",
+
+  "meta": {
+    "title": "Roofing Contractor in Conroe, TX | Free Inspections | Home Team",
+    "description": "Home Team provides residential roofing in Conroe, TX — free inspections, storm and hail damage repairs, full replacements, and financing. Serving Montgomery County homeowners.",
+    "canonical": "https://hometeamroof.com/roofing/conroe-tx",
+    "og_image": "https://hometeamroof.com/images/conroe.webp",
+    "estimate_url": "/estimate?source=conroe-roofing-tx"
+  },
+
+  "location": {
+    "city": "Conroe",
+    "state": "TX",
+    "county": "Montgomery County",
+    "slug": "conroe-tx",
+    "nearby_cities": "The Woodlands, Spring, Tomball, and Magnolia",
+    "climate_notes": "high humidity from Lake Conroe, heavy summer rainfall, and frequent hailstorms common across Montgomery County"
+  },
+
+  "hero": {
+    "eyebrow": "Conroe, TX · Roofing",
+    "h1_line1": "Residential Roofing in",
+    "h1_line2": "Conroe, TX",
+    "tagline": "Free inspections, storm damage repairs &amp; full roof replacements for Conroe homeowners.",
+    "mob_tagline": "Free inspections &amp; storm damage repairs for Conroe homeowners.",
+    "trust_items": ["Free Roof Inspections", "Serving Conroe, TX", "Warranty-Backed Work"],
+    "mob_trust_items": ["Free Inspections", "Warranty-Backed", "Local Team"],
+    "image": "/images/conroe.webp",
+    "image_position": "center center",
+    "image_alt": "Residential neighborhood in Conroe, TX"
+  },
+
+  "breadcrumb": [
+    { "label": "Home",       "url": "/" },
+    { "label": "Roofing",    "url": "/roofing" },
+    { "label": "Conroe, TX", "url": null }
+  ],
+
+  "intro": {
+    "eyebrow": "Conroe, TX",
+    "heading": "Roofing Built for Conroe",
+    "body_p1": "Conroe's location in Montgomery County places it squarely in one of the most active hail corridors in Southeast Texas. Homes built during the city's rapid expansion in the 1970s through 1990s now carry aging roofing systems that may be well past their service life. Add the elevated humidity near Lake Conroe, persistent pine and hardwood debris that accelerates moisture retention on shingles, and the intense summer sun, and the result is a roofing environment that punishes deferred maintenance.",
+    "body_p2": "Home Team works with Conroe homeowners to assess what their roof actually needs — whether that is targeted storm damage repair, a full shingle replacement, or addressing ventilation issues that are quietly shortening a roof's lifespan. We provide clear, honest findings and let you decide what makes sense for your home and budget.",
+    "callout_label": "Serving Conroe &amp; Surrounding Areas",
+    "callout_text": "Home Team serves homeowners throughout Conroe and neighboring communities including The Woodlands, Spring, Tomball, and Magnolia. Free inspections available — no pressure, no obligation.",
+    "image": "/images/conroe.webp",
+    "image_alt": "Residential home in Conroe, TX with a newly installed roof by Home Team Home Solutions",
+    "badge_strong": "Free Inspection",
+    "badge_span": "Conroe, TX"
+  },
+
+  "services_heading": "Roofing Services for Conroe Homeowners",
+  "services_sub": "From free inspections through complete installations, Home Team handles every phase of residential roofing in Conroe, TX.",
+
+  "process": {
+    "heading": "A Better Roof Replacement Experience",
+    "sub": "From the first call to the final walkthrough, every Home Team project in Conroe follows a clear, homeowner-friendly process.",
+    "step1_p": "Contact Home Team to schedule a no-cost roof inspection in Conroe. We assess shingles, flashing, decking condition, attic ventilation, and any signs of moisture intrusion — then document everything clearly with photos.",
+    "step2_p": "We walk through our findings together in plain language. No roofing jargon, no pressure — just an honest picture of what your roof needs, what it will cost, and which options make sense given Conroe's climate conditions.",
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles material selection, scheduling, and required Montgomery County permits so you don't have to navigate the process alone."
+  },
+
+  "financing": {
+    "heading": "Protect Your Conroe Home Without Delaying the Project",
+    "sub": "Flexible financing options available to Conroe homeowners. Ask during your free inspection."
+  },
+
+  "faq": {
+    "heading": "Roofing Questions — Answered",
+    "items": [
+      {
+        "q": "My home was built in the 1980s — how do I know if the roof needs replacing?",
+        "a": "Standard asphalt shingles in the Texas climate typically have a serviceable lifespan of 15–25 years depending on material quality, ventilation, and maintenance history. If your Conroe home is from the 1980s or early 1990s and the roof has never been replaced, it is worth having a professional inspection regardless of whether you see obvious damage. Signs of aging include curling or cupping shingles, widespread granule loss, sagging areas, and frequent minor leaks. Home Team can assess the current condition and tell you honestly whether a targeted repair or full replacement is the better investment."
+      },
+      {
+        "q": "How does living near Lake Conroe affect my roof?",
+        "a": "Elevated humidity near Lake Conroe creates conditions where algae and moss growth on shingles is more common than in drier parts of Texas. Moisture retention under debris — pine needles, seed pods, and leaf litter from the area's heavy tree cover — also accelerates shingle breakdown. Proper attic ventilation is especially important in this environment; a poorly ventilated attic traps heat and moisture that degrades shingles from beneath. Home Team evaluates ventilation as part of every inspection in the Conroe area."
+      },
+      {
+        "q": "What should I do after a hailstorm in Montgomery County?",
+        "a": "Avoid getting on the roof yourself, particularly after rain. Look at ground-level indicators instead: dented gutters, damaged window screens, granules pooled in downspout outlets, and any obvious missing or cracked shingles visible from the ground. Hail impact is not always immediately visible from the street but can fracture the underlayment and accelerate moisture intrusion. Schedule a professional inspection promptly — storm documentation timing can also matter if you plan to file an insurance claim. Home Team offers free post-storm inspections throughout Conroe and Montgomery County."
+      },
+      {
+        "q": "How long does a roof replacement take in Conroe?",
+        "a": "Most residential roof replacements in Conroe are completed in one to two days, depending on roof size, complexity, and the materials selected. Weather is the most common variable — Texas summer storms can interrupt a project, but Home Team monitors conditions and adjusts scheduling accordingly. You will receive a clear timeline before any work begins, and the crew completes a thorough cleanup before each day ends."
+      },
+      {
+        "q": "Does Home Team handle Montgomery County permit requirements?",
+        "a": "Yes. Roof replacements in the City of Conroe typically require a permit through the City of Conroe building department. Home Team handles the permit process on your behalf — you should not need to navigate permitting yourself. If you are in an unincorporated area of Montgomery County outside the Conroe city limits, permit requirements differ; we confirm the applicable requirements before your project begins."
+      },
+      {
+        "q": "Does Home Team offer financing for roofing projects in Conroe?",
+        "a": "Yes. Home Team offers flexible financing options to help Conroe homeowners manage the cost of a roofing project without putting it off. Ask about available payment plans during your free inspection or visit the <a href=\"/financing\" style=\"color:var(--red);text-decoration:none;font-weight:600\">financing page</a> for more information."
+      }
+    ]
+  },
+
+  "final_cta": {
+    "eyebrow": "Conroe, TX",
+    "heading": "Your Roof Protects Everything Underneath It.",
+    "sub": "Schedule a free inspection with Home Team — honest assessment, clear options, no pressure. Serving Conroe and Montgomery County homeowners."
+  },
+
+  "schema": {
+    "breadcrumb_item3_name": "Conroe, TX",
+    "service_name": "Roofing Services in Conroe, TX",
+    "service_area_city": "Conroe",
+    "service_description": "Residential roofing services in Conroe, TX including free inspections, full roof replacements, storm and hail damage restoration, roof repairs, and financing for Montgomery County homeowners.",
+    "faq_schema": [
+      {
+        "q": "My home was built in the 1980s — how do I know if the roof needs replacing?",
+        "a": "Asphalt shingles in Texas typically last 15–25 years. If your Conroe home is from the 1980s or 1990s and the roof has never been replaced, a professional inspection is worthwhile. Signs of aging include curling shingles, widespread granule loss, sagging areas, and recurring leaks. Home Team can assess the condition and recommend whether repair or replacement is the better investment."
+      },
+      {
+        "q": "How does living near Lake Conroe affect my roof?",
+        "a": "Elevated humidity near Lake Conroe promotes algae and moss growth on shingles and accelerates breakdown under debris from the area's tree canopy. Poor attic ventilation compounds these issues by trapping moisture. Home Team evaluates ventilation as part of every inspection in Conroe."
+      },
+      {
+        "q": "What should I do after a hailstorm in Montgomery County?",
+        "a": "Check for ground-level signs like dented gutters, granules in downspouts, and damaged window screens. Avoid getting on the roof. Schedule a professional inspection promptly — hail damage may not be visible from the street and timely documentation matters for insurance claims. Home Team offers free post-storm inspections throughout Conroe."
+      },
+      {
+        "q": "How long does a roof replacement take in Conroe?",
+        "a": "Most residential roof replacements in Conroe are completed in one to two days, depending on size, complexity, and materials. Home Team provides a clear timeline before work begins and handles thorough cleanup after each day."
+      },
+      {
+        "q": "Does Home Team handle Montgomery County permit requirements?",
+        "a": "Yes. Roof replacements within the City of Conroe typically require a city building permit. Home Team handles the permit process on your behalf. Requirements for unincorporated Montgomery County areas differ; we confirm applicable requirements before any project begins."
+      },
+      {
+        "q": "Does Home Team offer financing for roofing projects in Conroe?",
+        "a": "Yes. Home Team offers flexible financing options for Conroe homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
+      }
+    ]
+  }
+}

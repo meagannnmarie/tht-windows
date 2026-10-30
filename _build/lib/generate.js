@@ -174,6 +174,10 @@ function copyImages() {
 // Pages produced by the template generator — skip source prototypes
 const GENERATED_PAGES = new Set([
   path.join(ROOT, 'roofing', 'the-woodlands-tx.html'),
+  path.join(ROOT, 'roofing', 'conroe-tx.html'),
+  path.join(ROOT, 'roofing', 'spring-tx.html'),
+  path.join(ROOT, 'roofing', 'cypress-tx.html'),
+  path.join(ROOT, 'roofing', 'houston-tx.html'),
 ]);
 
 const SKIP_HTML_DIRS = new Set([
@@ -374,6 +378,10 @@ function main() {
   // 8. Template-generated pages
   console.log('Template pages/');
   generatePage('local-roofing', 'roofing-the-woodlands-tx', 'roofing/the-woodlands-tx.html');
+  generatePage('local-roofing', 'roofing-conroe-tx',       'roofing/conroe-tx.html');
+  generatePage('local-roofing', 'roofing-spring-tx',       'roofing/spring-tx.html');
+  generatePage('local-roofing', 'roofing-cypress-tx',      'roofing/cypress-tx.html');
+  generatePage('local-roofing', 'roofing-houston-tx',      'roofing/houston-tx.html');
 
   // 9. Sitemap
   console.log('sitemap/');
