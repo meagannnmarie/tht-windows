@@ -58,7 +58,7 @@
     "sub": "From the first call to the final walkthrough, every Home Team project in The Woodlands follows a clear, homeowner-friendly process.",
     "step1_p": "Contact Home Team to schedule a no-cost roof inspection in The Woodlands. We assess your shingles, flashing, decking, and ventilation — then document everything clearly for you.",
     "step2_p": "We walk through our findings together using photos and plain language. No roofing jargon, no pressure — just an honest picture of what your roof needs and what it will cost.",
-    "step3_p": "Choose the solution that fits your home, budget, and timeline. We handle material selection, scheduling, and required permits so you don't have to."
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. We handle material selection, scheduling, and every project detail through completion."
   },
 
   "financing": {
@@ -83,7 +83,7 @@
       },
       {
         "q": "What roofing materials work best for Texas weather?",
-        "a": "For The Woodlands climate — intense summer heat, high UV exposure, and active hail and storm seasons — Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed attic ventilation system. Class 4 impact-rated shingles also qualify for insurance discounts under many Texas policies. Your inspector will walk you through the options that fit your home, any applicable HOA requirements, and your budget."
+        "a": "For The Woodlands climate — intense summer heat, high UV exposure, and active hail and storm seasons — Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed attic ventilation system. Class 4 impact-rated shingles may qualify for discounts under some Texas insurance policies. Your inspector will walk you through the options that fit your home, any applicable HOA requirements, and your budget."
       },
       {
         "q": "Does Home Team offer free roof inspections in The Woodlands?",
@@ -122,7 +122,7 @@
       },
       {
         "q": "What roofing materials work best for Texas weather?",
-        "a": "For The Woodlands climate, Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed attic ventilation system. Class 4 impact-rated shingles also qualify for insurance discounts under many Texas policies."
+        "a": "For The Woodlands climate, Home Team recommends impact-resistant architectural shingles rated for high-wind and hail exposure, paired with quality synthetic underlayment and a properly designed attic ventilation system. Class 4 impact-rated shingles may qualify for discounts under some Texas insurance policies."
       },
       {
         "q": "Does Home Team offer free roof inspections in The Woodlands?",
@@ -133,5 +133,23 @@
         "a": "Yes. Home Team offers flexible financing options to help The Woodlands homeowners manage the cost of a roofing project. Contact us or visit the financing page to learn about available payment plans."
       }
     ]
+  },
+  "local_context": {
+    "topic1": {
+      "heading": "Intense Heat and UV Exposure",
+      "body": "Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement."
+    },
+    "topic2": {
+      "heading": "Hail and Severe Storm Seasons",
+      "body": "Montgomery County falls within one of the highest hail-frequency corridors in Texas. Hail damage often isn't visible from the ground — bruised shingles, granule loss, and cracked mat layers require close inspection. Even minor damage can allow moisture intrusion that worsens significantly over time."
+    },
+    "topic3": {
+      "heading": "Tree Canopy and Moisture",
+      "body": "The Woodlands is defined by its tree cover — which also means shaded roofs, debris accumulation, and slower drying after rain. These conditions accelerate algae growth, moss formation, and granule wear on shingles in areas with persistent shade. Periodic inspections matter more, not less, in heavily wooded neighborhoods."
+    },
+    "topic4": {
+      "heading": "HOA Considerations",
+      "body": "Many neighborhoods throughout The Woodlands are governed by HOA design guidelines that specify approved roofing colors, materials, or profiles. Home Team is familiar with these requirements and can help you select materials that meet your HOA's standards while performing well in the local climate."
+    }
   }
 }

@@ -58,7 +58,7 @@
     "sub": "From the first call to the final walkthrough, every Home Team project in Cypress follows a clear, homeowner-friendly process.",
     "step1_p": "Contact Home Team to schedule a no-cost roof inspection in Cypress. We assess shingles, all flashing transitions, valleys, penetrations, gutters, and attic ventilation — paying close attention to the multi-plane geometry common in Cy-Fair subdivision homes.",
     "step2_p": "We walk through our findings together using photos and plain language. No roofing jargon, no pressure — just an honest picture of your roof's condition, where the risks are, and what each option will cost.",
-    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and any required Harris County permits for Cypress projects — you should not have to manage the permit process yourself."
+    "step3_p": "Choose the solution that fits your home, budget, and timeline. Home Team handles materials, scheduling, and every project detail on your Cypress home from start to completion."
   },
 
   "financing": {
@@ -78,8 +78,8 @@
         "a": "Valley flashing failures and improper step flashing at dormers and skylights are among the most common issues on complex subdivision rooflines. Wind-driven rain during Houston-area storms finds any gap in a flashing seal. Additionally, attic ventilation problems — both inadequate intake at the soffit and restricted ridge venting — are common on the vaulted and hip roof geometries popular in Cy-Fair area homes. Poor ventilation traps heat and moisture that degrades shingles from beneath, shortening roof life regardless of shingle quality."
       },
       {
-        "q": "Does Cypress require permits for roof replacements?",
-        "a": "Cypress is an unincorporated community in Harris County, so roof replacements fall under Harris County permit requirements rather than a city building department. Harris County requires permits for full roof replacements. Home Team handles the permit process on your behalf — you should not need to navigate this yourself. We confirm all applicable requirements before your project begins."
+        "q": "What type of shingles perform best on Cypress homes with complex rooflines?",
+        "a": "Complex rooflines with multiple valleys, dormers, and hip sections place greater demands on installation quality and on shingle durability at every transition. Architectural shingles with enhanced wind and impact resistance are better suited to these profiles than standard three-tab shingles, which can lift more easily under high-wind conditions at ridges and hips. Class 4 impact-resistant shingles are also worth considering given the hail frequency in northwest Harris County. Home Team will discuss the full range of material options appropriate for your specific roof geometry during your free inspection."
       },
       {
         "q": "How does the Cy-Fair area's rainfall affect roofing in Cypress?",
@@ -117,8 +117,8 @@
         "a": "Valley flashing failures, improper step flashing at dormers, and attic ventilation problems are common on the complex subdivision rooflines in the Cy-Fair area. Poor ventilation traps heat and moisture that degrades shingles from beneath regardless of shingle quality."
       },
       {
-        "q": "Does Cypress require permits for roof replacements?",
-        "a": "Cypress is unincorporated Harris County. Roof replacements require Harris County permits rather than a city building permit. Home Team handles the permit process on your behalf and confirms all requirements before your project begins."
+        "q": "What type of shingles perform best on Cypress homes with complex rooflines?",
+        "a": "Architectural shingles with enhanced wind and impact resistance are better suited to complex multi-plane rooflines than standard three-tab shingles, which can lift at ridges and hip terminations under high winds. Class 4 impact-resistant shingles also offer better protection against the hail events common in northwest Harris County. Home Team can discuss material options appropriate for your specific roof geometry during your free inspection."
       },
       {
         "q": "How does the Cy-Fair area's rainfall affect roofing in Cypress?",
@@ -133,5 +133,23 @@
         "a": "Yes. Home Team offers flexible financing options for Cypress homeowners. Ask during your free inspection or visit the financing page to learn about available payment plans."
       }
     ]
+  },
+  "local_context": {
+    "topic1": {
+      "heading": "Intense Heat and UV Exposure",
+      "body": "Houston-area summers push roof surface temperatures well above the ambient air temperature. Over time, heat and UV radiation break down shingle granules, accelerate asphalt oxidation, and shorten the functional life of an improperly ventilated roof. Quality attic ventilation is not optional in this climate — it is a performance requirement."
+    },
+    "topic2": {
+      "heading": "Hail and Severe Storm Seasons",
+      "body": "Northwest Harris County — including the Cy-Fair area — is regularly exposed to severe thunderstorms and hail. Hail damage is often invisible from the ground: bruised shingles, compromised granule layers, and cracked underlayment require a professional inspection to identify. Home Team documents all storm-related damage with photos and a written assessment."
+    },
+    "topic3": {
+      "heading": "Heavy Rainfall and Complex Rooflines",
+      "body": "Cypress receives significant annual rainfall, and the subdivision rooflines common in the Cy-Fair area — with multiple valleys, dormers, and hip sections — create more potential water entry points than simpler designs. Every valley and flashing transition is a location where standing water or wind-driven rain can find a gap. Cypress homes benefit from inspection that specifically evaluates each transition, not just the field of shingles."
+    },
+    "topic4": {
+      "heading": "Manufacturer Certification and Warranty Coverage",
+      "body": "Home Team holds CertainTeed SELECT ShingleMaster certification, which qualifies installations for CertainTeed's enhanced warranty coverage on qualifying projects. These warranties offer longer coverage periods and more comprehensive protection than standard contractor-installed warranties. For Cypress homeowners investing in a new roof system on a complex multi-plane home, enhanced warranty coverage provides meaningful protection against both manufacturing defects and workmanship issues."
+    }
   }
 }
