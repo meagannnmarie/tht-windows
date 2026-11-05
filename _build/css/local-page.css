@@ -92,6 +92,7 @@
 .local-intro-img-wrap{position:relative}
 .local-intro-img{border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.14)}
 .local-intro-img img{width:100%;display:block;height:500px;object-fit:cover;object-position:center}
+.local-intro-img img[src*="homepagereplace"]{height:auto}
 .local-intro-badge{position:absolute;bottom:-1.375rem;left:-1.375rem;background:#fff;border-radius:12px;padding:1.125rem 1.375rem;box-shadow:0 12px 36px rgba(0,0,0,.12);display:flex;align-items:center;gap:.875rem;border:1px solid var(--border)}
 .local-badge-icon{width:40px;height:40px;border-radius:50%;background:#fef2f2;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .local-badge-text strong{display:block;font-size:13px;color:#0d0d0d;font-weight:700;line-height:1.3}
