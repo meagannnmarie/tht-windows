@@ -22,6 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 
 /* ═══ RESET ═══════════════════════════════════════════════════════ */
@@ -267,6 +268,10 @@ footer{padding:1.375rem 52px;display:flex;align-items:center;justify-content:spa
   .step-item{min-width:40px}
   .pf-form{padding:20px 16px}
 }
+.cf-turnstile{margin-bottom:1rem}
+.turnstile-fallback{display:none;padding:12px 14px;background:#fef2f2;border:1.5px solid #fca5a5;border-radius:8px;font-size:13px;color:#991b1b;line-height:1.6;margin-bottom:1rem}
+.turnstile-fallback a{color:#991b1b;font-weight:600}
+.turnstile-status{font-size:12.5px;color:#6b7280;margin-top:.375rem;line-height:1.5}
 </style>
 </head>
 <body>
@@ -494,10 +499,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div id="pf-error" class="pf-error-msg" role="alert" aria-live="polite"></div>
 
-        <button type="submit" class="pf-submit">
+        <!-- Cloudflare Turnstile — site key injected at build time by _build/lib/generate.js.
+             Production key (hometeamroof.com) is used when VERCEL_ENV=production.
+             Cloudflare test key is used in Preview and local environments.
+             Secret key is set via CLOUDFLARE_TURNSTILE_SECRET_KEY in Vercel. -->
+        <div class="cf-turnstile"
+             data-sitekey="{{TURNSTILE_SITE_KEY}}"
+             data-theme="light"
+             data-size="normal"
+             data-callback="onTurnstileSuccess"
+             data-expired-callback="onTurnstileExpired"
+             data-error-callback="onTurnstileError">
+        </div>
+        <!-- Shown by onTurnstileError JS callback when widget fails to load -->
+        <div id="turnstile-fallback" class="turnstile-fallback" role="alert">
+          Can't complete the security check? Call <a href="tel:+18324223039">(832) 422-3039</a> or
+          email <a href="mailto:thehometeamroofing@gmail.com">thehometeamroofing@gmail.com</a>.
+        </div>
+        <!-- Shown when JavaScript is disabled entirely -->
+        <noscript>
+          <div class="turnstile-fallback" style="display:block">
+            JavaScript is required to submit this form. Call <a href="tel:+18324223039">(832) 422-3039</a> or
+            email <a href="mailto:thehometeamroofing@gmail.com">thehometeamroofing@gmail.com</a>.
+          </div>
+        </noscript>
+        <button type="submit" id="pf-submit" class="pf-submit" disabled aria-describedby="turnstile-status">
           Schedule My Free Consultation →
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M7.5 3.5L11 7l-3.5 3.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
+        <div id="turnstile-status" class="turnstile-status" role="status" aria-live="polite">Completing security check…</div>
         <p class="pf-note">By submitting this form you agree to be contacted by Home Team Home Solutions regarding your project. We never share your information.</p>
 
       </form>
@@ -600,7 +630,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var errBanner = document.getElementById('pf-error');
   if (!form || !success) return;
 
-  var submitBtn      = form.querySelector('button[type="submit"]');
+  var submitBtn      = document.getElementById('pf-submit');
   var submitBtnOrig  = submitBtn ? submitBtn.innerHTML : '';
   var submitting     = false;
 
@@ -673,6 +703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       sourceKey:             sourceKey,
       pageUrl:               window.location.href,
       _hp:                   hp,
+      cfToken:               (document.querySelector('[name="cf-turnstile-response"]') || {}).value || '',
     };
 
     // Lock UI during submission; stop ET from also firing on valid submissions
@@ -719,6 +750,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 })();
+
+// Called by Turnstile widget once a valid token is obtained.
+function onTurnstileSuccess() {
+  var btn    = document.getElementById('pf-submit');
+  var status = document.getElementById('turnstile-status');
+  if (btn)    { btn.disabled = false; }
+  if (status) { status.style.display = 'none'; }
+}
+
+// Called when the Turnstile token expires (~5 min after issue).
+function onTurnstileExpired() {
+  var btn    = document.getElementById('pf-submit');
+  var status = document.getElementById('turnstile-status');
+  if (btn)    { btn.disabled = true; }
+  if (status) {
+    status.style.display  = 'block';
+    status.style.color    = '#991b1b';
+    status.textContent    = 'Security check expired — please refresh the page to submit your request.';
+  }
+}
+
+// Called when the widget fails to load or render.
+function onTurnstileError() {
+  var btn = document.getElementById('pf-submit');
+  if (btn) { btn.disabled = true; }
+  var fb  = document.getElementById('turnstile-fallback');
+  if (fb)  { fb.style.display = 'block'; }
+}
+
+// Safety net: if the Turnstile script fails to load (CDN blocked, firewall,
+// browser extension), no widget callback ever fires. After 12 s, if the button
+// is still disabled, surface the contact fallback so the customer always has a
+// path to reach the team.
+(function() {
+  setTimeout(function() {
+    var btn = document.getElementById('pf-submit');
+    if (btn && btn.disabled) { onTurnstileError(); }
+  }, 12000);
+}());
 </script>
 </body>
 </html>

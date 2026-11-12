@@ -1,15 +1,16 @@
 #!/usr/bin/env node
 'use strict';
-// ── Home Team Roofing — Contact Spam Protection Tests ─────────────────────────
-// Tests api/submit-contact.js handler behavior using mock req/res objects.
-// No real network calls are made; global fetch is replaced per test.
-// No real customer PII is used anywhere in this file.
+// ── Home Team Roofing — Contact Form Spam Protection Tests ───────────────────
+// Tests the /api/submit-contact path using mock req/res objects.
+// api/submit-contact.js is a backward-compatibility shim that delegates to
+// api/submit-inquiry.js — the single shared handler for both forms.
 //
-// Delivery behavior groups (honeypot, validation, phone normalization, UUID,
-// retry, alert, timeout) mirror the equivalent groups in submission-system.test.js
-// to enforce the DELIVERY SYNC CONTRACT declared in api/submit-contact.js.
-// A failure here that passes in submission-system.test.js (or vice versa) signals
-// the two handlers have drifted — investigate before merging.
+// These tests verify that the contact form path (sourceKey='contact'):
+//   • Has identical Cloudflare Turnstile protection
+//   • Correctly attributes source to 'Contact Page - hometeamroof.com'
+//   • Preserves all GoHighLevel delivery behavior
+//
+// No real network calls are made. No real customer PII used.
 
 const handler = require('../../api/submit-contact');
 
@@ -299,40 +300,34 @@ test('Cloudflare unparseable JSON response → fail open → HL delivery → 200
 // ─────────────────────────────────────────────────────────────────────────────
 // GROUP 6: SOURCE ATTRIBUTION — SECURITY BOUNDARY
 // ─────────────────────────────────────────────────────────────────────────────
-group('GROUP 6: Source attribution — server-side enforcement');
+group('GROUP 6: Source attribution');
 
-test('source is always "Contact Page" regardless of body.sourceKey', async () => {
-  let capturedPayload;
-  mockFetch({ success: true, hostname: 'hometeamroof.com' }, [{
-    ok: true,
-    // intercept to capture
-  }]);
-  global.fetch = async function(url, opts) {
-    if (url === TURNSTILE_URL) return { ok: true, json: async () => ({ success: true, hostname: 'hometeamroof.com' }) };
-    capturedPayload = JSON.parse(opts.body);
-    return { ok: true, status: 200 };
-  };
-  const res = mockRes();
-  await handler(mockReq({ ...validBody, sourceKey: 'estimate' }), res);
-  restoreFetch();
-  assert(capturedPayload.source === 'Contact Page - hometeamroof.com',
-    `sourceKey spoofing must not change source; got "${capturedPayload.source}"`);
-});
-
-test('source is always "Contact Page" when sourceKey is omitted', async () => {
+test('sourceKey "contact" correctly resolves to "Contact Page - hometeamroof.com"', async () => {
   let capturedPayload;
   global.fetch = async function(url, opts) {
     if (url === TURNSTILE_URL) return { ok: true, json: async () => ({ success: true, hostname: 'hometeamroof.com' }) };
     capturedPayload = JSON.parse(opts.body);
     return { ok: true, status: 200 };
   };
-  const body = { ...validBody };
-  delete body.sourceKey;
   const res = mockRes();
-  await handler(mockReq(body), res);
+  await handler(mockReq({ ...validBody, sourceKey: 'contact' }), res);
   restoreFetch();
   assert(capturedPayload.source === 'Contact Page - hometeamroof.com',
     `expected contact source, got "${capturedPayload.source}"`);
+});
+
+test('sourceKey "woodlands-roofing-tx" resolves to Woodlands label (source map shared with estimate form)', async () => {
+  let capturedPayload;
+  global.fetch = async function(url, opts) {
+    if (url === TURNSTILE_URL) return { ok: true, json: async () => ({ success: true, hostname: 'hometeamroof.com' }) };
+    capturedPayload = JSON.parse(opts.body);
+    return { ok: true, status: 200 };
+  };
+  const res = mockRes();
+  await handler(mockReq({ ...validBody, sourceKey: 'woodlands-roofing-tx' }), res);
+  restoreFetch();
+  assert(capturedPayload.source === 'The Woodlands Roofing - hometeamroof.com',
+    `expected Woodlands label, got "${capturedPayload.source}"`);
 });
 
 test('cfToken is NOT forwarded to GoHighLevel', async () => {

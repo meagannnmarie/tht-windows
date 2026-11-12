@@ -709,7 +709,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.disabled    = true;
     btn.textContent = 'Submitting…';
 
-    fetch('/api/submit-contact', {
+    fetch('/api/submit-inquiry', {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body:    JSON.stringify(payload),

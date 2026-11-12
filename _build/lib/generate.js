@@ -377,17 +377,18 @@ function main() {
   console.log('  shared.css + local-page.css copied');
 
   // 7. Existing HTML pages
-  // contact.html receives Turnstile site key injection before copy.
+  // contact.html and estimate.html receive Turnstile site key injection before copy.
   // All other source pages are copied verbatim.
   console.log('HTML pages/');
   const vercelEnv   = process.env.VERCEL_ENV;
   const tsSiteKey   = getSiteKey(vercelEnv);
   assertProductionSafe(vercelEnv, tsSiteKey);
+  const TS_INJECT_PAGES = new Set(['contact.html', 'estimate.html']);
   const srcPages = collectSourceHtml(ROOT);
   for (const src of srcPages) {
     const rel  = path.relative(ROOT, src);
     const dest = path.join(DIST, rel);
-    if (rel === 'contact.html') {
+    if (TS_INJECT_PAGES.has(rel)) {
       let html = fs.readFileSync(src, 'utf8');
       html = substituteTokens(html, { TURNSTILE_SITE_KEY: tsSiteKey });
       mkdirp(path.dirname(dest));
@@ -396,7 +397,7 @@ function main() {
       copyFile(src, dest);
     }
   }
-  console.log(`  ${srcPages.length} source pages copied (contact.html key: ${vercelEnv || 'local'})`);
+  console.log(`  ${srcPages.length} source pages copied (contact.html + estimate.html key: ${vercelEnv || 'local'})`);
 
   // 8. Template-generated pages
   console.log('Template pages/');

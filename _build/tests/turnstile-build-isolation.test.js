@@ -102,10 +102,19 @@ test('assertProductionSafe throws if production key is used outside production',
 // ─────────────────────────────────────────────────────────────────────────────
 group('GROUP 19: Source file integrity — token present, hardcoded keys absent');
 
-const contactHtmlPath = path.resolve(__dirname, '../../contact.html');
-let contactHtml = '';
-try { contactHtml = fs.readFileSync(contactHtmlPath, 'utf8'); }
-catch { /* handled per-test */ }
+const contactHtmlPath  = path.resolve(__dirname, '../../contact.html');
+const estimateHtmlPath = path.resolve(__dirname, '../../estimate.html');
+let contactHtml  = '';
+let estimateHtml = '';
+try { contactHtml  = fs.readFileSync(contactHtmlPath,  'utf8'); } catch { /* handled per-test */ }
+try { estimateHtml = fs.readFileSync(estimateHtmlPath, 'utf8'); } catch { /* handled per-test */ }
+
+const knownTestSiteKeys = [
+  '1x00000000000000000000AA', // always passes, visible
+  '2x00000000000000000000AB', // always fails, visible
+  '1x00000000000000000000BB', // always passes, invisible
+  '3x00000000000000000000FF', // forces interaction
+];
 
 test('contact.html contains the {{TURNSTILE_SITE_KEY}} build token', () => {
   assert(contactHtml.includes('data-sitekey="{{TURNSTILE_SITE_KEY}}"'),
@@ -119,16 +128,27 @@ test('contact.html does NOT contain the hardcoded production site key', () => {
 });
 
 test('contact.html does NOT contain any hardcoded Cloudflare test-mode site key', () => {
-  // All official CF test keys hardcoded in HTML would bypass the build-time guard.
-  const knownTestSiteKeys = [
-    '1x00000000000000000000AA', // always passes, visible
-    '2x00000000000000000000AB', // always fails, visible
-    '1x00000000000000000000BB', // always passes, invisible
-    '3x00000000000000000000FF', // forces interaction
-  ];
   for (const key of knownTestSiteKeys) {
     assert(!contactHtml.includes(key),
       `contact.html must not contain hardcoded test key ${key} — use {{TURNSTILE_SITE_KEY}} token`);
+  }
+});
+
+test('estimate.html contains the {{TURNSTILE_SITE_KEY}} build token', () => {
+  assert(estimateHtml.includes('data-sitekey="{{TURNSTILE_SITE_KEY}}"'),
+    'estimate.html must use {{TURNSTILE_SITE_KEY}} token — not a hardcoded key');
+});
+
+test('estimate.html does NOT contain the hardcoded production site key', () => {
+  assert(!estimateHtml.includes(PRODUCTION_SITE_KEY),
+    `estimate.html must not contain the hardcoded production site key — ` +
+    `it must come from the build token to prevent accidental test-environment use`);
+});
+
+test('estimate.html does NOT contain any hardcoded Cloudflare test-mode site key', () => {
+  for (const key of knownTestSiteKeys) {
+    assert(!estimateHtml.includes(key),
+      `estimate.html must not contain hardcoded test key ${key} — use {{TURNSTILE_SITE_KEY}} token`);
   }
 });
 

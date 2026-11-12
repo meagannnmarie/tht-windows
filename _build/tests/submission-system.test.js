@@ -42,13 +42,18 @@ function mockRes() {
 }
 
 // ── URL-routing fetch mock ────────────────────────────────────────────────────
-// Routes ALERT_WEBHOOK_URL calls independently so alert calls never consume a
-// slot in the HL responses array.  alertOk=true simulates a 200 from the alert
-// endpoint; alertOk=false simulates failure (handler must swallow it silently).
+// Routes by URL:
+//   • Cloudflare siteverify → always returns success with hometeamroof.com hostname
+//   • ALERT_WEBHOOK_URL → alertOk/alertFail response
+//   • All others (HL webhook) → consumed from hlResponses array in order
+const CLOUDFLARE_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 const originalFetch = global.fetch;
 function mockFetch(hlResponses, alertOk = true) {
   let hlCall = 0;
   global.fetch = async function(url, _opts) {
+    if (url === CLOUDFLARE_URL) {
+      return { ok: true, json: async () => ({ success: true, hostname: 'hometeamroof.com' }) };
+    }
     if (process.env.ALERT_WEBHOOK_URL && url === process.env.ALERT_WEBHOOK_URL) {
       return { ok: alertOk, status: alertOk ? 200 : 500 };
     }
@@ -63,7 +68,8 @@ function restoreFetch() { global.fetch = originalFetch; }
 const TEST_WEBHOOK = 'https://example.com/test-webhook';
 
 // Set up env for all tests
-process.env.HIGHLEVEL_INQUIRY_WEBHOOK_URL = TEST_WEBHOOK;
+process.env.HIGHLEVEL_INQUIRY_WEBHOOK_URL   = TEST_WEBHOOK;
+process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY = 'test-secret-key';
 
 // ── Valid baseline payload ────────────────────────────────────────────────────
 const validBody = {
@@ -77,6 +83,7 @@ const validBody = {
   message:       'Test inquiry — safe to delete.',
   sourceKey:     'estimate',
   pageUrl:       'https://hometeamroof.com/estimate?source=api-test',
+  cfToken:       'valid-test-token',
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -435,6 +442,8 @@ test('fires alert webhook on permanent HL failure', async () => {
   let alertCalled = false;
   let hlCallCount = 0;
   global.fetch = async (url, opts) => {
+    if (url === CLOUDFLARE_URL)
+      return { ok: true, json: async () => ({ success: true, hostname: 'hometeamroof.com' }) };
     if (url.includes('alert')) {
       alertCalled = true;
       return { ok: true, status: 200 };
@@ -529,7 +538,12 @@ group('GROUP 11: Repeat customer (multiple inquiries)');
 
 test('second submission from same customer is forwarded without deduplication', async () => {
   let hlCallCount = 0;
-  global.fetch = async () => { hlCallCount++; return { ok: true, status: 200 }; };
+  global.fetch = async (url) => {
+    if (url === CLOUDFLARE_URL)
+      return { ok: true, json: async () => ({ success: true, hostname: 'hometeamroof.com' }) };
+    hlCallCount++;
+    return { ok: true, status: 200 };
+  };
   const res1 = mockRes();
   const res2 = mockRes();
   await handler(mockReq({ ...validBody, submissionId: 'a1b2c3d4-e5f6-4a7b-8c9d-e0f1a2b3c4d5' }), res1);
@@ -552,6 +566,37 @@ test('returns 500 when HIGHLEVEL_INQUIRY_WEBHOOK_URL is not set', async () => {
   await handler(mockReq(validBody), res);
   process.env.HIGHLEVEL_INQUIRY_WEBHOOK_URL = saved;
   assert(res._status === 500, `expected 500, got ${res._status}`);
+});
+
+test('returns 500 when CLOUDFLARE_TURNSTILE_SECRET_KEY is not set', async () => {
+  const saved = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+  delete process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+  const res = mockRes();
+  await handler(mockReq(validBody), res);
+  process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY = saved;
+  assert(res._status === 500, `expected 500, got ${res._status}`);
+});
+
+test('returns 400 when cfToken is absent', async () => {
+  const body = { ...validBody };
+  delete body.cfToken;
+  const res = mockRes();
+  await handler(mockReq(body), res);
+  assert(res._status === 400, `expected 400, got ${res._status}`);
+  assert(/security check/i.test(res._body.error), 'error should mention security check');
+});
+
+test('returns 400 when Turnstile rejects token', async () => {
+  global.fetch = async (url) => {
+    if (url === CLOUDFLARE_URL)
+      return { ok: true, json: async () => ({ success: false, 'error-codes': ['invalid-input-response'] }) };
+    return { ok: true, status: 200 };
+  };
+  const res = mockRes();
+  await handler(mockReq(validBody), res);
+  restoreFetch();
+  assert(res._status === 400, `expected 400, got ${res._status}`);
+  assert(/security check failed/i.test(res._body.error), 'error should mention security check failed');
 });
 
 // ─────────────────────────────────────────────────────────────────────────────

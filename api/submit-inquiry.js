@@ -7,9 +7,15 @@
 // delivery failure so no inquiry is permanently lost. Configure to a Zapier /
 // Make.com / Slack incoming webhook that notifies the team by email or SMS.
 //
+// Cloudflare Turnstile is verified before any field validation or HL delivery.
+// Turnstile policy (fail-open, hostname allowlist) is shared with submit-contact.js
+// via api/lib/verify-turnstile.js.
+//
 // Logs contain only submissionId + outcome — no customer PII in log output.
 
 'use strict';
+
+const { verifyTurnstile } = require('./lib/verify-turnstile');
 
 // Maps sanitized source keys (sent from the browser) to human-readable labels
 // stored in HighLevel. Add an entry here whenever a new landing page is created.
@@ -70,9 +76,17 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const webhookUrl = process.env.HIGHLEVEL_INQUIRY_WEBHOOK_URL;
+  const webhookUrl  = process.env.HIGHLEVEL_INQUIRY_WEBHOOK_URL;
+  const tsSecretKey = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY;
+
   if (!webhookUrl) {
     console.error('[THT] HIGHLEVEL_INQUIRY_WEBHOOK_URL is not configured');
+    return res
+      .status(500)
+      .json({ error: 'Server configuration error. Please call us at (832) 422-3039.' });
+  }
+  if (!tsSecretKey) {
+    console.error('[THT] CLOUDFLARE_TURNSTILE_SECRET_KEY is not configured');
     return res
       .status(500)
       .json({ error: 'Server configuration error. Please call us at (832) 422-3039.' });
@@ -88,6 +102,23 @@ module.exports = async function handler(req, res) {
   // ── Honeypot — silently accept bots without forwarding ──────────────────────
   if (body._hp) {
     return res.status(200).json({ ok: true });
+  }
+
+  // ── Cloudflare Turnstile — reject if token is absent or invalid ──────────────
+  const cfToken = (body.cfToken || '').trim();
+  if (!cfToken) {
+    return res.status(400).json({ error: 'Please complete the security check and try again.' });
+  }
+
+  const tsResult = await verifyTurnstile(cfToken, tsSecretKey);
+  if (!tsResult.verified) {
+    console.error(`[THT] Turnstile rejected: ${tsResult.reason || 'unknown'}`);
+    return res
+      .status(400)
+      .json({ error: 'Security check failed. Please refresh the page and try again.' });
+  }
+  if (tsResult.failOpen && (tsResult.failReason || '').startsWith('cf-4xx')) {
+    console.error(`[THT] CONFIG ALERT: Cloudflare siteverify returned ${tsResult.failReason} — verify CLOUDFLARE_TURNSTILE_SECRET_KEY is correct`);
   }
 
   // ── Submission ID — accept valid client UUID or generate server-side ─────────
@@ -170,8 +201,10 @@ module.exports = async function handler(req, res) {
     submittedAt:           new Date().toISOString(),
   };
 
-  // Log context — submissionId + metadata only, no PII
-  const logCtx = `[THT] id=${submissionId} src=${rawSourceKey || 'direct'} svc=${serviceType || 'unset'}`;
+  const tsStatus = tsResult.failOpen
+    ? `fail-open(${tsResult.failReason || 'unknown'})`
+    : 'pass';
+  const logCtx = `[THT] id=${submissionId} src=${rawSourceKey || 'direct'} svc=${serviceType || 'unset'} turnstile=${tsStatus}`;
 
   // ── Attempt 1 ────────────────────────────────────────────────────────────────
   let result = await attemptDelivery(webhookUrl, payload);
