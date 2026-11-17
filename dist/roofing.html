@@ -417,6 +417,20 @@ nav{position:sticky;top:0;z-index:400;background:#fff;border-bottom:1px solid va
 .final-cta-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 @media(max-width:680px){.final-cta{padding:5.5rem 20px}.final-cta-btns{flex-direction:column}.final-cta-btns .btn-red,.final-cta-btns .btn-ghost{width:100%;justify-content:center}}
 
+/* ── LOCAL AREAS HUB ── */
+.local-areas-section{background:var(--offwhite);padding:5rem 2.5rem}
+.local-areas-inner{max-width:1100px;margin:0 auto}
+.local-areas-header{text-align:center;margin-bottom:2.75rem}
+.local-areas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.local-area-card{display:flex;flex-direction:column;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:1.5rem 1.25rem;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s}
+.local-area-card:hover{border-color:var(--red);box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.local-area-card:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.local-area-city{font-size:14px;font-weight:700;color:var(--black);margin-bottom:.375rem}
+.local-area-desc{font-size:12.5px;color:#6b7280;line-height:1.6;flex:1}
+.local-area-link{font-size:10.5px;font-weight:700;color:var(--red);letter-spacing:.8px;text-transform:uppercase;margin-top:.875rem;display:inline-flex;align-items:center;gap:5px}
+@media(max-width:960px){.local-areas-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.local-areas-grid{grid-template-columns:repeat(2,1fr)}.local-areas-section{padding:3.5rem 1.25rem}}
+
 /* ── FOOTER ── */
 footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:1.375rem 52px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .footer-copy{font-size:11.5px;color:#555}
@@ -1291,6 +1305,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="estimate.html" class="btn-ghost">Start My Project</a>
   </div>
 </div>
+
+<!-- ══════════════════════════
+     11b · LOCAL AREAS HUB
+══════════════════════════ -->
+<section class="local-areas-section" aria-labelledby="local-areas-heading">
+  <div class="local-areas-inner">
+
+    <div class="local-areas-header reveal">
+      <span class="sec-eyebrow">Greater Houston</span>
+      <h2 class="sec-h" id="local-areas-heading">Roofing Services Near You</h2>
+      <div class="sec-rule centered" aria-hidden="true"></div>
+      <p class="sec-sub">Home Team provides roofing inspections, storm damage repairs, and full replacements across the Greater Houston area. Find your city for local details and to schedule a free inspection.</p>
+    </div>
+
+    <div class="local-areas-grid">
+
+      <a href="/roofing/the-woodlands-tx" class="local-area-card reveal d1">
+        <div class="local-area-city">The Woodlands, TX</div>
+        <p class="local-area-desc">Roofing for Montgomery County's established neighborhoods — inspections, storm repairs, and full replacements.</p>
+        <span class="local-area-link" aria-label="Roofing services in The Woodlands, TX">
+          Learn More
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="/roofing/conroe-tx" class="local-area-card reveal d2">
+        <div class="local-area-city">Conroe, TX</div>
+        <p class="local-area-desc">Residential roofing in Montgomery County — free inspections, hail damage restoration, and warranty-backed replacements.</p>
+        <span class="local-area-link" aria-label="Roofing services in Conroe, TX">
+          Learn More
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="/roofing/spring-tx" class="local-area-card reveal d3">
+        <div class="local-area-city">Spring, TX</div>
+        <p class="local-area-desc">Roofing for Spring's established neighborhoods — free inspections, storm repairs, and full roof replacements.</p>
+        <span class="local-area-link" aria-label="Roofing services in Spring, TX">
+          Learn More
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="/roofing/cypress-tx" class="local-area-card reveal d4">
+        <div class="local-area-city">Cypress, TX</div>
+        <p class="local-area-desc">Roofing inspections and replacements for Cypress homeowners — storm damage, full installations, and financing options.</p>
+        <span class="local-area-link" aria-label="Roofing services in Cypress, TX">
+          Learn More
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="/roofing/houston-tx" class="local-area-card reveal d5">
+        <div class="local-area-city">Houston, TX</div>
+        <p class="local-area-desc">Residential roofing across Greater Houston — free inspections, storm damage restoration, and full replacements.</p>
+        <span class="local-area-link" aria-label="Roofing services in Houston, TX">
+          Learn More
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════
      12 · FINAL CTA
